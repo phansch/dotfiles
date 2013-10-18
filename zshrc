@@ -11,6 +11,12 @@ source $ZSH/oh-my-zsh.sh
 alias ls="ls -h --color"
 alias la="ls -A"
 alias git=hub
+alias bwpull=bugwarrior-pull
+
+## Directory operations
+alias ...="cd ../.."
+
+
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 

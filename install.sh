@@ -58,7 +58,7 @@ function configure_zsh {
 function setup {
   for file in *
   do
-    # we have a custom zsh setup function, so skip this step
+    # ignore .oh-my-sh and screenshot directories.
     if [ "$file" == '.oh-my-zsh' ] || [ "$file" == 'screenshots' ]; then
       continue
     fi
