@@ -1,5 +1,5 @@
 [core]
-  editor = nano
+  editor = subl -w
   excludesfile = ~/.gitignore
 [github]
   user = phansch
