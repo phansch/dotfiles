@@ -7,7 +7,6 @@ dotfiles_backup="$HOME/.dotfiles_backup"
 dotfiles="$HOME/.dotfiles"
 
 function backup {
-
   # Create backup directory
   if [ ! -e "$dotfiles_backup" ]; then
     mkdir "$HOME/.dotfiles_backup"
@@ -32,14 +31,22 @@ function backup {
 function configure_zsh {
   echo -e "\nSetting up zsh custom config.."
 
-  # symlink custom plugins
+  # Symlink custom plugins
   echo "Setting up plugins"
-  ln -s "$HOME/.dotfiles/.oh-my-zsh/custom/plugins/phansch" "$HOME/.oh-my-zsh/custom/plugins"
-  ln -s "$HOME/.dotfiles/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting" "$HOME/.oh-my-zsh/custom/plugins"
+  local plugin_target="$HOME/.oh-my-zsh/custom/plugins"
+  if [ ! -e "$plugin_target/phansch" ]; then
+    ln -s "$HOME/.dotfiles/.oh-my-zsh/custom/plugins/phansch" $plugin_target
+  fi
+  if [ ! -e "$plugin_target/zsh-syntax-highlighting" ]; then
+    ln -s "$HOME/.dotfiles/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting" $plugin_target
+  fi
 
-  # symlink theme
+  # Symlink theme
   echo "Adding custom theme"
-  ln -s "$HOME/.dotfiles/.oh-my-zsh/themes/phansch.zsh-theme" "$HOME/.oh-my-zsh/themes/phansch.zsh-theme"
+  local theme_target="$HOME/.oh-my-zsh/themes/phansch.zsh-theme"
+  if [ ! -e "$theme_target" ]; then
+    ln -s "$HOME/.dotfiles/.oh-my-zsh/themes/phansch.zsh-theme" $theme_target
+  fi
 
   # Set the default shell to zsh if it isn't currently set to zsh
   if [[ ! $(echo $SHELL) == $(which zsh) ]]; then
@@ -51,8 +58,7 @@ function configure_zsh {
 function setup {
   for file in *
   do
-    echo "File: $file"
-    # we have a custom zsh setup function, so skip the rest
+    # we have a custom zsh setup function, so skip this step
     if [ "$file" == '.oh-my-zsh' ] || [ "$file" == 'screenshots' ]; then
       continue
     fi
