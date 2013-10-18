@@ -29,17 +29,13 @@ function backup {
   done
 }
 
-function setup_zsh {
-  plugins=".oh-my-zsh/custom/plugins"
-
+function configure_zsh {
   echo -e "\nSetting up zsh custom config.."
-  # Remove all existing custom plugins
-  echo "Removing preinstalled custom plugins"
-  rm -rf $HOME/.dotfiles/oh-my-zsh/custom/plugins/
 
-  # symlink custom plugins dir
-  echo "Creating $HOME/$plugins from $dotfiles/$plugins"
-  ln -s "$HOME/.dotfiles/.oh-my-zsh/custom/plugins" "$HOME/.oh-my-zsh/custom"
+  # symlink custom plugins
+  echo "Setting up plugins"
+  ln -s "$HOME/.dotfiles/.oh-my-zsh/custom/plugins/phansch" "$HOME/.oh-my-zsh/custom/plugins"
+  ln -s "$HOME/.dotfiles/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting" "$HOME/.oh-my-zsh/custom/plugins"
 
   # symlink theme
   echo "Adding custom theme"
@@ -57,7 +53,7 @@ function setup {
   do
     echo "File: $file"
     # we have a custom zsh setup function, so skip the rest
-    if [ "$file" == '.oh-my-zsh' ]; then
+    if [ "$file" == '.oh-my-zsh' ] || [ "$file" == 'screenshots' ]; then
       continue
     fi
 
@@ -78,4 +74,4 @@ function setup {
 
 backup
 setup
-#setup_zsh
+configure_zsh
