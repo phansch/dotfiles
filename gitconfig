@@ -1,0 +1,26 @@
+[core]
+  editor = nano
+  excludesfile = ~/.gitignore
+[github]
+  user = phansch
+[user]
+	email = dev@phansch.net
+	name = Philipp Hansch
+[alias]
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    st = status
+    ci = commit
+    co = checkout
+    undo-ci = reset --soft HEAD^
+[push]
+	default = simple
+[credential]
+	helper = /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+[color "branch"]
+  current = cyan
+  local = yellow
+  remote = green

@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+# Script to empty the trash from command line.
+# Run on startup (.xinitrc), via cron, etc
+
+trash="/home/$USER/.local/share/Trash"
+
+rm -R $trash/info/*
+rm -R $trash/files/*
+
+
+
+
