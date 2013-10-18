@@ -14,9 +14,9 @@ Existing dotfiles will be moved to ~/.dotfiles_backup
 
 ##### Tab-completion plugin for ~ and ~/code/ directories
     c pha<tab> #c phansch.github.com/
-
     h .dot<tab> #h .dotfiles/
-Source: https://github.com/ryanb/dotfiles
+    
+From https://github.com/ryanb/dotfiles but without rake and cap completion.
 ### X Config
 
 ##### .xinitrc for dwm

@@ -14,6 +14,8 @@
     undo-ci = reset --soft HEAD^
 [push]
 	default = simple
+[commit]
+  template = ~/.gitmessage
 [credential]
 	helper = /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
 [color "status"]
