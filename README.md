@@ -5,6 +5,12 @@
 
 Existing dotfiles will be moved to ~/.dotfiles_backup
 
+## Updating
+
+    cd ~/.dotfiles
+    git pull
+    ./install.sh
+
 ## What's in there?
 ### oh-my-zsh
 
@@ -15,7 +21,7 @@ Existing dotfiles will be moved to ~/.dotfiles_backup
 ##### Tab-completion plugin for ~ and ~/code/ directories
     c pha<tab> #c phansch.github.com/
     h .dot<tab> #h .dotfiles/
-    
+
 From https://github.com/ryanb/dotfiles but without rake and cap completion.
 ### X Config
 
@@ -33,6 +39,7 @@ The script is pretty much self explanatory, but here's the gist:
  * Solarized Dark and Solarized Light (default).
  * Clickable urls to launch firefox
 
+![vlc ncurses](screenshots/screen-vlc.png)
 
 ### mutt & task
 *.muttrc* contains a config for using Gmail with mutt.
@@ -46,4 +53,6 @@ Extra shortcuts are:
     gd # Go to drafts
 
 *.taskrc* remains pretty basic so far. We just set the .task data fodler to ~/.task/ and use the provided theme.
+
+![task shell](screenshots/screen-task.png)
 
