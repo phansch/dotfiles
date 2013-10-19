@@ -5,8 +5,15 @@
 
 trash="/home/$USER/.local/share/Trash"
 
-rm -R $trash/info/*
-rm -R $trash/files/*
+rm -rdf $trash/info/*
+rm -rdf $trash/files/*
+
+# Remove .files without . and .. directories
+rm -rdf $trash/info/.[^.]*
+rm -rdf $trash/files/.[^.]*
+
+
+
 
 
 
