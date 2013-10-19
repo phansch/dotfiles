@@ -56,3 +56,11 @@ Extra shortcuts are:
 
 ![task shell](screenshots/screen-task.png)
 
+### Scripts in bin/
+ 
+  * `emptytrash` clears the trash (/home/$USER/.local/share/Trash). 
+  * `hub` adds github support to the git command
+  * `routines` helps me stick to my routines in the morning
+
+Here's a screenshot of the `routines` output:
+![routines](screenshots/routines.png)

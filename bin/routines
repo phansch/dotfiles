@@ -1,0 +1,91 @@
+#!/usr/bin/env ruby
+#
+# Routines
+#
+# Hacking my habits with a dead simple ruby script
+
+# Defining some colors.
+# From http://stackoverflow.com/a/16363159
+# Usage: "string".color
+class String
+  def black;          "\033[30m#{self}\033[0m" end
+  def red;            "\033[31m#{self}\033[0m" end
+  def green;          "\033[32m#{self}\033[0m" end
+  def brown;          "\033[33m#{self}\033[0m" end
+  def blue;           "\033[34m#{self}\033[0m" end
+  def magenta;        "\033[35m#{self}\033[0m" end
+  def cyan;           "\033[36m#{self}\033[0m" end
+  def gray;           "\033[37m#{self}\033[0m" end
+  def bg_black;       "\033[40m#{self}\0330m"  end
+  def bg_red;         "\033[41m#{self}\033[0m" end
+  def bg_green;       "\033[42m#{self}\033[0m" end
+  def bg_brown;       "\033[43m#{self}\033[0m" end
+  def bg_blue;        "\033[44m#{self}\033[0m" end
+  def bg_magenta;     "\033[45m#{self}\033[0m" end
+  def bg_cyan;        "\033[46m#{self}\033[0m" end
+  def bg_gray;        "\033[47m#{self}\033[0m" end
+  def bold;           "\033[1m#{self}\033[22m" end
+  def reverse_color;  "\033[7m#{self}\033[27m" end
+end
+
+class Routine
+  def initialize(description, question, cmd = nil)
+    @cmd = cmd
+    @description = description
+    @question = question
+  end
+
+  def start
+    # REPL for completing/skipping routines
+    loop do
+      puts
+
+      case key_pressed
+      when "\r" # Enter
+        system(@cmd) if @cmd
+        puts "-> Done.\n\n"
+        break
+      when "s"
+        puts "-> Skipping this step.\n\n"
+        break
+      else
+        puts "ERROR: Invalid command\n\n".red
+      end
+    end
+  end
+
+  def to_s
+    "#{@description.bold} #{@question.green} : "
+  end
+
+  # Get key pressed from console
+  # Taken from http://stackoverflow.com/a/4845304
+  def key_pressed
+    system("stty raw -echo") #=> Raw mode, no echo
+    key = STDIN.getc
+    system("stty -raw echo") #=> Reset terminal mode
+    key
+  end
+end
+
+
+puts "Instructions:".bold + " Press " + "[Enter]".bold + " to continue after completing a routine. Press " + "[s]".bold + " to skip the routine.\n\n"
+
+routines = []
+routines << Routine.new("Check that phone is charged and that ringer volume is suitable.", "Done?")
+routines << Routine.new("Do stretches + morning run. Start now.", "Back yet?")
+routines << Routine.new("Breakfast.", "Done?")
+#routines << Routine.new("Run laptop backups.", "Start backup now?")
+routines << Routine.new("Check calendar.", "Launch pal?", "pal -r 7")
+routines << Routine.new("Check all inboxes.", "Launch mutt?", "mutt")
+routines << Routine.new("Check all inboxes.", "Launch task?", "task li:5")
+#routines << Routine.new("Sync version control repositories.", "Sync now?")
+routines << Routine.new("Anki Review.", "Start anki?", "anki")
+
+routines.each_with_index do |routine, index|
+  index_str = "##{index + 1}:".bold
+  print "#{index_str} #{routine}"
+  routine.start
+end
+
+puts "\n\nAll done! Have a beatiful day!".bold.red
