@@ -2,6 +2,7 @@
 
     git clone git@github.com:phansch/dotfiles.git ~/.dotfiles && cd ~/.dotfiles
     ./install.sh
+    git submodule update --init
 
 Existing dotfiles will be moved to ~/.dotfiles_backup
 
@@ -9,6 +10,7 @@ Existing dotfiles will be moved to ~/.dotfiles_backup
 
     cd ~/.dotfiles
     git pull
+    git submodule update
     ./install.sh
 
 ## What's in there?
