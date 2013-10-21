@@ -12,8 +12,8 @@
 ## X Stuff ##
 #############
 
-# Set German keyboard layout
-sleep 1 && setxkbmap -layout de &
+# Set German keyboard layout, with alt_space to switch between de and de(dvorak)
+sleep 1 && setxkbmap 'de,de(dvorak)' -option 'grp:alt_space_toggle,ctrl:nocaps' 'de,de(dvorak)' &
 sleep 1 && xset m 4 & # Increase mouse acceleration
 sleep 1 && xrdb -merge ~/.Xresources # reread ~/.Xresources
 
