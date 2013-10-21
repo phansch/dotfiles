@@ -49,9 +49,9 @@ sleep 1 && bugwarrior-pull & # Pull github issues to taskwarrior
 sleep 1 && firefox &
 sleep 1 && xfce4-panel --disable-wm-check &
 #sleep 1 && urxvt -e weechat-curses & # irc
-sleep 1 && urxvt -e routines &
 
 sleep 1 && urxvt &
+sleep 1 && urxvt -e routines &
 sleep 1 && urxvt -e cvlc ~/Music/Radios/dronezone32.pls -I ncurses & # open vlc
 sleep 1 && subl & # open sublime-text
 sleep 1 && skype &

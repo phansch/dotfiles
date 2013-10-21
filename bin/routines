@@ -88,4 +88,4 @@ routines.each_with_index do |routine, index|
   routine.start
 end
 
-puts "\n\nAll done! Have a beatiful day!".bold.red
+puts "\n\nAll done! Have a beautiful day!".bold.red
