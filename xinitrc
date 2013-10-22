@@ -12,14 +12,14 @@
 ## X Stuff ##
 #############
 
-# Set German keyboard layout, with alt_space to switch between de and de(dvorak)
-sleep 1 && setxkbmap 'de,de(dvorak)' -option 'grp:alt_space_toggle,ctrl:nocaps' 'de,de(dvorak)' &
+# Set german dvorak keyboard layout
+sleep 1 && setxkbmap 'de(dvorak)'
 sleep 1 && xset m 4 & # Increase mouse acceleration
 sleep 1 && xrdb -merge ~/.Xresources # reread ~/.Xresources
 
 # TODO: Proper rewrite for screen section.
 # 		* Determine xrandr settings for different computers by hostname and
-# 		  available screens
+# 		  available screens. thi
 
 # netbook screen setup at parents
 #if [[ "$(xrandr | grep 'VGA1 connected')" != "" ]]; then
