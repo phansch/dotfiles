@@ -3,6 +3,7 @@
 # Routines
 #
 # Hacking my habits with a dead simple ruby script
+# Todo: read google calendar instead of pal
 
 # Defining some colors.
 # From http://stackoverflow.com/a/16363159
