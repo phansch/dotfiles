@@ -26,3 +26,5 @@
   current = cyan
   local = yellow
   remote = green
+[init]
+	templatedir = ~/.git-templates
