@@ -1,7 +1,12 @@
 #!/usr/bin/env ruby
 
-msg = `git log --pretty=format:%s`
-project = `basename `git rev-parse --show-toplevel``
+msg = `git log -1 --pretty=format:%s`
+dir = `git rev-parse --show-toplevel`
+project = File.basename(dir)
 branch = `git branch`
 
-­­`jou -a "New commit: #{msg} on branch #{branch} for #{project}"`
+msg.strip!
+project.strip!
+branch.strip!
+
+­­`jou -a "New commit: /#{msg}/ on branch [#{branch}] for #{project}"`
