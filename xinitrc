@@ -21,18 +21,14 @@ setxkbmap 'de(dvorak)' & # Set german dvorak keyboard layout
 #       * Determine xrandr settings for different computers by hostname and
 #         available screens.
 
-# netbook screen setup at parents
-#if [[ "$(xrandr | grep 'VGA1 connected')" != "" ]]; then
-#   sleep 1 && xrandr --output VGA1 --mode 1680x1050 &
-#   sleep 1 && xrandr --output LVDS1 --off &
-#else
-#   sleep 1 && xrandr --output LVDS1 --mode 1366x768 &
-#   sleep 1 && xrandr --output VGA1 --off &
-#fi &
-
-# Screen setup at home berlin
-sleep 2 && xrandr --output HDMI-0 --mode 1920x1080 &
-sleep 2 && xrandr --output DVI-1 --mode 1920x1080 --left-of HDMI-0 &
+# netbook screen setup
+if [[ "$(xrandr | grep 'HDMI1 connected')" != "" ]]; then
+  sleep 1 && xrandr --output LVDS1 --mode 1366x768 &
+  sleep 1 && xrandr --output HDMI1 --mode 1920x1080 --right-of LVDS1 &
+else
+  sleep 1 && xrandr --output LVDS1 --mode 1366x768 &
+  sleep 1 && xrandr --output HDMI1 --off &
+fi &
 
 ##########
 ## Misc ##
@@ -47,9 +43,11 @@ sleep 1 && bugwarrior-pull & # Pull github issues to taskwarrior
 # Launch programs
 sleep 1 && firefox &
 #sleep 1 && urxvt -e weechat-curses & # irc
-sleep 1 && urxvt -e cvlc ~/Music/Radios/dronezone32.pls -I ncurses & # open vlc
+sleep 1 && urxvt -e cvlc ~/Music/Radios/dronezone32.pls --browse-dir ~/Music/ -I ncurses & # open vlc
 sleep 1 && subl & # open sublime-text
 sleep 1 && skype &
+sleep 1 && nm-applet &
+sleep 1 && xfce4-power-manager &
 
 # make sure there's only one redshift service running
 if ! ps ax | grep -v grep | grep redshift > /dev/null
