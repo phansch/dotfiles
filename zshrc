@@ -13,6 +13,7 @@ alias la="ls -A"
 alias git=hub
 alias bwpull=bugwarrior-pull
 alias install="sudo apt-get install"
+alias apt="sudo apt-get"
 
 ## Directory operations
 alias ...="cd ../.."
