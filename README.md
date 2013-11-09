@@ -34,7 +34,7 @@ The script is pretty much self explanatory, but here's the gist:
  * Launch a ton of programs:
    * redshift, [btsync](http://labs.bittorrent.com/experiments/sync.html), unclutter, emptytrash, feh, [bugwarrior-pull](https://github.com/ralphbean/bugwarrior)
    * [vlc ncurses with playlist](http://www.videolan.org/doc/play-howto/en/ch04.html#id590986)
-   * productivity suite ([pal](http://palcal.sourceforge.net/), [task](http://taskwarrior.org/projects/show/taskwarrior), [mutt](http://www.mutt.org/), sublime-text-3)
+   * Applets for dwm systray
    * And finally: [dwm](http://dwm.suckless.org/)
 
 ##### .Xresources for urxvt configuration
@@ -43,17 +43,7 @@ The script is pretty much self explanatory, but here's the gist:
 
 ![vlc ncurses](screenshots/screen-vlc.png)
 
-### mutt & task
-*.muttrc* contains a config for using Gmail with mutt.
-Extra shortcuts are:
-
-    y # Gmail Archive message
-    d # Gmail delete message
-    gi # Go to inbox
-    ga # Go to all mail
-    gs # Go to starred messages
-    gd # Go to drafts
-
+### task
 *.taskrc* remains pretty basic so far. We just set the .task data fodler to ~/.task/ and use the provided theme.
 
 ![task shell](screenshots/screen-task.png)
