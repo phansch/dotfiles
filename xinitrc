@@ -48,6 +48,7 @@ sleep 1 && subl & # open sublime-text
 sleep 1 && skype &
 sleep 1 && nm-applet &
 sleep 1 && xfce4-power-manager &
+sleep 1 && hexchat &
 
 # make sure there's only one redshift service running
 if ! ps ax | grep -v grep | grep redshift > /dev/null
