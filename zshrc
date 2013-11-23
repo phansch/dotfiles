@@ -15,6 +15,7 @@ alias git=hub
 alias bwpull=bugwarrior-pull
 alias install="sudo apt-get install"
 alias apt="sudo apt-get"
+alias s=subl
 
 ## Directory operations
 alias ...="cd ../.."
