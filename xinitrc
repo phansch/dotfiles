@@ -37,12 +37,9 @@ fi &
 # Do background stuff
 sleep 1 && unclutter & # Hides mousecursor when inactive
 sleep 1 && emptytrash & # Empty trash (duh)
-sleep 1 && ~/.btsync/btsync & # Start btsync daemon
-sleep 1 && bugwarrior-pull & # Pull github issues to taskwarrior
 
 # Launch programs
 sleep 1 && firefox &
-#sleep 1 && urxvt -e weechat-curses & # irc
 sleep 1 && urxvt -e cvlc ~/Music/Radios/dronezone32.pls --browse-dir ~/Music/ -I ncurses & # open vlc
 sleep 1 && subl & # open sublime-text
 sleep 1 && skype &
