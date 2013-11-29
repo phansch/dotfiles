@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+#
+# This simple script is supposed to make it easier to connect to an external
+# beamer or any other external device.
+
+puts "Retrieving xrandr information..."
+
+system('xrandr')
+
+# repl
+loop do
+  puts "-" * 80
+  print "Continue with \"xrandr --output LVDS1 --auto --output DP1 --auto --same-as LVDS1\" ? (y/n) "
+
+  choice = gets.chomp
+
+  case choice
+  when "y"
+    system('xrandr --output LVDS1 --auto --output DP1 --auto --same-as LVDS1')
+    break
+  when "n"
+    break
+  else
+    puts ""
+  end
+end
+
