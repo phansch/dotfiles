@@ -17,6 +17,8 @@ Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-surround'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'bling/vim-airline'
+Bundle 'edkolev/tmuxline.vim'
+Bundle 'tomtom/tcomment_vim'
 
 " #########################
 " Settings
@@ -39,7 +41,7 @@ set showmode    " Display the mode you're in.
 set showmatch   " Show matching brackets/parenthesis
 
 set list
-set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
+set listchars=tab:▸\ ,trail:¬,extends:❯,precedes:❮
 set showbreak=↪
 
 set title " Set the terminal's title
@@ -100,7 +102,7 @@ let g:airline_powerline_fonts = 1
 
 " If the current buffer has never been saved, it will have no name,
 " call the file browser to save it, otherwise just save it.
-command -nargs=0 -bar Update if &modified 
+command -nargs=0 -bar Update if &modified
                            \|    if empty(bufname('%'))
                            \|        browse confirm write
                            \|    else
