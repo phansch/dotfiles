@@ -41,7 +41,6 @@ sleep 1 && emptytrash & # Empty trash (duh)
 # Launch programs
 sleep 1 && firefox &
 sleep 1 && urxvt -e cvlc ~/Music/Radios/dronezone32.pls --browse-dir ~/Music/ -I ncurses & # open vlc
-sleep 1 && subl & # open sublime-text
 sleep 1 && skype &
 sleep 1 && nm-applet &
 sleep 1 && xfce4-power-manager &
