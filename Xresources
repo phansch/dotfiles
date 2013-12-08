@@ -71,10 +71,13 @@ URxvt*saveLines: 8000
 URxvt*internalBorder: 3
 URxvt*lineSpace: 0
 
-! Fonts
-URxvt*allow_bold: true
-URxvt*font: xft:Ubuntu Mono:pixelsize=17
-URxvt*boldFont: xft:Ubuntu Mono:pixelsize=17:style=bold
+
+
+! Urxvt fonts
+urxvt.font: xft:Ubuntu Mono derivative Powerline:size=12
+urxvt.boldFont: xft:Ubuntu Mono derivative Powerline::bold:size=12
+urxvt.italicFont: xft:Ubuntu Mono derivative Powerline::italic:size=12
+urxvt.boldItalicFont: xft:Ubuntu Mono derivative Powerline::bolditalic:size=12
 
 ! Fix font space
 URxvt*letterSpace: -1
