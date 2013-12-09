@@ -94,6 +94,7 @@ URxvt*urlLauncher: firefox
 ! Cursor
 URxvt*cursorBlink: true
 URxvt*cursorUnderline: false
+Xcursor.theme: DMZ-Black
 
 ! Pointer
 URxvt*pointerBlank: true
