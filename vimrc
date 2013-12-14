@@ -24,6 +24,7 @@ Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
+Bundle 'kchmck/vim-coffee-script'
 
 " }}}
 " Settings {{{
@@ -45,6 +46,8 @@ set list
 set listchars=tab:▸\ ,trail:¬,extends:❯,precedes:❮
 set showbreak=↪
 set title " Set the terminal's title
+set scrolloff=10
+autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent
 
 " Wildmenu completition {{{
 set wildmenu
@@ -137,6 +140,10 @@ nnoremap <leader>gc :Gcommit<cr>
 " Rails remaps
 nnoremap <leader>r :Rake<cr>
 nnoremap <leader>s :w<cr>
+
+" Copy text to clipboard. Don't ask.
+vmap <leader>c :!xclip -f -sel clip<CR>
+
 
 " File Type specific settings
 au FileType vim setlocal foldmethod=marker
