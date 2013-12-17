@@ -111,12 +111,11 @@ noremap  <F1> <nop>
 inoremap <F1> <nop>
 
 imap <leader>i <esc>
+nnoremap <leader>s :w<cr>
+nnoremap <leader>q :q<cr>
+
 " Plugins
 let g:ctrlp_map = '<leader>d' " Remap ctrl + p to ,d
-
-" Insert blank lines without going into insert mode
-nmap go o<esc>
-nmap gO O<esc>
 
 " Easier to type, and I never use the default behavior.
 noremap H ^
@@ -140,7 +139,6 @@ nnoremap <leader>gc :Gcommit<cr>
 
 " Rails remaps
 nnoremap <leader>r :Rake<cr>
-nnoremap <leader>s :w<cr>
 
 " Copy text to clipboard. Don't ask.
 vmap <leader>c :!xclip -f -sel clip<CR>
