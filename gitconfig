@@ -1,23 +1,23 @@
 [core]
-  editor = subl -w
+  editor = vim
   excludesfile = ~/.gitignore
 [github]
   user = phansch
 [user]
-	email = dev@phansch.net
-	name = Philipp Hansch
+  email = dev@phansch.net
+  name = Philipp Hansch
 [alias]
-    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-    st = status
-    ci = commit
-    co = checkout
-    undo-ci = reset --soft HEAD^
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  st = status
+  ci = commit
+  co = checkout
+  undo-ci = reset --soft HEAD^
 [push]
-	default = simple
+  default = simple
 [commit]
   template = ~/.gitmessage
 [credential]
-	helper = /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
+  helper = /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
 [color "status"]
   added = yellow
   changed = green
@@ -27,4 +27,4 @@
   local = yellow
   remote = green
 [init]
-	templatedir = ~/.git-templates
+  templatedir = ~/.git-templates
