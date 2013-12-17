@@ -110,6 +110,7 @@ ino <up> <nop>
 noremap  <F1> <nop>
 inoremap <F1> <nop>
 
+imap <leader>i <esc>
 " Plugins
 let g:ctrlp_map = '<leader>d' " Remap ctrl + p to ,d
 
