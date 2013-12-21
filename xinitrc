@@ -36,7 +36,6 @@ fi &
 
 # Do background stuff
 sleep 1 && unclutter & # Hides mousecursor when inactive
-sleep 1 && emptytrash & # Empty trash (duh)
 
 # Launch programs
 sleep 1 && firefox &
