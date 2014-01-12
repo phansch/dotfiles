@@ -9,6 +9,7 @@ call vundle#rc()
 
 " Plugins {{{
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'ervandew/supertab'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails'
