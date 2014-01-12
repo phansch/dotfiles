@@ -13,10 +13,12 @@ alias ls="ls -h --color"
 alias la="ls -A"
 alias df="df -h"
 alias git=hub
-alias bwpull=bugwarrior-pull
 alias install="sudo apt-get install"
 alias apt="sudo apt-get"
-alias s=subl
+alias be="bundle exec"
+alias bi="bundle install"
+alias start_jekyll="jekyll serve --watch --drafts"
+alias vi="vim"
 
 ## Directory operations
 alias ...="cd ../.."
