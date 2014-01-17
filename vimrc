@@ -48,6 +48,7 @@ set listchars=tab:▸\ ,trail:¬,extends:❯,precedes:❮
 set showbreak=↪
 set title " Set the terminal's title
 set scrolloff=10
+set relativenumber
 autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent
 
 " Wildmenu completition {{{
