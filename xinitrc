@@ -14,7 +14,8 @@
 
 xset m 4 & # Increase mouse acceleration
 xrdb -merge ~/.Xresources & # reread ~/.Xresources
-xsetroot -solid OldLace & # background color
+# xsetroot -solid OldLace & # background color
+sh ~/.fehbg &
 setxkbmap 'de(dvorak)' & # Set german dvorak keyboard layout
 
 # TODO: Proper rewrite for screen section.
