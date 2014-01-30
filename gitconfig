@@ -1,6 +1,7 @@
 [core]
   editor = vim
   excludesfile = ~/.gitignore
+  whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
 [github]
   user = phansch
 [user]
