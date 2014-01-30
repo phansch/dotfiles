@@ -13,12 +13,15 @@
   ci = commit
   co = checkout
   undo-ci = reset --soft HEAD^
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
 [push]
   default = simple
 [commit]
   template = ~/.gitmessage
 [credential]
   helper = /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
+[color]
+  ui = auto
 [color "status"]
   added = yellow
   changed = green
