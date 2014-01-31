@@ -2,11 +2,6 @@
 #
 # .xinitrc - Called by startx
 #
-# Known issues:
-# Startup doesn't work correctly some times:
-#  * Sometimes, xrandr doesn't seem to make a change.
-#  * Sometimes, programs are not starting
-# 'sleep N' tries to fix that, but it's still not reliable
 
 #############
 ## X Stuff ##
