@@ -9,19 +9,26 @@ plugins=(git phansch zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # Aliases
+alias git=hub
+alias start_jekyll="jekyll serve --watch --drafts"
+
+## Bundle
+alias b="bundle"
+
+## Unix
+alias ...="cd ../.."
+alias mkdir="mkdir -p"
 alias ls="ls -h --color"
 alias la="ls -A"
 alias df="df -h"
-alias git=hub
-alias install="sudo apt-get install"
-alias apt="sudo apt-get"
-alias be="bundle exec"
-alias bi="bundle install"
-alias start_jekyll="jekyll serve --watch --drafts"
 alias vi="vim"
+alias apt="sudo apt-get"
+alias install="sudo apt-get install"
 
-## Directory operations
-alias ...="cd ../.."
+## Rails
+alias migrate="rake db:migrate db:rollback && rake db:migrate"
+alias m="migrate"
+alias rk="rake"
 
 
 # Path stuff
