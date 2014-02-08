@@ -2,6 +2,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="phansch"
 DISABLE_AUTO_UPDATE="true"
 DISABLE_LS_COLORS="true"
+DISABLE_AUTO_TITLE="true"
 DISABLE_CORRECTION="true"
 
 plugins=(git phansch zsh-syntax-highlighting)
@@ -34,7 +35,7 @@ alias m="migrate"
 alias rk="rake"
 
 # tmuxinator completion
-source ~/.bin/tmuxinator.zsh
+source ~/bin/tmuxinator.zsh
 
 
 # Path stuff
