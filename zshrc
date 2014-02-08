@@ -6,6 +6,8 @@ DISABLE_CORRECTION="true"
 
 plugins=(git phansch zsh-syntax-highlighting)
 
+export EDITOR='vim'
+
 source $ZSH/oh-my-zsh.sh
 
 # Aliases
@@ -14,6 +16,7 @@ alias start_jekyll="jekyll serve --watch --drafts"
 
 ## Bundle
 alias b="bundle"
+alias "bundle up"="bundle install"
 
 ## Unix
 alias ...="cd ../.."
@@ -30,6 +33,9 @@ alias migrate="rake db:migrate db:rollback && rake db:migrate"
 alias m="migrate"
 alias rk="rake"
 
+# tmuxinator completion
+source ~/.bin/tmuxinator.zsh
+
 
 # Path stuff
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
@@ -41,3 +47,4 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # added by travis gem
 [ -f /home/philipp/.travis/travis.sh ] && source /home/philipp/.travis/travis.sh
+
