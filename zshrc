@@ -5,15 +5,15 @@ DISABLE_LS_COLORS="true"
 DISABLE_AUTO_TITLE="true"
 DISABLE_CORRECTION="true"
 
-plugins=(git phansch zsh-syntax-highlighting)
+plugins=(git gitfast phansch zsh-syntax-highlighting)
 
 export EDITOR='vim'
 
 source $ZSH/oh-my-zsh.sh
 
 # Aliases
-alias git=hub
 alias start_jekyll="jekyll serve --watch --drafts"
+function git(){hub $@}
 
 ## Bundle
 alias b="bundle"
@@ -34,9 +34,8 @@ alias migrate="rake db:migrate db:rollback && rake db:migrate"
 alias m="migrate"
 alias rk="rake"
 
-# tmuxinator completion
+# completion
 source ~/bin/tmuxinator.zsh
-
 
 # Path stuff
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
