@@ -1,0 +1,7 @@
+# ~/.tmuxinator/slides.yml
+
+name: slides
+root: ~/code/slides
+
+windows:
+  - editor: vim

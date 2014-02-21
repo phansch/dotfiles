@@ -1,0 +1,8 @@
+# ~/.tmuxinator/pha.yml
+
+name: pha
+root: ~/code/phansch.github.com
+
+windows:
+  - editor: vim
+  - server: start_jekyll
