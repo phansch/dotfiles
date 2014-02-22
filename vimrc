@@ -126,7 +126,6 @@ imap <C-s> <esc>:w<CR>
 
 "Mimic firefox tab behavior
 map <C-t> <esc>:tabnew<cr>
-map <C-w> <esc>:tabclose<cr>
 map <leader>s :use ctrl s instead!
 
 " Plugins
