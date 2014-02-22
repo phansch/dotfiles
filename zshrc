@@ -11,6 +11,7 @@ export EDITOR='vim'
 
 source $ZSH/oh-my-zsh.sh
 
+stty -ixon
 # Aliases
 alias start_jekyll="jekyll serve --watch --drafts"
 function git(){hub $@}

@@ -51,6 +51,7 @@ set showbreak=↪
 set title " Set the terminal's title
 set scrolloff=10
 set relativenumber
+set noesckeys "Make esc faster
 autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent
 
 " Wildmenu completition {{{
@@ -119,8 +120,14 @@ noremap  <F1> <nop>
 inoremap <F1> <nop>
 
 imap <leader>i <esc>
-nnoremap <leader>s :w<cr>
 nnoremap <leader>q :q<cr>
+map <C-s> <esc>:w<CR>
+imap <C-s> <esc>:w<CR>
+
+"Mimic firefox tab behavior
+map <C-t> <esc>:tabnew<cr>
+map <C-w> <esc>:tabclose<cr>
+map <leader>s :use ctrl s instead!
 
 " Plugins
 let g:ctrlp_map = '<leader>d' " Remap ctrl + p to ,d
