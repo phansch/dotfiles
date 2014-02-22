@@ -120,10 +120,10 @@ imap <leader>i <esc>
 nnoremap <leader>q :q<cr>
 map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>
+map <leader>s :use ctrl s instead!
 
 "Mimic firefox tab behavior
 map <C-t> <esc>:tabnew<cr>
-map <leader>s :use ctrl s instead!
 
 " Plugins
 let g:ctrlp_map = '<leader>d' " Remap ctrl + p to ,d
@@ -155,7 +155,10 @@ map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
 " Rails remaps
-nnoremap <leader>r :Rake<cr>
+map <leader>bi :!bundle install<cr>
+map <leader>fa :e spec/factories/<cr>
+map <leader>sc :e db/schema.rb<cr>
+map <leader>ro :e config/routes.rb<cr>
 
 " Copy text to clipboard. Don't ask.
 vmap <leader>c :!xclip -f -sel clip<CR>
