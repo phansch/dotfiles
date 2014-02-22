@@ -17,6 +17,8 @@ Bundle 'tpope/vim-rake'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-surround'
+Bundle 'thoughtbot/vim-rspec'
+Bundle 'jgdavey/tslime.vim'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'bling/vim-airline'
 Bundle 'edkolev/tmuxline.vim'
@@ -81,7 +83,11 @@ set completeopt=longest,menuone,preview
 " Leader
 let mapleader = ","
 let maplocalleader = "\\"
+
+let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
 " }}}
+
+
 " Line Return {{{
 
 " Make sure Vim returns to the same line when you reopen a file.
@@ -138,6 +144,12 @@ nnoremap <leader>gd :Gdiff<cr>
 nnoremap <leader>gs :Gstatus<cr>
 nnoremap <leader>gco :Gcheckout<cr>
 nnoremap <leader>gc :Gcommit<cr>
+
+" vim-rspec remaps
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>n :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
 
 " Rails remaps
 nnoremap <leader>r :Rake<cr>
