@@ -18,7 +18,6 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-surround'
 Bundle 'thoughtbot/vim-rspec'
-Bundle 'jgdavey/tslime.vim'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'bling/vim-airline'
 Bundle 'edkolev/tmuxline.vim'
@@ -84,8 +83,6 @@ set completeopt=longest,menuone,preview
 " Leader
 let mapleader = ","
 let maplocalleader = "\\"
-
-let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
 " }}}
 
 
