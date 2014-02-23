@@ -13,7 +13,7 @@ source $ZSH/oh-my-zsh.sh
 
 # See http://robots.thoughtbot.com/cding-to-frequently-used-directories-in-zsh
 setopt auto_cd
-cdpath=($HOME/code $HOME/.dotfiles $HOME/Documents)
+cdpath=($HOME $HOME/code $HOME/.dotfiles $HOME/Documents)
 
 stty -ixon
 # Aliases
