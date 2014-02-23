@@ -11,6 +11,10 @@ export EDITOR='vim'
 
 source $ZSH/oh-my-zsh.sh
 
+# See http://robots.thoughtbot.com/cding-to-frequently-used-directories-in-zsh
+setopt auto_cd
+cdpath=($HOME/code $HOME/.dotfiles $HOME/Documents)
+
 stty -ixon
 # Aliases
 alias start_jekyll="jekyll serve --watch --drafts"
@@ -21,6 +25,7 @@ alias b="bundle"
 alias "bundle up"="bundle install"
 
 ## Unix
+alias c=cd
 alias ...="cd ../.."
 alias mkdir="mkdir -p"
 alias ls="ls -h --color"
