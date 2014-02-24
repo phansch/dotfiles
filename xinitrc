@@ -13,11 +13,7 @@ xrdb -merge ~/.Xresources & # reread ~/.Xresources
 sh ~/.fehbg &
 setxkbmap 'de(dvorak)' & # Set german dvorak keyboard layout
 
-# TODO: Proper rewrite for screen section.
-#       * Determine xrandr settings for different computers by hostname and
-#         available screens.
-
-# netbook screen setup
+# Screen setup
 if [[ "$(xrandr | grep 'HDMI1 connected')" != "" ]]; then
   sleep 1 && xrandr --output LVDS1 --mode 1366x768 &
   sleep 1 && xrandr --output HDMI1 --mode 1920x1080 --right-of LVDS1 &
@@ -39,7 +35,7 @@ sleep 1 && urxvt -e cvlc ~/Music/Radios/dronezone32.pls --browse-dir ~/Music/ -I
 sleep 1 && skype &
 sleep 1 && nm-applet &
 sleep 1 && xfce4-power-manager &
-sleep 1 && hexchat &
+sleep 1 && urxvt -e weechat-curses &
 
 # make sure there's only one redshift service running
 if ! ps ax | grep -v grep | grep redshift > /dev/null
