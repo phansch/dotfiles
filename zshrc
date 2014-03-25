@@ -34,7 +34,8 @@ alias df="df -h"
 alias vi="vim"
 alias apt="sudo apt-get"
 alias install="sudo apt-get install"
-alias touchpad="xinput set-prop 12 \"Device Enabled\""
+alias touchpadon="synclient TouchpadOff=0"
+alias touchpadoff="synclient TouchpadOff=1"
 
 ## Rails
 alias migrate="rake db:migrate db:rollback && rake db:migrate"
