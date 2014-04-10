@@ -32,17 +32,22 @@ alias ls="ls -h --color"
 alias la="ls -A"
 alias df="df -h"
 alias vi="vim"
+alias top="htop"
 alias apt="sudo apt-get"
 alias install="sudo apt-get install"
 alias touchpadon="synclient TouchpadOff=0"
 alias touchpadoff="synclient TouchpadOff=1"
+
+## Switches for pairing
+alias pair_dvorak="setxkbmap 'de(dvorak)'"
+alias pair_de="setxkbmap 'de'"
 
 ## Rails
 alias migrate="rake db:migrate db:rollback && rake db:migrate"
 alias m="migrate"
 alias rk="rake"
 
-# completion
+# completion for tmuxinator
 source ~/bin/tmuxinator.zsh
 
 # Path stuff
