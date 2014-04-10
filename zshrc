@@ -5,7 +5,7 @@ DISABLE_LS_COLORS="true"
 DISABLE_AUTO_TITLE="true"
 DISABLE_CORRECTION="true"
 
-plugins=(git gitfast phansch zsh-syntax-highlighting)
+plugins=(git gitfast pass phansch zsh-syntax-highlighting)
 
 export EDITOR='vim'
 
