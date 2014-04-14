@@ -30,7 +30,7 @@ fi &
 sleep 1 && unclutter & # Hides mousecursor when inactive
 
 # Launch programs
-sleep 1 && firefox &
+sleep 1 && firefox-trunk &
 sleep 1 && urxvt -e cvlc ~/Music/Radios/dronezone32.pls --browse-dir ~/Music/ -I ncurses & # open vlc
 sleep 1 && skype &
 sleep 1 && nm-applet &
