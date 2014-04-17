@@ -160,10 +160,6 @@ map <leader>fa :e spec/factories/<cr>
 map <leader>sc :e db/schema.rb<cr>
 map <leader>ro :e config/routes.rb<cr>
 
-" Copy text to clipboard. Don't ask.
-vmap <leader>c :!xclip -f -sel clip<CR>
-
-
 " File Type specific settings
 au FileType vim setlocal foldmethod=marker
 
