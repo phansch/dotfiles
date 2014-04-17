@@ -99,6 +99,12 @@ augroup line_return
 augroup END
 
 " }}}
+
+" Ruby/Rails stuff {{{
+let g:rubycomplete_rails = 1
+" }}}
+
+
 " Remaps {{{
 
 " Disable arrow keys
