@@ -148,6 +148,10 @@ nnoremap <leader>gs :Gstatus<cr>
 nnoremap <leader>gco :Gcheckout<cr>
 nnoremap <leader>gc :Gcommit<cr>
 
+" Copy/pasting remaps
+nnoremap <leader>y "+y
+nnoremap <leader>p "+p
+
 " vim-rspec remaps
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>n :call RunNearestSpec()<CR>
