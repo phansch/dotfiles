@@ -92,11 +92,17 @@ URxvt*scrollStyle: rxvt
 URxvt*scrollBar: false
 
 ! Perl extensions
-URxvt*perl-ext-common: default,matcher,clipboard
+URxvt*perl-ext-common: default,matcher,clipboard,font-size
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.iso14755: False
 URxvt*matcher.button: 1
 URxvt*urlLauncher: firefox-trunk
+
+! Fontsize shortcuts
+URxvt.keysym.C-Up:     perl:font-size:increase
+URxvt.keysym.C-Down:   perl:font-size:decrease
+URxvt.keysym.C-0:      perl:font-size:reset
+
 
 ! Cursor
 URxvt*cursorBlink: true
