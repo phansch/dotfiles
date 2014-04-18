@@ -6,5 +6,8 @@
 # * How does it address the problem?
 # * Are there any side effects?
 #
-# Also: Include a link to the ticket, if any.
+# Also:
+#
+#  * Include a link to the ticket, if any.
+#  * Add [skip ci] to skip CI
 #######
