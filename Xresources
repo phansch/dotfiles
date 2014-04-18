@@ -64,6 +64,11 @@ URxvt*color13: S_violet
 URxvt*color14: S_base1
 URxvt*color15: S_base3
 
+! Colored man pages
+URxvt.colorIT: #87af5f
+URxvt.colorBD: #d7d7d7
+URxvt.colorUL: #87afd7
+
 
 URxvt*depth: 32
 
