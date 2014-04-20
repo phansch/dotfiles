@@ -1,0 +1,20 @@
+# ~/.tmuxinator/werk.yml
+
+name: werk
+root: ~/code/work/werkstadt/werkstadt
+
+windows:
+  - editor: vim
+  - console: rails c
+  - git:
+  - server: rails s
+  - locallogs:
+      layout: even-horizontal
+      panes:
+        - tail -f log/development.log
+        - tail -f log/test.log
+  - herokulogs:
+      layout: even-horizontal
+      panes:
+        - heroku logs -t --app production-werkstadt
+        - heroku logs -t --app staging-werkstadt

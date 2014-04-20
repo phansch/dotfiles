@@ -1,0 +1,16 @@
+# ~/.tmuxinator/typistendar.yml
+
+name: typist
+root: ~/code/typist
+
+windows:
+  - editor: vim
+  - console: rails c
+  - git:
+  - logs:
+      layout: even-horizontal
+      panes:
+        - tail -f log/development.log
+        - tail -f log/test.log
+  - server: rails s
+  - heroku: heroku logs -t

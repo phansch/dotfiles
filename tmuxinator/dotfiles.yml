@@ -1,7 +1,7 @@
-# ~/.tmuxinator/webcalendar.yml
+# ~/.tmuxinator/dotfiles.yml
 
-name: webcal
-root: ~/code/webcal
+name: dotfiles
+root: ~/
 
 # Optional tmux socket
 # socket_name: foo
@@ -19,13 +19,10 @@ root: ~/code/webcal
 # tmux_command: byobu
 
 windows:
-  - editor: vim
-  - console: rails c
-  - git:
-  - logs:
-      layout: even-horizontal
+  - editor:
+      layout: main-vertical
       panes:
-        - tail -f log/development.log
-        - tail -f log/test.log
-  - server: rails s
-  - heroku: heroku logs -t
+        - vim
+        - guard
+  - server: bundle exec rails s
+  - logs: tail -f logs/development.log
