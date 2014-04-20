@@ -1,17 +1,13 @@
 ## Installation
 
+Set zsh as your login shell.
+
+    chsh -s $(which zsh)
+
+Clone the repo and setup the dotfiles.
+
     git clone git@github.com:phansch/dotfiles.git ~/.dotfiles && cd ~/.dotfiles
-    git submodule update --init
-    ./install.sh
-
-Existing dotfiles will be moved to ~/.dotfiles_backup
-
-## Updating
-
-    cd ~/.dotfiles
-    git pull
-    git submodule update
-    ./install.sh
+    rcup -x README.md -x screenshots/
 
 ## What's in there?
 ### oh-my-zsh
