@@ -5,11 +5,5 @@ root: ~/code/screenshot-streamer
 
 windows:
   - editor: vim
-  - console: rails c
   - git:
-  - server: rails s
-  - locallogs:
-      layout: even-horizontal
-      panes:
-        - tail -f log/development.log
-        - tail -f log/test.log
+  - server: rerun 'rackup'
