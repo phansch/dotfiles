@@ -76,7 +76,7 @@ URxvt*saveLines: 8000
 URxvt*internalBorder: 3
 URxvt*lineSpace: 0
 
-
+URxvt*loginShell: true
 
 ! Urxvt fonts
 urxvt.font: xft:Ubuntu Mono derivative Powerline:size=12

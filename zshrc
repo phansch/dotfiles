@@ -51,12 +51,11 @@ alias rk="rake"
 source ~/.bin/tmuxinator.zsh
 
 # Path stuff
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 
 ## Customize to your needs...
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/.bin
 
-
 # added by travis gem
 [ -f /home/philipp/.travis/travis.sh ] && source /home/philipp/.travis/travis.sh
-
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
