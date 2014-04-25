@@ -1,0 +1,8 @@
+name: web
+root: ~/code/website
+
+windows:
+  - editor: vim
+  - git:
+  - server: start_jekyll
+  - ssh: ssh phansch@bootes.uberspace.de
