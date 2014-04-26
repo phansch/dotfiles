@@ -18,7 +18,6 @@ cdpath=($HOME $HOME/code $HOME/.dotfiles $HOME/Documents)
 stty -ixon
 # Aliases
 alias start_jekyll="jekyll serve --watch --drafts"
-function git(){hub $@}
 
 ## Bundle
 alias b="bundle"
