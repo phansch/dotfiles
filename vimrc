@@ -1,13 +1,13 @@
 set nocompatible              " be iMproved
 filetype off                  " required!
 
+" Plugins {{{
+
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
+call vundle#begin()
 
 " let Vundle manage Vundle
 Plugin 'gmarik/vundle'
-
-" Plugins {{{
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'ervandew/supertab'
 Plugin 'kien/ctrlp.vim'
@@ -28,6 +28,7 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'kchmck/vim-coffee-script'
 
+call vundle#end()
 " }}}
 " Settings {{{
 set encoding=utf-8
