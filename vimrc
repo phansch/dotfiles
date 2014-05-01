@@ -19,8 +19,6 @@ Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-surround'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'bling/vim-airline'
-Plugin 'edkolev/tmuxline.vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
@@ -29,6 +27,12 @@ Plugin 'honza/vim-snippets'
 Plugin 'kchmck/vim-coffee-script'
 
 call vundle#end()
+
+" powerline setup
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+
 " }}}
 " Settings {{{
 set encoding=utf-8

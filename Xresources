@@ -92,7 +92,7 @@ URxvt*scrollStyle: rxvt
 URxvt*scrollBar: false
 
 ! Perl extensions
-URxvt*perl-ext-common: default,matcher,clipboard,font-size
+URxvt*perl-ext-common: default,matcher,font-size
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.iso14755: False
 URxvt*matcher.button: 1
