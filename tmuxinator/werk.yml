@@ -1,13 +1,15 @@
 # ~/.tmuxinator/werk.yml
 
 name: werk
-root: ~/code/work/werkstadt/werkstadt
+root: ~/code/work/werkstadt
+
+pre: vagrant up
 
 windows:
   - editor: vim
-  - console: rails c
+  - console: vagrant ssh -c 'cd /vagrant & rails c'
   - git:
-  - server: rails s
+  - server: vagrant ssh -c 'cd /vagrant & rails s'
   - locallogs:
       layout: even-horizontal
       panes:
