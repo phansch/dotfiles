@@ -14,13 +14,6 @@ xrdb -merge ~/.Xresources & # reread ~/.Xresources
 sh ~/.fehbg &
 setxkbmap 'de(dvorak)' & # Set german dvorak keyboard layout
 
-# Screen setup
-if [[ "$(xrandr | grep 'HDMI1 connected')" != "" ]]; then
-  sleep 1 && xrandr --output LVDS1 --mode 1366x768 --output HDMI1 --mode 1920x1080 --right-of LVDS1 &
-else
-  sleep 1 && xrandr --output LVDS1 --mode 1366x768 --output HDMI1 --off &
-fi &
-
 #############
 ## Startup ##
 #############

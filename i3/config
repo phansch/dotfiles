@@ -145,10 +145,12 @@ bindsym $mod+Shift+equal move container to workspace 10
 
 # window specific settings
 ## Move to workspace
+### Note that everything that's using urxvt as a base,
+### must be assigned before urxvt itself
 assign [title="mutt"] $WS3
 assign [title="cvlc"] $WS5
 assign [title="weechat*"] $WS4
-assign [title="Skype*"] $WS4
+assign [class="Skype*"] $WS4
 assign [instance="urxvt"] $WS1
 assign [class="sublime-text"] $WS1
 assign [class="^Firefox$"] $WS2
@@ -158,13 +160,17 @@ for_window [class="^Firefox$"] border normal
 for_window [class="^Firefox$" title="^Library$"] floating enable
 for_window [class="^Firefox$" window_role="^Preferences$"] floating enable
 for_window [class="^Viewnior$"] floating enable border normal
-for_window [title="xfce4-notifyd|Volume Control|JDownloader|Skype*"] floating enable
+for_window [class="^Keepassx$"] floating enable move absolute center
+for_window [class="^Skype$"] floating enable
+for_window [title="xfce4-notifyd|Volume Control|JDownloader"] floating enable
 for_window [class="^Shutter$"] floating enable, border normal
 for_window [class="Thunar"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [class="xfce4-notifyd"] floating enable
 
 
+# Autostart
+exec xrandr --output LVDS1 --mode 1366x768 --output HDMI1 --mode 1920x1080 --right-of LVDS1
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
