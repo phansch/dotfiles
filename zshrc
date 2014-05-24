@@ -10,6 +10,9 @@ plugins=(git gitfast phansch zsh-syntax-highlighting)
 export EDITOR='vim'
 export TERMINAL='urxvt'
 
+# Disables gnome-keyring
+unset GNOME_KEYRING_CONTROL
+
 source $ZSH/oh-my-zsh.sh
 
 # See http://robots.thoughtbot.com/cding-to-frequently-used-directories-in-zsh
