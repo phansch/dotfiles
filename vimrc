@@ -47,7 +47,7 @@ set laststatus=2
 set hlsearch
 set cursorline
 set showcmd     " Display incomplete commands.
-set showmode    " Display the mode you're in.
+set noshowmode    " Don't display the mode you're in.
 set showmatch   " Show matching brackets/parenthesis
 set list
 set listchars=tab:▸\ ,trail:¬,extends:❯,precedes:❮
