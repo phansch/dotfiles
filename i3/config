@@ -44,8 +44,11 @@ bindsym Mod4+r exec --no-startup-id sudo reboot
 bindsym Mod4+Shift+s exec --no-startup-id sudo poweroff
 
 ## Audio
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 2 +5%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 2 -- -5%
+bindsym XF86AudioRaiseVolume exec ncmpcpp volume +5
+bindsym XF86AudioLowerVolume exec ncmpcpp volume -5
+bindsym XF86AudioPlay exec ncmpcpp toggle
+bindsym XF86AudioPrev exec ncmpcpp prev
+bindsym XF86AudioNext exec ncmpcpp next
 
 ## start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
