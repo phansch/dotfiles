@@ -155,7 +155,7 @@ bindsym $mod+Shift+equal move container to workspace 10
 ### Note that everything that's using urxvt as a base,
 ### must be assigned before urxvt itself
 assign [title="mutt"] $WS3
-assign [title="cvlc"] $WS5
+assign [title="ncmpcpp"] $WS5
 assign [title="weechat*"] $WS4
 assign [class="Skype*"] $WS4
 assign [instance="urxvt"] $WS1
@@ -167,8 +167,10 @@ for_window [class="^Firefox$"] border normal
 for_window [class="^Firefox$" title="^Library$"] floating enable
 for_window [class="^Firefox$" window_role="^Preferences$"] floating enable
 for_window [class="^Viewnior$"] floating enable border normal
+for_window [class="^Anki$"] floating enable border normal move absolute center
 for_window [class="^Keepassx$"] floating enable move absolute center
 for_window [class="^Skype$"] floating enable
+for_window [title="^ncmpcpp$"] floating enable move absolute center
 for_window [title="xfce4-notifyd|Volume Control|JDownloader"] floating enable
 for_window [class="^Shutter$"] floating enable, border normal
 for_window [class="Thunar"] floating enable
