@@ -43,6 +43,10 @@ bindsym Mod4+q exec --no-startup-id exit
 bindsym Mod4+r exec --no-startup-id sudo reboot
 bindsym Mod4+Shift+s exec --no-startup-id sudo poweroff
 
+## Audio
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 2 +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 2 -- -5%
+
 ## start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
 
@@ -170,7 +174,8 @@ for_window [class="xfce4-notifyd"] floating enable
 
 
 # Autostart
-exec xrandr --output LVDS1 --mode 1366x768 --output HDMI1 --mode 1920x1080 --right-of LVDS1
+exec --no-startup-id xrandr --output LVDS1 --mode 1366x768 --output HDMI1 --mode 1920x1080 --right-of LVDS1
+exec --no-startup-id nitrogen --restore
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
