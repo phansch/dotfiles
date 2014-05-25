@@ -31,6 +31,8 @@ alias "bundle up"="bundle install"
 alias c=cd
 alias ...="cd ../.."
 alias mkdir="mkdir -p"
+alias grep="grep --color=auto"
+alias ping="ping -c 5"
 alias ls="ls -h --color"
 alias la="ls -A"
 alias df="df -h"
