@@ -25,6 +25,7 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'junegunn/goyo.vim'
 
 call vundle#end()
 
@@ -163,11 +164,14 @@ nnoremap <leader>gc :Gcommit<cr>
 nnoremap <leader>y "+y
 nnoremap <leader>p "+p
 
+" Goyo remaps
+nnoremap <leader><Space> :Goyo<CR>
+
 " vim-rspec remaps
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>n :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
+map <leader>t :call RunCurrentSpecFile()<CR>
+map <leader>n :call RunNearestSpec()<CR>
+map <leader>l :call RunLastSpec()<CR>
+map <leader>a :call RunAllSpecs()<CR>
 
 " Rails remaps
 map <leader>bi :!bundle install<cr>
