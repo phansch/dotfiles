@@ -1,6 +1,7 @@
 set nocompatible              " be iMproved
 filetype off                  " required!
 
+
 " Plugins {{{
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -35,6 +36,8 @@ python powerline_setup()
 python del powerline_setup
 
 " }}}
+
+
 " Settings {{{
 set encoding=utf-8
 syntax on
@@ -57,7 +60,6 @@ set title " Set the terminal's title
 set scrolloff=10
 set relativenumber
 set noesckeys "Make esc faster
-autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent
 
 " Wildmenu completition {{{
 set wildmenu
@@ -72,7 +74,7 @@ set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
 set ignorecase
 set smartcase
 
-"Indentation settings
+" Indentation settings
 set shiftwidth=2
 set softtabstop=2
 set expandtab
@@ -85,6 +87,10 @@ colorscheme solarized "Set colorscheme to solarized
 " Better Completion
 set complete=.,w,b,u,t
 set completeopt=longest,menuone,preview
+
+" Reload file if changed outside vim
+set autoread
+set guioptions=c " Disable menu, and other gui elements
 
 " Leader
 let mapleader = ","
@@ -105,6 +111,7 @@ augroup line_return
 augroup END
 
 " }}}
+
 
 " Ruby/Rails stuff {{{
 let g:rubycomplete_rails = 1
@@ -137,15 +144,13 @@ map <leader>s :use ctrl s instead!
 "Mimic firefox tab behavior
 map <C-t> <esc>:tabnew<cr>
 
-" Plugins
-let g:ctrlp_map = '<leader>d' " Remap ctrl + p to ,d
+" Remap ctrl + p to ,d
+let g:ctrlp_map = '<leader>d'
 
 " Easier to type, and I never use the default behavior.
 noremap H ^
 noremap L $
 vnoremap L g_
-
-" ctrlp.vim
 
 " Clear last search highlighting
 nnoremap <esc> :noh<return><esc>
@@ -179,7 +184,45 @@ map <leader>fa :e spec/factories/<cr>
 map <leader>sc :e db/schema.rb<cr>
 map <leader>ro :e config/routes.rb<cr>
 
-" File Type specific settings
-au FileType vim setlocal foldmethod=marker
+"Convenience remaps
+map <leader>nn :e ~/documents/03si/Notes.md<cr>
 
-au BufRead,BufNewFile *.md set filetype=markdown
+" }}}
+
+
+" File Type specific settings {{{
+augroup filetype_markdown
+  au!
+  au BufNewFile,BufRead *.md set filetype=markdown
+
+  au FileType markdown nmap <leader>f :call OpenCurrentFileInBrowser()<cr>
+augroup END
+
+augroup filetype_vim
+  au!
+  " Have everything folded when opening vim files
+  au FileType vim setl foldmethod=marker
+augroup END
+
+augroup filetype_coffee
+  au!
+  au BufNewFile,BufRead *.coffee set filetype=coffeescript
+
+  " use folding by indentation for coffeescript
+  au FileType coffeescript setl foldmethod=indent nofoldenable
+augroup END
+
+" }}}
+
+
+" Custom functions {{{
+
+fu! OpenCurrentFileInBrowser()
+  " Open current markdown file in browser and pipes stdout to /dev/null
+  :silent execute "!sensible-browser &>/dev/null 2>&1 %"
+
+  " Fix empty vim window by forcing a redraw
+  :redraw!
+endfu
+
+" }}}
