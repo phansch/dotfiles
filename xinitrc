@@ -10,8 +10,6 @@
 xset m 4 & # Increase mouse acceleration
 xset s noblank # Disable screen blanking
 xrdb -merge ~/.Xresources & # reread ~/.Xresources
-# xsetroot -solid OldLace & # background color
-sh ~/.fehbg &
 setxkbmap 'de(dvorak)' & # Set german dvorak keyboard layout
 
 #############
