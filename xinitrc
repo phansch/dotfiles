@@ -19,14 +19,16 @@ setxkbmap 'de(dvorak)' & # Set german dvorak keyboard layout
 # Do background stuff
 sleep 1 && unclutter & # Hides mousecursor when inactive
 sleep 1 && urxvtd -q -o -f &
+sleep 1 && mpd ~/.config/mpd/mpd.conf &
 
 # Launch programs
 sleep 1 && firefox-trunk &
 sleep 1 && urxvt &
-sleep 1 && urxvt -e cvlc ~/Music/Radios/dronezone32.pls --browse-dir ~/Music/ -I ncurses & # open vlc
 sleep 1 && skype &
 sleep 1 && nm-applet &
 sleep 1 && xfce4-power-manager &
+sleep 1 && urxvt -e ~/.bin/routines &
+sleep 1 && urxvt -e ncmpcpp &
 sleep 1 && urxvt -e weechat-curses &
 sleep 1 && urxvt -e mutt &
 sleep 1 && owncloud &
