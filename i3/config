@@ -59,7 +59,7 @@ bindsym $mod+Shift+c reload
 ## restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
-## exit i3 (logs you out of your X session)
+
 bindsym $mod+Shift+q exit
 
 # kill focused window
@@ -154,7 +154,8 @@ bindsym $mod+Shift+equal move container to workspace 10
 ## Move to workspace
 ### Note that everything that's using urxvt as a base,
 ### must be assigned before urxvt itself
-assign [title="mutt"] $WS3
+assign [title="^Icedove$"] $WS3
+assign [title="routines"] $WS1
 assign [title="ncmpcpp"] $WS5
 assign [title="weechat*"] $WS4
 assign [class="Skype*"] $WS4
@@ -163,11 +164,14 @@ assign [class="sublime-text"] $WS1
 assign [class="^Firefox$"] $WS2
 
 ## window floating
+for_window [title="ncmpcpp"] resize shrink right 31px or 31 ppt
 for_window [class="^Firefox$"] border normal
 for_window [class="^Firefox$" title="^Library$"] floating enable
 for_window [class="^Firefox$" window_role="^Preferences$"] floating enable
+for_window [class="^Icedove$"] border normal
+for_window [class="^Icedove$" window_role="^Preferences$"] floating enable
 for_window [class="^Viewnior$"] floating enable border normal
-for_window [class="^Anki$"] floating enable border normal move absolute center
+for_window [class="^Anki$"] floating enable; border normal; move absolute center
 for_window [class="^Keepassx$"] floating enable move absolute center
 for_window [class="^Skype$"] floating enable
 for_window [title="xfce4-notifyd|Volume Control|JDownloader"] floating enable
