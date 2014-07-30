@@ -42,6 +42,7 @@ alias apt="sudo apt-get"
 alias install="sudo apt-get install"
 alias touchpadon="synclient TouchpadOff=0"
 alias touchpadoff="synclient TouchpadOff=1"
+alias gnucash="LANG=de_DE.UTF8 gnucash"
 
 ## Switches for pairing
 alias pair_dvorak="setxkbmap 'de(dvorak)'"
