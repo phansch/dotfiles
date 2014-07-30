@@ -211,13 +211,17 @@ augroup filetype_markdown
   au!
   au BufNewFile,BufRead *.md set filetype=markdown
 
-  au FileType markdown nmap <leader>f :call OpenCurrentFileInBrowser()<cr>
+  au FileType markdown nnoremap <leader>f :call OpenCurrentFileInBrowser()<cr>
 augroup END
 
 augroup filetype_vim
   au!
   " Have everything folded when opening vim files
   au FileType vim setl foldmethod=marker
+augroup END
+
+augroup filetype_html
+  au FileType html nnoremap <leader>f :call OpenCurrentFileInBrowser()<cr>
 augroup END
 
 augroup filetype_coffee
@@ -233,9 +237,9 @@ augroup END
 
 " Custom functions {{{
 
-fu! OpenCurrentFileInBrowser()
+function! OpenCurrentFileInBrowser()
   " Open current markdown file in browser and pipes stdout to /dev/null
-  :silent execute "!sensible-browser &>/dev/null 2>&1 %"
+  :silent execute "!sensible-browser %"
 
   " Fix empty vim window by forcing a redraw
   :redraw!
