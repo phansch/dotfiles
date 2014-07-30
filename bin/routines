@@ -74,14 +74,12 @@ puts "Instructions:".bold + " Press " + "[Enter]".bold + " to continue after com
 
 routines = []
 routines << Routine.new("Check that phone is charged and that ringer volume is suitable.", "Done?")
-routines << Routine.new("Do stretches + morning run. Start now.", "Back yet?")
 routines << Routine.new("Breakfast.", "Done?")
-#routines << Routine.new("Run laptop backups.", "Start backup now?")
-routines << Routine.new("Check calendar.", "Launch pal?", "pal -r 7")
-routines << Routine.new("Check all inboxes.", "Launch mutt?", "mutt")
-routines << Routine.new("Check all inboxes.", "Launch task?", "task li:5")
-#routines << Routine.new("Sync version control repositories.", "Sync now?")
+routines << Routine.new("Check calendar.", "Open browser tab?", "firefox-trunk https://refuge.phansch.net/index.php/apps/calendar")
+routines << Routine.new("Check all inboxes.", "Check mail?", "i3-msg workspace 3:mail")
 routines << Routine.new("Anki Review.", "Start anki?", "anki")
+routines << Routine.new("Do stretches + morning run. Start now.", "Back yet?")
+#routines << Routine.new("Run laptop backups.", "Start backup now?")
 
 routines.each_with_index do |routine, index|
   index_str = "##{index + 1}:".bold
