@@ -26,12 +26,12 @@ sleep 1 && mpd ~/.config/mpd/mpd.conf &
 sleep 1 && firefox-trunk &
 sleep 1 && urxvt &
 sleep 1 && skype &
+sleep 1 && icedove &
 sleep 1 && nm-applet &
 sleep 1 && xfce4-power-manager &
 sleep 1 && urxvt -e ~/.bin/routines &
 sleep 1 && urxvt -e ncmpcpp &
 sleep 1 && urxvt -e weechat-curses &
-sleep 1 && urxvt -e mutt &
 sleep 1 && owncloud &
 
 # make sure there's only one redshift service running
