@@ -88,6 +88,10 @@ colorscheme solarized "Set colorscheme to solarized
 set complete=.,w,b,u,t
 set completeopt=longest,menuone,preview
 
+" Split settings
+set splitbelow
+set splitright
+
 " Reload file if changed outside vim
 set autoread
 set guioptions=c " Disable menu, and other gui elements
@@ -140,6 +144,12 @@ nnoremap <leader>q :q<cr>
 map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>
 map <leader>s :use ctrl s instead!
+
+" Remap split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 "Mimic firefox tab behavior
 map <C-t> <esc>:tabnew<cr>
