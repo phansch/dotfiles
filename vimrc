@@ -197,6 +197,12 @@ map <leader>ro :e config/routes.rb<cr>
 "Convenience remaps
 map <leader>nn :e ~/documents/03si/Notes.md<cr>
 
+" Open vimrc in split
+nnoremap <leader>ev :tabnew $MYVIMRC<cr>
+
+" Source vimrc
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
 " }}}
 
 
