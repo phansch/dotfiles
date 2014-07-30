@@ -1,8 +1,10 @@
 name: web
-root: ~/code/website
+root: ~/code/phansch-net
+
+pre: vagrant up
 
 windows:
   - editor: vim
   - git:
-  - server: start_jekyll
+  - server: vagrant ssh -c 'jekyll serve --watch --drafts'
   - ssh: ssh phansch@bootes.uberspace.de
