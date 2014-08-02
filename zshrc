@@ -60,7 +60,7 @@ source ~/.bin/tmuxinator.zsh
 PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 
 ## Customize to your needs...
-export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/.bin:$HOME/.local/bin
+export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/.bin:$HOME/.local/bin:/usr/local/bin/node
 
 # added by travis gem
 [ -f /home/philipp/.travis/travis.sh ] && source /home/philipp/.travis/travis.sh
