@@ -19,6 +19,7 @@ Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-sensible'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -27,6 +28,7 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'junegunn/goyo.vim'
+Plugin 'wting/rust.vim'
 
 call vundle#end()
 
@@ -39,19 +41,12 @@ python del powerline_setup
 
 
 " Settings {{{
-set encoding=utf-8
-syntax on
-filetype indent plugin on
 
-set autoindent
 set nu
-set ruler
 set hidden
-set laststatus=2
 set hlsearch
 set cursorline
-set showcmd     " Display incomplete commands.
-set noshowmode    " Don't display the mode you're in.
+set noshowmode  " Don't display the mode you're in.
 set showmatch   " Show matching brackets/parenthesis
 set list
 set listchars=tab:▸\ ,trail:¬,extends:❯,precedes:❮
@@ -62,7 +57,6 @@ set relativenumber
 set noesckeys "Make esc faster
 
 " Wildmenu completition {{{
-set wildmenu
 set wildmode=list:longest " Complete files like a shell.
 set wildignore=*.o,*.obj,*.exe,*.dll,*.manifest " Compiled object files
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/* " Version Control
