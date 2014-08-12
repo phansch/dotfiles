@@ -9,6 +9,7 @@
 #
 # Also:
 #
+#  * Don't forget to run your tests
 #  * Include a link to the ticket, if any.
 #  * Add [skip ci] to skip CI
 #######
