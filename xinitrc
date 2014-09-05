@@ -54,6 +54,8 @@ do
   fi
 done &
 
+xbindkeys &
+
 ##############
 ## Start WM ##
 ##############

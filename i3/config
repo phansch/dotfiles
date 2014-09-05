@@ -24,34 +24,6 @@ new_window none
 floating_modifier $mod
 
 # Keybindings
-## start a terminal
-bindsym $mod+Return exec urxvt
-
-## Screenshots
-bindsym Print exec --no-startup-id scrot -z -e 'mv $f ~/images/screenshots 2>/dev/null' & notify-send "Screenshot saved in ~/images/screenshots"
-bindsym Shift+Print exec --no-startup-id shutter -s
-
-## Start thunar
-bindsym $mod+Shift+f exec --no-startup-id thunar ~/code
-
-## Start mutt
-bindsym $mod+Shift+m exec urxvt -e mutt
-
-## Suspend, Shutdown, Lock
-bindsym Mod4+l exec --no-startup-id i3lock -c 000000
-bindsym Mod4+q exec --no-startup-id exit
-bindsym Mod4+r exec --no-startup-id sudo reboot
-bindsym Mod4+Shift+s exec --no-startup-id sudo poweroff
-
-## Audio
-bindsym XF86AudioRaiseVolume exec ncmpcpp volume +5
-bindsym XF86AudioLowerVolume exec ncmpcpp volume -5
-bindsym XF86AudioPlay exec ncmpcpp toggle
-bindsym XF86AudioPrev exec ncmpcpp prev
-bindsym XF86AudioNext exec ncmpcpp next
-
-## start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
 
 ## reload the configuration file
 bindsym $mod+Shift+c reload
@@ -59,11 +31,11 @@ bindsym $mod+Shift+c reload
 ## restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
-
+# Exit i3
 bindsym $mod+Shift+q exit
 
 # kill focused window
-bindsym Mod1+Shift+e kill
+bindsym $mod+Shift+e kill
 
 # change focus
 bindsym $mod+o focus left
