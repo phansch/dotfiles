@@ -189,7 +189,8 @@ map <leader>sc :e db/schema.rb<cr>
 map <leader>ro :e config/routes.rb<cr>
 
 "Convenience remaps
-map <leader>nn :e ~/documents/03si/Notes.md<cr>
+map <leader>nn :tabnew ~/documents/03si/Notes.md<cr>
+map <leader>jj :tabnew ~/documents/03si/Journal.md<cr>
 
 " Open vimrc in split
 nnoremap <leader>ev :tabnew $MYVIMRC<cr>
