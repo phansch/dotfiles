@@ -126,7 +126,7 @@ bindsym $mod+Shift+equal move container to workspace 10
 ## Move to workspace
 ### Note that everything that's using urxvt as a base,
 ### must be assigned before urxvt itself
-assign [title="^Icedove$"] $WS3
+assign [title="Icedove"] $WS3
 assign [title="routines"] $WS1
 assign [title="ncmpcpp"] $WS5
 assign [title="weechat*"] $WS4
