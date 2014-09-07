@@ -176,6 +176,11 @@ nnoremap <leader>gc :Gcommit<cr>
 nnoremap <leader>y "+y
 nnoremap <leader>p "+p
 
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
+
+
 " Goyo remaps
 nnoremap <leader><Space> :Goyo<CR>
 
