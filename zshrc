@@ -57,6 +57,18 @@ alias rk="rake"
 # completion for tmuxinator
 source ~/.bin/tmuxinator.zsh
 
+fancy-ctrl-z () {
+  if [[ $#BUFFER -eq 0 ]]; then
+    BUFFER="fg"
+    zle accept-line
+  else
+    zle push-input
+    zle clear-screen
+  fi
+}
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z
+
 # Path stuff
 PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 
