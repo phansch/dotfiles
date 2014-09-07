@@ -133,6 +133,9 @@ ino <up> <nop>
 noremap  <F1> <nop>
 inoremap <F1> <nop>
 
+" Stop that window from popping up
+map q: :q
+
 imap <leader>i <esc>
 nnoremap <leader>q :q<cr>
 map <C-s> <esc>:w<CR>
