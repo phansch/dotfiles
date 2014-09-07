@@ -5,6 +5,6 @@ pre: vagrant up
 
 windows:
   - editor: vim
-  - git:
-  - server: vagrant ssh -c 'jekyll serve --watch --drafts'
+  - git: git status
+  - server: vagrant ssh
   - ssh: ssh phansch@bootes.uberspace.de
