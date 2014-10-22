@@ -32,7 +32,6 @@ Plugin 'wting/rust.vim'
 
 call vundle#end()
 
-" powerline setup
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
 python del powerline_setup
@@ -179,6 +178,8 @@ nnoremap <leader>p "+p
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
+
+nnoremap <leader>av :AV<cr>
 
 
 " Goyo remaps

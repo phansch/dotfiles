@@ -7,45 +7,5 @@
   Alt + Return
 
 # Start thunar
-"thunar ~/code"
+"nemo ~/repos"
   Alt+Shift + f
-
-# Lock
-"i3lock -c 000000"
-  Mod4 + l
-
-# Reboot
-"sudo reboot"
-  Mod4 + r
-
-# Shutdown
-"sudo poweroff"
-  Mod4+Shift + s
-
-# Fullscreen Screenshot
-"scrot -z -e 'mv $f ~/images/screenshots 2>/dev/null' & notify-send 'Screenshot saved in ~/images/screenshots'"
-  Print
-
-# Select screentshot
-"shutter -s"
-  Shift + Print
-
-# Raise volume
-"ncmpcpp volume +5"
-  XF86AudioRaiseVolume
-
-# Lower volume
-"ncmpcpp volume -5"
-  XF86AudioLowerVolume
-
-# Toggle play
-"ncmpcpp toggle"
-  XF86AudioPlay
-
-# Previous
-"ncmpcpp prev"
-  XF86AudioPrev
-
-# Next
-"ncmpcpp next"
-  XF86AudioNext

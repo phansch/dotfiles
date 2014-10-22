@@ -19,7 +19,7 @@ source $ZSH/oh-my-zsh.sh
 
 # See http://robots.thoughtbot.com/cding-to-frequently-used-directories-in-zsh
 setopt auto_cd
-cdpath=($HOME $HOME/code $HOME/.dotfiles $HOME/Documents)
+cdpath=($HOME $HOME/repos $HOME/code $HOME/.dotfiles $HOME/Documents)
 
 stty -ixon
 # Aliases
@@ -80,3 +80,5 @@ export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/
 # added by travis gem
 [ -f /home/philipp/.travis/travis.sh ] && source /home/philipp/.travis/travis.sh
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+export NVM_DIR="/home/phensch/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
