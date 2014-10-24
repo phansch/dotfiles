@@ -2,8 +2,6 @@
   editor = vim
   excludesfile = ~/.gitignore
   whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
-[diff]
-  external = git_diff_wrapper
 [pager]
   diff =
 [github]
