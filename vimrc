@@ -62,6 +62,8 @@ set wildmode=list:longest " Complete files like a shell.
 set wildignore=*.o,*.obj,*.exe,*.dll,*.manifest " Compiled object files
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/* " Version Control
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+set wildignore+=*/coverage/*
+set wildignore+=*/node_modules/*,*/bower_components/* " Package Control
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
 " }}}
 
