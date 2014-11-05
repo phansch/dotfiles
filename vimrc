@@ -14,12 +14,12 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'ervandew/supertab'
-Plugin 'kien/ctrlp.vim'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'Shougo/unite.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rake'
 Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-sensible'
@@ -30,9 +30,9 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'junegunn/goyo.vim'
-Plugin 'wting/rust.vim'
 
 call vundle#end()
+filetype plugin indent on
 
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
@@ -85,6 +85,10 @@ colorscheme solarized "Set colorscheme to solarized
 set complete=.,w,b,u,t
 set completeopt=longest,menuone,preview
 
+set noswapfile
+set nobackup
+set nowb
+
 " Split settings
 set splitbelow
 set splitright
@@ -93,9 +97,39 @@ set splitright
 set autoread
 set guioptions=c " Disable menu, and other gui elements
 
+" This should make drawing the window 9000 times faster
+set ttyfast
+set lazyredraw
+
 " Leader
 let mapleader = ","
 let maplocalleader = "\\"
+
+" Unite settings
+let g:unite_enable_start_insert = 1
+let g:unite_source_history_yank_enable = 1
+let g:unite_split_rule = "botright"
+let g:unite_force_overwrite_statusline = 0
+let g:unite_winheight = 10
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#filters#sorter_default#use(['sorter_rank'])
+let g:unite_source_grep_command='ag'
+let g:unite_source_grep_default_opts='--nocolor --line-numbers --nogroup -S -C4'
+let g:unite_source_grep_recursive_opt=''
+
+autocmd FileType unite call s:unite_settings()
+
+function! s:unite_settings()
+  let b:SuperTabDisabled=1
+  imap <buffer> <C-j>   <Plug>(unite_select_next_line)
+  imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
+  imap <silent><buffer><expr> <C-x> unite#do_action('split')
+  imap <silent><buffer><expr> <C-v> unite#do_action('vsplit')
+  imap <silent><buffer><expr> <C-t> unite#do_action('tabopen')
+
+  nmap <buffer> <ESC> <Plug>(unite_exit)
+endfunction
+
 " }}}
 
 
@@ -122,8 +156,7 @@ let g:rubycomplete_rails = 1
 " Remaps {{{
 
 " Disable arrow keys
-no <down> <nop>
-no <left> <nop>
+no <down> <nop> no <left> <nop>
 no <right> <nop>
 no <up> <nop>
 
@@ -154,8 +187,11 @@ nnoremap <C-H> <C-W><C-H>
 "Mimic firefox tab behavior
 map <C-t> <esc>:tabnew<cr>
 
-" Remap ctrl + p to ,d
-let g:ctrlp_map = '<leader>d'
+"Unite mappings
+nnoremap <space>d = :Unite -buffer-name=files file_rec/async<cr>
+nnoremap <space>b = :Unite -buffer-name=buffers -quick-match buffer<cr>
+nnoremap <space>f = :Unite -buffer-name=search grep:.<cr>
+nnoremap <space>y = :Unite -buffer-name=yankhist history/yank<cr>
 
 " Easier to type, and I never use the default behavior.
 noremap H ^

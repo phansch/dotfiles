@@ -59,6 +59,11 @@ alias rk="rake"
 # completion for tmuxinator
 source ~/.bin/tmuxinator.zsh
 
+push_to_staging() {
+  local branch=`git rev-parse --symbolic-full-name --abbrev-ref HEAD`
+  eval "git checkout staging && git pull && git merge $branch && git push && git checkout $branch"
+}
+
 fancy-ctrl-z () {
   if [[ $#BUFFER -eq 0 ]]; then
     BUFFER="fg"
