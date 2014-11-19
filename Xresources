@@ -15,7 +15,7 @@
 #define S_green #859900
 
 
-Dark
+! Dark
 
 #define S_base03 #002b36
 #define S_base02 #073642
