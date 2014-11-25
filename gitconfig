@@ -32,3 +32,5 @@
   current = cyan
   local = yellow
   remote = green
+[diff]
+	tool = meld
