@@ -118,6 +118,9 @@ let g:unite_source_grep_default_opts='--nocolor --line-numbers --nogroup -S -C4'
 let g:unite_source_rec_async_command = 'ag --follow --nocolor --nogroup --hidden -g ""'
 let g:unite_source_grep_recursive_opt=''
 
+" vim-rspec should use spring and colored output
+let g:rspec_command = "!spring rspec {spec} --color"
+
 autocmd FileType unite call s:unite_settings()
 
 function! s:unite_settings()
