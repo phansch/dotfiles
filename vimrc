@@ -191,6 +191,7 @@ nnoremap <leader>gd :Gdiff<cr>
 nnoremap <leader>gs :Gstatus<cr>
 nnoremap <leader>gco :Gcheckout<cr>
 nnoremap <leader>gc :Gcommit<cr>
+nnoremap <leader>gp :Gpush<cr>
 
 " Copy/pasting remaps
 nnoremap <leader>y "+y
