@@ -14,8 +14,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'ervandew/supertab'
-Plugin 'Shougo/vimproc.vim'
-Plugin 'Shougo/unite.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rake'
@@ -105,34 +104,12 @@ set lazyredraw
 let mapleader = ","
 let maplocalleader = "\\"
 
-" Unite settings
-let g:unite_enable_start_insert = 1
-let g:unite_source_history_yank_enable = 1
-let g:unite_split_rule = "botright"
-let g:unite_force_overwrite_statusline = 0
-let g:unite_winheight = 10
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-call unite#filters#sorter_default#use(['sorter_rank'])
-let g:unite_source_grep_command='ag'
-let g:unite_source_grep_default_opts='--nocolor --line-numbers --nogroup -S -C4'
-let g:unite_source_rec_async_command = 'ag --follow --nocolor --nogroup --hidden -g ""'
-let g:unite_source_grep_recursive_opt=''
+" Remap ctrl + p to ,d
+let g:ctrlp_map = '<space>d'
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
 " vim-rspec should use spring and colored output
-let g:rspec_command = "!spring rspec {spec} --color"
-
-autocmd FileType unite call s:unite_settings()
-
-function! s:unite_settings()
-  let b:SuperTabDisabled=1
-  imap <buffer> <C-j>   <Plug>(unite_select_next_line)
-  imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
-  imap <silent><buffer><expr> <C-x> unite#do_action('split')
-  imap <silent><buffer><expr> <C-v> unite#do_action('vsplit')
-  imap <silent><buffer><expr> <C-t> unite#do_action('tabopen')
-
-  nmap <buffer> <ESC> <Plug>(unite_exit)
-endfunction
+let g:rspec_command = "!clear && spring rspec {spec} --color"
 
 " }}}
 
@@ -160,7 +137,8 @@ let g:rubycomplete_rails = 1
 " Remaps {{{
 
 " Disable arrow keys
-no <down> <nop> no <left> <nop>
+no <down> <nop>
+no <left> <nop>
 no <right> <nop>
 no <up> <nop>
 
@@ -191,11 +169,10 @@ nnoremap <C-H> <C-W><C-H>
 "Mimic firefox tab behavior
 map <C-t> <esc>:tabnew<cr>
 
-"Unite mappings
-nnoremap <space>d = :Unite -buffer-name=files file_rec/async<cr>
-nnoremap <space>b = :Unite -buffer-name=buffers -quick-match buffer<cr>
-nnoremap <space>f = :Unite -buffer-name=search grep:.<cr>
-nnoremap <space>y = :Unite -buffer-name=yankhist history/yank<cr>
+nnoremap <space>b :CtrlPBuffer<cr>
+nnoremap <space>m :CtrlPMRU<cr>
+"nnoremap <space>f :
+"nnoremap <space>y = :Unite -buffer-name=yankhist history/yank<cr>
 
 " Easier to type, and I never use the default behavior.
 noremap H ^
