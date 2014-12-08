@@ -28,7 +28,8 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
-Plugin 'junegunn/goyo.vim'
+Plugin 'gcmt/taboo.vim'
+Plugin 'dbakker/vim-projectroot'
 
 call vundle#end()
 filetype plugin indent on
@@ -107,10 +108,17 @@ let maplocalleader = "\\"
 " Remap ctrl + p to ,d
 let g:ctrlp_map = '<space>d'
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+let g:ctrlp_prompt_mappings = {
+  \ 'PrtClearCache()':      ['<c-r>'],
+  \ }
 
 " vim-rspec should use spring and colored output
 let g:rspec_command = "!clear && spring rspec {spec} --color"
 
+"Taboo Tab settings
+set showtabline=2 "always show tabs
+let g:taboo_tab_format = ' %N: ['.fnamemodify(projectroot#guess(), ':t').']%m '
+let g:taboo_renamed_tab_format = ' %N: [%l]%m'
 " }}}
 
 
@@ -223,8 +231,14 @@ map <leader>ro :e config/routes.rb<cr>
 map <leader>nn :tabnew ~/documents/03si/Notes.md<cr>
 map <leader>jj :tabnew ~/documents/03si/Journal.md<cr>
 
+"MEG remaps
+map <leader>cc :TabooOpen cms<cr>:lcd ~/repos/cms/<cr>
+map <leader>mm :TabooOpen tesla-mobile<cr>:lcd ~/repos/tesla-mobile/<cr>
+map <leader>tt :TabooOpen tesla<cr>:lcd ~/repos/tesla/<cr>
+map <leader>aa :TabooOpen admin<cr>:lcd ~/repos/admin/<cr>
+
 " Open vimrc in split
-nnoremap <leader>ev :tabnew $MYVIMRC<cr>
+nnoremap <leader>ev :TabooOpen vimrc<cr>:lcd ~/.dotfiles<cr>:e $MYVIMRC<cr>
 
 " Source vimrc
 nnoremap <leader>sv :source $MYVIMRC<cr>
