@@ -26,6 +26,7 @@ Plug 'honza/vim-snippets'
 Plug 'scrooloose/syntastic'
 Plug 'rking/ag.vim'
 Plug 'godlygeek/tabular'
+Plug 'haya14busa/incsearch.vim'
 
 call plug#end()
 
@@ -111,6 +112,9 @@ let g:ctrlp_prompt_mappings = {
 
 " vim-rspec should use spring and colored output
 let g:rspec_command = "!clear && spring rspec {spec} --color"
+
+" Incsearch, turn off highlighting of searches
+let g:incsearch#auto_nohlsearch = 1
 
 set showtabline=2 "always show tabs
 
@@ -223,6 +227,10 @@ map <leader>bi :!bundle install<cr>
 map <leader>fa :e spec/factories/<cr>
 map <leader>sc :e db/schema.rb<cr>
 map <leader>ro :e config/routes.rb<cr>
+
+" Incsearch mappings
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
 
 "Convenience remaps
 map <leader>nn :tabnew ~/documents/03si/Notes.md<cr>
