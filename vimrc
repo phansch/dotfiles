@@ -1,39 +1,34 @@
 set nocompatible              " be iMproved
 filetype off                  " required!
 
-
 " Plugins {{{
+call plug#begin('~/.vim/plugged')
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+Plug 'vim-ruby/vim-ruby',                      { 'for': 'ruby' }
+Plug 'tpope/vim-rails',                        { 'for': 'ruby' }
+Plug 'tpope/vim-rake',                         { 'for': 'ruby' }
+Plug 'thoughtbot/vim-rspec',                   { 'for': 'ruby' }
+Plug 'pangloss/vim-javascript',                { 'for': 'javascript' }
+Plug 'jelera/vim-javascript-syntax',           { 'for': 'javascript' }
+Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
+Plug 'ervandew/supertab'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-sensible'
+Plug 'airblade/vim-gitgutter'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
+Plug 'scrooloose/syntastic'
+Plug 'rking/ag.vim'
+Plug 'godlygeek/tabular'
 
-" let Vundle manage Vundle
-Plugin 'gmarik/vundle'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'pangloss/vim-javascript'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'othree/javascript-libraries-syntax.vim'
-Plugin 'ervandew/supertab'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-rake'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-sensible'
-Plugin 'thoughtbot/vim-rspec'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
-Plugin 'gcmt/taboo.vim'
-Plugin 'dbakker/vim-projectroot'
-Plugin 'scrooloose/syntastic'
-Plugin 'rking/ag.vim'
+call plug#end()
 
-call vundle#end()
 filetype plugin indent on
 
 python from powerline.vim import setup as powerline_setup
@@ -236,19 +231,13 @@ map <leader>ro :e config/routes.rb<cr>
 map <leader>nn :tabnew ~/documents/03si/Notes.md<cr>
 map <leader>jj :tabnew ~/documents/03si/Journal.md<cr>
 
-"MEG remaps
-map <leader>cc :TabooOpen cms<cr>:lcd ~/repos/cms/<cr>
-map <leader>mm :TabooOpen tesla-mobile<cr>:lcd ~/repos/tesla-mobile/<cr>
-map <leader>tt :TabooOpen tesla<cr>:lcd ~/repos/tesla/<cr>
-map <leader>aa :TabooOpen admin<cr>:lcd ~/repos/admin/<cr>
-
 " Visual mode pressing * or # searches for the current selection
 " Super useful! From an idea by Michael Naumann
 vnoremap <silent> * :call VisualSelection('f')<CR>
 vnoremap <silent> # :call VisualSelection('b')<CR>
 
 " Open vimrc in split
-nnoremap <leader>ev :TabooOpen vimrc<cr>:lcd ~/.dotfiles<cr>:e $MYVIMRC<cr>
+nnoremap <leader>ev :tabnew ~/.dotfiles/vimrc<cr>
 
 " Source vimrc
 nnoremap <leader>sv :source $MYVIMRC<cr>
