@@ -277,6 +277,9 @@ augroup filetype_coffee
   au FileType coffeescript setl foldmethod=indent nofoldenable
 augroup END
 
+" Turn syntax off for large files
+autocmd BufReadPre * if getfsize(expand("%")) > 10000000 | syntax off | endif
+
 " }}}
 
 
