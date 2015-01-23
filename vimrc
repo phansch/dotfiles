@@ -31,6 +31,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'gcmt/taboo.vim'
 Plugin 'dbakker/vim-projectroot'
 Plugin 'scrooloose/syntastic'
+Plugin 'rking/ag.vim'
 
 call vundle#end()
 filetype plugin indent on
