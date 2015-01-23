@@ -184,8 +184,6 @@ map <C-t> <esc>:tabnew<cr>
 
 nnoremap <space>b :CtrlPBuffer<cr>
 nnoremap <space>m :CtrlPMRU<cr>
-"nnoremap <space>f :
-"nnoremap <space>y = :Unite -buffer-name=yankhist history/yank<cr>
 
 " Easier to type, and I never use the default behavior.
 noremap H ^
@@ -221,9 +219,6 @@ nnoremap <silent> p p`]
 
 nnoremap <leader>av :AV<cr>
 
-
-" Goyo remaps
-nnoremap <leader><Space> :Goyo<CR>
 
 " vim-rspec remaps
 map <leader>t :call RunCurrentSpecFile()<CR>
