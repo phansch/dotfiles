@@ -147,7 +147,7 @@ let g:rubycomplete_rails = 1
 " }}}
 
 
-" Remaps {{{
+" Mappings {{{
 
 " Disable arrow keys
 no <down> <nop>
@@ -193,6 +193,9 @@ noremap L $
 vnoremap L g_
 map j gj
 map k gk
+
+" hit <C-p>to paste
+set pastetoggle=<C-p>
 
 " Clear last search highlighting
 nnoremap <esc> :noh<return><esc>
