@@ -112,10 +112,7 @@ let g:ctrlp_prompt_mappings = {
 " vim-rspec should use spring and colored output
 let g:rspec_command = "!clear && spring rspec {spec} --color"
 
-"Taboo Tab settings
 set showtabline=2 "always show tabs
-let g:taboo_tab_format = ' %N: ['.fnamemodify(projectroot#guess(), ':t').']%m '
-let g:taboo_renamed_tab_format = ' %N: [%l]%m'
 
 let g:syntastic_ruby_exec = '/home/phansch/.rvm/rubies/ruby-2.1.4/bin/ruby'
 
