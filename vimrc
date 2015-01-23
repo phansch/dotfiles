@@ -190,6 +190,8 @@ nnoremap <space>m :CtrlPMRU<cr>
 noremap H ^
 noremap L $
 vnoremap L g_
+map j gj
+map k gk
 
 " Clear last search highlighting
 nnoremap <esc> :noh<return><esc>
