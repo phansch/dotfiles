@@ -194,10 +194,6 @@ set pastetoggle=<C-p>
 " Clear last search highlighting
 nnoremap <esc> :noh<return><esc>
 
-" Space to toggle folds.
-nnoremap <Space> za
-vnoremap <Space> za
-
 " Git fugitive remaps
 nnoremap <leader>gd :Gdiff<cr>
 nnoremap <leader>gs :Gstatus<cr>
@@ -256,12 +252,6 @@ augroup filetype_markdown
   au BufNewFile,BufRead *.md set filetype=markdown
 
   au FileType markdown nnoremap <leader>f :call OpenCurrentFileInBrowser()<cr>
-augroup END
-
-augroup filetype_vim
-  au!
-  " Have everything folded when opening vim files
-  au FileType vim setl foldmethod=marker
 augroup END
 
 augroup filetype_html
