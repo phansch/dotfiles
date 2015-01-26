@@ -4,8 +4,8 @@ filetype off                  " required!
 " Plugins {{{
 call plug#begin('~/.vim/plugged')
 
-Plug 'vim-ruby/vim-ruby',                      { 'for': 'ruby' }
-Plug 'tpope/vim-rails',                        { 'for': 'ruby' }
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake',                         { 'for': 'ruby' }
 Plug 'thoughtbot/vim-rspec',                   { 'for': 'ruby' }
 Plug 'pangloss/vim-javascript',                { 'for': 'javascript' }
