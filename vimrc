@@ -44,7 +44,6 @@ python del powerline_setup
 set nu
 set hidden
 set hlsearch
-set cursorline
 set noshowmode  " Don't display the mode you're in.
 set showmatch   " Show matching brackets/parenthesis
 set list
@@ -115,8 +114,6 @@ let g:rspec_command = "!clear && spring rspec {spec} --color"
 
 " Incsearch, turn off highlighting of searches
 let g:incsearch#auto_nohlsearch = 1
-
-set showtabline=2 "always show tabs
 
 let g:syntastic_ruby_exec = '/home/phansch/.rvm/rubies/ruby-2.1.4/bin/ruby'
 
