@@ -4,7 +4,7 @@ filetype off                  " required!
 " Plugins {{{
 call plug#begin('~/.vim/plugged')
 
-Plug 'vim-ruby/vim-ruby'
+Plug 'vim-ruby/vim-ruby',                      { 'for': 'ruby' }
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake',                         { 'for': 'ruby' }
 Plug 'thoughtbot/vim-rspec',                   { 'for': 'ruby' }
@@ -23,7 +23,7 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
-Plug 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic',                   { 'for': ['ruby', 'javascript', 'css'] }
 Plug 'rking/ag.vim'
 Plug 'godlygeek/tabular'
 Plug 'haya14busa/incsearch.vim'
