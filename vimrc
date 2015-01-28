@@ -1,5 +1,6 @@
-set nocompatible              " be iMproved
-filetype off                  " required!
+" be iMproved
+set nocompatible
+filetype off
 
 " Plugins {{{
 call plug#begin('~/.vim/plugged')
@@ -74,7 +75,8 @@ set softtabstop=2
 set expandtab
 
 " Theme settings
-set t_Co=256 " Set terminal colors to 256
+" Set terminal colors to 256
+set t_Co=256
 set background=dark
 colorscheme solarized "Set colorscheme to solarized
 
@@ -92,7 +94,8 @@ set splitright
 
 " Reload file if changed outside vim
 set autoread
-set guioptions=c " Disable menu, and other gui elements
+" Disable menu, and other gui elements
+set guioptions=c
 
 " This should make drawing the window 9000 times faster
 set ttyfast
@@ -185,7 +188,7 @@ vnoremap L g_
 map j gj
 map k gk
 
-" hit <C-p>to paste
+" hit <C-p>to toggle pastemode
 set pastetoggle=<C-p>
 
 " Clear last search highlighting
