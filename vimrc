@@ -145,29 +145,16 @@ let g:rubycomplete_rails = 1
 
 " Mappings {{{
 
-" Disable arrow keys
-no <down> <nop>
-no <left> <nop>
-no <right> <nop>
-no <up> <nop>
-
-ino <down> <nop>
-ino <left> <nop>
-ino <right> <nop>
-ino <up> <nop>
-
 " Disable help key.
 noremap  <F1> <nop>
 inoremap <F1> <nop>
 
 " Stop that window from popping up
-map q: :q
+noremap q: :q
 
-imap <leader>i <esc>
 nnoremap <leader>q :q<cr>
-map <C-s> <esc>:w<CR>
-imap <C-s> <esc>:w<CR>
-map <leader>s :use ctrl s instead!
+noremap <C-s> <esc>:w<CR>
+inoremap <C-s> <esc>:w<CR>
 
 " Remap split navigation
 nnoremap <C-J> <C-W><C-J>
@@ -176,7 +163,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 "Mimic firefox tab behavior
-map <C-t> <esc>:tabnew<cr>
+noremap <C-t> <esc>:tabnew<cr>
 
 nnoremap <space>b :CtrlPBuffer<cr>
 nnoremap <space>m :CtrlPMRU<cr>
@@ -185,8 +172,9 @@ nnoremap <space>m :CtrlPMRU<cr>
 noremap H ^
 noremap L $
 vnoremap L g_
-map j gj
-map k gk
+noremap j gj
+noremap k gk
+
 
 " hit <C-p>to toggle pastemode
 set pastetoggle=<C-p>
@@ -213,24 +201,24 @@ nnoremap <leader>av :AV<cr>
 
 
 " vim-rspec remaps
-map <leader>t :call RunCurrentSpecFile()<CR>
-map <leader>n :call RunNearestSpec()<CR>
-map <leader>l :call RunLastSpec()<CR>
-map <leader>a :call RunAllSpecs()<CR>
+noremap <leader>t :call RunCurrentSpecFile()<CR>
+noremap <leader>n :call RunNearestSpec()<CR>
+noremap <leader>l :call RunLastSpec()<CR>
+noremap <leader>a :call RunAllSpecs()<CR>
 
 " Rails remaps
-map <leader>bi :!bundle install<cr>
-map <leader>fa :e spec/factories/<cr>
-map <leader>sc :e db/schema.rb<cr>
-map <leader>ro :e config/routes.rb<cr>
+noremap <leader>bi :!bundle install<cr>
+noremap <leader>fa :e spec/factories/<cr>
+noremap <leader>sc :e db/schema.rb<cr>
+noremap <leader>ro :e config/routes.rb<cr>
 
 " Incsearch mappings
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
+noremap /  <Plug>(incsearch-forward)
+noremap ?  <Plug>(incsearch-backward)
 
 "Convenience remaps
-map <leader>nn :tabnew ~/documents/03si/Notes.md<cr>
-map <leader>jj :tabnew ~/documents/03si/Journal.md<cr>
+noremap <leader>nn :tabnew ~/documents/03si/Notes.md<cr>
+noremap <leader>jj :tabnew ~/documents/03si/Journal.md<cr>
 
 " Visual mode pressing * or # searches for the current selection
 " Super useful! From an idea by Michael Naumann
