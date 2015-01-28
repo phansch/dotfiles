@@ -118,7 +118,12 @@ let g:rspec_command = "!clear && spring rspec {spec} --color"
 " Incsearch, turn off highlighting of searches
 let g:incsearch#auto_nohlsearch = 1
 
+" Syntastic
 let g:syntastic_ruby_exec = '/home/phansch/.rvm/rubies/ruby-2.1.4/bin/ruby'
+let g:syntastic_check_on_open = 1
+
+
+let g:rubycomplete_rails = 1
 
 " }}}
 
@@ -136,12 +141,6 @@ augroup line_return
 augroup END
 
 " }}}
-
-
-" Ruby/Rails stuff {{{
-let g:rubycomplete_rails = 1
-" }}}
-
 
 " Mappings {{{
 
