@@ -41,8 +41,7 @@ python del powerline_setup
 
 
 " Settings {{{
-
-set nu
+set number
 set hidden
 set hlsearch
 set noshowmode  " Don't display the mode you're in.
@@ -86,7 +85,7 @@ set completeopt=longest,menuone,preview
 
 set noswapfile
 set nobackup
-set nowb
+set nowritebackup
 
 " Split settings
 set splitbelow
@@ -141,6 +140,8 @@ augroup line_return
 augroup END
 
 " }}}
+
+iabbrev pry binding.pry
 
 " Mappings {{{
 
@@ -212,8 +213,8 @@ noremap <leader>sc :e db/schema.rb<cr>
 noremap <leader>ro :e config/routes.rb<cr>
 
 " Incsearch mappings
-noremap /  <Plug>(incsearch-forward)
-noremap ?  <Plug>(incsearch-backward)
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
 
 "Convenience remaps
 noremap <leader>nn :tabnew ~/documents/03si/Notes.md<cr>
