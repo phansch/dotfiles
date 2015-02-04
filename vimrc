@@ -178,7 +178,7 @@ noremap k gk
 set pastetoggle=<C-p>
 
 " Clear last search highlighting
-nnoremap <esc> :noh<return><esc>
+nnoremap <esc> :nohlsearch<return><esc>
 
 " Git fugitive remaps
 nnoremap <leader>gd :Gdiff<cr>
@@ -200,6 +200,7 @@ nnoremap <leader>av :AV<cr>
 " go substitute because the default map for sleeping is silly
 nnoremap gs :%s//g<Left><Left>
 
+nnoremap <space>e :Explore<cr>
 " Show 3 levels for :Explore
 let g:netrw_liststyle=3
 
