@@ -91,8 +91,6 @@ set nowritebackup
 set splitbelow
 set splitright
 
-" Reload file if changed outside vim
-set autoread
 " Disable menu, and other gui elements
 set guioptions=c
 
