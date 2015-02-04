@@ -199,6 +199,14 @@ nnoremap <silent> p p`]
 
 nnoremap <leader>av :AV<cr>
 
+" go substitute because the default map for sleeping is silly
+nnoremap gs :%s//g<Left><Left>
+
+" Show 3 levels for :Explore
+let g:netrw_liststyle=3
+
+" let terminal resize scale the internal windows
+autocmd VimResized * :wincmd =
 
 " vim-rspec remaps
 noremap <leader>t :call RunCurrentSpecFile()<CR>
