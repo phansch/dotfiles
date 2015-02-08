@@ -266,6 +266,9 @@ augroup END
 " Turn syntax off for large files
 autocmd BufReadPre * if getfsize(expand("%")) > 10000000 | syntax off | endif
 
+" Remove trailing whitespace for some filetypes
+autocmd FileType ruby,js,css autocmd BufWritePre <buffer> :%s/\s\+$//e
+
 " }}}
 
 
