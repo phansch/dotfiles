@@ -141,7 +141,8 @@ augroup END
 
 " }}}
 
-iabbrev pry binding.pry
+iabbrev teh the
+iabbrev seperate separate
 
 " Mappings {{{
 
