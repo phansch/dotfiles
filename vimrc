@@ -77,7 +77,8 @@ set expandtab
 " Set terminal colors to 256
 set t_Co=256
 set background=dark
-colorscheme solarized "Set colorscheme to solarized
+"Set colorscheme to solarized
+colorscheme solarized
 
 " Better Completion
 set complete=.,w,b,u,t
@@ -216,7 +217,7 @@ noremap <leader>ro :e config/routes.rb<cr>
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 
-"Convenience remaps
+" Convenience remaps
 noremap <leader>nn :tabnew ~/documents/03si/Notes.md<cr>
 noremap <leader>jj :tabnew ~/documents/03si/Journal.md<cr>
 
@@ -225,7 +226,7 @@ noremap <leader>jj :tabnew ~/documents/03si/Journal.md<cr>
 vnoremap <silent> * :call VisualSelection('f')<CR>
 vnoremap <silent> # :call VisualSelection('b')<CR>
 
-" Open vimrc in split
+" Open vimrc
 nnoremap <leader>ev :tabnew ~/.dotfiles/vimrc<cr>
 
 " Source vimrc
