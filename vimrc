@@ -141,17 +141,12 @@ augroup END
 
 " }}}
 
+" Abbreviations {{{
 iabbrev teh the
 iabbrev seperate separate
+" }}}
 
 " Mappings {{{
-
-" Disable help key.
-noremap  <F1> <nop>
-inoremap <F1> <nop>
-
-" Stop that window from popping up
-noremap q: :q
 
 nnoremap <leader>q :q<cr>
 noremap <C-s> <esc>:w<CR>
@@ -163,9 +158,6 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-"Mimic firefox tab behavior
-noremap <C-t> <esc>:tabnew<cr>
-
 nnoremap <space>b :CtrlPBuffer<cr>
 nnoremap <space>m :CtrlPMRU<cr>
 
@@ -175,7 +167,6 @@ noremap L $
 vnoremap L g_
 noremap j gj
 noremap k gk
-
 
 " hit <C-p>to toggle pastemode
 set pastetoggle=<C-p>
