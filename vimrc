@@ -77,7 +77,8 @@ set expandtab
 " Set terminal colors to 256
 set t_Co=256
 set background=dark
-colorscheme solarized "Set colorscheme to solarized
+"Set colorscheme to solarized
+colorscheme solarized
 
 " Better Completion
 set complete=.,w,b,u,t
@@ -139,16 +140,12 @@ augroup END
 
 " }}}
 
-iabbrev pry binding.pry
+" Abbreviations {{{
+iabbrev teh the
+iabbrev seperate separate
+" }}}
 
 " Mappings {{{
-
-" Disable help key.
-noremap  <F1> <nop>
-inoremap <F1> <nop>
-
-" Stop that window from popping up
-noremap q: :q
 
 nnoremap <leader>q :q<cr>
 noremap <C-s> <esc>:w<CR>
@@ -160,9 +157,6 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-"Mimic firefox tab behavior
-noremap <C-t> <esc>:tabnew<cr>
-
 nnoremap <space>b :CtrlPBuffer<cr>
 nnoremap <space>m :CtrlPMRU<cr>
 
@@ -172,7 +166,6 @@ noremap L $
 vnoremap L g_
 noremap j gj
 noremap k gk
-
 
 " hit <C-p>to toggle pastemode
 set pastetoggle=<C-p>
@@ -223,7 +216,7 @@ noremap <leader>ro :e config/routes.rb<cr>
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 
-"Convenience remaps
+" Convenience remaps
 noremap <leader>nn :tabnew ~/documents/03si/Notes.md<cr>
 noremap <leader>jj :tabnew ~/documents/03si/Journal.md<cr>
 
@@ -232,7 +225,7 @@ noremap <leader>jj :tabnew ~/documents/03si/Journal.md<cr>
 vnoremap <silent> * :call VisualSelection('f')<CR>
 vnoremap <silent> # :call VisualSelection('b')<CR>
 
-" Open vimrc in split
+" Open vimrc
 nnoremap <leader>ev :tabnew ~/.dotfiles/vimrc<cr>
 
 " Source vimrc
@@ -263,6 +256,9 @@ augroup END
 
 " Turn syntax off for large files
 autocmd BufReadPre * if getfsize(expand("%")) > 10000000 | syntax off | endif
+
+" Remove trailing whitespace for some filetypes
+autocmd FileType ruby,js,css autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " }}}
 
