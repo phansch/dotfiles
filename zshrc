@@ -56,6 +56,9 @@ alias migrate="rake db:migrate db:rollback && rake db:migrate"
 alias m="migrate"
 alias rk="rake"
 
+## Git
+alias gaa="git add --all"
+
 # completion for tmuxinator
 source ~/.bin/tmuxinator.zsh
 
