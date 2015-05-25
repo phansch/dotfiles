@@ -144,3 +144,16 @@ noremap <leader>bi :!bundle install<cr>
 noremap <leader>fa :e spec/factories/<cr>
 noremap <leader>sc :e db/schema.rb<cr>
 noremap <leader>ro :e config/routes.rb<cr>
+
+" Open vimrc
+nnoremap <leader>ev :tabnew ~/.dotfiles/nvimrc<cr>
+
+" Source vimrc
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" neovim
+tnoremap <Esc> <C-\><C-n>
+tnoremap <C-h> <C-\><C-n><C-w>h
+tnoremap <C-j> <C-\><C-n><C-w>j
+tnoremap <C-k> <C-\><C-n><C-w>k
+tnoremap <C-l> <C-\><C-n><C-w>l
