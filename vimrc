@@ -99,6 +99,12 @@ set guioptions=c
 set ttyfast
 set lazyredraw
 
+" Update syntax highlighting for more lines increased scrolling performance
+syntax sync minlines=256
+
+" Don't syntax highlight long lines
+set synmaxcol=256
+
 " Leader
 let mapleader = ","
 let maplocalleader = "\\"
