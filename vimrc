@@ -149,6 +149,11 @@ augroup END
 " Abbreviations {{{
 iabbrev teh the
 iabbrev seperate separate
+iabbrev FactoryGril FactoryGirl
+iabbrev loctation location
+iabbrev sessinos sessions
+iabbrev initator initiator
+iabbrev conut count
 " }}}
 
 " Mappings {{{
