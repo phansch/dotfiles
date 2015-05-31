@@ -7,5 +7,5 @@
   Alt + Return
 
 # Start thunar
-"nemo ~/repos"
-  Alt+Shift + f
+"nemo ~/repos || thunar ~/repos"
+  Alt + f

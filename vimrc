@@ -107,7 +107,6 @@ colorscheme gruvbox
 set t_Co=256
 set background=light
 
-
 " Leader
 let mapleader = ","
 let maplocalleader = "\\"
