@@ -5,10 +5,12 @@ filetype off
 " Plugins {{{
 call plug#begin('~/.vim/plugged')
 
-Plug 'vim-ruby/vim-ruby',                      { 'for': 'ruby' }
+Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
-Plug 'tpope/vim-rake',                         { 'for': 'ruby' }
-Plug 'thoughtbot/vim-rspec',                   { 'for': 'ruby' }
+Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-rake'
+Plug 'thoughtbot/vim-rspec'
+Plug 'Keithbsmiley/rspec.vim'
 Plug 'pangloss/vim-javascript',                { 'for': 'javascript' }
 Plug 'jelera/vim-javascript-syntax',           { 'for': 'javascript' }
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
@@ -117,7 +119,11 @@ let g:ctrlp_prompt_mappings = {
   \ }
 
 " vim-rspec should use spring and colored output
-let g:rspec_command = "!clear && spring rspec {spec} --color"
+if executable("spring")
+  let g:rspec_command = "!clear && spring rspec {spec} --color"
+else
+  let g:rspec_command = "!clear && rspec {spec} --color"
+endif
 
 " Incsearch, turn off highlighting of searches
 let g:incsearch#auto_nohlsearch = 1
@@ -149,6 +155,11 @@ augroup END
 " Abbreviations {{{
 iabbrev teh the
 iabbrev seperate separate
+iabbrev FactoryGril FactoryGirl
+iabbrev loctation location
+iabbrev sessinos sessions
+iabbrev initator initiator
+iabbrev conut count
 " }}}
 
 " Mappings {{{
