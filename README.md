@@ -1,10 +1,12 @@
 ## Installation
 
-Set zsh as your login shell.
+1. Make sure zsh is your shell.
 
     chsh -s $(which zsh)
 
-Clone the repo and setup the dotfiles.
+2. Get rcm: https://github.com/thoughtbot/rcm
+
+3. Clone the repo and setup the dotfiles.
 
     git clone git@github.com:phansch/dotfiles.git ~/.dotfiles && cd ~/.dotfiles
     rcup -x README.md -x screenshots/
@@ -34,8 +36,9 @@ The script is pretty much self explanatory, but here's the gist:
    * And finally: [dwm](http://dwm.suckless.org/)
 
 ##### .Xresources for urxvt configuration
- * Solarized Dark and Solarized Light (default).
+ * Gruvbox and Solarized themes
  * Clickable urls to launch firefox
+ * Shortcuts to change the terminal font size
 
 ![vlc ncurses](screenshots/screen-vlc.png)
 
