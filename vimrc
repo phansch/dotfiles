@@ -30,6 +30,7 @@ Plug 'scrooloose/syntastic',                   { 'for': ['ruby', 'javascript', '
 Plug 'rking/ag.vim'
 Plug 'godlygeek/tabular'
 Plug 'haya14busa/incsearch.vim'
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
@@ -75,13 +76,6 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 
-" Theme settings
-" Set terminal colors to 256
-set t_Co=256
-set background=dark
-"Set colorscheme to solarized
-colorscheme solarized
-
 " Better Completion
 set complete=.,w,b,u,t
 set completeopt=longest,menuone,preview
@@ -106,6 +100,13 @@ syntax sync minlines=256
 
 " Don't syntax highlight long lines
 set synmaxcol=256
+
+" Theme settings
+" Set terminal colors to 256
+colorscheme gruvbox
+set t_Co=256
+set background=light
+
 
 " Leader
 let mapleader = ","
