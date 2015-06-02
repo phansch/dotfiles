@@ -103,6 +103,7 @@ set synmaxcol=256
 
 " Theme settings
 " Set terminal colors to 256
+let g:gruvbox_termcolors=16
 colorscheme gruvbox
 set t_Co=256
 set background=light
