@@ -130,8 +130,10 @@ endif
 let g:incsearch#auto_nohlsearch = 1
 
 " Syntastic
-let g:syntastic_ruby_exec = '/home/phansch/.rvm/rubies/ruby-2.1.4/bin/ruby'
+let g:syntastic_ruby_checkers = ["rubocop", "mri"]
+let g:syntastic_ruby_exec = "/home/phansch/.rvm/rubies/ruby-2.1.6/bin/ruby"
 let g:syntastic_check_on_open = 1
+let g:syntastic_enable_signs = 1
 
 
 let g:rubycomplete_rails = 1
