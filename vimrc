@@ -221,6 +221,9 @@ let g:netrw_liststyle=3
 " let terminal resize scale the internal windows
 autocmd VimResized * :wincmd =
 
+" format json (requires jq to be installed)
+noremap <leader>fj :call FormatJson()<CR>
+
 " vim-rspec remaps
 noremap <leader>t :call RunCurrentSpecFile()<CR>
 noremap <leader>n :call RunNearestSpec()<CR>
@@ -305,6 +308,10 @@ function! VisualSelection(direction) range
 
     let @/ = l:pattern
     let @" = l:saved_reg
+endfunction
+
+function! FormatJson()
+  :silent execute ":%!cat % | jq '.'"
 endfunction
 
 function! OpenCurrentFileInBrowser()
