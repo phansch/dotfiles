@@ -94,6 +94,7 @@ set guioptions=c
 " This should make drawing the window 9000 times faster
 set ttyfast
 set lazyredraw
+set regexpengine=2
 
 " Update syntax highlighting for more lines increased scrolling performance
 syntax sync minlines=256
