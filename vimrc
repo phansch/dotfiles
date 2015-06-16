@@ -113,6 +113,7 @@ set background=light
 let mapleader = ","
 let maplocalleader = "\\"
 
+noremap <cr> :
 " Remap ctrl + p to ,d
 let g:ctrlp_map = '<space>d'
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
