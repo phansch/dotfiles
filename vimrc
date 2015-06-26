@@ -121,7 +121,7 @@ let g:ctrlp_prompt_mappings = {
   \ }
 
 " vim-rspec should use spring and colored output
-if executable("spring") && RailsDetect(expand("<afile>:p"))
+if executable("spring")
   let g:rspec_command = "!clear && spring rspec {spec} --color"
 else
   let g:rspec_command = "!clear && rspec {spec} --color"
