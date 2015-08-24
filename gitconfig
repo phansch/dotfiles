@@ -18,7 +18,7 @@
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
 [push]
-  default = simple
+  default = current
 [commit]
   template = ~/.gitmessage
 [credential]
