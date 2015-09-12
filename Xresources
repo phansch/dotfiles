@@ -1,12 +1,15 @@
 !#include ".Xresources.d/solarized-light.xresources"
 !#include ".Xresources.d/solarized-dark.xresources"
-#include ".Xresources.d/gruvbox-light.xresources"
-!#include ".Xresources.d/gruvbox-dark.xresources"
+!#include ".Xresources.d/gruvbox-light.xresources"
+#include ".Xresources.d/gruvbox-dark.xresources"
 
 *intensityStyles: false
 *fading: 20
 
 URxvt*depth: 32
+URxvt*.transparent: true
+! URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
+URxvt*.shading: 10
 
 URxvt*saveLines: 8000
 URxvt*internalBorder: 3
