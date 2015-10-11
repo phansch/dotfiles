@@ -5,6 +5,7 @@ filetype off
 " Plugins {{{
 call plug#begin('~/.vim/plugged')
 
+Plug 'rust-lang/rust.vim'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-projectionist'
@@ -31,14 +32,12 @@ Plug 'rking/ag.vim'
 Plug 'godlygeek/tabular'
 Plug 'haya14busa/incsearch.vim'
 Plug 'morhetz/gruvbox'
+Plug 'bling/vim-airline'
+
 
 call plug#end()
 
 filetype plugin indent on
-
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
 
 " }}}
 
