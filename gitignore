@@ -30,3 +30,5 @@
 .*
 !.gitignore
 *~
+
+notes.md
