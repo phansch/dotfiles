@@ -144,6 +144,9 @@ let g:rubycomplete_rails = 1
 " }}}
 
 
+" Ag settings
+let g:ag_highlight=1
+
 " Line Return {{{
 
 " Make sure Vim returns to the same line when you reopen a file.
