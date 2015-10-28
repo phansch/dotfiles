@@ -59,6 +59,7 @@ alias rk="rake"
 ## Git
 alias gaa="git add --all"
 alias gfa="git fetch --all"
+alias gcp="git cherry-pick"
 
 # completion for tmuxinator
 source ~/.bin/tmuxinator.zsh
