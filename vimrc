@@ -33,7 +33,7 @@ Plug 'godlygeek/tabular'
 Plug 'haya14busa/incsearch.vim'
 Plug 'morhetz/gruvbox'
 Plug 'bling/vim-airline'
-
+Plug 'DataWraith/auto_mkdir'
 
 call plug#end()
 
