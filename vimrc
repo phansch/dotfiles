@@ -97,7 +97,7 @@ set lazyredraw
 set regexpengine=2
 
 " More frequent updates for, e.g. signs.
-set updatetime=750
+set updatetime=800
 
 " Update syntax highlighting for more lines increased scrolling performance
 syntax sync minlines=256
