@@ -15,6 +15,7 @@ Plug 'Keithbsmiley/rspec.vim'
 Plug 'pangloss/vim-javascript',                { 'for': 'javascript' }
 Plug 'jelera/vim-javascript-syntax',           { 'for': 'javascript' }
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
+Plug 'kchmck/vim-coffee-script'
 Plug 'ervandew/supertab'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
