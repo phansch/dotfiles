@@ -110,7 +110,7 @@ set synmaxcol=256
 let g:gruvbox_termcolors=16
 colorscheme gruvbox
 set t_Co=256
-set background=light
+set background=dark
 
 " Leader
 let mapleader = ","
@@ -147,6 +147,9 @@ let g:rubycomplete_rails = 1
 
 " }}}
 
+"Airline
+let g:airline_powerline_fonts=1
+let g:airline_theme="zenburn"
 
 " Ag settings
 let g:ag_highlight=1
