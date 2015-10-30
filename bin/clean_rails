@@ -1,0 +1,17 @@
+#!/bin/bash -x
+
+if [ -f log/test.log ]; then
+  rm -f log/test.log
+fi
+
+if [ -f log/development.log ]; then
+  rm -f log/development.log
+fi
+
+if [ -d public/uploads ]; then
+  rm -rf public/uploads/*
+fi
+
+if [ -d tmp/cache ]; then
+  rm -rf tmp/cache/*
+fi
