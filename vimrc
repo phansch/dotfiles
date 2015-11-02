@@ -135,11 +135,11 @@ let g:incsearch#auto_nohlsearch = 1
 
 " Syntastic
 let g:syntastic_ruby_checkers = ["mri"]
-let g:syntastic_ruby_exec = "/home/phansch/.rvm/rubies/ruby-2.1.6/bin/ruby"
+let g:syntastic_ruby_mri_exec = "/home/phansch/.rvm/rubies/ruby-2.1.6/bin/ruby"
 let g:syntastic_check_on_open = 1
 let g:syntastic_enable_signs = 1
 let g:syntastic_mode_map = { "mode": "active",
-      \ "active_filetypes": [],
+      \ "active_filetypes": ["rb"],
       \ "passive_filetypes": ["haml","scss","sass"] }
 
 
