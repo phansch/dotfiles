@@ -2,6 +2,7 @@
 !#include ".Xresources.d/solarized-dark.xresources"
 !#include ".Xresources.d/gruvbox-light.xresources"
 #include ".Xresources.d/gruvbox-dark.xresources"
+#include ".Xresources.d/rofi.xresources"
 
 *intensityStyles: false
 *fading: 20

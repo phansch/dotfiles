@@ -1,6 +1,10 @@
-# Open dmenu
-"dmenu_run"
+# Open rofi
+"rofi -show run"
   Alt + d
+
+# Open rofi ssh
+"rofi -show ssh"
+  Alt + s
 
 # Open a terminal
 "urxvt"

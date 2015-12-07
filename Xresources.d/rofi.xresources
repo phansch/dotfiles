@@ -1,0 +1,9 @@
+rofi.width: 40
+rofi.bg: _background
+rofi.fg: _foreground
+rofi.hlfg: _color2
+rofi.bc: _color2
+rofi.hlbg: _background
+rofi.opacity: 85
+rofi.font: 'Ubuntu Mono' 12
+rofi.fuzzy: true
