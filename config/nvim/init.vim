@@ -271,6 +271,11 @@ nnoremap <leader>sv :source ~/.config/nvim/init.vim<cr>
 
 
 " File Type specific settings {{{
+augroup filetype_xdefaults
+  au!
+  au BufNewFile,BufRead *.xresources set filetype=xdefaults
+augroup END
+
 augroup filetype_markdown
   au!
   au BufNewFile,BufRead *.md set filetype=markdown
