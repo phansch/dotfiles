@@ -8,10 +8,11 @@
 #############
 
 xset m 4 & # Increase mouse acceleration
-xset s off         # don't activate screensaver
-xset s noblank     # don't blank the video device
+xset s off # don't activate screensaver
+xset s noblank # don't blank the video device
 xrdb -merge ~/.Xresources & # reread ~/.Xresources
 setxkbmap 'de(dvorak)' & # Set german dvorak keyboard layout
+# TODO: Check for hostname of laptop to disable it
 xinput disable "ELAN Touchscreen"
 
 #############
@@ -21,18 +22,13 @@ xinput disable "ELAN Touchscreen"
 # Do background stuff
 sleep 1 && unclutter & # Hides mousecursor when inactive
 sleep 1 && urxvtd -q -o -f &
-sleep 1 && mpd ~/.config/mpd/mpd.conf &
 
 # Launch programs
-sleep 1 && firefox-trunk &
+sleep 1 && firefox &
 sleep 1 && urxvt &
-sleep 1 && skype &
-sleep 1 && icedove &
+sleep 1 && thunderbird &
 sleep 1 && nm-applet &
 sleep 1 && xfce4-power-manager &
-sleep 1 && urxvt -e ~/.bin/routines &
-sleep 1 && urxvt -e ncmpcpp &
-sleep 1 && urxvt -e weechat-curses &
 sleep 1 && owncloud &
 
 # make sure there's only one redshift service running
@@ -55,18 +51,4 @@ do
   fi
 done &
 
-xbindkeys &
-
-##############
-## Start WM ##
-##############
-
-DEFAULT_SESSION="i3"
-case $1 in
-openbox-session|i3)
-        exec $1
-        ;;
-*)
-        exec $DEFAULT_SESSION
-        ;;
-esac
+xbindkeys
