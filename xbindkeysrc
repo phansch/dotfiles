@@ -13,3 +13,7 @@
 # Start thunar
 "nemo ~/repos || thunar ~/repos"
   Alt + f
+
+# Lock screen
+"slock"
+  Alt + l
