@@ -126,13 +126,12 @@ bindsym $mod+Shift+equal move container to workspace 10
 ## Move to workspace
 ### Note that everything that's using urxvt as a base,
 ### must be assigned before urxvt itself
-assign [title="Icedove"] $WS3
+assign [title="Icedove|Thunderbird"] $WS3
 assign [title="routines"] $WS1
 assign [title="ncmpcpp"] $WS5
 assign [title="weechat*"] $WS4
 assign [class="Skype*"] $WS4
 assign [instance="urxvt"] $WS1
-assign [class="sublime-text"] $WS1
 assign [class="^Firefox$"] $WS2
 
 ## window floating
@@ -140,8 +139,8 @@ for_window [title="ncmpcpp"] resize shrink right 31px or 31 ppt
 for_window [class="^Firefox$"] border normal
 for_window [class="^Firefox$" title="^Library$"] floating enable
 for_window [class="^Firefox$" window_role="^Preferences$"] floating enable
-for_window [class="^Icedove$"] border normal
-for_window [class="^Icedove$" window_role="^Preferences$"] floating enable
+for_window [class="^Icedove|Thunderbird$"] border normal
+for_window [class="^Icedove|Thunderbird$" window_role="^Preferences$"] floating enable
 for_window [class="^Viewnior$"] floating enable border normal
 for_window [class="^Anki$"] floating enable; border normal; move absolute center
 for_window [class="^Keepassx$"] floating enable move absolute center
@@ -154,8 +153,8 @@ for_window [class="xfce4-notifyd"] floating enable
 
 
 # Autostart
-exec --no-startup-id xrandr --output LVDS1 --mode 1366x768 --output HDMI1 --mode 1920x1080 --right-of LVDS1
-exec --no-startup-id nitrogen --restore
+# exec --no-startup-id xrandr --output LVDS1 --mode 1366x768 --output HDMI1 --mode 1920x1080 --right-of LVDS1
+# exec --no-startup-id nitrogen --restore
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
