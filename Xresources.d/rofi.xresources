@@ -1,9 +1,18 @@
-rofi.width: 40
-rofi.bg: _background
-rofi.fg: _foreground
-rofi.hlfg: _color2
-rofi.bc: _color2
-rofi.hlbg: _background
-rofi.opacity: 85
+rofi.padding: 310
+rofi.width: 100
+rofi.lines: 10
+rofi.columns: 1
+
+rofi.bw: 0
 rofi.font: 'Ubuntu Mono' 12
 rofi.fuzzy: true
+
+rofi.color-enabled: true
+! State:           'bg',        'fg',        'bgalt',     'hlbg',   'hlfg'
+rofi.color-normal: argb:444444, _foreground, argb:444444, argb:444444, _color2
+rofi.color-urgent: argb:444444, _foreground, argb:444444, argb:444444, _color2
+rofi.color-active: argb:444444, _foreground, argb:444444, argb:444444, _color2
+
+!                  'background', 'border'
+rofi.color-window: argb:DD444444, argb:444444
+
