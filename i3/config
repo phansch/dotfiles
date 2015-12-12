@@ -87,6 +87,10 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindcode $mod+d focus child
 
+# Scratchpad configuration
+bindsym $mod+minus [instance="urxvt" title="scratchpad"] scratchpad show
+for_window [instance="urxvt" title="scratchpad"] move scratchpad
+exec_always --no-startup-id urxvt -title "scratchpad" -e vim +star ~/documents/scratchpad.md
 
 # ASSIGN WORKSPACE VARIABLES
 set $WS1 1:dev
