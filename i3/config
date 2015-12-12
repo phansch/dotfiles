@@ -184,7 +184,7 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar
 bar {
-  status_command i3status
+  status_command i3bar
   position top
   workspace_buttons yes
 
