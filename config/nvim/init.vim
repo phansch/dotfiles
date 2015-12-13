@@ -220,8 +220,7 @@ nnoremap <leader>gp :Gpush<cr>
 nnoremap <leader>gl :Gpull<cr>
 
 " Copy/pasting remaps
-nnoremap <leader>y "+y
-nnoremap <leader>p "+p
+set clipboard+=unnamedplus
 
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
