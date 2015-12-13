@@ -65,6 +65,7 @@ set title " Set the terminal's title
 set scrolloff=10
 set relativenumber
 set noesckeys "Make esc faster
+set mouse=
 
 " Wildmenu completition {{{
 set wildmode=list:longest " Complete files like a shell.
