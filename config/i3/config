@@ -11,14 +11,13 @@
 
 set $mod Mod1
 
-# font for window titles. ISO 10646 = Unicode
-font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+font pango:Ubuntu Mono derivative Powerline 10
 
 # Never show borders (exceptions below)
 new_window none
 
 # Hide borders that are adjecent to screen edges
-# hide_edge_borders vertical
+hide_edge_borders none
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -90,7 +89,7 @@ bindsym $mod+a focus parent
 # Scratchpad configuration
 bindsym $mod+minus [instance="urxvt" title="scratchpad"] scratchpad show
 for_window [instance="urxvt" title="scratchpad"] move scratchpad
-exec_always --no-startup-id urxvt -title "scratchpad" -e vim +star ~/documents/scratchpad.md
+exec_always --no-startup-id urxvt -title "scratchpad" -e vim ~/documents/scratchpad.md
 
 # ASSIGN WORKSPACE VARIABLES
 set $WS1 1:dev
@@ -140,10 +139,8 @@ assign [class="^Firefox$"] $WS2
 
 ## window floating
 for_window [title="ncmpcpp"] resize shrink right 31px or 31 ppt
-for_window [class="^Firefox$"] border normal
 for_window [class="^Firefox$" title="^Library$"] floating enable
 for_window [class="^Firefox$" window_role="^Preferences$"] floating enable
-for_window [class="^Icedove|Thunderbird$"] border normal
 for_window [class="^Icedove|Thunderbird$" window_role="^Preferences$"] floating enable
 for_window [class="^Viewnior$"] floating enable border normal
 for_window [class="^Anki$"] floating enable; border normal; move absolute center
@@ -193,12 +190,13 @@ bar {
   workspace_buttons yes
 
   colors {
-            background #002b36
+            background #98971a
             statusline #93a1a1
 
-            focused_workspace #073642 #586e75 #fdf6e3
-            active_workspace #1a2122 #232323 #eee8d5
-            inactive_workspace #073642 #073642 #93a1a1
-            urgent_workspace #dc322f #dc322f #fdf6e3
+            # border background text
+            focused_workspace #98971a #32302f #98971a
+            active_workspace #98971a #232323 #eee8d5
+            inactive_workspace #98971a #98971a #32302f
+            urgent_workspace #98971a #fb4934 #32302f
   }
 }
