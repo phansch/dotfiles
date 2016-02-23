@@ -12,7 +12,6 @@ xset s off # don't activate screensaver
 xset s noblank # don't blank the video device
 xrdb -merge ~/.Xresources & # reread ~/.Xresources
 setxkbmap 'de(dvorak)' & # Set german dvorak keyboard layout
-xbindkeys &
 # TODO: Check for hostname of laptop to disable it
 xinput disable "ELAN Touchscreen"
 
