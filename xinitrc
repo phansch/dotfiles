@@ -21,7 +21,7 @@ xinput disable "ELAN Touchscreen"
 #############
 
 # Do background stuff
-sleep 1 && unclutter & # Hides mousecursor when inactive
+sleep 1 && unclutter -noevents & # Hides mousecursor when inactive
 sleep 1 && urxvtd -q -o -f &
 
 # Launch programs
