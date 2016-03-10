@@ -5,7 +5,7 @@ aptget='sudo apt-get'
 function cleanup()
 {
   # Run this before, to get app list: sed -nrs '/^\[Desktop Entry\]/d;/^(\[|Name=|Exec=)/p;${g;p}' /usr/share/applications/*.desktop > ~/Desktop/Names-n-Commands.txt
-  $aptget update
+  $aptget update -q
   $aptget autoremove && sudo aptitude autoclean
   $aptget upgrade -y
 }
