@@ -23,7 +23,6 @@ cdpath=($HOME $HOME/repos $HOME/code $HOME/.dotfiles $HOME/Documents)
 
 stty -ixon
 # Aliases
-alias start_jekyll="jekyll serve --watch --drafts"
 
 ## Bundle
 alias b="bundle"
@@ -39,7 +38,6 @@ alias ping="ping -c 5"
 alias ls="ls -h --color"
 alias la="ls -A"
 alias df="df -h"
-alias vi="vim"
 alias top="htop"
 alias apt="sudo apt-get"
 alias install="sudo apt-get install"
@@ -54,7 +52,6 @@ alias pair_de="setxkbmap 'de'"
 ## Rails
 alias migrate="rake db:migrate db:rollback && rake db:migrate"
 alias m="migrate"
-alias rk="rake"
 
 ## Git
 alias gaa="git add --all"
