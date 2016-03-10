@@ -42,9 +42,18 @@ function dotfiles_setup()
   cd $HOME
 }
 
+function finish()
+{
+  echo 'Logging you out in 5 seconds'
+  echo 'Please re-login with your current user afterwards to complete the setup'
+  sleep 5
+  xfce4-session-logout --logout
+}
+
 cleanup
 base_packages
 dotfiles_setup
+finish
 
 # sudo add-apt-repository ppa:neovim-ppa/unstable
 # $aptget install -y i3 neovim
