@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+aptget='sudo apt-get'
+sudo add-apt-repository ppa:neovim-ppa/unstable
+$aptget update
+$aptget autoremove && sudo aptitude autoclean
+$aptget upgrade -y
+
+$aptget install -y i3 neovim
+
+# needed for i3?
+ln -s $HOME/.xinitrc $HOME/.xsessionrc
