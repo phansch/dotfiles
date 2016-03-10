@@ -1,12 +1,54 @@
 #!/usr/bin/env bash
 
 aptget='sudo apt-get'
-sudo add-apt-repository ppa:neovim-ppa/unstable
-$aptget update
-$aptget autoremove && sudo aptitude autoclean
-$aptget upgrade -y
 
-$aptget install -y i3 neovim
+function cleanup()
+{
+  # Run this before, to get app list: sed -nrs '/^\[Desktop Entry\]/d;/^(\[|Name=|Exec=)/p;${g;p}' /usr/share/applications/*.desktop > ~/Desktop/Names-n-Commands.txt
+  $aptget update
+  $aptget autoremove && sudo aptitude autoclean
+  $aptget upgrade -y
+}
+
+function base_packages()
+{
+  $aptget install -y software-properties-common git curl rxvt-unicode tmux virtualbox-5.0 zsh unclutter build-essential libglib2.0-dev xsel
+}
+
+function dotfiles_setup()
+{
+  cd $HOME/Downloads
+
+  # oh-my-zsh
+  wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
+
+  # rcm (for installing .dotfiles)
+  wget https://thoughtbot.github.io/rcm/debs/rcm_1.2.2-2_all.deb
+  sudo dpkg -i rcm*
+  $aptget -f -y install
+
+  rm *.deb
+
+  # Setup Dotfiles/Configuration
+  chsh -s $(which zsh)
+
+  git clone git@gitlab.com:phansch/dotfiles.git $HOME/.dotfiles && cd $HOME/.dotfiles
+  rcup -x README.md -x screenshots
+
+  # Setup Ubuntu Mono Powerline Font
+  wget -P ~/.fonts/ https://github.com/Lokaltog/powerline-fonts/raw/master/UbuntuMono/Ubuntu%20Mono%20derivative%20Powerline.ttf
+  sudo fc-cache -fv
+
+  cd $HOME
+}
+
+cleanup
+base_packages
+dotfiles_setup
+
+# sudo add-apt-repository ppa:neovim-ppa/unstable
+# $aptget install -y i3 neovim
 
 # needed for i3?
-ln -s $HOME/.xinitrc $HOME/.xsessionrc
+# ln -s $HOME/.xinitrc $HOME/.xsessionrc
+

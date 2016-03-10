@@ -1,15 +1,6 @@
 ## Installation
 
-1. Make sure zsh is your shell.
-
-    `chsh -s $(which zsh)`
-
-2. Get rcm: https://github.com/thoughtbot/rcm
-
-3. Clone the repo and setup the dotfiles.
-
-    `git clone git@github.com:phansch/dotfiles.git ~/.dotfiles && cd ~/.dotfiles
-    rcup -x README.md -x screenshots/`
+    curl https://gitlab.com/phansch/dotfiles/raw/master/setup | bash
 
 ## What's in there?
 ### oh-my-zsh
