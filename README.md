@@ -55,3 +55,17 @@ The script is pretty much self explanatory, but here's the gist:
 
 Here's a screenshot of the `routines` output:
 ![routines](screenshots/routines.png)
+
+## Development
+
+Currently only tested with Linux Mint XFCE, which you can get [here](https://linuxmint.com/edition.php?id=214)
+
+Once downloaded, open a terminal and set `IMAGE_PATH` to the path where the .iso is located.
+
+    IMAGE_PATH=$HOME/Downloads/linuxmint-17.3-xfce-64bit.iso
+
+Then run the dev-setup.sh:
+
+    ./dev-setup
+
+Now you'll have to go through the installation process of Linux Mint.
