@@ -44,6 +44,8 @@ function dotfiles_setup()
   wget -qP ~/.fonts/ https://github.com/Lokaltog/powerline-fonts/raw/master/UbuntuMono/Ubuntu%20Mono%20derivative%20Powerline.ttf
   sudo fc-cache -fv > /dev/null 2>&1;
 
+  # needed if i3 is used, because 
+  ln -s $HOME/.xinitrc $HOME/.xsessionrc
   cd $HOME
 }
 
@@ -80,6 +82,4 @@ finish
 
 # $aptget install -y i3 neovim
 
-# needed for i3?
-# ln -s $HOME/.xinitrc $HOME/.xsessionrc
 
