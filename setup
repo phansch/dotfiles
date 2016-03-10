@@ -26,7 +26,7 @@ function dotfiles_setup()
 
   # rcm (for installing .dotfiles)
   wget -q https://thoughtbot.github.io/rcm/debs/rcm_1.2.2-2_all.deb
-  sudo dpkg -i rcm*
+  sudo dpkg -i -E rcm*
   $aptget -f -y -qq install
 
   rm *.deb
