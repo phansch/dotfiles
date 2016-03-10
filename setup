@@ -58,12 +58,13 @@ function packages_setup()
 
 function finish()
 {
-  echo 'Almost done. Do you want to re-login now to complete the setup?'
-  select yn in "y" "n"; do
-      case $yn in
-          y ) xfce4-session-logout --logout; break;;
-          n ) exit;;
-      esac
+  while true; do
+    read -p "Almost done. Do you want to re-login now to complete the setup? " yn
+    case $yn in
+        [y]* ) xfce4-session-logout --logout; break;;
+        [n]* ) exit;;
+        * ) echo "Please answer yes (y) or no (n).";;
+    esac
   done
 }
 
