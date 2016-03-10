@@ -32,7 +32,7 @@ function dotfiles_setup()
   # Setup Dotfiles/Configuration
   chsh -s $(which zsh)
 
-  git clone git@gitlab.com:phansch/dotfiles.git $HOME/.dotfiles && cd $HOME/.dotfiles
+  git clone https://gitlab.com/phansch/dotfiles.git $HOME/.dotfiles && cd $HOME/.dotfiles
   rcup -x README.md -x screenshots
 
   # Setup Ubuntu Mono Powerline Font

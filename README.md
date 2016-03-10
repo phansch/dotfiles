@@ -1,6 +1,6 @@
 ## Installation
 
-    wget --no-check-certificate https://gitlab.com/phansch/dotfiles/raw/master/setup -O - | sh
+    wget --no-check-certificate https://gitlab.com/phansch/dotfiles/raw/master/setup -O - | bash
 
 ## What's in there?
 ### oh-my-zsh
