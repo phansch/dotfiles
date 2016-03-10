@@ -1,6 +1,6 @@
 ## Installation
 
-    curl https://gitlab.com/phansch/dotfiles/raw/master/setup | bash
+    wget --no-check-certificate https://gitlab.com/phansch/dotfiles/raw/master/setup -O - | sh
 
 ## What's in there?
 ### oh-my-zsh
