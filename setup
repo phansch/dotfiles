@@ -35,6 +35,9 @@ function dotfiles_setup()
   git clone https://gitlab.com/phansch/dotfiles.git $HOME/.dotfiles && cd $HOME/.dotfiles
   rcup -x README.md -x screenshots
 
+  # Make sure zsh-syntax-highlighting is pulled
+  git submodule update --init --recursive
+
   # Setup Ubuntu Mono Powerline Font
   wget -P ~/.fonts/ https://github.com/Lokaltog/powerline-fonts/raw/master/UbuntuMono/Ubuntu%20Mono%20derivative%20Powerline.ttf
   sudo fc-cache -fv

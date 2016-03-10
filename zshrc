@@ -5,7 +5,7 @@ DISABLE_LS_COLORS="true"
 DISABLE_AUTO_TITLE="true"
 DISABLE_CORRECTION="true"
 
-plugins=(git gitfast phansch zsh-syntax-highlighting tmux)
+plugins=(git gitfast phansch tmux zsh-syntax-highlighting)
 
 ZSH_TMUX_AUTOSTART="true"
 
