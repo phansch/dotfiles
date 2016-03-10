@@ -11,7 +11,7 @@
   Alt + Return
 
 # Start thunar
-"nemo ~/repos || thunar ~/repos"
+"nemo ~/code || thunar ~/code"
   Alt + f
 
 # Lock screen
