@@ -85,8 +85,6 @@ export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/
 # added by travis gem
 [ -f /home/philipp/.travis/travis.sh ] && source /home/philipp/.travis/travis.sh
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
