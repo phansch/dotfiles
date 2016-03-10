@@ -12,7 +12,7 @@ function cleanup()
 
 function base_packages()
 {
-  $aptget install -y software-properties-common git curl rxvt-unicode tmux virtualbox-5.0 zsh unclutter build-essential libglib2.0-dev xsel
+  $aptget install -y software-properties-common git curl rxvt-unicode tmux virtualbox-5.0 zsh unclutter build-essential libglib2.0-dev xsel silversearcher-ag
 }
 
 function dotfiles_setup()
