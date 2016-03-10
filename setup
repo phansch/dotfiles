@@ -30,7 +30,7 @@ function dotfiles_setup()
   rm *.deb
 
   # Setup Dotfiles/Configuration
-  chsh -s $(which zsh)
+  sudo chsh -s $(which zsh)
 
   git clone https://gitlab.com/phansch/dotfiles.git $HOME/.dotfiles && cd $HOME/.dotfiles
   rcup -x README.md -x screenshots
