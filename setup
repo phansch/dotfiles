@@ -5,14 +5,14 @@ aptget='sudo apt-get'
 function cleanup()
 {
   # Run this before, to get app list: sed -nrs '/^\[Desktop Entry\]/d;/^(\[|Name=|Exec=)/p;${g;p}' /usr/share/applications/*.desktop > ~/Desktop/Names-n-Commands.txt
-  $aptget update -q
-  $aptget autoremove && sudo aptitude autoclean
-  $aptget upgrade -y
+  $aptget update -qq
+  $aptget autoremove -qq && sudo aptitude autoclean -q2
+  $aptget upgrade -y -qq
 }
 
 function base_packages()
 {
-  $aptget install -y software-properties-common git curl rxvt-unicode tmux virtualbox-5.0 zsh unclutter build-essential libglib2.0-dev xsel silversearcher-ag
+  $aptget install -y -qq software-properties-common git curl rxvt-unicode tmux virtualbox-5.0 zsh unclutter build-essential libglib2.0-dev xsel silversearcher-ag
 }
 
 function dotfiles_setup()
