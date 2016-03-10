@@ -55,10 +55,13 @@ function packages_setup()
 
 function finish()
 {
-  echo 'Logging you out in 5 seconds'
-  echo 'Please re-login with your current user afterwards to complete the setup'
-  sleep 5
-  xfce4-session-logout --logout
+  echo 'Do you want to re-login now to complete the setup?'
+  select yn in "y" "n"; do
+      case $yn in
+          y ) xfce4-session-logout --logout; break;;
+          n ) exit;;
+      esac
+  done
 }
 
 cleanup
