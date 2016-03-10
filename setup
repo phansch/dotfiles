@@ -5,6 +5,7 @@ aptget='sudo apt-get'
 function cleanup()
 {
   # Run this before, to get app list: sed -nrs '/^\[Desktop Entry\]/d;/^(\[|Name=|Exec=)/p;${g;p}' /usr/share/applications/*.desktop > ~/Desktop/Names-n-Commands.txt
+  echo 'Updating and autocleaning packages..'
   $aptget update -qq
   $aptget autoremove -qq && sudo aptitude autoclean -q2
   $aptget upgrade -y -qq
@@ -12,7 +13,8 @@ function cleanup()
 
 function base_packages()
 {
-  $aptget install -y -qq software-properties-common git curl rxvt-unicode tmux virtualbox-5.0 zsh unclutter build-essential libglib2.0-dev xsel silversearcher-ag
+  echo 'Installing base packages'
+  $aptget install -qq software-properties-common git curl rxvt-unicode tmux virtualbox-5.0 zsh unclutter build-essential libglib2.0-dev xsel silversearcher-ag
 }
 
 function dotfiles_setup()
@@ -20,12 +22,12 @@ function dotfiles_setup()
   cd $HOME/Downloads
 
   # oh-my-zsh
-  wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
+  wget -q --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
 
   # rcm (for installing .dotfiles)
-  wget https://thoughtbot.github.io/rcm/debs/rcm_1.2.2-2_all.deb
+  wget -q https://thoughtbot.github.io/rcm/debs/rcm_1.2.2-2_all.deb
   sudo dpkg -i rcm*
-  $aptget -f -y install
+  $aptget -f -y -qq install
 
   rm *.deb
 
@@ -39,8 +41,8 @@ function dotfiles_setup()
   git submodule update --init --recursive
 
   # Setup Ubuntu Mono Powerline Font
-  wget -P ~/.fonts/ https://github.com/Lokaltog/powerline-fonts/raw/master/UbuntuMono/Ubuntu%20Mono%20derivative%20Powerline.ttf
-  sudo fc-cache -fv
+  wget -qP ~/.fonts/ https://github.com/Lokaltog/powerline-fonts/raw/master/UbuntuMono/Ubuntu%20Mono%20derivative%20Powerline.ttf
+  sudo fc-cache -fv > /dev/null 2>&1;
 
   cd $HOME
 }
@@ -48,9 +50,9 @@ function dotfiles_setup()
 function packages_setup()
 {
   # Add Neovim repo
-  sudo add-apt-repository -y ppa:neovim-ppa/unstable
+  sudo add-apt-repository -y ppa:neovim-ppa/unstable > /dev/null 2>&1
 
-  $aptget install -y neovim
+  $aptget install -qq neovim
 }
 
 function finish()
