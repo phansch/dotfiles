@@ -31,3 +31,5 @@
   remote = green
 [diff]
   tool = meld
+[credential]
+  helper = gnome-keyring
