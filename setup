@@ -13,7 +13,7 @@ function cleanup()
 
 function base_packages()
 {
-  $aptget install -qq software-properties-common git curl rxvt-unicode tmux virtualbox-5.0 zsh unclutter build-essential libglib2.0-dev xsel silversearcher-ag
+  $aptget install -qq software-properties-common git curl rxvt-unicode tmux virtualbox-5.0 zsh unclutter build-essential libglib2.0-dev xsel xbindkeys silversearcher-ag
 }
 
 function dotfiles_setup()
@@ -60,12 +60,19 @@ function packages_setup()
   sudo update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
   sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
   sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
+
+  # Installing RVM + Ruby
+  cd ~ && \curl -L https://get.rvm.io | bash -s stable --ruby
+  source ~/.rvm/scripts/rvm
+
+  # Installing tmuxinator
+  gem --silent install tmuxinator
 }
 
 function ssh_save()
 {
   while true; do
-    read -p "Do you want to add your ssh key to ssh-agent?" yn
+    read -p "Do you want to add your ssh key to ssh-agent? " yn
     case $yn in
         [y]* ) ssh-add ~/.ssh/id_rsa &>/dev/null; break;;
         [n]* ) break;;
