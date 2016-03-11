@@ -4,7 +4,7 @@ aptget='sudo apt-get'
 
 function cleanup()
 {
-  # Run this before, to get app list: sed -nrs '/^\[Desktop Entry\]/d;/^(\[|Name=|Exec=)/p;${g;p}' /usr/share/applications/*.desktop > ~/Desktop/Names-n-Commands.txt
+  # Run this before, to get app list: sed -nrs '/^\[Desktop Entry\]/d;/^(\[|Name=|Exec=)/p;${g;p}' /usr/share/applications/*.desktop > $HOME/Desktop/Names-n-Commands.txt
   echo 'Updating and autocleaning packages..'
   $aptget update -qq
   $aptget autoremove -qq && sudo aptitude autoclean -q2
@@ -13,7 +13,7 @@ function cleanup()
 
 function base_packages()
 {
-  $aptget install -qq software-properties-common git curl rxvt-unicode tmux virtualbox-5.0 zsh unclutter build-essential libglib2.0-dev xsel silversearcher-ag
+  $aptget install -qq software-properties-common git curl rxvt-unicode tmux virtualbox-5.0 zsh unclutter build-essential libglib2.0-dev xsel xbindkeys silversearcher-ag
 }
 
 function dotfiles_setup()
@@ -41,7 +41,7 @@ function dotfiles_setup()
   git submodule update --init --recursive
 
   # Setup Ubuntu Mono Powerline Font
-  wget -qP ~/.fonts/ https://github.com/Lokaltog/powerline-fonts/raw/master/UbuntuMono/Ubuntu%20Mono%20derivative%20Powerline.ttf
+  wget -qP $HOME/.fonts/ https://github.com/Lokaltog/powerline-fonts/raw/master/UbuntuMono/Ubuntu%20Mono%20derivative%20Powerline.ttf
   sudo fc-cache -fv > /dev/null 2>&1;
 
   # needed if i3 is used, because 
@@ -60,14 +60,22 @@ function packages_setup()
   sudo update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
   sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
   sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
+
+  # Installing RVM + Ruby
+  gpg -q --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+  cd $HOME && \curl -L https://get.rvm.io | bash -s stable --ruby --auto-dotfiles
+  source $HOME/.rvm/scripts/rvm
+
+  # Installing tmuxinator
+  gem install -q tmuxinator
 }
 
 function ssh_save()
 {
   while true; do
-    read -p "Do you want to add your ssh key to ssh-agent?" yn
+    read -p "Do you want to add your ssh key to ssh-agent? " yn
     case $yn in
-        [y]* ) ssh-add ~/.ssh/id_rsa &>/dev/null; break;;
+        [y]* ) ssh-add $HOME/.ssh/id_rsa &>/dev/null; break;;
         [n]* ) break;;
         * ) echo "Please answer yes (y) or no (n).";;
     esac
