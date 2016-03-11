@@ -55,6 +55,10 @@ function dotfiles_setup()
 function packages_setup()
 {
   echo 'Installing additional packages..'
+
+  # Installing docker
+  curl -fsSL https://get.docker.com/ | sh
+
   # Add Neovim repo
   sudo add-apt-repository -y ppa:neovim-ppa/unstable > /dev/null 2>&1
 
@@ -71,6 +75,18 @@ function packages_setup()
 
   # Installing tmuxinator
   gem install -q tmuxinator
+
+  # Installing Anki
+  wget -q http://ankisrs.net/download/mirror/anki-2.0.33.deb
+  dpkg -i anki*
+  $aptget -f -y install
+
+  # Installing Skype
+  wget http://download.skype.com/linux/skype-ubuntu-precise_4.3.0.37-1_i386.deb
+  dpkg -i skype-*
+  $aptget -f -y install
+
+  rm *.deb
 }
 
 function ssh_save()
