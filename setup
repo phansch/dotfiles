@@ -47,7 +47,7 @@ function dotfiles_setup()
   wget -qP $HOME/.fonts/ https://github.com/Lokaltog/powerline-fonts/raw/master/UbuntuMono/Ubuntu%20Mono%20derivative%20Powerline.ttf
   sudo fc-cache -fv > /dev/null 2>&1;
 
-  # needed if i3 is used, because 
+  # needed if i3 is used, because
   ln -s $HOME/.xinitrc $HOME/.xsessionrc
   cd $HOME
 }
@@ -78,13 +78,13 @@ function packages_setup()
 
   # Installing Anki
   wget -q http://ankisrs.net/download/mirror/anki-2.0.33.deb
-  dpkg -i anki*
-  $aptget -f -y install
+  sudo dpkg -i anki* > /dev/null 2>&1
+  $aptget -f -y -qq install
 
   # Installing Skype
-  wget http://download.skype.com/linux/skype-ubuntu-precise_4.3.0.37-1_i386.deb
-  dpkg -i skype-*
-  $aptget -f -y install
+  wget -q http://download.skype.com/linux/skype-ubuntu-precise_4.3.0.37-1_i386.deb
+  sudo dpkg -i skype-* > /dev/null 2>&1
+  $aptget -f -y -qq install
 
   rm *.deb
 }
