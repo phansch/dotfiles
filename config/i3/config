@@ -156,6 +156,7 @@ for_window [class="xfce4-notifyd"] floating enable
 # Autostart
 # exec --no-startup-id xrandr --output LVDS1 --mode 1366x768 --output HDMI1 --mode 1920x1080 --right-of LVDS1
 # exec --no-startup-id nitrogen --restore
+exec --no-startup-id urxvt
 exec_always xbindkeys
 
 # resize window (you can also use the mouse for that)

@@ -25,7 +25,6 @@ sleep 1 && urxvtd -q -o -f &
 
 # Launch programs
 sleep 1 && firefox &
-sleep 1 && urxvt &
 sleep 1 && thunderbird &
 sleep 1 && nm-applet &
 sleep 1 && owncloud &
