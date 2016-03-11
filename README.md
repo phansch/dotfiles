@@ -27,7 +27,9 @@ Launches a couple of programs and the [i3](https://i3wm.org://i3wm.org/) window 
 
 ## Development
 
-Currently only tested with Linux Mint XFCE, which you can get [here](https://linuxmint.com/edition.php?id=214)
+Since it can be a bit problematic to test changes to the configuration on the actual machine where you want to make them, there is a dev-setup script that will setup and start a VM with Linux Mint.
+
+Currently it is only tested with Linux Mint XFCE, which you can get [here](https://linuxmint.com/edition.php?id=214)
 
 Once downloaded, open a terminal and set `IMAGE_PATH` to the path where the .iso is located.
 
@@ -37,4 +39,4 @@ Then run the `dev-setup`:
 
     ./dev-setup
 
-Now you'll have to go through the installation process of Linux Mint.
+Now you'll have to go through the installation process of Linux Mint and then you're ready to install the dotfiles.
