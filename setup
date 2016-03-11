@@ -13,7 +13,10 @@ function cleanup()
 
 function base_packages()
 {
-  $aptget install -qq software-properties-common git curl rxvt-unicode tmux virtualbox-5.0 zsh unclutter build-essential libglib2.0-dev xsel xbindkeys silversearcher-ag
+  $aptget install -qq software-properties-common build-essential libglib2.0-dev
+  $aptget install -qq xsel xbindkeys
+  $aptget install -qq zsh rxvt-unicode tmux
+  $aptget install -qq git curl htop silversearcher-ag unclutter virtualbox-5.0
 }
 
 function dotfiles_setup()
