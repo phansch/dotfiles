@@ -94,6 +94,16 @@ function packages_setup()
   $aptget install -qq owncloud-client
 }
 
+function setup_rofi() {
+  cd $HOME/Downloads
+  wget -q https://github.com/DaveDavenport/rofi/releases/download/0.15.12/rofi-0.15.12.tar.gz -O - | tar -xz && cd rofi*
+  $aptget install libx11-dev libxinerama-dev libghc-pango-dev libstartup-notification0-dev
+  ./configure --prefix=${HOME}/.local/
+  make
+  make install
+  cd $HOME
+}
+
 function ssh_save()
 {
   while true; do
@@ -129,5 +139,6 @@ cleanup
 base_packages
 dotfiles_setup
 packages_setup
+setup_rofi
 ssh_save
 finish
