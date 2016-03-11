@@ -13,7 +13,10 @@ function cleanup()
 
 function base_packages()
 {
-  $aptget install -qq software-properties-common git curl rxvt-unicode tmux virtualbox-5.0 zsh unclutter build-essential libglib2.0-dev xsel xbindkeys silversearcher-ag
+  $aptget install -qq software-properties-common build-essential libglib2.0-dev
+  $aptget install -qq xsel xbindkeys
+  $aptget install -qq zsh rxvt-unicode tmux
+  $aptget install -qq git curl htop silversearcher-ag unclutter virtualbox-5.0 shutter keepassx
 }
 
 function dotfiles_setup()
@@ -44,7 +47,7 @@ function dotfiles_setup()
   wget -qP $HOME/.fonts/ https://github.com/Lokaltog/powerline-fonts/raw/master/UbuntuMono/Ubuntu%20Mono%20derivative%20Powerline.ttf
   sudo fc-cache -fv > /dev/null 2>&1;
 
-  # needed if i3 is used, because 
+  # needed if i3 is used, because
   ln -s $HOME/.xinitrc $HOME/.xsessionrc
   cd $HOME
 }
@@ -52,6 +55,11 @@ function dotfiles_setup()
 function packages_setup()
 {
   echo 'Installing additional packages..'
+
+  # Installing docker
+  curl -fsSL https://get.docker.com/ | sh
+  sudo usermod -aG docker $USER
+
   # Add Neovim repo
   sudo add-apt-repository -y ppa:neovim-ppa/unstable > /dev/null 2>&1
 
@@ -68,6 +76,40 @@ function packages_setup()
 
   # Installing tmuxinator
   gem install -q tmuxinator
+
+  # Installing Anki
+  wget -q http://ankisrs.net/download/mirror/anki-2.0.33.deb
+  sudo dpkg -i anki* > /dev/null 2>&1
+  $aptget -f -y -qq install
+
+  # Installing Skype
+  wget -q http://download.skype.com/linux/skype-ubuntu-precise_4.3.0.37-1_i386.deb
+  sudo dpkg -i skype-* > /dev/null 2>&1
+  $aptget -f -y -qq install
+
+  rm *.deb
+
+  # Installing owncloud client
+  sudo sh -c "echo 'deb http://download.opensuse.org/repositories/isv:/ownCloud:/desktop/Ubuntu_15.04/ /' >> /etc/apt/sources.list.d/owncloud-client.list"
+  $aptget update
+  $aptget install -qq owncloud-client
+}
+
+function setup_rofi() {
+  cd $HOME/Downloads
+  wget -q https://github.com/DaveDavenport/rofi/releases/download/0.15.12/rofi-0.15.12.tar.gz -O - | tar -xz && cd rofi*
+  $aptget install libx11-dev libxinerama-dev libghc-pango-dev libstartup-notification0-dev
+  ./configure --prefix=${HOME}/.local/
+  make
+  make install
+  cd $HOME
+}
+
+function setup_spotify() {
+  sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886
+  echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
+  $aptget update
+  $aptget install spotify-client
 }
 
 function ssh_save()
@@ -84,7 +126,7 @@ function ssh_save()
 
 function fix_git_gnome_keyring()
 {
-  $aptget install libgnome-keyring-dev
+  $aptget install -qq libgnome-keyring-dev
   cd /usr/share/doc/git/contrib/credential/gnome-keyring
   sudo make
 }
@@ -105,5 +147,7 @@ cleanup
 base_packages
 dotfiles_setup
 packages_setup
+setup_rofi
+setup_spotify
 ssh_save
 finish
