@@ -58,6 +58,7 @@ function packages_setup()
 
   # Installing docker
   curl -fsSL https://get.docker.com/ | sh
+  sudo usermod -aG docker $USER
 
   # Add Neovim repo
   sudo add-apt-repository -y ppa:neovim-ppa/unstable > /dev/null 2>&1
