@@ -62,6 +62,18 @@ function packages_setup()
   sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
 }
 
+function ssh_save()
+{
+  while true; do
+    read -p "Do you want to add your ssh key to ssh-agent?" yn
+    case $yn in
+        [y]* ) ssh-add ~/.ssh/id_rsa &>/dev/null; break;;
+        [n]* ) exit;;
+        * ) echo "Please answer yes (y) or no (n).";;
+    esac
+  done
+}
+
 function finish()
 {
   while true; do
@@ -78,8 +90,5 @@ cleanup
 base_packages
 dotfiles_setup
 packages_setup
+ssh_save
 finish
-
-# $aptget install -y i3 neovim
-
-
