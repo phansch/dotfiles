@@ -44,8 +44,8 @@ function dotfiles_setup()
   git submodule update --init --recursive
 
   # Setup Ubuntu Mono Powerline Font
-  wget -nc -qP $HOME/.fonts/ https://github.com/powerline/fonts/blob/master/UbuntuMono/Ubuntu%20Mono%20derivative%20Powerline.ttf
-  sudo fc-cache -fv > /dev/null 2>&1;
+  wget -nc -qP $HOME/.fonts/ https://github.com/powerline/fonts/raw/master/UbuntuMono/Ubuntu%20Mono%20derivative%20Powerline.ttf
+  sudo fc-cache -f
 
   # needed if i3 is used, because
   ln -s $HOME/.xinitrc $HOME/.xsessionrc
