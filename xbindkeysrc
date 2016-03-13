@@ -1,10 +1,10 @@
 # Open rofi
 "rofi -show run"
-  Alt + d
+  F2
 
 # Open rofi ssh
 "rofi -show ssh"
-  Alt + s
+  F3
 
 # Open a terminal
 "urxvt"
