@@ -18,39 +18,6 @@ function cleanup()
   $aptget upgrade -y -qq
 }
 
-function dotfiles_setup()
-{
-  echo 'Configuring dotfiles..'
-  cd $HOME/Downloads
-
-  # oh-my-zsh
-  wget -q --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
-
-  # rcm (for installing .dotfiles)
-  wget -q https://thoughtbot.github.io/rcm/debs/rcm_1.2.2-2_all.deb
-  sudo dpkg -i -E rcm* > /dev/null 2>&1
-  $aptget -f -y -qq install
-
-  rm *.deb
-
-  # Setup Dotfiles/Configuration
-  sudo chsh -s $(which zsh)
-
-  git clone https://gitlab.com/phansch/dotfiles.git $HOME/.dotfiles && cd $HOME/.dotfiles
-  rcup -x README.md -x screenshots
-
-  # Make sure zsh-syntax-highlighting is pulled
-  git submodule update --init --recursive
-
-  # Setup Ubuntu Mono Powerline Font
-  wget -nc -qP $HOME/.fonts/ https://github.com/powerline/fonts/raw/master/UbuntuMono/Ubuntu%20Mono%20derivative%20Powerline.ttf
-  sudo fc-cache -f
-
-  # needed if i3 is used, because
-  ln -s $HOME/.xinitrc $HOME/.xsessionrc
-  cd $HOME
-}
-
 function packages_setup()
 {
   echo 'Installing additional packages..'
