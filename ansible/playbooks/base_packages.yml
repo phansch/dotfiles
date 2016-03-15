@@ -1,0 +1,19 @@
+---
+- hosts: localhost
+  become: yes
+  become_method: sudo
+  tasks:
+  - name: Install base packages
+    action: apt pkg={{ item }} state=present
+    with_items:
+      - build-essential
+      - libglib2.0-dev
+      - xsel
+      - xbindkeys
+      - slock
+      - zsh
+      - rxvt-unicode
+      - tmux
+      - git
+  - name: Set zsh as default shell
+    user: shell=/bin/zsh name={{ ansible_user_id }}
