@@ -2,6 +2,13 @@
 
 aptget='sudo apt-get'
 
+function ansible()
+{
+  sudo apt-add-repository ppa:ansible/ansible -y
+  $aptget update -qq
+  $aptget install -qq software-properties-common ansible
+}
+
 function cleanup()
 {
   # Run this before, to get app list: sed -nrs '/^\[Desktop Entry\]/d;/^(\[|Name=|Exec=)/p;${g;p}' /usr/share/applications/*.desktop > $HOME/Desktop/Names-n-Commands.txt
@@ -9,14 +16,6 @@ function cleanup()
   $aptget update -qq
   $aptget autoremove -qq && sudo aptitude autoclean -q2
   $aptget upgrade -y -qq
-}
-
-function base_packages()
-{
-  $aptget install -qq software-properties-common build-essential libglib2.0-dev
-  $aptget install -qq xsel xbindkeys slock
-  $aptget install -qq zsh rxvt-unicode tmux
-  $aptget install -qq git curl htop silversearcher-ag unclutter virtualbox-5.0 shutter keepassx vagrant
 }
 
 function dotfiles_setup()
@@ -144,10 +143,4 @@ function finish()
 }
 
 cleanup
-base_packages
-dotfiles_setup
-packages_setup
-setup_rofi
-setup_spotify
-ssh_save
-finish
+ansible
