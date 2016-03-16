@@ -35,16 +35,6 @@ function packages_setup()
   gem install -q tmuxinator
 }
 
-function setup_rofi() {
-  cd $HOME/Downloads
-  wget -q https://github.com/DaveDavenport/rofi/releases/download/0.15.12/rofi-0.15.12.tar.gz -O - | tar -xz && cd rofi*
-  $aptget install libx11-dev libxinerama-dev libghc-pango-dev libstartup-notification0-dev
-  ./configure --prefix=${HOME}/.local/
-  make
-  make install
-  cd $HOME
-}
-
 function ssh_save()
 {
   while true; do
