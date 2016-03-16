@@ -26,15 +26,6 @@ function packages_setup()
   curl -fsSL https://get.docker.com/ | sh
   sudo usermod -aG docker $USER
 
-  # Add Neovim repo
-  sudo add-apt-repository -y ppa:neovim-ppa/unstable > /dev/null 2>&1
-
-  $aptget install -qq neovim
-
-  sudo update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
-  sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
-  sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
-
   # Installing RVM + Ruby
   gpg -q --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
   cd $HOME && \curl -L https://get.rvm.io | bash -s stable --ruby --auto-dotfiles
@@ -42,23 +33,6 @@ function packages_setup()
 
   # Installing tmuxinator
   gem install -q tmuxinator
-
-  # Installing Anki
-  wget -q http://ankisrs.net/download/mirror/anki-2.0.33.deb
-  sudo dpkg -i anki* > /dev/null 2>&1
-  $aptget -f -y -qq install
-
-  # Installing Skype
-  wget -q http://download.skype.com/linux/skype-ubuntu-precise_4.3.0.37-1_i386.deb
-  sudo dpkg -i skype-* > /dev/null 2>&1
-  $aptget -f -y -qq install
-
-  rm *.deb
-
-  # Installing owncloud client
-  sudo sh -c "echo 'deb http://download.opensuse.org/repositories/isv:/ownCloud:/desktop/Ubuntu_15.04/ /' >> /etc/apt/sources.list.d/owncloud-client.list"
-  $aptget update
-  $aptget install -qq owncloud-client
 }
 
 function setup_rofi() {
