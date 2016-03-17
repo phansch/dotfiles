@@ -1,0 +1,19 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Install oh-my-zsh
+      git: repo=https://github.com/robbyrussell/oh-my-zsh.git dest=~/.oh-my-zsh depth=1
+    - name: Download rcm
+      get_url: url=https://thoughtbot.github.io/rcm/debs/rcm_1.2.2-2_all.deb
+        dest=/tmp/rcm.deb
+    - name: Install rcm
+      apt: deb=/tmp/rcm.deb
+    - name: Pull submodules
+      shell: git submodule update --init --recursive
+    - name: Install dotfiles
+      shell: rcup -x README.md -x screenshots chdir=~
+    - name: Download powerline font
+      get_url: url=https://github.com/powerline/fonts/raw/master/UbuntuMono/Ubuntu%20Mono%20derivative%20Powerline.ttf
+        dest=~/.fonts/
+    - name: Refresh font cache
+      shell: fc-cache -f

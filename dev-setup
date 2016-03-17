@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 VM_NAME=dotfiles-dev
-HDD_PATH=$HOME/VirtualBox\ VMs/$VM_NAME/$VM_NAME.vdi
-sudo apt-get install virtualbox-5.0 -y
+HDD_PATH="$HOME/VirtualBox VMs/$VM_NAME/$VM_NAME.vdi"
+sudo apt-get update -qq
+sudo apt-get install virtualbox-5.0 -qq
 vboxmanage createvm --name $VM_NAME --register
-vboxmanage createvdi --filename $HOME/VirtualBox\ VMs/$VM_NAME/$VM_NAME.vdi --size 14000
+vboxmanage createvdi --filename "$HDD_PATH" --size 14000
 vboxmanage modifyvm $VM_NAME --ostype Ubuntu --memory 512 --vram 128 --accelerate3d on --nic1 nat --nictype1 82540EM --cableconnected1 on
 vboxmanage storagectl $VM_NAME --name SATA --add sata --controller IntelAhci --bootable on
 vboxmanage storagectl $VM_NAME --name IDE --add ide --controller PIIX4 --bootable on
-vboxmanage storageattach $-storagectl SATA --port 0 --device 0 --type hdd --medium $HDD_PATH
+vboxmanage storageattach $VM_NAME --storagectl SATA --port 0 --device 0 --type hdd --medium "$HDD_PATH"
 vboxmanage storageattach $VM_NAME --storagectl IDE --port 0 --device 0 --type dvddrive --medium $IMAGE_PATH
 vboxmanage startvm $VM_NAME

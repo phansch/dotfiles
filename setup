@@ -1,121 +1,56 @@
 #!/usr/bin/env bash
 
-aptget='sudo apt-get'
+function do_setup() {
+  bootstrap
+  ssh_save
+  finish
+}
 
-function cleanup()
+function bootstrap()
 {
-  # Run this before, to get app list: sed -nrs '/^\[Desktop Entry\]/d;/^(\[|Name=|Exec=)/p;${g;p}' /usr/share/applications/*.desktop > $HOME/Desktop/Names-n-Commands.txt
-  echo 'Updating and autocleaning packages..'
-  $aptget update -qq
-  $aptget autoremove -qq && sudo aptitude autoclean -q2
-  $aptget upgrade -y -qq
-}
+  sudo apt-add-repository ppa:ansible/ansible -y > /dev/null 2>&1
 
-function base_packages()
-{
-  $aptget install -qq software-properties-common build-essential libglib2.0-dev
-  $aptget install -qq xsel xbindkeys slock
-  $aptget install -qq zsh rxvt-unicode tmux
-  $aptget install -qq git curl htop silversearcher-ag unclutter virtualbox-5.0 shutter keepassx
-}
+  echo '-----> Upgrading and autocleaning packages...'
+  sudo apt-get update -qq
+  sudo apt-get upgrade -y -qq
+  sudo apt-get autoremove -y -qq && sudo aptitude autoclean -q2
 
-function dotfiles_setup()
-{
-  echo 'Configuring dotfiles..'
-  cd $HOME/Downloads
+  echo '-----> Installing Ansible and git...'
+  sudo apt-get install -qq software-properties-common git ansible
 
-  # oh-my-zsh
-  wget -q --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
+  if [ -d "$HOME/.dotfiles" ]; then
+    echo '-----> Updating dotfiles...'
+    cd $HOME/.dotfiles && git checkout master && git pull
+  else
+    echo '-----> Cloning dotfiles...'
+    git clone https://gitlab.com/phansch/dotfiles.git $HOME/.dotfiles && cd $HOME/.dotfiles
+  fi
 
-  # rcm (for installing .dotfiles)
-  wget -q https://thoughtbot.github.io/rcm/debs/rcm_1.2.2-2_all.deb
-  sudo dpkg -i -E rcm* > /dev/null 2>&1
-  $aptget -f -y -qq install
+  default_playbooks=(
+    ansible/playbooks/base.yml
+    ansible/playbooks/dotfiles.yml
+    ansible/playbooks/rofi.yml
+  )
+  echo '-----> Running default playbooks...'
+  ansible-playbook ${default_playbooks[*]} --ask-become-pass
 
-  rm *.deb
+  additional_playbooks=(
+    ansible/playbooks/docker.yml
+    ansible/playbooks/rvm_tmuxinator.yml
+    ansible/playbooks/spotify.yml
+    ansible/playbooks/additional_packages.yml
+    ansible/playbooks/i3.yml
+  )
 
-  # Setup Dotfiles/Configuration
-  sudo chsh -s $(which zsh)
-
-  git clone https://gitlab.com/phansch/dotfiles.git $HOME/.dotfiles && cd $HOME/.dotfiles
-  rcup -x README.md -x screenshots
-
-  # Make sure zsh-syntax-highlighting is pulled
-  git submodule update --init --recursive
-
-  # Setup Ubuntu Mono Powerline Font
-  wget -nc -qP $HOME/.fonts/ https://github.com/powerline/fonts/raw/master/UbuntuMono/Ubuntu%20Mono%20derivative%20Powerline.ttf
-  sudo fc-cache -f
-
-  # needed if i3 is used, because
-  ln -s $HOME/.xinitrc $HOME/.xsessionrc
-  cd $HOME
-}
-
-function packages_setup()
-{
-  echo 'Installing additional packages..'
-
-  # Installing docker
-  curl -fsSL https://get.docker.com/ | sh
-  sudo usermod -aG docker $USER
-
-  # Add Neovim repo
-  sudo add-apt-repository -y ppa:neovim-ppa/unstable > /dev/null 2>&1
-
-  $aptget install -qq neovim
-
-  sudo update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
-  sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
-  sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
-
-  # Installing RVM + Ruby
-  gpg -q --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-  cd $HOME && \curl -L https://get.rvm.io | bash -s stable --ruby --auto-dotfiles
-  source $HOME/.rvm/scripts/rvm
-
-  # Installing tmuxinator
-  gem install -q tmuxinator
-
-  # Installing Anki
-  wget -q http://ankisrs.net/download/mirror/anki-2.0.33.deb
-  sudo dpkg -i anki* > /dev/null 2>&1
-  $aptget -f -y -qq install
-
-  # Installing Skype
-  wget -q http://download.skype.com/linux/skype-ubuntu-precise_4.3.0.37-1_i386.deb
-  sudo dpkg -i skype-* > /dev/null 2>&1
-  $aptget -f -y -qq install
-
-  rm *.deb
-
-  # Installing owncloud client
-  sudo sh -c "echo 'deb http://download.opensuse.org/repositories/isv:/ownCloud:/desktop/Ubuntu_15.04/ /' >> /etc/apt/sources.list.d/owncloud-client.list"
-  $aptget update
-  $aptget install -qq owncloud-client
-}
-
-function setup_rofi() {
-  cd $HOME/Downloads
-  wget -q https://github.com/DaveDavenport/rofi/releases/download/0.15.12/rofi-0.15.12.tar.gz -O - | tar -xz && cd rofi*
-  $aptget install libx11-dev libxinerama-dev libghc-pango-dev libstartup-notification0-dev
-  ./configure --prefix=${HOME}/.local/
-  make
-  make install
-  cd $HOME
-}
-
-function setup_spotify() {
-  sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886
-  echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
-  $aptget update
-  $aptget install spotify-client
+  cmd="ansible-playbook ${additional_playbooks[*]} --ask-become-pass"
+  echo "-----> To run the rest of the playbooks:"
+  echo $cmd
 }
 
 function ssh_save()
 {
   while true; do
-    read -p "Do you want to add your ssh key to ssh-agent? " yn
+    read -p "-----> Do you want to add your ssh key to ssh-agent? " yn
     case $yn in
         [y]* ) ssh-add $HOME/.ssh/id_rsa &>/dev/null; break;;
         [n]* ) break;;
@@ -124,17 +59,10 @@ function ssh_save()
   done
 }
 
-function fix_git_gnome_keyring()
-{
-  $aptget install -qq libgnome-keyring-dev
-  cd /usr/share/doc/git/contrib/credential/gnome-keyring
-  sudo make
-}
-
 function finish()
 {
   while true; do
-    read -p "Almost done. Do you want to re-login now to complete the setup? " yn
+    read -p "-----> Almost done. Do you want to re-login now to complete the setup? " yn
     case $yn in
         [y]* ) xfce4-session-logout --logout; break;;
         [n]* ) exit;;
@@ -143,11 +71,4 @@ function finish()
   done
 }
 
-cleanup
-base_packages
-dotfiles_setup
-packages_setup
-setup_rofi
-setup_spotify
-ssh_save
-finish
+do_setup

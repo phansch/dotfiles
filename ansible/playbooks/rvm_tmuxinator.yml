@@ -1,0 +1,30 @@
+---
+- hosts: localhost
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: Setup galaxy rvm package
+      local_action: command ansible-galaxy install rvm_io.rvm1-ruby
+
+- hosts: localhost
+  become: yes
+  become_method: sudo
+  vars:
+    - ruby_version: ruby-2.3.0
+  roles:
+    - role: rvm_io.rvm1-ruby
+      become: true
+      become_user: "{{ ansible_user_id }}"
+      rvm1_user: "{{ ansible_user_id }}"
+      rvm1_group: "{{ ansible_user_id }}"
+      rvm1_rvm_version: 'stable'
+      rvm1_rvm_check_for_updates: true
+      rvm1_install_flags: '--user-install'
+      rvm1_install_path: '~/.rvm'
+      rvm1_rubies:
+        - "{{ ruby_version }}"
+  tasks:
+    - name: Set current ruby
+      shell: ~/.rvm/scripts/rvm use {{ ruby_version }}
+    - name: Install tmuxinator
+      gem: name=tmuxinator user_install=yes
