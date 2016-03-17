@@ -18,19 +18,6 @@ function cleanup()
   $aptget upgrade -y -qq
 }
 
-function packages_setup()
-{
-  echo 'Installing additional packages..'
-
-  # Installing RVM + Ruby
-  gpg -q --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-  cd $HOME && \curl -L https://get.rvm.io | bash -s stable --ruby --auto-dotfiles
-  source $HOME/.rvm/scripts/rvm
-
-  # Installing tmuxinator
-  gem install -q tmuxinator
-}
-
 function ssh_save()
 {
   while true; do
