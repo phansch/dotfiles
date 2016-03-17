@@ -2,6 +2,13 @@
 - hosts: localhost
   become: yes
   become_method: sudo
+  tasks:
+    - name: Setup galaxy rvm package
+      local_action: command ansible-galaxy install rvm_io.rvm1-ruby
+
+- hosts: localhost
+  become: yes
+  become_method: sudo
   vars:
     - ruby_version: ruby-2.3.0
   roles:
