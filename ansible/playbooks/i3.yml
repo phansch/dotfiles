@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Install i3
+      apt: name=i3
+    - name: Link .xinitrc and .xsessionrc
+      file: state=link src=~/.xinitrc path=~/.xsessionrc
+

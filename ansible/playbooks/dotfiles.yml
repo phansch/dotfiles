@@ -17,5 +17,3 @@
         dest=~/.fonts/
     - name: Refresh font cache
       shell: fc-cache -f
-    - name: Link .xinitrc and .xsessionrc
-      file: state=link src=~/.xinitrc path=~/.xsessionrc
