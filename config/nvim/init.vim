@@ -183,6 +183,7 @@ iabbrev loctation location
 iabbrev sessinos sessions
 iabbrev initator initiator
 iabbrev conut count
+iabbrev prereqs prerequisites
 " }}}
 
 " Mappings {{{
