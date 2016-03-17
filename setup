@@ -1,27 +1,56 @@
 #!/usr/bin/env bash
 
-aptget='sudo apt-get'
-
-function ansible()
-{
-  sudo apt-add-repository ppa:ansible/ansible -y
-  $aptget update -qq
-  $aptget install -qq software-properties-common ansible
+function do_setup() {
+  bootstrap
+  ssh_save
+  finish
 }
 
-function cleanup()
+function bootstrap()
 {
-  # Run this before, to get app list: sed -nrs '/^\[Desktop Entry\]/d;/^(\[|Name=|Exec=)/p;${g;p}' /usr/share/applications/*.desktop > $HOME/Desktop/Names-n-Commands.txt
-  echo 'Updating and autocleaning packages..'
-  $aptget update -qq
-  $aptget autoremove -qq && sudo aptitude autoclean -q2
-  $aptget upgrade -y -qq
+  sudo apt-add-repository ppa:ansible/ansible -y > /dev/null 2>&1
+
+  echo '-----> Upgrading and autocleaning packages...'
+  sudo apt-get update -qq
+  sudo apt-get upgrade -y -qq
+  sudo apt-get autoremove -y -qq && sudo aptitude autoclean -q2
+
+  echo '-----> Installing Ansible and git...'
+  sudo apt-get install -qq software-properties-common git ansible
+
+  if [ -d "$HOME/.dotfiles" ]; then
+    echo '-----> Updating dotfiles...'
+    cd $HOME/.dotfiles && git checkout master && git pull
+  else
+    echo '-----> Cloning dotfiles...'
+    git clone https://gitlab.com/phansch/dotfiles.git $HOME/.dotfiles && cd $HOME/.dotfiles
+  fi
+
+  default_playbooks=(
+    ansible/playbooks/base.yml
+    ansible/playbooks/dotfiles.yml
+    ansible/playbooks/rofi.yml
+  )
+  echo '-----> Running default playbooks...'
+  ansible-playbook ${default_playbooks[*]} --ask-become-pass
+
+  additional_playbooks=(
+    ansible/playbooks/docker.yml
+    ansible/playbooks/rvm_tmuxinator.yml
+    ansible/playbooks/spotify.yml
+    ansible/playbooks/additional_packages.yml
+    ansible/playbooks/i3.yml
+  )
+
+  cmd="ansible-playbook ${additional_playbooks[*]} --ask-become-pass"
+  echo "-----> To run the rest of the playbooks:"
+  echo $cmd
 }
 
 function ssh_save()
 {
   while true; do
-    read -p "Do you want to add your ssh key to ssh-agent? " yn
+    read -p "-----> Do you want to add your ssh key to ssh-agent? " yn
     case $yn in
         [y]* ) ssh-add $HOME/.ssh/id_rsa &>/dev/null; break;;
         [n]* ) break;;
@@ -33,7 +62,7 @@ function ssh_save()
 function finish()
 {
   while true; do
-    read -p "Almost done. Do you want to re-login now to complete the setup? " yn
+    read -p "-----> Almost done. Do you want to re-login now to complete the setup? " yn
     case $yn in
         [y]* ) xfce4-session-logout --logout; break;;
         [n]* ) exit;;
@@ -42,5 +71,4 @@ function finish()
   done
 }
 
-cleanup
-ansible
+do_setup
