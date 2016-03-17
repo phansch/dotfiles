@@ -17,3 +17,8 @@
       - git
   - name: Set zsh as default shell
     user: shell=/bin/zsh name={{ ansible_user_id }}
+  # Fix gnome keyring
+  - name: Install libgnome-keyring-dev
+    apt: name=libgnome-keyring-dev
+  - name: Make gnome-keyring git credential helper
+    shell: make chdir=/usr/share/doc/git/contrib/credential/gnome-keyring
