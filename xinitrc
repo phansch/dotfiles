@@ -19,6 +19,9 @@ xinput disable "ELAN Touchscreen"
 ## Startup ##
 #############
 
+# Set wallpaper
+feh --no-fehbg --bg-scale ~/images/current_wallpaper
+
 # Do background stuff
 sleep 1 && unclutter -noevents -root & # Hides mousecursor when inactive
 sleep 1 && urxvtd -q -o -f &
