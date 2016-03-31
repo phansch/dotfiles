@@ -94,12 +94,12 @@ exec_always --no-startup-id urxvt -title "scratchpad" -e vim ~/documents/scratch
 # ASSIGN WORKSPACE VARIABLES
 set $WS1 1:dev
 set $WS2 2:www
-set $WS3 3:mail
-set $WS4 4:im/irc
-set $WS5 5:media
-set $WS6 6:misc
-set $WS7 7:misc
-set $WS8 8:misc
+set $WS4 3:im/irc
+set $WS5 4:media
+set $WS6 5:misc
+set $WS7 6:misc
+set $WS8 7:misc
+set $WS3 8:misc
 
 # switch to workspace
 bindsym $mod+1 workspace $WS1
@@ -129,19 +129,19 @@ bindsym $mod+Shift+equal move container to workspace 10
 ## Move to workspace
 ### Note that everything that's using urxvt as a base,
 ### must be assigned before urxvt itself
-assign [title="Icedove|Thunderbird"] $WS3
-assign [title="routines"] $WS1
-assign [title="ncmpcpp"] $WS5
-assign [title="weechat*"] $WS4
-assign [class="Skype*"] $WS4
 assign [instance="urxvt"] $WS1
 assign [class="^Firefox$"] $WS2
+assign [class="qutebrowser"] $WS2
+assign [class="Skype*"] $WS3
+assign [title="Messenger"] $WS3
+assign [class="Hexchat"] $WS3
+assign [class="^Keepassx$"] $WS6
+assign [title="Icedove|Thunderbird"] $WS7
 
 ## window floating
-for_window [title="ncmpcpp"] resize shrink right 31px or 31 ppt
 for_window [class="^Firefox$" title="^Library$"] floating enable
 for_window [class="^Firefox$" window_role="^Preferences$"] floating enable
-for_window [class="^Icedove|Thunderbird$" window_role="^Preferences$"] floating enable
+for_window [class="qutebrowser"] border normal hide_edge_borders none
 for_window [class="^Viewnior$"] floating enable border normal
 for_window [class="^Anki$"] floating enable; border normal; move absolute center
 for_window [class="^Keepassx$"] floating enable move absolute center
@@ -152,12 +152,10 @@ for_window [class="Thunar"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [class="xfce4-notifyd"] floating enable
 
-
 # Autostart
 # exec --no-startup-id xrandr --output LVDS1 --mode 1366x768 --output HDMI1 --mode 1920x1080 --right-of LVDS1
 # exec --no-startup-id nitrogen --restore
 exec --no-startup-id urxvt
-exec_always xbindkeys
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
