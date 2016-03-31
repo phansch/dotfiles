@@ -15,6 +15,7 @@
       - rxvt-unicode
       - tmux
       - git
+      - feh
   - name: Set zsh as default shell
     user: shell=/bin/zsh name={{ ansible_user_id }}
   # Fix gnome keyring
