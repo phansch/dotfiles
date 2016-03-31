@@ -40,8 +40,6 @@ Plug 'rking/ag.vim'
 Plug 'godlygeek/tabular'
 Plug 'haya14busa/incsearch.vim'
 Plug 'morhetz/gruvbox'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'DataWraith/auto_mkdir'
 Plug 'benekastah/neomake'
 Plug 'Raimondi/delimitMate'
@@ -153,10 +151,6 @@ autocmd! BufWritePost * Neomake
 let g:rubycomplete_rails = 1
 
 " }}}
-
-"Airline
-let g:airline_powerline_fonts=1
-let g:airline_theme="zenburn"
 
 " Ag settings
 let g:ag_highlight=1
