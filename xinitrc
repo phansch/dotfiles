@@ -24,8 +24,8 @@ sleep 1 && unclutter -noevents & # Hides mousecursor when inactive
 sleep 1 && urxvtd -q -o -f &
 
 # Launch programs
-# sleep 1 && qutebrowser &
-# sleep 1 && nm-applet &
+sleep 1 && qutebrowser &
+sleep 1 && nm-applet &
 sleep 1 && owncloud &
 
 # make sure there's only one redshift service running
