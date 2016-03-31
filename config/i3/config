@@ -94,12 +94,12 @@ exec_always --no-startup-id urxvt -title "scratchpad" -e vim ~/documents/scratch
 # ASSIGN WORKSPACE VARIABLES
 set $WS1 1:dev
 set $WS2 2:www
-set $WS4 3:im/irc
-set $WS5 4:media
-set $WS6 5:misc
-set $WS7 6:misc
-set $WS8 7:misc
-set $WS3 8:misc
+set $WS3 3:im/irc
+set $WS4 4:media
+set $WS5 5:misc
+set $WS6 6:misc
+set $WS7 7:misc
+set $WS8 8:misc
 
 # switch to workspace
 bindsym $mod+1 workspace $WS1
