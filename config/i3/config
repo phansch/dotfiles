@@ -135,6 +135,7 @@ assign [class="qutebrowser"] $WS2
 assign [class="Skype*"] $WS3
 assign [title="Messenger"] $WS3
 assign [class="Hexchat"] $WS3
+assign [class="VirtualBox"] $WS5
 assign [class="^Keepassx$"] $WS6
 assign [title="Icedove|Thunderbird"] $WS7
 
@@ -151,6 +152,7 @@ for_window [class="^Shutter$"] floating enable, border normal
 for_window [class="Thunar"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [class="xfce4-notifyd"] floating enable
+for_window [class="VirtualBox"] floating enable
 
 # Autostart
 # exec --no-startup-id xrandr --output LVDS1 --mode 1366x768 --output HDMI1 --mode 1920x1080 --right-of LVDS1
