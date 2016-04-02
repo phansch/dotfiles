@@ -22,6 +22,9 @@ hide_edge_borders none
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# Cycle between workspaces
+workspace_auto_back_and_forth yes
+
 # Keybindings
 
 ## reload the configuration file
