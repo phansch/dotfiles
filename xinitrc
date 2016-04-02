@@ -30,7 +30,6 @@ sleep 1 && urxvtd -q -o -f &
 
 # Launch programs
 sleep 1 && nm-applet &
-sleep 1 && qutebrowser &
 
 # make sure there's only one redshift service running
 if ! ps ax | grep -v grep | grep redshift > /dev/null
