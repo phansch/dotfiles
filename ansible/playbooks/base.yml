@@ -12,7 +12,7 @@
       - xbindkeys
       - slock
       - zsh
-      - rxvt-unicode
+      - rxvt-unicode-256color
       - tmux
       - git
       - feh
