@@ -193,7 +193,8 @@ bindsym $mod+r mode "resize"
 bar {
   status_command i3bar
   position top
-  workspace_buttons yes
+  mode hide
+  modifier $mod
 
   colors {
             background #98971a
