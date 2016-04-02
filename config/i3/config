@@ -13,6 +13,9 @@ set $mod Mod1
 
 font pango:Ubuntu Mono derivative Powerline 10
 
+# class                 border  backgr. text    indicator child_border
+client.focused          #282828 #98971a #282828 #ffffff   #282828
+
 # Never show borders (exceptions below)
 new_window none
 
