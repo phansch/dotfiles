@@ -19,6 +19,8 @@ xinput disable "ELAN Touchscreen" &
 ## Startup ##
 #############
 
+export $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+
 # Set wallpaper
 feh --no-fehbg --bg-scale ~/images/current_wallpaper &
 
