@@ -141,6 +141,10 @@ assign [class="qutebrowser"] $WS2
 assign [class="Skype*"] $WS3
 assign [title="Messenger"] $WS3
 assign [class="Hexchat"] $WS3
+# assign doesn't work with Spotify because it doesn't set the
+# window classes early enough, so we have to use for_window:
+# https://github.com/i3/i3/issues/2060
+for_window [class="Spotify"] move to workspace $WS4
 assign [class="VirtualBox"] $WS5
 assign [class="^Keepassx$"] $WS6
 assign [title="Icedove|Thunderbird"] $WS7
@@ -162,10 +166,10 @@ for_window [class="VirtualBox"] floating enable
 # Autostart
 # Use --no-startup-id for background programs or if there is a 'watch' cursor
 # exec --no-startup-id xrandr --output LVDS1 --mode 1366x768 --output HDMI1 --mode 1920x1080 --right-of LVDS1
-# exec --no-startup-id nitrogen --restore
 exec --no-startup-id urxvt
 exec ~/.bin/qutebrowser
 exec messengerfordesktop
+exec spotify
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -204,7 +208,7 @@ bar {
             background #98971a
             statusline #93a1a1
 
-            # border background text
+            #                 border background text
             focused_workspace #98971a #32302f #98971a
             active_workspace #98971a #232323 #eee8d5
             inactive_workspace #98971a #98971a #32302f
