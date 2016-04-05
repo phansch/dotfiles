@@ -147,6 +147,7 @@ assign [class="Hexchat"] $WS3
 for_window [class="Spotify"] move to workspace $WS4
 assign [class="VirtualBox"] $WS5
 assign [class="^Keepassx$"] $WS6
+for_window[title="Auto-Type - KeePassX"] move to workspace current
 assign [title="Icedove|Thunderbird"] $WS7
 
 ## window floating
@@ -154,7 +155,6 @@ for_window [class="^Firefox$" title="^Library$"] floating enable
 for_window [class="^Firefox$" window_role="^Preferences$"] floating enable
 for_window [class="qutebrowser"] border normal 0
 for_window [class="^Anki$"] floating enable; border normal; move absolute center
-for_window [class="^Keepassx$"] floating enable move absolute center
 for_window [class="^Skype$"] floating enable
 for_window [title="xfce4-notifyd|Volume Control|JDownloader"] floating enable
 for_window [class="^Shutter$"] floating enable, border normal
@@ -170,6 +170,7 @@ exec --no-startup-id urxvt
 exec ~/.bin/qutebrowser
 exec messengerfordesktop
 exec spotify
+exec keepassx
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
