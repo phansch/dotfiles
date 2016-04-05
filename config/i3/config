@@ -147,7 +147,8 @@ assign [class="Hexchat"] $WS3
 for_window [class="Spotify"] move to workspace $WS4
 assign [class="VirtualBox"] $WS5
 assign [class="^Keepassx$"] $WS5
-for_window[title="Auto-Type - KeePassX"] move to workspace current
+for_window [class="deja-dup|Deja-dup"] move to workspace $WS6; workspace $WS6
+for_window [title="Auto-Type - KeePassX"] move to workspace current
 assign [title="Icedove|Thunderbird"] $WS7
 
 ## window floating, borders and positioning
@@ -161,6 +162,7 @@ for_window [class="^Shutter$"] floating enable, border normal
 for_window [class="Thunar"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [class="xfce4-notifyd"] floating enable
+for_window [class="deja-dup|Deja-dup"] floating enable
 
 # Autostart
 # Use --no-startup-id for background programs or if there is a 'watch' cursor
