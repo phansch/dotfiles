@@ -148,8 +148,7 @@ assign [title="Icedove|Thunderbird"] $WS7
 ## window floating
 for_window [class="^Firefox$" title="^Library$"] floating enable
 for_window [class="^Firefox$" window_role="^Preferences$"] floating enable
-for_window [class="qutebrowser"] border normal hide_edge_borders
-for_window [class="^Viewnior$"] floating enable border normal
+for_window [class="qutebrowser"] border normal 0
 for_window [class="^Anki$"] floating enable; border normal; move absolute center
 for_window [class="^Keepassx$"] floating enable move absolute center
 for_window [class="^Skype$"] floating enable
@@ -165,6 +164,8 @@ for_window [class="VirtualBox"] floating enable
 # exec --no-startup-id xrandr --output LVDS1 --mode 1366x768 --output HDMI1 --mode 1920x1080 --right-of LVDS1
 # exec --no-startup-id nitrogen --restore
 exec --no-startup-id urxvt
+exec ~/.bin/qutebrowser
+exec messengerfordesktop
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
