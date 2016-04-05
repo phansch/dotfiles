@@ -2,6 +2,18 @@
 "dmenu_run -f -p 'run:' -nb '#98971a' -nf '#32302f' -sb '#32302f' -sf '#98971a'"
   Alt + d
 
+# Volume down
+"pactl set-sink-volume @DEFAULT_SINK@ -- -5% && pactl set-sink-mute @DEFAULT_SINK@ 0"
+  XF86AudioLowerVolume
+
+# Volume up
+"pactl set-sink-volume @DEFAULT_SINK@ -- +5% && pactl set-sink-mute @DEFAULT_SINK@ 0"
+  XF86AudioRaiseVolume
+
+# Volume mute
+"pactl set-sink-mute @DEFAULT_SINK@ toggle"
+  XF86AudioMute
+
 # Open a terminal
 "urxvt"
   Alt + Return
