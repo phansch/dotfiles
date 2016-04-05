@@ -16,6 +16,10 @@
       - tmux
       - git
       - feh
+  - name: Remove specific packages
+    action: apt pkg={[ item }} state=absent
+    with_items:
+      - xscreensaver
   - name: Set zsh as default shell
     user: shell=/bin/zsh name={{ ansible_user_id }}
   # Fix gnome keyring
