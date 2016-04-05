@@ -9,6 +9,7 @@
 
 xset m 4 & # Increase mouse acceleration
 xset s off # don't activate screensaver
+xset -dpms
 xset s noblank # don't blank the video device
 xrdb -merge ~/.Xresources & # reread ~/.Xresources
 setxkbmap 'de(dvorak)' & # Set german dvorak keyboard layout
