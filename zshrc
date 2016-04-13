@@ -79,4 +79,6 @@ export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 # Local config
-[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+if [[ -e ~/.zshrc.local ]]; then
+    source ~/.zshrc.local
+fi
