@@ -18,9 +18,6 @@ source $ZSH/oh-my-zsh.sh
 setopt auto_cd
 cdpath=($HOME $HOME/repos $HOME/code $HOME/.dotfiles $HOME/Documents)
 
-# Always list files after changing directories (zsh-only)
-chpwd() ls
-
 stty -ixon
 # Aliases
 
