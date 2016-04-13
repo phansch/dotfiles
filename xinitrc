@@ -20,6 +20,7 @@ xinput disable "ELAN Touchscreen" &
 ## Startup ##
 #############
 
+eval $(ssh-agent)
 export $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 
 # Set wallpaper
