@@ -9,4 +9,6 @@
         dest=/etc/udev/rules.d/01-touchpad.rules
         owner=root
         group=root
+    - name: Reload udev rules
+      shell: udevadm trigger
 
