@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: Copy udev rules for touchpad
+      template:
+        src=../templates/udev/01-touchpad.rules.j2
+        dest=/etc/udev/rules.d/01-touchpad.rules
+        owner=root
+        group=root
+

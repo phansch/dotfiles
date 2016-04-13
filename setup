@@ -32,7 +32,7 @@ function bootstrap()
     ansible/playbooks/rofi.yml
   )
   echo '-----> Running default playbooks...'
-  ansible-playbook ${default_playbooks[*]} --ask-become-pass
+  ansible-playbook ${default_playbooks[*]} --ask-become-pass -u $USER
 
   additional_playbooks=(
     ansible/playbooks/docker.yml
@@ -41,9 +41,10 @@ function bootstrap()
     ansible/playbooks/additional_packages.yml
     ansible/playbooks/i3.yml
     ansible/playbooks/qutebrowser.yml
+    ansible/playbooks/udev.yml
   )
 
-  cmd="ansible-playbook ${additional_playbooks[*]} --ask-become-pass"
+  cmd="ansible-playbook ${additional_playbooks[*]} --ask-become-pass -u $USER"
   echo "-----> To run the rest of the playbooks:"
   echo $cmd
 }
