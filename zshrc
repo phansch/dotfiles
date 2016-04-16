@@ -19,11 +19,8 @@ setopt auto_cd
 cdpath=($HOME $HOME/repos $HOME/code $HOME/.dotfiles $HOME/Documents)
 
 stty -ixon
-# Aliases
 
-## Bundle
-alias b="bundle"
-alias "bundle up"="bundle install"
+# Aliases
 
 ## Unix
 alias c=cd
@@ -38,7 +35,6 @@ alias df="df -h"
 alias top="htop"
 alias apt="sudo apt-get"
 alias install="sudo apt-get install"
-alias gnucash="LANG=de_DE.UTF8 gnucash"
 
 ## Switches for pairing
 alias pair_dvorak="setxkbmap 'de(dvorak)'"
@@ -72,10 +68,8 @@ bindkey '^Z' fancy-ctrl-z
 PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 
 ## Customize to your needs...
-export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/.bin:$HOME/.local/bin:/usr/local/bin/node:$HOME/android-sdk-linux/platform-tools
+export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$HOME/.bin:$HOME/.local/bin
 
-# added by travis gem
-[ -f /home/philipp/.travis/travis.sh ] && source /home/philipp/.travis/travis.sh
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 # Local config
