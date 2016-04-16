@@ -11,7 +11,6 @@ This will:
 3. Clone the dotfiles (or pull if they exist already)
 4. Run the [base playbook](https://gitlab.com/phansch/dotfiles/blob/master/ansible/playbooks/base.yml) to install the prerequisites
 5. Run the [dotfiles playbook](https://gitlab.com/phansch/dotfiles/blob/master/ansible/playbooks/dotfiles.yml) to symlink the dotfiles
-6. Run the [rofi playbook](https://gitlab.com/phansch/dotfiles/blob/master/ansible/playbooks/rofi.yml) to install the latest rofi version
 7. Print the command to run the optional playbooks
 
 ## What's in there?
