@@ -172,7 +172,6 @@ exec ~/.bin/qutebrowser
 exec messengerfordesktop
 exec spotify
 exec keepassx
-exec owncloud
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
