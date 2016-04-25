@@ -23,11 +23,6 @@
     with_items:
       - anki*
       - skype*
-  - name: Add owncloud source
-    lineinfile: "dest=/etc/apt/sources.list.d/owncloud-client.list
-      line='deb http://download.opensuse.org/repositories/isv:/ownCloud:/desktop/Ubuntu_15.04/ /'"
-  - name: Install owncloud-client
-    apt: update_cache=yes name=owncloud-client
   # Ansible does not support apt_repository on Linux Mint right now
   - name: Add neovim repository
     shell: add-apt-repository -y ppa:neovim-ppa/unstable
