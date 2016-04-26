@@ -23,8 +23,6 @@ stty -ixon
 # Aliases
 
 ## Unix
-alias c=cd
-alias v=vim
 alias ...="cd ../.."
 alias mkdir="mkdir -p"
 alias grep="grep --color=auto"
