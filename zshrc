@@ -5,7 +5,7 @@ DISABLE_LS_COLORS="true"
 DISABLE_AUTO_TITLE="true"
 DISABLE_CORRECTION="true"
 
-plugins=(git gitfast phansch tmux zsh-syntax-highlighting)
+plugins=(gitfast tmux zsh-syntax-highlighting)
 
 ZSH_TMUX_AUTOSTART="true"
 
@@ -20,6 +20,7 @@ cdpath=($HOME $HOME/repos $HOME/code $HOME/.dotfiles $HOME/Documents)
 
 stty -ixon
 
+source ~/.zsh_prompt
 source ~/.aliases
 # completion for tmuxinator
 source ~/.bin/tmuxinator.zsh
