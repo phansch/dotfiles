@@ -6,7 +6,8 @@ alias mkdir="mkdir -p"
 alias grep="grep --color=auto"
 alias ping="ping -c 5"
 alias ls="ls -h --color"
-alias la="ls -A"
+alias ll='ls -lh'
+alias la='ls -lAh'
 alias df="df -h"
 alias top="htop"
 alias apt="sudo apt-get"
@@ -21,6 +22,17 @@ alias migrate="rake db:migrate db:rollback && rake db:migrate"
 alias m="migrate"
 
 ## Git
+alias ga="git add"
 alias gaa="git add --all"
-alias gfa="git fetch --all"
+
+alias gst="git status"
+
+alias gb="git branch"
+alias gc="git commit -v"
 alias gcp="git cherry-pick"
+
+alias gd="git diff"
+
+alias gl="git pull"
+alias gfa="git fetch --all"
+alias gp="git push"

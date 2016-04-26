@@ -1,18 +1,31 @@
-ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="phansch"
-DISABLE_AUTO_UPDATE="true"
-DISABLE_LS_COLORS="true"
-DISABLE_AUTO_TITLE="true"
-DISABLE_CORRECTION="true"
-
-plugins=(gitfast tmux zsh-syntax-highlighting)
-
-ZSH_TMUX_AUTOSTART="true"
-
 export EDITOR='vim'
 export TERMINAL='urxvt'
 
-source $ZSH/oh-my-zsh.sh
+# History
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.zsh_history
+setopt hist_verify
+setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt inc_append_history
+setopt share_history
+setopt extended_history
+
+# fuzzy find history
+autoload -U up-line-or-beginning-search
+zle -N up-line-or-beginning-search
+bindkey "${terminfo[kcuu1]}" up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "${terminfo[kcud1]}" down-line-or-beginning-search
+
+# Completion
+setopt auto_menu
+setopt complete_in_word
+setopt always_to_end
+zstyle ':completion:*:*:*:*:*' menu select
+zstyle ':completion::complete:*' use-cache 1
 
 # See http://robots.thoughtbot.com/cding-to-frequently-used-directories-in-zsh
 setopt auto_cd

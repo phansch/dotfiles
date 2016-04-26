@@ -32,11 +32,9 @@ You will need to have [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) ins
 
 ## What's in there?
 
-### zsh/oh-my-zsh
+### zsh
 
 * Custom zsh prompt/theme
-* zsh syntax highlighting plugin
-* tmux autostart
 * CTRL+Z to send jobs to background and to foreground
 
 ![zsh prompt](screenshots/screen-zsh1.png)
