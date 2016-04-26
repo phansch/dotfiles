@@ -20,33 +20,7 @@ cdpath=($HOME $HOME/repos $HOME/code $HOME/.dotfiles $HOME/Documents)
 
 stty -ixon
 
-# Aliases
-
-## Unix
-alias ...="cd ../.."
-alias mkdir="mkdir -p"
-alias grep="grep --color=auto"
-alias ping="ping -c 5"
-alias ls="ls -h --color"
-alias la="ls -A"
-alias df="df -h"
-alias top="htop"
-alias apt="sudo apt-get"
-alias install="sudo apt-get install"
-
-## Switches for pairing
-alias pair_dvorak="setxkbmap 'de(dvorak)'"
-alias pair_de="setxkbmap 'de'"
-
-## Rails
-alias migrate="rake db:migrate db:rollback && rake db:migrate"
-alias m="migrate"
-
-## Git
-alias gaa="git add --all"
-alias gfa="git fetch --all"
-alias gcp="git cherry-pick"
-
+source ~/.aliases
 # completion for tmuxinator
 source ~/.bin/tmuxinator.zsh
 
