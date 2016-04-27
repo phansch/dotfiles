@@ -146,7 +146,7 @@ assign [class="Hexchat"] $WS3
 # https://github.com/i3/i3/issues/2060
 for_window [class="Spotify"] move to workspace $WS4
 assign [class="VirtualBox"] $WS5
-assign [class="^Keepassx$"] $WS5
+assign [class="eepassx"] $WS5
 for_window [class="deja-dup|Deja-dup"] move to workspace $WS6; workspace $WS6
 for_window [title="Auto-Type - KeePassX"] move to workspace current
 assign [title="Icedove|Thunderbird"] $WS7
@@ -168,10 +168,10 @@ for_window [class="deja-dup|Deja-dup"] floating enable
 # Use --no-startup-id for background programs or if there is a 'watch' cursor
 # exec --no-startup-id xrandr --output LVDS1 --mode 1366x768 --output HDMI1 --mode 1920x1080 --right-of LVDS1
 exec --no-startup-id urxvt
-exec ~/.bin/qutebrowser
+exec qutebrowser
 exec messengerfordesktop
 exec spotify
-exec keepassx
+exec keepassx2
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
