@@ -24,7 +24,7 @@ eval $(ssh-agent)
 export $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 
 # Set wallpaper
-feh --no-fehbg --bg-scale ~/images/current_wallpaper &
+feh --no-fehbg --bg-scale ~/Pictures/current_wallpaper &
 
 # Do background stuff
 sleep 1 && unclutter -noevents -root & # Hides mousecursor when inactive
