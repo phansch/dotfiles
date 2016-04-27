@@ -24,8 +24,14 @@ bindkey "${terminfo[kcud1]}" down-line-or-beginning-search
 setopt auto_menu
 setopt complete_in_word
 setopt always_to_end
+
+## enable menu completion
 zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion::complete:*' use-cache 1
+
+## case-insensitive
+zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 # See http://robots.thoughtbot.com/cding-to-frequently-used-directories-in-zsh
 setopt auto_cd
