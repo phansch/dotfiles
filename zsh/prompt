@@ -1,0 +1,18 @@
+# vim: ft=zsh
+source ~/.zsh/.git-prompt.sh
+autoload -Uz colors && colors
+
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWSTASHSTATE=true
+
+local return_code="%(?..%{$fg[red]%}↳ %?%{$reset_color%})"
+local time='%T'
+local current_dir="%{$fg[blue]%}%{$terminfo[bold]%}%~%{$reset_color%}"
+
+local before="${return_code}
+%{$fg[blue]%}%B#%b ${time} in ${current_dir} %{$fg[yellow]%}"
+local after="%{$reset_color%}
+%{$fg[green]%}%B$%b%{$reset_color%} "
+local git="(%s)"
+
+precmd () { __git_ps1 "$before" "$after" "$git" }

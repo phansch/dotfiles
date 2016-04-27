@@ -1,10 +1,15 @@
 export EDITOR='vim'
 export TERMINAL='urxvt'
 
+autoload -U compinit
+compinit
+
+bindkey -e # emacs mode
+
 # History
 HISTSIZE=10000
 SAVEHIST=10000
-HISTFILE=~/.zsh_history
+HISTFILE=~/.zsh/history
 setopt hist_verify
 setopt hist_ignore_dups
 setopt hist_ignore_space
@@ -39,7 +44,7 @@ cdpath=($HOME $HOME/repos $HOME/code $HOME/.dotfiles $HOME/Documents)
 
 stty -ixon
 
-source ~/.zsh_prompt
+source ~/.zsh/prompt
 source ~/.aliases
 # completion for tmuxinator
 source ~/.bin/tmuxinator.zsh
