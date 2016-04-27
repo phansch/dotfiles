@@ -172,6 +172,7 @@ exec qutebrowser
 exec messengerfordesktop
 exec spotify
 exec keepassx2
+exec xbindkeys
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
