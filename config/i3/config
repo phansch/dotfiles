@@ -135,6 +135,7 @@ bindsym $mod+Shift+equal move container to workspace 10
 ## Move to workspace
 ### Note that everything that's using urxvt as a base,
 ### must be assigned before urxvt itself
+assign [title="irssi"] $WS3
 assign [instance="urxvt"] $WS1
 assign [class="^Firefox$"] $WS2
 assign [class="qutebrowser"] $WS2
@@ -168,6 +169,7 @@ for_window [class="deja-dup|Deja-dup"] floating enable
 # Use --no-startup-id for background programs or if there is a 'watch' cursor
 # exec --no-startup-id xrandr --output LVDS1 --mode 1366x768 --output HDMI1 --mode 1920x1080 --right-of LVDS1
 exec --no-startup-id urxvt
+exec --no-startup-id "sleep 1 && urxvt -title irssi -e ssh -t phansch@cetus.uberspace.de tmux attach && bash"
 exec qutebrowser
 exec messengerfordesktop
 exec spotify
