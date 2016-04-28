@@ -23,5 +23,5 @@
   Alt + f
 
 # Lock screen
-"i3lock -i ~/Pictures/current_lockscreen_bg"
+"~/.bin/lock.sh"
   Alt + l
