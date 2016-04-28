@@ -43,10 +43,10 @@ bindsym $mod+Shift+q exit
 bindsym $mod+Shift+e kill
 
 # change focus
-bindsym $mod+o focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus u
-bindsym $mod+l focus right
+# bindsym $mod+o focus left
+# bindsym $mod+j focus down
+# bindsym $mod+k focus u
+# bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -73,7 +73,7 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen
+# bindsym $mod+f fullscreen
 
 # change container layout (stacked, tabbed, default)
 bindsym $mod+s layout stacking
