@@ -171,7 +171,6 @@ for_window [class="deja-dup|Deja-dup"] floating enable
 exec --no-startup-id urxvt -e tmux
 exec --no-startup-id "sleep 1 && urxvt -title irssi -e ssh -t phansch@cetus.uberspace.de tmux attach && bash"
 exec sleep 1 && qutebrowser
-exec messengerfordesktop
 exec spotify
 exec keepassx2
 exec xbindkeys
