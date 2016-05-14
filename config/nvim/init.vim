@@ -12,6 +12,7 @@ endif
 call plug#begin('~/.nvim/plugged')
 
 Plug 'rust-lang/rust.vim'
+Plug 'elixir-lang/vim-elixir'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-projectionist'
