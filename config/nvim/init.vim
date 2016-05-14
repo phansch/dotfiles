@@ -175,6 +175,9 @@ iabbrev sessinos sessions
 iabbrev initator initiator
 iabbrev conut count
 iabbrev prereqs prerequisites
+iabbrev pyr pry
+iabbrev visibilty visibility
+iabbrev enbaled enabled
 " }}}
 
 " Mappings {{{
