@@ -183,6 +183,9 @@ noremap <C-s> <esc>:w<CR>
 inoremap <C-s> <esc>:w<CR>
 
 " Remap split navigation
+if has('nvim')
+     nmap <BS> <C-W>h
+ endif
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
