@@ -15,7 +15,7 @@
   XF86AudioMute
 
 # Open a terminal
-"urxvt"
+"urxvtc"
   Alt + Return
 
 # Start thunar
