@@ -267,10 +267,10 @@ vnoremap <silent> * :call VisualSelection('f')<CR>
 vnoremap <silent> # :call VisualSelection('b')<CR>
 
 " Open vimrc
-nnoremap <leader>ev :tabnew ~/.config/nvim/init.vim<cr>
+nnoremap <leader>ev :tabnew ~/.dotfiles/config/nvim/init.vim<cr>
 
 " Source vimrc
-nnoremap <leader>sv :source ~/.config/nvim/init.vim<cr>
+nnoremap <leader>sv :source ~/.dotfiles/config/nvim/init.vim<cr>
 
 " }}}
 
