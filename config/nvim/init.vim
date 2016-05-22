@@ -183,8 +183,8 @@ iabbrev enbaled enabled
 " Mappings {{{
 
 nnoremap <leader>q :q<cr>
-noremap <C-s> :echo 'File is already saved on leaving insert mode'<CR>
-inoremap <C-s> :echo 'File is already saved on leaving insert mode'<CR>
+noremap <C-s> <esc>:w<CR>
+inoremap <C-s> <esc>:w<CR>
 
 " Remap split navigation
 if has('nvim')
@@ -274,7 +274,6 @@ nnoremap <leader>sv :source ~/.dotfiles/config/nvim/init.vim<cr>
 
 " }}}
 
-autocmd InsertLeave * write
 
 " File Type specific settings {{{
 augroup filetype_xdefaults
