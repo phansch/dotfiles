@@ -292,6 +292,7 @@ augroup END
 augroup filetype_html
   au!
   au FileType html nnoremap <leader>f :call OpenCurrentFileInBrowser()<cr>
+  au FileType eelixir SnipMateLoadScope html
 augroup END
 
 augroup filetype_coffee
