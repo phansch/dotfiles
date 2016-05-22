@@ -12,7 +12,6 @@ sudo pacman -S i3-wm i3status i3lock dmenu
 sudo pacman -S htop
 sudo pacman -S skype
 sudo pacman -S mupdf
-sudo pacman -S irssi
 
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 \curl -sSL https://get.rvm.io | bash -s stable --ruby
@@ -38,3 +37,6 @@ makepkg -sri --skippgpcheck
 mkdir ~/.ssh/login-keys.d && cd ~/.ssh/login-keys.d && ln -s ~/.ssh/id_rsa
 
 # Now follow the instructions on https://wiki.archlinux.org/index.php/SSH_keys#pam_ssh
+
+sudo pacman -S postgresql
+sudo pacman -S inotify-tools
