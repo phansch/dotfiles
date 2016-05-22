@@ -14,9 +14,15 @@
 "pactl set-sink-mute @DEFAULT_SINK@ toggle"
   XF86AudioMute
 
+
+
 # Open a terminal
-"urxvt"
+"urxvtc"
   Alt + Return
+
+# Open IRC
+"urxvtc -title irssi -e ssh -t phansch@cetus.uberspace.de tmux attach && bash"
+  F2
 
 # Start thunar
 "nemo ~/code || thunar ~/code"
