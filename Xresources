@@ -5,7 +5,7 @@
 #include ".Xresources.d/rofi.xresources"
 
 *intensityStyles: false
-*fading: 20
+*fading: 10
 
 URxvt*depth: 32
 
