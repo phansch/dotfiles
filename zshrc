@@ -44,10 +44,12 @@ cdpath=($HOME $HOME/repos $HOME/code $HOME/.dotfiles $HOME/Documents)
 
 stty -ixon
 
+lazy_source () {
+  eval "$1 () { [ -f $2 ] && source $2 && $1 \$@ }"
+}
+
 source ~/.zsh/prompt
 source ~/.aliases
-# completion for tmuxinator
-source ~/.bin/tmuxinator.zsh
 
 fancy-ctrl-z () {
   if [[ $#BUFFER -eq 0 ]]; then
@@ -67,7 +69,7 @@ PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 ## Customize to your needs...
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$HOME/.bin:$HOME/.local/bin
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+lazy_source rvm "$HOME/.rvm/scripts/rvm"
 
 # Local config
 if [[ -e ~/.zshrc.local ]]; then
@@ -75,4 +77,4 @@ if [[ -e ~/.zshrc.local ]]; then
 fi
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+lazy_source nvm "$NVM_DIR/nvm.sh" # This loads nvm
