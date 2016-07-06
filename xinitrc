@@ -30,6 +30,8 @@ xinput disable "ELAN Touchscreen" &
 eval $(ssh-agent)
 export $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 
+export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+
 # Set wallpaper
 feh --no-fehbg --bg-scale ~/Pictures/current_wallpaper &
 
