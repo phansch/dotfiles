@@ -145,7 +145,10 @@ assign [class="Hexchat"] $WS3
 # assign doesn't work with Spotify because it doesn't set the
 # window classes early enough, so we have to use for_window:
 # https://github.com/i3/i3/issues/2060
-for_window [class="Spotify"] move to workspace $WS4
+for_window [class="spotify|Spotify"] move to workspace $WS4
+for_window [title="Spotify"] move to workspace $WS4
+# Same issue with hipchat
+for_window [class="hipchat4"] move to workspace $WS3
 assign [class="VirtualBox"] $WS5
 assign [class="eepassx"] $WS5
 for_window [class="deja-dup|Deja-dup"] move to workspace $WS6; workspace $WS6
@@ -170,7 +173,7 @@ for_window [class="deja-dup|Deja-dup"] floating enable
 # exec --no-startup-id xrandr --output LVDS1 --mode 1366x768 --output HDMI1 --mode 1920x1080 --right-of LVDS1
 exec --no-startup-id urxvtc -e tmux
 exec --no-startup-id "sleep 1 && urxvt -title irssi -e ssh -t phansch@cetus.uberspace.de tmux attach && bash"
-exec sleep 1 && qutebrowser
+exec firefox
 exec spotify
 exec keepassx2
 exec xbindkeys
@@ -203,11 +206,11 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar
 bar {
-  status_command i3status
+  status_command i3bar
   position top
   modifier $mod
   mode hide
-  separator_symbol "•"
+  # separator_symbol "•"
 
   colors {
             background #98971a
