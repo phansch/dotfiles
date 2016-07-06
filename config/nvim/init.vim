@@ -11,14 +11,11 @@ endif
 
 call plug#begin('~/.nvim/plugged')
 
-Plug 'rust-lang/rust.vim'
-Plug 'elixir-lang/vim-elixir'
+Plug 'elixir-lang/vim-elixir',                 { 'for': ['elixir'] }
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rake'
-Plug 'thoughtbot/vim-rspec'
-Plug 'Keithbsmiley/rspec.vim'
 Plug 'pangloss/vim-javascript',                { 'for': ['javascript', 'coffeescript'] }
 Plug 'jelera/vim-javascript-syntax',           { 'for': ['javascript', 'coffeescript'] }
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'coffeescript'] }
@@ -38,12 +35,12 @@ Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
 Plug 'rking/ag.vim'
-Plug 'godlygeek/tabular'
 Plug 'haya14busa/incsearch.vim'
 Plug 'morhetz/gruvbox'
 Plug 'DataWraith/auto_mkdir'
 Plug 'benekastah/neomake'
 Plug 'Raimondi/delimitMate'
+Plug 'rodjek/vim-puppet'
 
 call plug#end()
 
@@ -52,18 +49,18 @@ filetype plugin indent on
 " }}}
 
 
+set re=1
 " Settings {{{
 set number
 set hidden
 set hlsearch
-set noshowmode  " Don't display the mode you're in.
+set showmode  " Don't display the mode you're in.
 set showmatch   " Show matching brackets/parenthesis
 set list
 set listchars=tab:▸\ ,trail:¬,extends:❯,precedes:❮
 set showbreak=↪
 set title " Set the terminal's title
 set scrolloff=10
-set relativenumber
 set noesckeys "Make esc faster
 set mouse=
 
@@ -107,7 +104,7 @@ set lazyredraw
 set regexpengine=2
 
 " More frequent updates for, e.g. signs.
-set updatetime=800
+set updatetime=1200
 
 " Update syntax highlighting for more lines increased scrolling performance
 syntax sync minlines=256
@@ -122,19 +119,16 @@ set background=dark
 let mapleader = ","
 let maplocalleader = "\\"
 
+" Make vim-gitgutter faster
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
+
 " Remap ctrl + p to ,d
 let g:ctrlp_map = '<space>d'
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 let g:ctrlp_prompt_mappings = {
   \ 'PrtClearCache()':      ['<c-r>'],
   \ }
-
-" vim-rspec should use spring and colored output
-if executable("spring")
-  let g:rspec_command = "!clear && spring rspec {spec} --color"
-else
-  let g:rspec_command = "!clear && rspec {spec} --color"
-endif
 
 " Incsearch, turn off highlighting of searches
 let g:incsearch#auto_nohlsearch = 1
@@ -144,8 +138,6 @@ let g:neomake_warning_sign = {
             \ 'texthl': 'WarningMsg',
             \ }
 autocmd! BufWritePost * Neomake
-
-let g:rubycomplete_rails = 1
 
 " }}}
 
@@ -241,14 +233,7 @@ autocmd VimResized * :wincmd =
 " format json (requires jq to be installed)
 noremap <leader>fj :call FormatJson()<CR>
 
-" vim-rspec remaps
-noremap <leader>t :call RunCurrentSpecFile()<CR>
-noremap <leader>n :call RunNearestSpec()<CR>
-noremap <leader>l :call RunLastSpec()<CR>
-noremap <leader>a :call RunAllSpecs()<CR>
-
 " Rails remaps
-noremap <leader>bi :!bundle install<cr>
 noremap <leader>fa :e spec/factories/<cr>
 noremap <leader>sc :e db/schema.rb<cr>
 noremap <leader>ro :e config/routes.rb<cr>
