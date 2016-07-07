@@ -1,26 +1,10 @@
 general {
         output_format = "i3bar"
-        interval = 5
+        interval = 30
 }
 
-order += "battery 0"
-order += "volume master"
 order += "tztime berlin"
 
-volume master {
-        format = "♫ %volume"
-        format_muted = "♫ muted (%volume)"
-        device = "pulse"
-}
-
 tztime berlin {
-        format = "⚈ %a %d.%m, %R"
-}
-
-battery 0 {
-        format = "%status %percentage"
-        status_chr = "🔋 ⚇"
-        status_bat = "🔋 BAT"
-        status_full = "🔋 FULL"
-        low_threshold = 10
+        format = "%a %d.%m, %R"
 }
