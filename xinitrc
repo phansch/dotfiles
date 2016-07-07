@@ -48,3 +48,7 @@ if ! ps ax | grep -v grep | grep redshift > /dev/null
 then
     sleep 1 && redshift -l 52.2:13.6 -t 6500:4200 -m randr -v
 fi &
+
+if [ $(hostname) = 'philipp-samsung' ]; then
+  xrandr --output LVDS1 --off --output HDMI1 --primary
+fi &
