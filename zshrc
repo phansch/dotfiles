@@ -64,9 +64,6 @@ zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
 
 # Path stuff
-PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
-
-## Customize to your needs...
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$HOME/.bin:$HOME/.local/bin
 
 lazy_source rvm "$HOME/.rvm/scripts/rvm"
