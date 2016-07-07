@@ -14,8 +14,6 @@
 "pactl set-sink-mute @DEFAULT_SINK@ toggle"
   XF86AudioMute
 
-
-
 # Open a terminal
 "urxvtc"
   Alt + Return

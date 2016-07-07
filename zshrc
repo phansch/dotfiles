@@ -66,8 +66,6 @@ bindkey '^Z' fancy-ctrl-z
 # Path stuff
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$HOME/.bin:$HOME/.local/bin
 
-lazy_source rvm "$HOME/.rvm/scripts/rvm"
-
 # Local config
 if [[ -e ~/.zshrc.local ]]; then
     source ~/.zshrc.local
