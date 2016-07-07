@@ -1,9 +1,2 @@
-Style/StringLiterals:
-  EnforcedStyle: double_quotes
-
 Metrics/LineLength:
   Max: 100
-
-# Use 'raise', not 'fail'
-SignalException:
-  Enabled: false
