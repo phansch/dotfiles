@@ -117,6 +117,24 @@ set synmaxcol=256
 let g:hybrid_custom_term_colors = 1
 colorscheme hybrid
 set background=dark
+
+set laststatus=2
+set statusline=
+set statusline+=%9*\ %<%F\ %m\ %w\        " File+path
+set statusline+=%9*\ %=                                  " Space
+set statusline+=%1*\%{GitInfo()}                        " Git Branch name
+set statusline+=%9*\ %{(&fenc!=''?&fenc:&enc)}\[%{&ff}]\ " Encoding & Fileformat
+set statusline+=%9*\%3p%%\ %l/%L\ %c\                 " Rownumber/total (%)
+
+function! GitInfo()
+  let git = fugitive#head()
+  if git != ''
+    return ' '.fugitive#head()
+  else
+    return ''
+  endif
+endfunction
+
 " Leader
 let mapleader = ","
 let maplocalleader = "\\"
