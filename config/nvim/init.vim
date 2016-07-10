@@ -41,6 +41,7 @@ Plug 'DataWraith/auto_mkdir'
 Plug 'benekastah/neomake'
 Plug 'Raimondi/delimitMate'
 Plug 'rodjek/vim-puppet'
+Plug 'w0ng/vim-hybrid'
 
 call plug#end()
 
@@ -54,7 +55,7 @@ set re=1
 set number
 set hidden
 set hlsearch
-set showmode  " Don't display the mode you're in.
+set showmode  " Display the mode you're in.
 set showmatch   " Show matching brackets/parenthesis
 set list
 set listchars=tab:▸\ ,trail:¬,extends:❯,precedes:❮
@@ -113,7 +114,8 @@ syntax sync minlines=256
 set synmaxcol=256
 
 " Theme settings
-colorscheme gruvbox
+let g:hybrid_custom_term_colors = 1
+colorscheme hybrid
 set background=dark
 " Leader
 let mapleader = ","
