@@ -9,7 +9,7 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
-call plug#begin('~/.nvim/plugged')
+call plug#begin('~/.config/.nvim/plugged')
 
 Plug 'elixir-lang/vim-elixir',                 { 'for': ['elixir'] }
 Plug 'vim-ruby/vim-ruby'
