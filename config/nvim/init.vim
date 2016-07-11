@@ -114,8 +114,7 @@ syntax sync minlines=256
 set synmaxcol=256
 
 " Theme settings
-let g:hybrid_custom_term_colors = 1
-colorscheme hybrid
+colorscheme gruvbox
 set background=dark
 
 set laststatus=2
