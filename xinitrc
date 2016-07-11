@@ -46,7 +46,7 @@ sleep 1 && nm-applet &
 # make sure there's only one redshift service running
 if ! ps ax | grep -v grep | grep redshift > /dev/null
 then
-    sleep 1 && redshift -l 52.2:13.6 -t 6500:4200 -m randr -v
+    sleep 1 && redshift
 fi &
 
 if [ $(hostname) = 'philipp-samsung' ]; then
