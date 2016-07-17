@@ -1,4 +1,4 @@
-song_list_format           = "$3{%A }|{%a }$7{%b }$0{%t}| $4$R{%7l}$9"
+song_list_format           = "$3{%A }|{%a }$7{%b }$0{%t} $4$R{%7l}$9"
 now_playing_prefix         = "$4"
 now_playing_suffix         = "$9"
 song_columns_list_format   = "(34)[green]{a} (34)[]{t|f} (32)[cyan]{b}"
@@ -8,7 +8,6 @@ search_engine_display_mode = "columns"
 autocenter_mode            = "yes"
 centered_cursor            = "yes"
 user_interface             = "alternative"
-default_space_mode         = "select"
 header_visibility          = "no"
 statusbar_visibility       = "no"
 titles_visibility          = "yes"
@@ -321,8 +320,6 @@ mpd_music_dir = "~/music"
 #media_library_left_column = "a" (possible values: a,y,g,c,p, legend above)
 #
 #default_find_mode = "wrapped" (wrapped/normal)
-#
-#default_space_mode = "add" (add/select)
 #
 #default_tag_editor_left_col = "albums" (albums/dirs)
 #
