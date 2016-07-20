@@ -9,6 +9,8 @@
 *fading: 20
 
 URxvt*depth: 32
+URxvt*transparent: true
+URxvt*shading: 10
 
 URxvt*saveLines: 8000
 URxvt*internalBorder: 0
