@@ -15,6 +15,7 @@
   undo-ci = reset --soft HEAD^
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  up = pull --rebase --autostash
 [push]
   default = current
 [commit]
