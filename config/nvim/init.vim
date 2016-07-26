@@ -119,11 +119,12 @@ set background=dark
 " Transparent background colors
 let g:gitgutter_override_sign_column_highlight = 0
 hi Normal ctermbg=NONE
-hi GitGutterDelete ctermfg=1 ctermbg=NONE
+hi SignColumn ctermbg=NONE
+hi VertSplit ctermbg=NONE
 hi GitGutterAdd ctermfg=2 ctermbg=NONE
 hi GitGutterChange ctermfg=4 ctermbg=NONE
-hi GitGutterChangeDelete ctermfg=4 ctermbg=NONE
-hi SignColumn ctermbg=NONE
+hi GitGutterDelete ctermfg=1 ctermbg=NONE
+hi GitGutterChangeDelete ctermfg=1 ctermbg=NONE
 
 set laststatus=2
 set statusline=
