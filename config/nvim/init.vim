@@ -287,7 +287,6 @@ nnoremap <leader>sv :source ~/.dotfiles/config/nvim/init.vim<cr>
 
 " }}}
 
-
 " File Type specific settings {{{
 augroup filetype_xdefaults
   au!
