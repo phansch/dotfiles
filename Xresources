@@ -9,9 +9,6 @@
 *fading: 20
 
 URxvt*depth: 24
-URxvt*transparent: true
-URxvt*tintColor: _background
-URxvt*shading: 80
 
 URxvt*saveLines: 8000
 URxvt*internalBorder: 0
