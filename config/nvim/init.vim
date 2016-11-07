@@ -11,7 +11,9 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 
+" Language specific
 Plug 'elixir-lang/vim-elixir',                 { 'for': ['elixir'] }
+Plug 'rodjek/vim-puppet'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-projectionist'
@@ -20,26 +22,35 @@ Plug 'pangloss/vim-javascript',                { 'for': ['javascript', 'coffeesc
 Plug 'jelera/vim-javascript-syntax',           { 'for': ['javascript', 'coffeescript'] }
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'coffeescript'] }
 Plug 'kchmck/vim-coffee-script'
-Plug 'ervandew/supertab'
+
+" Library dependencies
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+
+" Search and find
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'rking/ag.vim'
+Plug 'tpope/vim-vinegar'
+
+" Git
+Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+
+" Insert mode
+Plug 'ervandew/supertab'
+Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-vinegar'
-Plug 'airblade/vim-gitgutter'
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
-Plug 'rking/ag.vim'
-Plug 'morhetz/gruvbox'
+
+" Other
 Plug 'DataWraith/auto_mkdir'
 Plug 'benekastah/neomake'
-Plug 'Raimondi/delimitMate'
-Plug 'rodjek/vim-puppet'
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
