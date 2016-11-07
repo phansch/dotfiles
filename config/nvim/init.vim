@@ -40,7 +40,6 @@ Plug 'DataWraith/auto_mkdir'
 Plug 'benekastah/neomake'
 Plug 'Raimondi/delimitMate'
 Plug 'rodjek/vim-puppet'
-Plug 'w0ng/vim-hybrid'
 
 call plug#end()
 
