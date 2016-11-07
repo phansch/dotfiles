@@ -12,6 +12,7 @@ alias df="df -h"
 alias top="htop"
 alias apt="sudo apt-get"
 alias install="sudo apt-get install"
+alias git_clean_branches="git branch --merged | egrep -v '(^\*|master)' | xargs git branch -d"
 
 ## Switches for pairing
 alias pair_dvorak="setxkbmap 'de(dvorak)'"
