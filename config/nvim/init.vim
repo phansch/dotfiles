@@ -35,7 +35,6 @@ Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
 Plug 'rking/ag.vim'
-Plug 'haya14busa/incsearch.vim'
 Plug 'morhetz/gruvbox'
 Plug 'DataWraith/auto_mkdir'
 Plug 'benekastah/neomake'
@@ -265,10 +264,6 @@ noremap <leader>fj :call FormatJson()<CR>
 noremap <leader>fa :e spec/factories/<cr>
 noremap <leader>sc :e db/schema.rb<cr>
 noremap <leader>ro :e config/routes.rb<cr>
-
-" Incsearch mappings
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
 
 " Convenience remaps
 noremap <leader>nn :tabnew ~/documents/03si/Notes.md<cr>
