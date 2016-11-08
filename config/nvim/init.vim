@@ -135,17 +135,18 @@ hi GitGutterAdd ctermfg=2 ctermbg=NONE
 hi GitGutterChange ctermfg=4 ctermbg=NONE
 hi GitGutterDelete ctermfg=1 ctermbg=NONE
 hi GitGutterChangeDelete ctermfg=1 ctermbg=NONE
+hi User1 ctermfg=3
 
 set laststatus=2
 set statusline=
-set statusline+=%9*\ \ %L\          " Total rownumber
-set statusline+=%9*\%<%F\           " File+path
-set statusline+=%3*\%{GitInfo()}    " Git Branch name
+set statusline+=%9*\ \ %L%*        " Total rownumber
+set statusline+=%9*\ %f\           " File+path
+set statusline+=%9*\on\ \[%1*%{GitInfo()}%*%9*\]  " Git Branch name
 
 function! GitInfo()
   let git = fugitive#head()
   if git != ''
-    return 'on ['.fugitive#head().']'
+    return fugitive#head()
   else
     return ''
   endif
@@ -155,6 +156,7 @@ endfunction
 let mapleader = ","
 let maplocalleader = "\\"
 
+let g:gitgutter_sign_column_always = 1
 " Make vim-gitgutter faster
 let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
