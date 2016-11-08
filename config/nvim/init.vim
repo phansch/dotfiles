@@ -139,7 +139,7 @@ hi GitGutterDelete ctermfg=1 ctermbg=NONE
 hi GitGutterChangeDelete ctermfg=1 ctermbg=NONE
 hi User1 ctermfg=3
 
-set fillchars=vert:\│,stlnc:\ ,stl:\
+set fillchars=vert:\│,stlnc:\ ",stl:\ "
 set laststatus=2
 set statusline=%9*\ \ %L%*        " Total rownumber
 set statusline+=%9*\ %f\           " File+path
