@@ -51,6 +51,7 @@ Plug 'honza/vim-snippets'
 Plug 'DataWraith/auto_mkdir'
 Plug 'benekastah/neomake'
 Plug 'morhetz/gruvbox'
+Plug 'jceb/vim-orgmode'
 
 call plug#end()
 
