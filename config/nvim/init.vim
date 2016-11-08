@@ -138,16 +138,14 @@ hi GitGutterChangeDelete ctermfg=1 ctermbg=NONE
 
 set laststatus=2
 set statusline=
-set statusline+=%9*\ %<%F\ %m\ %w\        " File+path
-set statusline+=%9*\ %=                                  " Space
-set statusline+=%1*\%{GitInfo()}                        " Git Branch name
-set statusline+=%9*\ %{(&fenc!=''?&fenc:&enc)}\[%{&ff}]\ " Encoding & Fileformat
-set statusline+=%9*\%3p%%\ %l/%L\ %c\                 " Rownumber/total (%)
+set statusline+=%9*\ \ %L\          " Total rownumber
+set statusline+=%9*\%<%F\           " File+path
+set statusline+=%3*\%{GitInfo()}    " Git Branch name
 
 function! GitInfo()
   let git = fugitive#head()
   if git != ''
-    return ' '.fugitive#head()
+    return 'on ['.fugitive#head().']'
   else
     return ''
   endif
