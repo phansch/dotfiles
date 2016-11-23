@@ -22,6 +22,7 @@ Plug 'pangloss/vim-javascript',                { 'for': ['javascript', 'coffeesc
 Plug 'jelera/vim-javascript-syntax',           { 'for': ['javascript', 'coffeescript'] }
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'coffeescript'] }
 Plug 'kchmck/vim-coffee-script'
+Plug 'plasticboy/vim-markdown'
 
 " Library dependencies
 Plug 'MarcWeber/vim-addon-mw-utils'
@@ -51,7 +52,6 @@ Plug 'honza/vim-snippets'
 Plug 'DataWraith/auto_mkdir'
 Plug 'benekastah/neomake'
 Plug 'morhetz/gruvbox'
-Plug 'jceb/vim-orgmode'
 
 call plug#end()
 
