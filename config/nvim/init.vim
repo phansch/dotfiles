@@ -123,6 +123,12 @@ syntax sync minlines=256
 " Don't syntax highlight long lines
 set synmaxcol=256
 
+" Undo settings, to make undo persistent
+set undofile
+set undodir=$HOME/.config/nvim/undo
+set undolevels=1000
+set undoreload=10000
+
 " Theme settings
 colorscheme gruvbox
 set background=dark
