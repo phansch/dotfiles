@@ -1,4 +1,3 @@
-" be iMproved
 set nocompatible
 filetype off
 
@@ -106,6 +105,9 @@ set nowritebackup
 set splitbelow
 set splitright
 
+" Highlight search & replace
+set inccommand=split
+
 " Disable menu, and other gui elements
 set guioptions=c
 
@@ -170,9 +172,6 @@ let g:ctrlp_prompt_mappings = {
   \ 'PrtClearCache()':      ['<c-r>'],
   \ }
 
-" Incsearch, turn off highlighting of searches
-let g:incsearch#auto_nohlsearch = 1
-
 let g:neomake_warning_sign = {
             \ 'text': '>>',
             \ 'texthl': 'WarningMsg',
@@ -210,6 +209,7 @@ iabbrev prereqs prerequisites
 iabbrev pyr pry
 iabbrev visibilty visibility
 iabbrev enbaled enabled
+iabbrev objecs objects
 " }}}
 
 " Mappings {{{
