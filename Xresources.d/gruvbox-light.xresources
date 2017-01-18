@@ -7,30 +7,58 @@
 ! -----------------------------------------------------------------------------
 
 ! hard contrast: *background: #f9f5d7
-*background: #fbf1c7
+#define _background #fbf1c7
+
 ! soft contrast: *background: #f2e5bc
-*foreground: #3c3836
+#define _foreground #3c3836
+
 ! Black + DarkGrey
-*color0:  #fdf4c1
-*color8:  #928374
+#define _color0 #fdf4c1
+#define _color8 #928374
+
 ! DarkRed + Red
-*color1:  #cc241d
-*color9:  #9d0006
+#define _color1 #cc241d
+#define _color9 #9d0006
+
 ! DarkGreen + Green
-*color2:  #98971a
-*color10: #79740e
+#define _color2 #98971a
+#define _color10 #79740e
+
 ! DarkYellow + Yellow
-*color3:  #d79921
-*color11: #b57614
+#define _color3 #d79921
+#define _color11 #b57614
+
 ! DarkBlue + Blue
-*color4:  #458588
-*color12: #076678
+#define _color4 #458588
+#define _color12 #076678
+
 ! DarkMagenta + Magenta
-*color5:  #b16286
-*color13: #8f3f71
+#define _color5 #b16286
+#define _color13 #8f3f71
+
 ! DarkCyan + Cyan
-*color6:  #689d6a
-*color14: #427b58
+#define _color6 #689d6a
+#define _color14 #427b58
+
 ! LightGrey + White
-*color7:  #7c6f64
-*color15: #3c3836
+#define _color7 #7c6f64
+#define _color15 #3c3836
+
+*background: _background
+*foreground: _foreground
+*color0: _color0
+*color8: _color8
+*color1: _color1
+*color9: _color9
+*color2: _color2
+*color10: _color10
+*color3: _color3
+*color11: _color11
+*color4: _color4
+*color12: _color12
+*color5: _color5
+*color13: _color13
+*color6: _color6
+*color14: _color14
+*color7: _color7
+*color15: _color15
