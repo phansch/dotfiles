@@ -125,6 +125,12 @@ syntax sync minlines=256
 " Don't syntax highlight long lines
 set synmaxcol=256
 
+" Undo settings, to make undo persistent
+set undofile
+set undodir=$HOME/.config/nvim/undo
+set undolevels=1000
+set undoreload=10000
+
 " Theme settings
 colorscheme gruvbox
 set background=dark
@@ -306,6 +312,11 @@ augroup filetype_markdown
   au BufNewFile,BufRead *.md set filetype=markdown
 
   au FileType markdown nnoremap <leader>f :call OpenCurrentFileInBrowser()<cr>
+  au FileType markdown nnoremap <leader>t :Toc<cr>
+  au FileType markdown nnoremap <F5> :put ='<' . strftime('%F') . '>'<cr>
+  au FileType markdown inoremap <F5> :put ='<' . strftime('%F') . '>'<cr>
+  au FileType markdown let g:vim_markdown_new_list_item_indent = 2
+  au FileType markdown let g:vim_markdown_toc_autofit = 1
 augroup END
 
 augroup filetype_html
