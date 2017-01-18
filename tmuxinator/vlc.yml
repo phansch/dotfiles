@@ -1,0 +1,5 @@
+name: vlc
+root: ~/Music
+
+windows:
+  - vlc: vlc -I ncurses --browse-dir ~/Music/*
