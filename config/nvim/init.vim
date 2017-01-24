@@ -313,8 +313,8 @@ augroup filetype_markdown
 
   au FileType markdown nnoremap <leader>f :call OpenCurrentFileInBrowser()<cr>
   au FileType markdown nnoremap <leader>t :Toc<cr>
-  au FileType markdown nnoremap <F5> :put ='<' . strftime('%F') . '>'<cr>
-  au FileType markdown inoremap <F5> :put ='<' . strftime('%F') . '>'<cr>
+  au FileType markdown nnoremap <F5> :put ='### <' . strftime('%F %a') . '>'<cr>
+  au FileType markdown inoremap <F5> :put ='### <' . strftime('%F %a') . '>'<cr>
   au FileType markdown let g:vim_markdown_new_list_item_indent = 2
   au FileType markdown let g:vim_markdown_toc_autofit = 1
 augroup END
