@@ -51,6 +51,8 @@ Plug 'honza/vim-snippets'
 Plug 'DataWraith/auto_mkdir'
 Plug 'benekastah/neomake'
 Plug 'morhetz/gruvbox'
+Plug 'altercation/vim-colors-solarized'
+Plug 'chriskempson/base16-vim'
 
 call plug#end()
 
@@ -132,7 +134,7 @@ set undolevels=1000
 set undoreload=10000
 
 " Theme settings
-colorscheme gruvbox
+colorscheme base16-ocean
 set background=dark
 " Transparent background colors
 let g:gitgutter_override_sign_column_highlight = 0
