@@ -16,3 +16,5 @@ notification :tmux,
 
   # Notify on all tmux clients
   display_on_all_clients: false
+
+notification :notifysend
