@@ -20,7 +20,7 @@
 
 # Open IRC
 "urxvtc -title irssi -e ssh -t phansch@cetus.uberspace.de tmux attach && bash"
-  F2
+  Alt + c
 
 # Start thunar
 "nemo ~/code || thunar ~/code"

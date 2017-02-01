@@ -52,6 +52,8 @@ Plug 'honza/vim-snippets'
 Plug 'DataWraith/auto_mkdir'
 Plug 'benekastah/neomake'
 Plug 'morhetz/gruvbox'
+Plug 'altercation/vim-colors-solarized'
+Plug 'chriskempson/base16-vim'
 
 call plug#end()
 
@@ -133,7 +135,7 @@ set undolevels=1000
 set undoreload=10000
 
 " Theme settings
-colorscheme gruvbox
+colorscheme base16-ocean
 set background=dark
 " Transparent background colors
 let g:gitgutter_override_sign_column_highlight = 0
@@ -314,8 +316,8 @@ augroup filetype_markdown
 
   au FileType markdown nnoremap <leader>f :call OpenCurrentFileInBrowser()<cr>
   au FileType markdown nnoremap <leader>t :Toc<cr>
-  au FileType markdown nnoremap <F5> :put ='<' . strftime('%F') . '>'<cr>
-  au FileType markdown inoremap <F5> :put ='<' . strftime('%F') . '>'<cr>
+  au FileType markdown nnoremap <F5> :put ='### <' . strftime('%F %a') . '>'<cr>
+  au FileType markdown inoremap <F5> :put ='### <' . strftime('%F %a') . '>'<cr>
   au FileType markdown let g:vim_markdown_new_list_item_indent = 2
   au FileType markdown let g:vim_markdown_toc_autofit = 1
 augroup END

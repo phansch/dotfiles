@@ -1,0 +1,64 @@
+! S_base3
+#define _background #fdf6e3
+
+! S_base00
+#define _foreground #657b83
+
+! S_base02 + S_base03
+! black dark/light
+#define _color0 #073642
+#define _color8 #002b36
+
+! S_red + S_orange
+! red dark/light
+#define _color1 #dc322f
+#define _color9 #cb4b16
+
+! S_green + S_base01
+! green dark/light
+#define _color2 #859900
+#define _color10 #586e75
+
+! S_yellow + S_base00
+! yellow dark/light
+#define _color3 #b58900
+#define _color11 #657b83
+
+! S_blue + S_base0
+! blue dark/light
+#define _color4 #268bd2
+#define _color12 #839496
+
+! S_magenta + S_violet
+! magenta dark/light
+#define _color5 #d33682
+#define _color13 #6c71c4
+
+! S_cyan + S_base1
+! cyan dark/light
+#define _color6 #2aa198
+#define _color14 #93a1a1
+
+! S_base2 + S_base3
+! white dark/light
+#define _color7 #eee8d5
+#define _color15 #fdf6e3
+
+*background: _background
+*foreground: _foreground
+*color0: _color0
+*color8: _color8
+*color1: _color1
+*color9: _color9
+*color2: _color2
+*color10: _color10
+*color3: _color3
+*color11: _color11
+*color4: _color4
+*color12: _color12
+*color5: _color5
+*color13: _color13
+*color6: _color6
+*color14: _color14
+*color7: _color7
+*color15: _color15
