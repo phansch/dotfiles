@@ -13,6 +13,7 @@ call plug#begin('~/.config/nvim/plugged')
 " Language specific
 Plug 'elixir-lang/vim-elixir',                 { 'for': ['elixir'] }
 Plug 'rodjek/vim-puppet'
+Plug 'slashmili/alchemist.vim',                { 'for': ['elixir'] }
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-projectionist'
