@@ -339,6 +339,16 @@ autocmd BufReadPre * if getfsize(expand("%")) > 10000000 | syntax off | endif
 " Remove trailing whitespace for some filetypes
 autocmd FileType ruby,js,css autocmd BufWritePre <buffer> :%s/\s\+$//e
 
+" Some custom ruby syntax highlights
+augroup custom_ruby_syntax
+  au!
+
+  au FileType ruby :highlight FocusTrue ctermbg=1 ctermfg=2
+  au FileType ruby :match FocusTrue 'focus: true'
+  au FileType ruby syntax match Pry 'binding.pry'
+  au FileType ruby highlight Pry ctermbg=1 ctermfg=2
+augroup END
+
 " }}}
 
 
