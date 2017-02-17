@@ -13,6 +13,7 @@ call plug#begin('~/.config/nvim/plugged')
 " Language specific
 Plug 'elixir-lang/vim-elixir',                 { 'for': ['elixir'] }
 Plug 'rodjek/vim-puppet'
+Plug 'slashmili/alchemist.vim',                { 'for': ['elixir'] }
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-projectionist'
@@ -49,7 +50,7 @@ Plug 'honza/vim-snippets'
 
 " Other
 Plug 'DataWraith/auto_mkdir'
-Plug 'benekastah/neomake'
+Plug 'w0rp/ale'
 Plug 'morhetz/gruvbox'
 Plug 'altercation/vim-colors-solarized'
 Plug 'chriskempson/base16-vim'
@@ -184,7 +185,6 @@ let g:neomake_warning_sign = {
             \ 'text': '>>',
             \ 'texthl': 'WarningMsg',
             \ }
-autocmd! BufWritePost * Neomake
 
 " }}}
 
