@@ -43,7 +43,6 @@ Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-repeat'
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
@@ -74,7 +73,6 @@ set listchars=tab:▸\ ,trail:¬,extends:❯,precedes:❮
 set showbreak=↪
 set title " Set the terminal's title
 set scrolloff=10
-set noesckeys "Make esc faster
 set mouse=
 
 " Wildmenu completition {{{
