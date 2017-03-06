@@ -38,7 +38,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
 " Insert mode
-Plug 'ervandew/supertab'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
@@ -256,6 +256,9 @@ nnoremap <leader>gco :Gcheckout<cr>
 nnoremap <leader>gc :Gcommit<cr>
 nnoremap <leader>gp :Gpush<cr>
 nnoremap <leader>gl :Gpull<cr>
+
+" Completion
+let g:deoplete#enable_at_startup = 1
 
 " Copy/pasting remaps
 set clipboard+=unnamedplus
