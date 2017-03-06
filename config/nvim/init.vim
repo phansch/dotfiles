@@ -133,7 +133,7 @@ set undolevels=1000
 set undoreload=10000
 
 " Theme settings
-colorscheme base16-ocean
+colorscheme gruvbox
 set background=dark
 " Transparent background colors
 let g:gitgutter_override_sign_column_highlight = 0
