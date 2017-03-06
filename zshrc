@@ -38,6 +38,9 @@ zstyle ':completion::complete:*' use-cache 1
 zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
+## Git completion fix
+zstyle ':completion:*:*' ignored-patterns '*ORIG_HEAD'
+
 # See http://robots.thoughtbot.com/cding-to-frequently-used-directories-in-zsh
 setopt auto_cd
 cdpath=($HOME $HOME/repos $HOME/code $HOME/.dotfiles $HOME/Documents)
