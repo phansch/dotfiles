@@ -210,6 +210,26 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar
 bar {
+  output LVDS1
+  status_command i3status
+  position top
+  modifier $mod
+  mode hide
+  # separator_symbol "•"
+
+  colors {
+            background #98971a
+            statusline #32302f
+
+            #                 border background text
+            focused_workspace #98971a #32302f #98971a
+            active_workspace #98971a #232323 #eee8d5
+            inactive_workspace #98971a #98971a #32302f
+            urgent_workspace #98971a #fb4934 #32302f
+  }
+}
+bar {
+  output HDMI1
   status_command i3status
   position top
   modifier $mod
