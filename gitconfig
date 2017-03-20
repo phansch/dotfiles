@@ -8,13 +8,9 @@
   email = dev@phansch.net
   name = Philipp Hansch
 [alias]
+  fixup = rebase -i origin/master
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-  st = status
-  ci = commit
-  co = checkout
   undo-ci = reset --soft HEAD^
-  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-  lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
   up = pull --rebase --autostash
 [push]
   default = current
