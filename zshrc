@@ -1,5 +1,6 @@
 export EDITOR='vim'
 export TERMINAL='urxvt'
+export LESS="-i" # case-insensitive less search
 
 autoload -U compinit
 compinit
@@ -10,7 +11,6 @@ bindkey -e # emacs mode
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.zsh/history
-export LESS="-i"
 setopt hist_verify
 setopt hist_ignore_dups
 setopt hist_ignore_space
@@ -77,6 +77,3 @@ export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/
 if [[ -e ~/.zshrc.local ]]; then
     source ~/.zshrc.local
 fi
-
-export NVM_DIR="$HOME/.nvm"
-lazy_source nvm "$NVM_DIR/nvm.sh" # This loads nvm
