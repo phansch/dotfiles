@@ -10,6 +10,7 @@ bindkey -e # emacs mode
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.zsh/history
+export LESS="-i"
 setopt hist_verify
 setopt hist_ignore_dups
 setopt hist_ignore_space
