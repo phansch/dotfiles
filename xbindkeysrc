@@ -19,7 +19,7 @@
   Alt + Return
 
 # Open IRC
-"urxvtc -title irssi -e ssh -t phansch@cetus.uberspace.de tmux attach && bash"
+"urxvtc -title irssi -e ssh -t phansch@207.154.238.9 tmux attach && bash"
   Alt + c
 
 # Start thunar
