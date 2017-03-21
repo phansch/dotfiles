@@ -1,5 +1,5 @@
 # Start dmenu
-"dmenu_run -f -i -fn 'Ubuntu Mono derivative Powerline-10' -p 'run:' -nb '#98971a' -nf '#32302f' -sb '#32302f' -sf '#98971a'"
+"dmenu_run -f -i -fn 'Ubuntu Mono derivative Powerline-10' -p 'run:' -nb '#ebdbb2' -nf '#282828' -sb '#282828' -sf '#ebdbb2'"
   Alt + d
 
 # Volume down
