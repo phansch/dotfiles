@@ -1,6 +1,6 @@
 export EDITOR='vim'
 export TERMINAL='urxvt'
-export LESS="-i" # case-insensitive less search
+export LESS="-i -R" # case-insensitive less search
 
 autoload -U compinit
 compinit
