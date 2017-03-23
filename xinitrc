@@ -50,5 +50,5 @@ then
 fi &
 
 if [ $(hostname) = 'philipp-samsung' ]; then
-  xrandr --output LVDS1 --off --output HDMI1 --primary
+  xrandr --output LVDS1 --auto --output HDMI1 --right-of LVDS1 --auto --primary
 fi &
