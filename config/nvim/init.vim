@@ -189,6 +189,11 @@ let g:neomake_warning_sign = {
 " Ag settings
 let g:ag_highlight=1
 
+" nvim cursor shape
+if has('nvim')
+  let $NVIM_TUI_ENABLE_CURSOR_SHAPE=2
+endif
+
 " Line Return {{{
 
 " Make sure Vim returns to the same line when you reopen a file.
@@ -227,7 +232,7 @@ inoremap <C-s> <esc>:w<CR>
 " Remap split navigation
 if has('nvim')
      nmap <BS> <C-W>h
- endif
+endif
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
