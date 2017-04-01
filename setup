@@ -50,14 +50,12 @@ function bootstrap()
 
 function ssh_save()
 {
-  while true; do
-    read -p "-----> Do you want to add your ssh key to ssh-agent? " yn
-    case $yn in
-        [y]* ) ssh-add $HOME/.ssh/id_rsa &>/dev/null; break;;
-        [n]* ) break;;
-        * ) echo "Please answer yes (y) or no (n).";;
-    esac
-  done
+  read -p "-----> Do you want to add your ssh key to ssh-agent? " yn
+  case $yn in
+      [y]* ) ssh-add $HOME/.ssh/id_rsa &>/dev/null; break;;
+      [n]* ) break;;
+      * ) echo "Please answer yes (y) or no (n).";;
+  esac
 }
 
 function finish()
