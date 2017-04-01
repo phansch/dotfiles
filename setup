@@ -60,14 +60,12 @@ function ssh_save()
 
 function finish()
 {
-  while true; do
-    read -p "-----> Almost done. Do you want to re-login now to complete the setup? " yn
-    case $yn in
-        [y]* ) xfce4-session-logout --logout; break;;
-        [n]* ) exit;;
-        * ) echo "Please answer yes (y) or no (n).";;
-    esac
-  done
+  read -p "-----> Almost done. Do you want to re-login now to complete the setup? " yn
+  case $yn in
+      [y]* ) xfce4-session-logout --logout; break;;
+      [n]* ) exit;;
+      * ) echo "Please answer yes (y) or no (n).";;
+  esac
 }
 
 do_setup
