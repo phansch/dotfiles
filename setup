@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-function do_setup() {
+do_setup() {
   bootstrap
   ssh_save
   finish
 }
 
-function bootstrap()
+bootstrap()
 {
   sudo apt-add-repository ppa:ansible/ansible -y > /dev/null 2>&1
 
@@ -48,24 +48,35 @@ function bootstrap()
   echo $cmd
 }
 
-function ssh_save()
+ssh_save()
 {
-  read -p "-----> Do you want to add your ssh key to ssh-agent? " yn
-  case $yn in
-      [y]* ) ssh-add $HOME/.ssh/id_rsa &>/dev/null; break;;
-      [n]* ) break;;
-      * ) echo "Please answer yes (y) or no (n).";;
-  esac
+  ask_for_confirmation "-----> Do you want to add your ssh key to ssh-agent? "
+  if answer_is_yes; then
+    ssh-add $HOME/.ssh/id_rsa &>/dev/null
+  fi
 }
 
-function finish()
+finish()
 {
-  read -p "-----> Almost done. Do you want to re-login now to complete the setup? " yn
-  case $yn in
-      [y]* ) xfce4-session-logout --logout; break;;
-      [n]* ) exit;;
-      * ) echo "Please answer yes (y) or no (n).";;
-  esac
+  ask_for_confirmation "-----> Almost done. Do you want to re-login now to complete the setup? "
+  if answer_is_yes; then
+    xfce4-session-logout --logout
+  else
+    exit
+  fi
 }
+
+answer_is_yes() {
+  [[ "$REPLY" =~ ^[Yy]$ ]] \
+    && return 0 \
+    || return 1
+}
+
+ask_for_confirmation() {
+  printf "$1 (y/n)"
+  read -r -n 1
+  printf "\n"
+}
+
 
 do_setup
