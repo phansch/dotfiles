@@ -17,7 +17,7 @@
         - git
         - feh
     - name: Remove specific packages
-      action: apt pkg={[ item }} state=absent
+      action: apt pkg={{ item }} state=absent
       with_items:
         - xscreensaver
     - name: Set zsh as default shell
