@@ -18,10 +18,8 @@ This will:
 ### Just the dotfiles
 
 If you just want the dotfiles, clone them and use [rcm](https://github.com/thoughtbot/rcm) as below.
-You will need to have [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) installed at `$HOME/.oh-my-zsh`.
 
     git clone https://gitlab.com/phansch/dotfiles.git $HOME/.dotfiles && cd $HOME/.dotfiles
-    git submodule foreach git pull origin master
 
     wget https://thoughtbot.github.io/rcm/debs/rcm_1.3.0-1_all.deb
     sha=$(sha256sum rcm_1.3.0-1_all.deb | cut -f1 -d' ')
@@ -68,16 +66,10 @@ Launches a couple of programs and the [i3](https://i3wm.org://i3wm.org/) window 
 
 ## Development
 
-Since it can be a bit problematic to test changes to the configuration on the actual machine where you want to make them, there is a dev-setup script that will setup and start a VM with Linux Mint.
+Since it can be a bit problematic to test changes to the configuration on the actual machine where you want to make them, you can use Vagrant to test changes to the configuration.
 
-Currently it is only tested with Linux Mint XFCE, which you can get [here](https://linuxmint.com/edition.php?id=214)
+You will need Vagrant and Virtualbox installed, then you can run:
 
-Once downloaded, open a terminal and set `IMAGE_PATH` to the path where the .iso is located.
+    vagrant up
 
-    IMAGE_PATH=$HOME/Downloads/linuxmint-17.3-xfce-64bit.iso
-
-Then run the `dev-setup`:
-
-    ./dev-setup
-
-Now you'll have to go through the installation process of Linux Mint and then you're ready to install the dotfiles.
+You can then either use `vagrant ssh` or connect to the VM through Virtualbox to have a GUI.
