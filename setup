@@ -74,7 +74,7 @@ answer_is_yes() {
 }
 
 ask_for_confirmation() {
-  printf "$1 (y/n)"
+  printf "%b" "$1 (y/n)"
   read -r -n 1
   printf "\n"
 }
