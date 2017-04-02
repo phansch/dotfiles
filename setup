@@ -10,19 +10,19 @@ bootstrap()
 {
   sudo apt-add-repository ppa:ansible/ansible-2.1 -y > /dev/null 2>&1
 
-  print_message '[setup] Upgrading and autocleaning packages...'
+  print_message "[setup] Upgrading and autocleaning packages..."
   sudo apt-get update -qq
   sudo apt-get upgrade -qq --force-yes
   sudo apt-get autoremove -y -qq
 
-  print_message '[setup] Installing Ansible and git...'
+  print_message "[setup] Installing Ansible and git..."
   sudo apt-get install -qq software-properties-common git ansible
 
   if [ -d "$HOME/.dotfiles" ]; then
-    print_message '[setup] Updating dotfiles...'
+    print_message "[setup] Updating dotfiles..."
     cd $HOME/.dotfiles && git checkout master && git pull
   else
-    print_message '[setup] Cloning dotfiles...'
+    print_message "[setup] Cloning dotfiles..."
     git clone https://gitlab.com/phansch/dotfiles.git $HOME/.dotfiles && cd $HOME/.dotfiles
   fi
 
@@ -30,7 +30,7 @@ bootstrap()
     ansible/playbooks/base.yml
     ansible/playbooks/dotfiles.yml
   )
-  print_message '[setup] Running default playbooks...'
+  print_message "[setup] Running default playbooks..."
   ansible-playbook ${default_playbooks[*]} --ask-become-pass -u $USER
 
   additional_playbooks=(
@@ -79,7 +79,7 @@ ask_for_confirmation() {
 }
 
 print_message() {
-  printf "%b" $1
+  printf "%b" "$1"
 }
 
 do_setup
