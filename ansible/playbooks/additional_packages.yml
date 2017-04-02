@@ -11,6 +11,7 @@
       state=present
   - name: Install additional apt packages
     action: apt pkg={{ item }} state=present
+    update_cache: yes
     with_items:
       - unclutter
       - virtualbox-5.1
