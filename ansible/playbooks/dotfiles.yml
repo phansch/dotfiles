@@ -9,6 +9,8 @@
       become: yes
     - name: Install dotfiles
       shell: rcup -x README.md -x screenshots chdir=~
+    - name: Create ~/.fonts directory
+      file: path=~/.fonts state=directory
     - name: Download powerline font
       get_url: url=https://github.com/powerline/fonts/raw/master/UbuntuMono/Ubuntu%20Mono%20derivative%20Powerline.ttf
         dest=~/.fonts/
