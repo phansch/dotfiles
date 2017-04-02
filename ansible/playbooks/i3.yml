@@ -2,10 +2,10 @@
 - hosts: localhost
   tasks:
     - name: Download package
-      shell: /usr/lib/apt/apt-helper download-file http://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2017.01.02_all.deb keyring.deb SHA256:4c3c6685b1181d83efe3a479c5ae38a2a44e23add55e16a328b8c8560bf05e5f
+      shell: /usr/lib/apt/apt-helper download-file http://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2017.01.02_all.deb /tmp/keyring.deb SHA256:4c3c6685b1181d83efe3a479c5ae38a2a44e23add55e16a328b8c8560bf05e5f
     - name: Install keyring.deb
       become: yes
-      shell: apt install keyring.deb
+      shell: apt install /tmp/keyring.deb
     - name: Add apt source
       become: yes
       apt_repository: repo="deb http://debian.sur5r.net/i3/ {{ ansible_distribution_release }} universe"
