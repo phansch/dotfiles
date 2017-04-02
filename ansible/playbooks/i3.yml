@@ -1,8 +1,14 @@
 ---
 - hosts: localhost
   tasks:
+    - name: Download package
+      shell: /usr/lib/apt/apt-helper download-file http://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2017.01.02_all.deb keyring.deb SHA256:4c3c6685b1181d83efe3a479c5ae38a2a44e23add55e16a328b8c8560bf05e5f
+    - name: Install keyring.deb
+      shell: apt install keyring.deb
+    - name: Add apt source
+      apt_repository: repo="deb http://debian.sur5r.net/i3/ {{ ansible_distribution_release }} universe"
     - name: Install i3
-      apt: name=i3
+      apt: update_cache=yes pkg=i3
     - name: Link .xinitrc and .xsessionrc
       file: state=link src=~/.xinitrc path=~/.xsessionrc
 
