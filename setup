@@ -10,19 +10,19 @@ bootstrap()
 {
   sudo apt-add-repository ppa:ansible/ansible-2.1 -y > /dev/null 2>&1
 
-  echo '-----> Upgrading and autocleaning packages...'
+  print_message '[setup] Upgrading and autocleaning packages...'
   sudo apt-get update -qq
   sudo apt-get upgrade -qq --force-yes
-  sudo apt-get autoremove -y -qq && sudo aptitude autoclean -q2
+  sudo apt-get autoremove -y -qq
 
-  echo '-----> Installing Ansible and git...'
+  print_message '[setup] Installing Ansible and git...'
   sudo apt-get install -qq software-properties-common git ansible
 
   if [ -d "$HOME/.dotfiles" ]; then
-    echo '-----> Updating dotfiles...'
+    print_message '[setup] Updating dotfiles...'
     cd $HOME/.dotfiles && git checkout master && git pull
   else
-    echo '-----> Cloning dotfiles...'
+    print_message '[setup] Cloning dotfiles...'
     git clone https://gitlab.com/phansch/dotfiles.git $HOME/.dotfiles && cd $HOME/.dotfiles
   fi
 
@@ -30,7 +30,7 @@ bootstrap()
     ansible/playbooks/base.yml
     ansible/playbooks/dotfiles.yml
   )
-  echo '-----> Running default playbooks...'
+  print_message '[setup] Running default playbooks...'
   ansible-playbook ${default_playbooks[*]} --ask-become-pass -u $USER
 
   additional_playbooks=(
@@ -44,13 +44,13 @@ bootstrap()
   )
 
   cmd="ansible-playbook ${additional_playbooks[*]} --ask-become-pass -u $USER"
-  echo "-----> To run the rest of the playbooks:"
-  echo $cmd
+  print_message "[setup] To run the rest of the playbooks:"
+  print_message $cmd
 }
 
 ssh_save()
 {
-  ask_for_confirmation "-----> Do you want to add your ssh key to ssh-agent? "
+  ask_for_confirmation "[setup] Do you want to add your ssh key to ssh-agent? "
   if answer_is_yes; then
     ssh-add $HOME/.ssh/id_rsa &>/dev/null
   fi
@@ -58,7 +58,7 @@ ssh_save()
 
 finish()
 {
-  ask_for_confirmation "-----> Almost done. Do you want to re-login now to complete the setup? "
+  ask_for_confirmation "[setup] Almost done. Do you want to re-login now to complete the setup? "
   if answer_is_yes; then
     xfce4-session-logout --logout
   else
@@ -73,10 +73,13 @@ answer_is_yes() {
 }
 
 ask_for_confirmation() {
-  printf "%b" "$1 (y/n)"
+  print_message "$1 (y/n)"
   read -r -n 1
-  printf "%b" "\n"
+  print_message "\n"
 }
 
+print_message() {
+  printf "%b" $1
+}
 
 do_setup
