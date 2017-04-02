@@ -73,9 +73,9 @@ answer_is_yes() {
 }
 
 ask_for_confirmation() {
-  print_message "$1 (y/n)"
+  printf "$1 (y/n)"
   read -r -n 1
-  print_message "\n"
+  printf "\n"
 }
 
 print_message() {
