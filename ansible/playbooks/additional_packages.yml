@@ -19,15 +19,10 @@
       - vagrant
   - name: Create tmp download dir
     file: path=/tmp/ansible-debs state=directory
-  - name: Download .deb packages
-    action: get_url url={{ item }} dest=/tmp/ansible-debs/
+  - name: Install additional deb packages
+    apt: deb={{ item }} state=present
     with_items:
       - https://go.skype.com/skypeforlinux-64.deb
-  - name: Install additional deb packages
-    shell: dpkg -i /tmp/ansible-debs/{{ item }} && apt-get -f -y -qq install
-    with_items:
-      - skype*
-  # Ansible does not support apt_repository on Linux Mint right now
   - name: Add neovim repository
     shell: add-apt-repository -y ppa:neovim-ppa/unstable
   - name: Install neovim
