@@ -6,8 +6,7 @@
         dest=/tmp/rcm.deb
     - name: Install rcm
       apt: deb=/tmp/rcm.deb
-    - name: Pull submodules
-      shell: git submodule foreach git pull origin master
+      become: yes
     - name: Install dotfiles
       shell: rcup -x README.md -x screenshots chdir=~
     - name: Download powerline font
