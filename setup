@@ -8,6 +8,7 @@ do_setup() {
 
 bootstrap()
 {
+  print_message "[setup] Adding ansible ppa..."
   sudo apt-add-repository ppa:ansible/ansible-2.1 -y > /dev/null 2>&1
 
   print_message "[setup] Upgrading and autocleaning packages..."
@@ -20,10 +21,10 @@ bootstrap()
 
   if [ -d "$HOME/.dotfiles" ]; then
     print_message "[setup] Updating dotfiles..."
-    cd $HOME/.dotfiles && git checkout master && git pull
+    cd $HOME/.dotfiles && git checkout master -q && git pull -q
   else
     print_message "[setup] Cloning dotfiles..."
-    git clone https://gitlab.com/phansch/dotfiles.git $HOME/.dotfiles && cd $HOME/.dotfiles
+    git clone -q https://gitlab.com/phansch/dotfiles.git $HOME/.dotfiles && cd $HOME/.dotfiles
   fi
 
   default_playbooks=(
@@ -45,7 +46,7 @@ bootstrap()
 
   cmd="ansible-playbook ${additional_playbooks[*]} --ask-become-pass -u $USER"
   print_message "[setup] To run the rest of the playbooks:"
-  print_message $cmd
+  print_message "$cmd"
 }
 
 ssh_save()
