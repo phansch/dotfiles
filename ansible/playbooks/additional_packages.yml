@@ -10,8 +10,8 @@
     apt_repository: repo="deb http://download.virtualbox.org/virtualbox/debian {{ ansible_distribution_release }} contrib"
       state=present
   - name: Install additional apt packages
-    action: apt pkg={{ item }} state=present
     update_cache: yes
+    action: apt pkg={{ item }} state=present
     with_items:
       - unclutter
       - virtualbox-5.1
