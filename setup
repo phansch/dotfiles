@@ -79,7 +79,7 @@ ask_for_confirmation() {
 }
 
 print_message() {
-  printf "%b" "$1"
+  printf "%b" "$1\n"
 }
 
 do_setup
