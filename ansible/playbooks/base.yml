@@ -16,6 +16,7 @@
         - tmux
         - git
         - feh
+        - htop
     - name: Remove specific packages
       action: apt pkg={{ item }} state=absent
       with_items:
