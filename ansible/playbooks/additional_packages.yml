@@ -23,12 +23,10 @@
   - name: Download .deb packages
     action: get_url url={{ item }} dest=/tmp/ansible-debs/
     with_items:
-      - http://ankisrs.net/download/mirror/anki-2.0.33.deb
-      - http://download.skype.com/linux/skype-ubuntu-precise_4.3.0.37-1_i386.deb
+      - https://go.skype.com/skypeforlinux-64.deb
   - name: Install additional .deb packages
     shell: dpkg -i /tmp/ansible-debs/{{ item }} && apt-get -f -y -qq install
     with_items:
-      - anki*
       - skype*
   # Ansible does not support apt_repository on Linux Mint right now
   - name: Add neovim repository
