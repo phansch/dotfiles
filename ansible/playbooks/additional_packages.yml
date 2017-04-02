@@ -4,7 +4,7 @@
   become_method: sudo
   tasks:
   - name: Add virtualbox apt key
-    apt_key: url=https://www.virtualbox.org/download/oracle_vbox.asc
+    apt_key: url=https://www.virtualbox.org/download/oracle_vbox_2016.asc
       state=present
   - name: Add virtualbox repository
     apt_repository: repo="deb http://download.virtualbox.org/virtualbox/debian {{ ansible_distribution_release }} contrib"
