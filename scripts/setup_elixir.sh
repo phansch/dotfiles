@@ -1,3 +1,4 @@
+#!/bin/sh
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang
 asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir

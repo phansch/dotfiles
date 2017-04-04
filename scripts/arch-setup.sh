@@ -1,3 +1,4 @@
+#!/bin/sh
 sudo pacman -S avahi
 sudo pacman -S keepassx2
 sudo pacman -S qutebrowser

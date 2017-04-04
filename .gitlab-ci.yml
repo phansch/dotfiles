@@ -3,4 +3,4 @@ before_script:
 
 shellcheck:
   script:
-    - shellcheck **/*.{sh,bash}
+    - bash -O extglob -c 'shellcheck **/!(git-prompt).sh bin/* -e SC1071'
