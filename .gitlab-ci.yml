@@ -4,3 +4,7 @@ before_script:
 shellcheck:
   script:
     - test/shellcheck.sh
+
+setup:
+  script:
+    - setup
