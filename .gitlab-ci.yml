@@ -1,0 +1,6 @@
+before_script:
+  - apt-get update -qq && apt-get install -y -qq shellcheck
+
+shellcheck:
+  script:
+    - shellcheck **/*.{sh,bash}
