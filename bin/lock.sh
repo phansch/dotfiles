@@ -1,6 +1,6 @@
 #!/bin/sh
 umask 0077
-cfg_tmpdir="/run/user/$(id -u $USER)/my-i3lock"
+cfg_tmpdir="/run/user/$(id -u "$USER")/my-i3lock"
 image_path="$cfg_tmpdir/screen.png"
 
 mkdir -p "$cfg_tmpdir"
