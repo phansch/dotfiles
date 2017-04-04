@@ -14,25 +14,25 @@ sudo pacman -S skype
 sudo pacman -S mupdf
 
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-\curl -sSL https://get.rvm.io | bash -s stable --ruby
+curl -sSL https://get.rvm.io | bash -s stable --ruby
 
 mkdir ~/builds
 
-cd ~/builds
+cd ~/builds || return
 wget https://aur.archlinux.org/cgit/aur.git/snapshot/rcm.tar.gz
-tar xf rcm.tar.gz && cd rcm
+tar xf rcm.tar.gz && cd rcm || return
 makepkg -sri
 
-cd $HOME && rcup -x README.md -x screenshots
+cd "$HOME" && rcup -x README.md -x screenshots
 
 mkdir ~/.fonts
-cd ~/.fonts
+cd ~/.fonts || return
 wget https://github.com/powerline/fonts/raw/master/UbuntuMono/Ubuntu%20Mono%20derivative%20Powerline.ttf
 fc-cache -f
 
-cd ~/builds
+cd ~/builds || return
 wget https://aur.archlinux.org/cgit/aur.git/snapshot/pam_ssh.tar.gz
-tar xf pam_ssh.tar.gz && cd pam_ssh
+tar xf pam_ssh.tar.gz && cd pam_ssh || return
 makepkg -sri --skippgpcheck
 mkdir ~/.ssh/login-keys.d && cd ~/.ssh/login-keys.d && ln -s ~/.ssh/id_rsa
 
