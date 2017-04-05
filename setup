@@ -95,7 +95,7 @@ run_with_sudo() {
     my_sudo='sudo'
   fi
 
-  $my_sudo "$1"
+  $my_sudo "$@"
 }
 
 do_setup
