@@ -51,6 +51,8 @@ bootstrap()
 
 ssh_save()
 {
+
+  if [[ -n "$CI" ]]; then return; fi
   ask_for_confirmation "[setup] Do you want to add your ssh key to ssh-agent? "
   if answer_is_yes; then
     ssh-add "$HOME/.ssh/id_rsa" &>/dev/null
@@ -59,6 +61,7 @@ ssh_save()
 
 finish()
 {
+  if [[ -n "$CI" ]]; then return; fi
   ask_for_confirmation "[setup] Almost done. Do you want to re-login now to complete the setup? "
   if answer_is_yes; then
     xfce4-session-logout --logout
