@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -x
+
 do_setup() {
   bootstrap
   ssh_save
