@@ -9,15 +9,15 @@ do_setup() {
 bootstrap()
 {
   print_message "[setup] Adding ansible ppa..."
-  sudo apt-add-repository ppa:ansible/ansible-2.1 -y > /dev/null 2>&1
+  run_with_sudo apt-add-repository ppa:ansible/ansible-2.1 -y > /dev/null 2>&1
 
   print_message "[setup] Upgrading and autocleaning packages..."
-  sudo apt-get update -qq
-  sudo apt-get upgrade -qq --force-yes
-  sudo apt-get autoremove -y -qq
+  run_with_sudo apt-get update -qq
+  run_with_sudo apt-get upgrade -qq --force-yes
+  run_with_sudo apt-get autoremove -y -qq
 
   print_message "[setup] Installing Ansible and git..."
-  sudo apt-get install -qq software-properties-common git ansible
+  run_with_sudo apt-get install -qq software-properties-common git ansible
 
   if [ -d "$HOME/.dotfiles" ]; then
     print_message "[setup] Updating dotfiles..."
@@ -81,6 +81,19 @@ ask_for_confirmation() {
 
 print_message() {
   printf "%b" "$1\n"
+}
+
+# This is a wrapper around sudo for gitlab-ci
+# Because gitlab-ci runners don't seem to have sudo and are root already.
+run_with_sudo() {
+  my_sudo=""
+
+  if [[ $(id -u) -ne 0 ]] ; then
+    print_message "We are not root, using 'sudo'"
+    my_sudo='sudo'
+  fi
+
+  $my_sudo "$1"
 }
 
 do_setup
