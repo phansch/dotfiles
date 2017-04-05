@@ -32,7 +32,7 @@ bootstrap()
     ansible/playbooks/dotfiles.yml
   )
   print_message "[setup] Running default playbooks..."
-  ansible-playbook "${default_playbooks[*]}" --ask-become-pass -u "$USER"
+  ansible-playbook "${default_playbooks[@]}" --ask-become-pass -u "$USER"
 
   additional_playbooks=(
     ansible/playbooks/docker.yml
