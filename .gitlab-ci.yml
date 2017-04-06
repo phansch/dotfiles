@@ -9,3 +9,4 @@ shellcheck:
 setup:
   script:
     - ./setup
+    - test/ansible

@@ -73,3 +73,7 @@ You will need Vagrant and Virtualbox installed, then you can run:
     vagrant up
 
 You can then either use `vagrant ssh` or connect to the VM through Virtualbox to have a GUI.
+
+**Running the tests**
+
+    run-parts test/
