@@ -262,6 +262,7 @@ nnoremap <leader>gco :Gcheckout<cr>
 nnoremap <leader>gc :Gcommit<cr>
 nnoremap <leader>gp :Gpush<cr>
 nnoremap <leader>gl :Gpull<cr>
+nnoremap <leader>gr :terminal git rebase -i origin/master<cr>
 
 " Completion
 let g:deoplete#enable_at_startup = 1
