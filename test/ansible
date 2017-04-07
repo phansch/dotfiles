@@ -2,5 +2,5 @@
 
 set -x
 
-ansible-galaxy install rvm_io.ruby
+sudo ansible-galaxy install rvm_io.ruby
 ansible-playbook ansible/playbooks/* --syntax-check
