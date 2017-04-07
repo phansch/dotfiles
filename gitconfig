@@ -9,7 +9,7 @@
   name = Philipp Hansch
 [alias]
   fixup = rebase -i origin/master
-  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  hist = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
   undo-ci = reset --soft HEAD^
   up = pull --rebase --autostash
 [push]
