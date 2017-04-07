@@ -10,3 +10,4 @@ setup:
   script:
     - ./setup
     - test/ansible
+    - test/i3
