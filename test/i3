@@ -1,0 +1,5 @@
+#!/bin/sh
+
+set -x
+
+i3 -C config/i3/config
