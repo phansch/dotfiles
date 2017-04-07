@@ -9,7 +9,7 @@
 
 if [ -d /etc/X11/xinit/xinitrc.d ]; then
     for f in /etc/X11/xinit/xinitrc.d/*; do
-        # shellcheck source=/etc/X11/xinit/xinitrc.d/50-systemd-user.sh
+        # shellcheck disable=1090
         [ -x "$f" ] && . "$f"
     done
     unset f

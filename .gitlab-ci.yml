@@ -8,6 +8,6 @@ shellcheck:
 
 setup:
   script:
-    - ./setup
+    - ./setup -a
     - test/ansible
     - test/i3

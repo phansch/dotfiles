@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 do_setup() {
-  bootstrap
+  bootstrap "$1"
   ssh_save
   finish
 }
@@ -45,8 +45,14 @@ bootstrap()
   )
 
   cmd="ansible-playbook ${additional_playbooks[*]} --ask-become-pass -u $USER"
-  print_message "[setup] To run the rest of the playbooks:"
-  print_message "$cmd"
+  if [ "$1" = true ] ; then
+    print_message "[setup] Running all additional playbooks"
+    ansible-playbook ${additional_playbooks[@]} --ask-become-pass -u "$USER"
+  else
+    print_message "[setup] To run the rest of the playbooks:"
+    print_message "$cmd"
+  fi
+
 }
 
 ssh_save()
@@ -99,4 +105,17 @@ run_with_sudo() {
   $my_sudo "$@"
 }
 
-do_setup
+while getopts "a" opt; do
+  case "$opt" in
+    a)
+      all=true
+      ;;
+    \?)
+      echo >&2 \
+        "usage: $0 [-a]"
+      exit 1;;
+  esac
+done
+shift $((OPTIND-1))
+
+do_setup "$all"
