@@ -14,13 +14,13 @@
       rvm1_install_path: '/home/{{ ansible_user_id }}/.rvm'
       rvm1_bundler_install: true
       rvm1_rubies:
-        - "{{ ruby_version }}"
+        - ruby-2.4.1
   tasks:
     - name: Install tmuxinator if not installed
       # Inspired by https://github.com/rvm/rvm1-ansible/blob/master/tasks/rubies.yml#L34
       # Could be refactored into its own module somehow.
       with_items:
-        - "{{ ruby_version }}"
+        - ruby-2.4.1
       shell: >
         ls /home/{{ ansible_user_id }}/.rvm/wrappers/{{ item }}
         | if ! grep "^tmuxinator " ; then /home/{{ ansible_user_id }}/.rvm/wrappers/{{ item }}/gem install tmuxinator ; fi
