@@ -1,10 +1,10 @@
 ---
 - hosts: localhost
-  become: yes
-  become_method: sudo
   tasks:
     - name: Install Prerequisites
-      apt: name={{ item }}
+      become: yes
+      become_method: sudo
+      apt: name={{ item }} update_cache=yes
       with_items:
         - python3-pyqt5
         - python3-pyqt5.qtwebkit
@@ -14,13 +14,18 @@
         - asciidoc
         - source-highlight
     - name: Clone repo
-      git: repo=git@github.com:phansch/qutebrowser.git
+      git: repo=https://github.com/qutebrowser/qutebrowser.git
         dest=~/code/qutebrowser
+        accept_hostkey=yes
+        depth=1
+      register: clone_repo
     - name: Generate help
-      shell: phyton3 scripts/asciidoc2html.py
+      shell: python3 scripts/asciidoc2html.py
         chdir=~/code/qutebrowser
+      when: clone_repo.changed
     - name: Install venv with tox
       shell: tox -e mkvenv
         chdir=~/code/qutebrowser
+      when: clone_repo.changed
     # The wrapper script for qutebrowser is already at
     # .bin/qutebrowser
