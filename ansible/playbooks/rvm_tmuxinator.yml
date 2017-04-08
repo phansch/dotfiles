@@ -11,7 +11,7 @@
       rvm1_rvm_version: 'stable'
       rvm1_rvm_check_for_updates: true
       rvm1_install_flags: '--user-install --auto-dotfiles'
-      rvm1_install_path: '/home/{{ ansible_user }}/.rvm'
+      rvm1_install_path: '/home/{{ ansible_user_id }}/.rvm'
       rvm1_bundler_install: true
       rvm1_rubies:
         - "{{ ruby_version }}"
@@ -22,9 +22,9 @@
       with_items:
         - "{{ ruby_version }}"
       shell: >
-        ls /home/{{ ansible_user }}/.rvm/wrappers/{{ item }}
-        | if ! grep "^tmuxinator " ; then /home/{{ ansible_user }}/.rvm/wrappers/{{ item }}/gem install tmuxinator ; fi
+        ls /home/{{ ansible_user_id }}/.rvm/wrappers/{{ item }}
+        | if ! grep "^tmuxinator " ; then /home/{{ ansible_user_id }}/.rvm/wrappers/{{ item }}/gem install tmuxinator ; fi
       args:
-        creates: '/home/{{ ansible_user }}/.rvm/wrappers/{{ item }}/tmuxinator'
+        creates: '/home/{{ ansible_user_id }}/.rvm/wrappers/{{ item }}/tmuxinator'
       register: bundler_install
       changed_when: '"Successfully installed tmuxinator" in bundler_install.stdout'
