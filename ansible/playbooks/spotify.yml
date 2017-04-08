@@ -6,6 +6,7 @@
     - name: Add apt-key
       apt_key: keyserver=keyserver.ubuntu.com id=BBEBDCB318AD50EC6865090613B00F1FD2C19886
     - name: Add spotify source
-      lineinfile: dest=/etc/apt/sources.list.d/spotify.list line='deb http://repository.spotify.com stable non-free'
+      apt_repository: repo="deb http://repository.spotify.com stable non-free"
+      become: yes
     - name: Install spotify-client
       apt: update_cache=yes name=spotify-client
