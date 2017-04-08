@@ -47,6 +47,7 @@ bootstrap()
   cmd="ansible-playbook ${additional_playbooks[*]} --ask-become-pass -u $USER"
   if [ "$1" = true ] ; then
     print_message "[setup] Running all additional playbooks"
+    ansible-galaxy install -r ansible/requirements.yml --force
     ansible-playbook "${additional_playbooks[@]}" --ask-become-pass -u "$USER"
   else
     print_message "[setup] To run the rest of the playbooks:"

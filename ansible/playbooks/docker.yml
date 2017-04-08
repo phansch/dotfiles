@@ -3,30 +3,11 @@
   become: yes
   become_method: sudo
   tasks:
-    - name: Add GPG key
-      apt_key: keyserver=p80.pool.sks-keyservers.net id=58118E89F3A912897C070ADBF76221572C52609D
-    - name: Remove existing docker.list apt source file
-      file: path=/etc/apt/sources.list.d/docker.list state=absent
-    - name: Create new docker.list
-      file: path=/etc/apt/sources.list.d/docker.list state=touch
-    - name: Ensure correct apt source entry in docker.list
-      lineinfile: dest=/etc/apt/sources.list.d/docker.list
-        line='deb https://apt.dockerproject.org/repo ubuntu-trusty main'
-    - name: Update apt cache
-      apt: update_cache=yes
-    - name: Verify that apt is pulling from the right repository.
-      shell: apt-cache policy docker-engine
-    - name: Install prereqs, recommended linux-image-extra package, apparmor and docker-engine
-      apt: name={{ item }}
-      with_items:
-        - apt-transport-https
-        - ca-certificates
-        - linux-image-extra-{{ ansible_kernel }}
-        - apparmor
-        - docker-engine
-    - name: Create docker group
-      group: name=docker
-    - name: Add current user to docker group
-      user: name={{ ansible_user_id }} groups=docker
-    - name: Ensure docker service is running
-      service: name=docker state=started
+    - name: Install python-pycurl for angstwad.docker_ubuntu
+      apt: name=python-pycurl update_cache=yes
+
+- hosts: localhost
+  become: yes
+  become_method: sudo
+  roles:
+    - role: angstwad.docker_ubuntu
