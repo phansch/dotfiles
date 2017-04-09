@@ -9,6 +9,7 @@ do_setup() {
 bootstrap()
 {
   print_message "[setup] Ensure add-apt-repository is installed"
+  run_with_sudo apt-get update -qq
   run_with_sudo apt-get install software-properties-common -qq
   print_message "[setup] Adding ansible ppa..."
   run_with_sudo add-apt-repository ppa:ansible/ansible -y > /dev/null
