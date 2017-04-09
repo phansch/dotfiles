@@ -9,7 +9,7 @@ do_setup() {
 bootstrap()
 {
   print_message "[setup] Adding ansible ppa..."
-  run_with_sudo apt-add-repository ppa:ansible/ansible -y
+  run_with_sudo add-apt-repository ppa:ansible/ansible -y > /dev/null 2>&1
 
   print_message "[setup] Upgrading and autocleaning packages..."
   run_with_sudo apt-get update -qq
