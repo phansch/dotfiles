@@ -2,6 +2,8 @@
 - hosts: localhost
   become: yes
   become_method: sudo
+  roles:
+    - role: kagux.silversearcher_ag
   tasks:
     - name: Install base packages
       action: apt pkg={{ item }} state=present
