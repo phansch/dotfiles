@@ -35,6 +35,7 @@ bootstrap()
     ansible/playbooks/dotfiles.yml
   )
   print_message "[setup] Running default playbooks..."
+  run_with_sudo ansible-galaxy install -r ansible/requirements.yml --force
   ansible-playbook "${default_playbooks[@]}" --ask-become-pass -u "$USER"
 
   additional_playbooks=(
@@ -49,7 +50,6 @@ bootstrap()
   cmd="ansible-playbook ${additional_playbooks[*]} --ask-become-pass -u $USER"
   if [ "$1" = true ] ; then
     print_message "[setup] Running all additional playbooks"
-    run_with_sudo ansible-galaxy install -r ansible/requirements.yml --force
     ansible-playbook "${additional_playbooks[@]}" --ask-become-pass -u "$USER"
   else
     print_message "[setup] To run the rest of the playbooks:"
