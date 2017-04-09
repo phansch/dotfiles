@@ -8,6 +8,8 @@ do_setup() {
 
 bootstrap()
 {
+  print_message "[setup] Ensure add-apt-repository is installed"
+  run_with_sudo apt-get install software-properties-common -qq
   print_message "[setup] Adding ansible ppa..."
   run_with_sudo add-apt-repository ppa:ansible/ansible -y > /dev/null
 
@@ -17,7 +19,7 @@ bootstrap()
   run_with_sudo apt-get autoremove -y -qq
 
   print_message "[setup] Installing Ansible and git..."
-  run_with_sudo apt-get install -qq software-properties-common git ansible
+  run_with_sudo apt-get install -qq git ansible
 
   if [ -d "$HOME/.dotfiles" ]; then
     print_message "[setup] Updating dotfiles..."
