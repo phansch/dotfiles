@@ -26,7 +26,10 @@
       with_items:
         - xscreensaver
     - name: Set zsh as default shell
-      user: shell=/bin/zsh name={{ ansible_user_id }}
+      user:
+        name: "{{ lookup('env', 'USER') }}"
+        shell: /bin/zsh
+        append: yes
     # Fix gnome keyring
     - name: Install libgnome-keyring-dev
       apt: name=libgnome-keyring-dev
