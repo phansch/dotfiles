@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+export ANSIBLE_FORCE_COLOR=true
+
 do_setup() {
   bootstrap "$1"
   ssh_save
