@@ -19,6 +19,11 @@
       - https://go.skype.com/skypeforlinux-64.deb
   - name: Add neovim repository
     shell: add-apt-repository -y ppa:neovim-ppa/unstable
+  - name: Install python3-pip
+    apt: name=python3-pip
+  - pip:
+      name: neovim
+      executable: pip3
   - name: Install neovim
     apt: name=neovim update_cache=yes
   - name: Set nvim as vi alternative
