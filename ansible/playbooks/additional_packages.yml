@@ -17,6 +17,8 @@
       - shutter
       - keepassx
       - vagrant
+      - libreoffice-calc
+      - deja-dup
   - name: Create tmp download dir
     file: path=/tmp/ansible-debs state=directory
   - name: Install additional deb packages
