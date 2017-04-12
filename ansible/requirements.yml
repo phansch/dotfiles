@@ -1,3 +1,4 @@
 - src: rvm_io.ruby
 - src: angstwad.docker_ubuntu
 - src: kagux.silversearcher_ag
+- src: FGtatsuro.vagrant
