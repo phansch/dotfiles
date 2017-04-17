@@ -1,5 +1,67 @@
 [![build status](https://gitlab.com/phansch/dotfiles/badges/master/build.svg)](https://gitlab.com/phansch/dotfiles/commits/master)
 
+## What's in there?
+
+This is meant to be a 'minimal', distraction free setup.
+It should automate as much as possible and keep UI clutter to a minimum.
+
+
+### i3
+
+ * i3bar is only shown when the modifier key is pressed
+ * i3bar only shows the workspaces, time and tray programs
+
+### tmux
+
+The status display has no additional information apart from windows.
+
+![tmux status display](screenshots/screen-tmux.png)
+
+### zsh
+
+* Custom zsh prompt/theme
+* CTRL+Z to send jobs to background and to foreground
+* No oh-my-zsh, because it makes things slow
+* Same completion as oh-my-zsh
+
+![zsh prompt](screenshots/screen-zsh1.png)
+
+### X Config
+
+**.xinitrc for i3**
+
+Launches a couple of programs and the [i3](https://i3wm.org://i3wm.org/) window manager.
+
+**.Xresources for urxvt configuration**
+
+ * Gruvbox and Solarized themes
+ * Clickable urls to launch firefox
+ * Shortcuts to change the terminal font size
+ * Font size management with Ctrl + arrow keys
+
+### Vim
+
+ * Support for 'line' cursor shape in insert mode if using nvim
+ * Turns syntax off for large files
+ * Open the current file in browser (Useful for markdown)
+ * Return to the same line when you reopen a file
+
+### Git
+
+ * Pre-defined commit message with suggestions
+
+### Ruby
+
+ * Basic rubocop.yml
+ * irbrc - start pry if possible
+ * gemrc - never download docs
+
+### Scripts in bin/
+
+ * `clean_rails` cleans cache and log files in rails projects
+ * `lock.sh` Locks the screen with a blurred screenshot of the current screen.
+   Requires `scrot`, `imagemagick` and `i3lock`
+
 ## Installation
 
 ### System bootstrapping
@@ -30,41 +92,6 @@ If you just want the dotfiles, clone them and use [rcm](https://github.com/thoug
 
     cd $HOME && rcup -x README.md -x screenshots
 
-## What's in there?
-
-### zsh
-
-* Custom zsh prompt/theme
-* CTRL+Z to send jobs to background and to foreground
-
-![zsh prompt](screenshots/screen-zsh1.png)
-
-### X Config
-
-**.xinitrc for i3**
-
-Launches a couple of programs and the [i3](https://i3wm.org://i3wm.org/) window manager.
-
-**.Xresources for urxvt configuration**
-
- * Gruvbox and Solarized themes
- * Clickable urls to launch firefox
- * Shortcuts to change the terminal font size
- * Font size management with Ctrl + arrow keys
-
-### Git
-
- * Pre-defined commit message with suggestions
-
-### Ruby
-
- * Basic rubocop.yml
- * irbrc - start pry if possible
- * gemrc - never download docs
-
-### Scripts in bin/
-
- * `clean_rails` cleans cache and log files in rails projects
 
 ## Development
 
@@ -79,3 +106,14 @@ You can then either use `vagrant ssh` or connect to the VM through Virtualbox to
 **Running the tests**
 
     run-parts test/
+
+### CI Info
+
+CI is trying to mirror a full Ubuntu installation in order to ensure the setup script doesn't fail.
+
+All ansible playbooks are run on CI. The build will fail if:
+
+* Any ansible playbook has not finished successfully
+* i3 config is invalid
+* `ansible-playbook --syntax-check` has not finished successfully
+* shellcheck found errors
