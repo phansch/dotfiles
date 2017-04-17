@@ -4,7 +4,7 @@
 
 Just run the following command:
 
-    wget --no-check-certificate https://gitlab.com/phansch/dotfiles/raw/master/setup -O - | bash
+    wget --no-check-certificate https://github.com/phansch/dotfiles/raw/master/setup -O - | bash
 
 This will:
 
