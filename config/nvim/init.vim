@@ -29,8 +29,9 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 
 " Search and find
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'rking/ag.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
 Plug 'tpope/vim-vinegar'
 
 " Git
@@ -172,19 +173,15 @@ let g:gitgutter_sign_column_always = 1
 let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
 
-" Remap ctrl + p to ,d
-let g:ctrlp_map = '<space>d'
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-let g:ctrlp_prompt_mappings = {
-  \ 'PrtClearCache()':      ['<c-r>'],
-  \ }
-
 let g:neomake_warning_sign = {
             \ 'text': '>>',
             \ 'texthl': 'WarningMsg',
             \ }
 
 " }}}
+
+" fzf settings
+let g:fzf_tags_command = 'ctags -R'
 
 " Ag settings
 let g:ag_highlight=1
@@ -239,8 +236,9 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-nnoremap <space>b :CtrlPBuffer<cr>
-nnoremap <space>m :CtrlPMRU<cr>
+nnoremap <space>d :FZF<cr>
+nnoremap <space>b :Buffers<cr>
+nnoremap <space>m :History<cr>
 
 " Easier to type, and I never use the default behavior.
 noremap H ^
