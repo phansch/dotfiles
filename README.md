@@ -1,3 +1,5 @@
+[![build status](https://gitlab.com/phansch/dotfiles/badges/master/build.svg)](https://gitlab.com/phansch/dotfiles/commits/master)
+
 ## Installation
 
 ### System bootstrapping
