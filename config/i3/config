@@ -160,7 +160,6 @@ assign [title="Icedove|Thunderbird"] $WS7
 ## window floating, borders and positioning
 for_window [class="^Firefox$" title="^Library$"] floating enable
 for_window [class="^Firefox$" window_role="^Preferences$"] floating enable
-for_window [class="qutebrowser"] border normal 0
 for_window [class="^Anki$"] floating enable, border normal, move absolute position center
 for_window [class="^Skype$"] floating enable
 for_window [title="xfce4-notifyd|Volume Control"] floating enable
