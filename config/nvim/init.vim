@@ -49,6 +49,7 @@ Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
 
 " Other
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'DataWraith/auto_mkdir'
 Plug 'w0rp/ale'
 Plug 'morhetz/gruvbox'
