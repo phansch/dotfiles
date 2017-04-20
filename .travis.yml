@@ -1,0 +1,15 @@
+sudo: required
+
+language: generic
+
+services:
+- docker
+
+install:
+  - docker build -t dotfiles .
+  - docker run -it dotfiles test/shellcheck
+  - docker run -it dotfiles ./setup -a && test/ansible && test/i3
+
+script:
+  - docker ps | grep -q dotfiles
+
