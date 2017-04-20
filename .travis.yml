@@ -5,6 +5,9 @@ language: generic
 services:
   - docker
 
+env:
+  - USER=root
+
 install:
   - docker build -t dotfiles .
   - docker run dotfiles test/shellcheck
