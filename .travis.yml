@@ -6,7 +6,12 @@ services:
   - docker
 
 env:
-  - USER=root
+  global:
+    - USER=root
+
+branches:
+  only:
+    master
 
 install:
   - docker build -t dotfiles .
