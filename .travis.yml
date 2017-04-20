@@ -3,12 +3,12 @@ sudo: required
 language: generic
 
 services:
-- docker
+  - docker
 
 install:
   - docker build -t dotfiles .
-  - docker run -it dotfiles test/shellcheck
-  - docker run -it dotfiles ./setup -a && test/ansible && test/i3
+  - docker run dotfiles test/shellcheck
+  - docker run dotfiles ./setup -a && test/ansible && test/i3
 
 script:
   - docker ps | grep -q dotfiles
