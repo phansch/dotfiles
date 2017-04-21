@@ -15,9 +15,8 @@ branches:
 
 install:
   - docker build -t dotfiles .
-  - docker run dotfiles test/shellcheck
-  - docker run dotfiles ./setup -a && test/ansible && test/i3
 
 script:
-  - docker ps | grep -q dotfiles
+  - docker run dotfiles test/shellcheck
+  - docker run dotfiles ./setup -a && test/ansible && test/i3
 
