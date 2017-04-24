@@ -23,7 +23,7 @@
   Alt + c
 
 # Start thunar
-"nemo ~/code || thunar ~/code"
+"thunar ~/code"
   Alt + f
 
 # Lock screen
