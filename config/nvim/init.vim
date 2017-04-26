@@ -215,6 +215,7 @@ iabbrev visibilty visibility
 iabbrev enbaled enabled
 iabbrev objecs objects
 iabbrev shrug ¯\_(ツ)_/¯
+iabbrev mothed method
 " }}}
 
 " Mappings {{{
