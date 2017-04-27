@@ -25,8 +25,12 @@ bootstrap()
   run_with_sudo apt-get install -qq git ansible
 
   if [ -d "$HOME/.dotfiles" ]; then
-    print_message "[setup] Updating dotfiles..."
+    print_message "[setup] Dotfiles exist. Updating dotfiles..."
     cd "$HOME/.dotfiles" && git checkout master -q && git pull -q
+  elif [ "$TESTING" = "true" ]; then
+    print_message "[setup] We're in our testing container. Hello!"
+    print_message "[setup] We're testing the code that has been mapped to the container."
+    cd /code || exit 1
   else
     print_message "[setup] Cloning dotfiles..."
     git clone -q https://gitlab.com/phansch/dotfiles.git "$HOME/.dotfiles" && cd "$HOME/.dotfiles" || exit
