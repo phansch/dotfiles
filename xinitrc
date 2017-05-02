@@ -51,5 +51,7 @@ then
 fi &
 
 if [ "$(hostname)" = 'philipp-samsung' ]; then
-  xrandr --output LVDS1 --auto --output HDMI1 --right-of LVDS1 --auto --primary
+  ~/.screenlayout/work_default.sh
+else
+  ~/.screenlayout/home_default.sh
 fi &
