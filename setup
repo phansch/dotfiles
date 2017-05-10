@@ -31,6 +31,7 @@ bootstrap()
     print_message "[setup] We're in our testing container. Hello!"
     print_message "[setup] We're testing the code that has been mapped to the container."
     cd /code || exit 1
+    cp -r /code "$HOME/.dotfiles"
   else
     print_message "[setup] Cloning dotfiles..."
     git clone -q https://gitlab.com/phansch/dotfiles.git "$HOME/.dotfiles" && cd "$HOME/.dotfiles" || exit
@@ -80,8 +81,6 @@ finish()
   ask_for_confirmation "[setup] Almost done. Do you want to re-login now to complete the setup? "
   if answer_is_yes; then
     xfce4-session-logout --logout
-  else
-    exit
   fi
 }
 
