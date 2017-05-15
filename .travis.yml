@@ -1,0 +1,21 @@
+sudo: required
+
+language: generic
+
+services:
+  - docker
+
+env:
+  global:
+    - USER=root
+
+branches:
+  only:
+    master
+
+install:
+  - docker build -t dotfiles .
+
+script:
+  - docker run dotfiles test/shellcheck
+  - docker run dotfiles /bin/bash -c "./setup -a; ./test/ansible; ./test/i3"

@@ -3,6 +3,8 @@
   become: yes
   become_method: sudo
   tasks:
+    - name: Ensure udev directory
+      file: path=/etc/udev/rules.d state=directory
     - name: Copy udev rules for touchpad
       template:
         src=../templates/udev/01-touchpad.rules.j2
