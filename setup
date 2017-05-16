@@ -34,7 +34,7 @@ bootstrap()
     cp -r /code "$HOME/.dotfiles"
   else
     print_message "[setup] Cloning dotfiles..."
-    git clone -q https://gitlab.com/phansch/dotfiles.git "$HOME/.dotfiles" && cd "$HOME/.dotfiles" || exit
+    git clone -q https://github.com/phansch/dotfiles.git "$HOME/.dotfiles" && cd "$HOME/.dotfiles" || exit
   fi
 
   default_playbooks=(
