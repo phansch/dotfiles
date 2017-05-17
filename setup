@@ -100,8 +100,7 @@ print_message() {
   printf "%b" "$1\n"
 }
 
-# This is a wrapper around sudo for gitlab-ci
-# Because gitlab-ci runners don't seem to have sudo and are root already.
+# This is a wrapper around sudo for docker
 run_with_sudo() {
   my_sudo=""
 

@@ -75,15 +75,15 @@ This will:
 1. Setup [Ansible](https://www.ansible.com/)
 2. Upgrade and autoclean system packages
 3. Clone the dotfiles (or pull if they exist already)
-4. Run the [base playbook](https://gitlab.com/phansch/dotfiles/blob/master/ansible/playbooks/base.yml) to install the prerequisites
-5. Run the [dotfiles playbook](https://gitlab.com/phansch/dotfiles/blob/master/ansible/playbooks/dotfiles.yml) to symlink the dotfiles
+4. Run the [base playbook](https://github.com/phansch/dotfiles/blob/master/ansible/playbooks/base.yml) to install the prerequisites
+5. Run the [dotfiles playbook](https://github.com/phansch/dotfiles/blob/master/ansible/playbooks/dotfiles.yml) to symlink the dotfiles
 7. Print the command to run the optional playbooks
 
 ### Just the dotfiles
 
 If you just want the dotfiles, clone them and use [rcm](https://github.com/thoughtbot/rcm) as below.
 
-    git clone https://gitlab.com/phansch/dotfiles.git $HOME/.dotfiles && cd $HOME/.dotfiles
+    git clone https://github.com/phansch/dotfiles.git $HOME/.dotfiles && cd $HOME/.dotfiles
 
     wget https://thoughtbot.github.io/rcm/debs/rcm_1.3.0-1_all.deb
     sha=$(sha256sum rcm_1.3.0-1_all.deb | cut -f1 -d' ')
