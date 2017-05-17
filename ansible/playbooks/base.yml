@@ -29,6 +29,7 @@
         - xscreensaver
         - transmission-gtk
         - thunderbird
+        - pidgin
     - name: Set zsh as default shell
       user:
         name: "{{ lookup('env', 'USER') }}"
