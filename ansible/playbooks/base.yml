@@ -26,6 +26,8 @@
       action: apt pkg={{ item }} state=absent
       with_items:
         - xscreensaver
+        - transmission-gtk
+        - thunderbird
     - name: Set zsh as default shell
       user:
         name: "{{ lookup('env', 'USER') }}"
