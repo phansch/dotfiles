@@ -156,12 +156,10 @@ set statusline=%9*\ \ %L%*        " Total rownumber
 set statusline+=%9*\ %f\           " File+path
 set statusline+=%9*\on\ \[%1*%{GitInfo()}%*%9*\]  " Git Branch name
 
-if !exists('*fugitive#statusline')
-  function! fugitive#statusline()
-      return ''
-  endfunction
-endif
 function! GitInfo()
+  if !exists('*fugitive#statusline')
+      return ''
+  endif
   let git = fugitive#head()
   if git != ''
     return fugitive#head()
