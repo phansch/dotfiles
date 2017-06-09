@@ -23,6 +23,7 @@ Plug 'jelera/vim-javascript-syntax',           { 'for': ['javascript', 'coffeesc
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'coffeescript'] }
 Plug 'kchmck/vim-coffee-script'
 Plug 'plasticboy/vim-markdown'
+Plug 'vimwiki/vimwiki'
 
 " Library dependencies
 Plug 'MarcWeber/vim-addon-mw-utils'
@@ -181,6 +182,10 @@ let g:gitgutter_eager = 0
 
 " fzf settings
 let g:fzf_tags_command = 'ctags -R'
+
+let g:vimwiki_list = [
+      \{'path': '~/documents/vimwiki/', 'syntax': 'markdown', 'ext': '.md'},
+      \{'path': '~/code/documentation.wiki/', 'syntax': 'markdown', 'ext': '.md'}]
 
 " nvim cursor shape
 if has('nvim')
