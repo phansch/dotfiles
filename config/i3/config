@@ -175,7 +175,6 @@ for_window [title="spotify|Spotify"] floating enable, border none, move absolute
 # Use --no-startup-id for background programs or if there is a 'watch' cursor
 # exec --no-startup-id xrandr --output LVDS1 --mode 1366x768 --output HDMI1 --mode 1920x1080 --right-of LVDS1
 exec --no-startup-id "urxvtc -e tmux"
-exec --no-startup-id "sleep 1 && urxvtc -title irssi -e ssh -t phansch@207.154.238.9 tmux attach"
 exec firefox
 exec spotify
 exec keepassx2
