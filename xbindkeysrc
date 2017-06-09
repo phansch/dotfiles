@@ -18,10 +18,6 @@
 "urxvtc"
   Alt + Return
 
-# Open IRC
-"urxvtc -title irssi -e ssh -t phansch@207.154.238.9 tmux attach && bash"
-  Alt + c
-
 # Start thunar
 "thunar ~/code"
   Alt + f
