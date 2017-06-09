@@ -95,8 +95,8 @@ bindsym $mod+a focus parent
 bindsym $mod+x move workspace to output right
 
 # Scratchpad configuration
-bindsym $mod+minus [instance="urxvt" title="index.md"] scratchpad show
-for_window [instance="urxvt" title="index.md"] move scratchpad
+bindsym $mod+minus [instance="urxvt" title="vimwiki"] scratchpad show
+for_window [instance="urxvt" title="vimwiki"] move scratchpad
 exec_always --no-startup-id urxvt -title "scratchpad" -e ~/.bin/scratchpad_start
 
 # ASSIGN WORKSPACE VARIABLES
