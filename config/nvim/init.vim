@@ -182,9 +182,6 @@ let g:gitgutter_eager = 0
 " fzf settings
 let g:fzf_tags_command = 'ctags -R'
 
-" Ag settings
-let g:ag_highlight=1
-
 " nvim cursor shape
 if has('nvim')
   let $NVIM_TUI_ENABLE_CURSOR_SHAPE=2
@@ -290,13 +287,9 @@ autocmd VimResized * :wincmd =
 noremap <leader>fj :call FormatJson()<CR>
 
 " Rails remaps
-noremap <leader>fa :e spec/factories/<cr>
-noremap <leader>sc :e db/schema.rb<cr>
-noremap <leader>ro :e config/routes.rb<cr>
-
-" Convenience remaps
-noremap <leader>nn :tabnew ~/documents/03si/Notes.md<cr>
-noremap <leader>jj :tabnew ~/documents/03si/Journal.md<cr>
+noremap <leader>rf :e spec/factories/<cr>
+noremap <leader>rs :e db/schema.rb<cr>
+noremap <leader>rr :e config/routes.rb<cr>
 
 " Open vimrc
 nnoremap <leader>ev :tabnew ~/.dotfiles/config/nvim/init.vim<cr>
