@@ -75,8 +75,6 @@ bindkey '^Z' fancy-ctrl-z
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$HOME/.bin:$HOME/.local/bin
 
 # Local config
-if [[ -e ~/.zshrc.local ]]; then
-    source ~/.zshrc.local
-fi
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
