@@ -56,6 +56,7 @@ lazy_source () {
   eval "$1 () { [ -f $2 ] && source $2 && $1 \$@ }"
 }
 
+source ~/.bin/tmuxinator.zsh
 source ~/.zsh/prompt
 source ~/.aliases
 
