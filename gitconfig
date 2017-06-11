@@ -42,3 +42,5 @@
   helper = cred_path="/usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring"; test -d $cred_path && "$cred_path"
 [include]
   path = .gitconfig.local
+[gpg]
+  program = /usr/bin/gpg2
