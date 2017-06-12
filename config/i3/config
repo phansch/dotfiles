@@ -142,6 +142,7 @@ assign [instance="urxvt"] $WS1
 assign [class="^Firefox$"] $WS2
 assign [class="qutebrowser"] $WS2
 assign [class="Skype*"] $WS3
+assign [class="Pidgin"] $WS3
 assign [title="Messenger"] $WS3
 assign [class="Hexchat"] $WS3
 # assign doesn't work with Spotify because it doesn't set the
@@ -176,6 +177,7 @@ for_window [title="spotify|Spotify"] floating enable, border none, move absolute
 # exec --no-startup-id xrandr --output LVDS1 --mode 1366x768 --output HDMI1 --mode 1920x1080 --right-of LVDS1
 exec --no-startup-id "urxvtc -e tmux"
 exec firefox
+exec qutebrowser --backend webengine
 exec spotify
 exec keepassx2
 exec xbindkeys
