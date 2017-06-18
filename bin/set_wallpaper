@@ -1,0 +1,8 @@
+#!/bin/sh
+
+set -e
+
+mkdir -p ~/.config/wallpapersetter
+ln -sf "$1" ~/.config/wallpapersetter/current_wallpaper
+feh --no-fehbg --bg-scale ~/.config/wallpapersetter/current_wallpaper
+
