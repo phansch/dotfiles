@@ -240,6 +240,8 @@ nnoremap <C-H> <C-W><C-H>
 
 nnoremap <A-j> }
 nnoremap <A-k> {
+vnoremap <A-j> }
+vnoremap <A-k> {
 nnoremap <space>d :FZF<cr>
 nnoremap <space>b :Buffers<cr>
 nnoremap <space>m :History<cr>
