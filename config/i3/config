@@ -172,6 +172,7 @@ for_window [class="deja-dup|Deja-dup"] floating enable
 for_window [class="eepassx"] floating enable, border none, move absolute position center
 for_window [title="spotify|Spotify"] floating enable, border none, move absolute position center
 for_window [title="Bluetooth"] floating enable, border none, move absolute position center
+for_window [class="ile-roller$"] floating enable, border none, move absolute position center
 
 # Autostart
 # Use --no-startup-id for background programs or if there is a 'watch' cursor
