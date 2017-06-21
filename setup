@@ -52,6 +52,7 @@ bootstrap()
     ansible/playbooks/i3.yml
     ansible/playbooks/qutebrowser.yml
     ansible/playbooks/udev.yml
+    ansible/playbooks/github_hub.yml
   )
 
   cmd="ansible-playbook ${additional_playbooks[*]} --ask-become-pass -u $USER"
