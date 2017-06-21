@@ -45,11 +45,7 @@ sleep 1 && /usr/lib/x86_64-linux-gnu/deja-dup/deja-dup-monitor &
 # Launch programs
 sleep 1 && nm-applet &
 
-# make sure there's only one redshift service running
-if ! pgrep -f redshift > /dev/null
-then
-    sleep 1 && redshift
-fi &
+sleep 1 && ~/bin/run_redshift.sh &
 
 if [ "$(hostname)" = 'philipp-samsung' ]; then
   ~/.screenlayout/work_default.sh
