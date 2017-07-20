@@ -54,8 +54,6 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'DataWraith/auto_mkdir'
 Plug 'w0rp/ale'
 Plug 'morhetz/gruvbox'
-Plug 'altercation/vim-colors-solarized'
-Plug 'chriskempson/base16-vim'
 
 call plug#end()
 
