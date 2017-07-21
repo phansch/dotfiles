@@ -167,6 +167,8 @@ function! GitInfo()
   endif
 endfunction
 
+command! Gamend :Gcommit --amend
+
 " Leader
 let mapleader = ","
 let maplocalleader = "\\"
