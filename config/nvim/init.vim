@@ -62,7 +62,7 @@ filetype plugin indent on
 " }}}
 
 
-set re=1
+set regexpengine=1
 " Settings {{{
 set number
 set hidden
@@ -159,8 +159,8 @@ function! GitInfo()
   if !exists('*fugitive#statusline')
       return ''
   endif
-  let git = fugitive#head()
-  if git != ''
+  let l:git = fugitive#head()
+  if l:git != ''
     return fugitive#head()
   else
     return ''
@@ -334,11 +334,15 @@ augroup filetype_coffee
   au FileType coffeescript setl foldmethod=indent nofoldenable
 augroup END
 
-" Turn syntax off for large files
-autocmd BufReadPre * if getfsize(expand("%")) > 10000000 | syntax off | endif
+augroup no_syntax_highlight_for_big_files
+  au!
+  autocmd BufReadPre * if getfsize(expand("%")) > 10000000 | syntax off | endif
+augroup END
 
-" Remove trailing whitespace for some filetypes
-autocmd FileType ruby,js,css autocmd BufWritePre <buffer> :%s/\s\+$//e
+augroup remove_trailing_whitespace
+  au!
+  autocmd FileType ruby,js,css autocmd BufWritePre <buffer> :%s/\s\+$//e
+augroup END
 
 " Some custom ruby syntax highlights
 augroup custom_ruby_syntax
@@ -361,7 +365,7 @@ endfunction
 
 function! OpenCurrentFileInBrowser()
   " Open current markdown file in browser and pipes stdout to /dev/null
-  :silent execute "!sensible-browser %"
+  :silent execute '!sensible-browser %'
 
   " Fix empty vim window by forcing a redraw
   :redraw!
