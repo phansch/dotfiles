@@ -103,6 +103,8 @@ set noswapfile
 set nobackup
 set nowritebackup
 
+set spelllang=en,de
+
 " Split settings
 set splitbelow
 set splitright
@@ -110,7 +112,7 @@ set splitright
 " Highlight search & replace
 set inccommand=split
 
-" Disable menu, and other gui elements
+" Disable menu, and other GUI elements
 set guioptions=c
 
 " This should make drawing the window 9000 times faster
