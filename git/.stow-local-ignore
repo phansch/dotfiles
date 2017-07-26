@@ -1,0 +1,2 @@
+# This file makes sure that the default stow ignore list is overridden.
+# That allows the .gitignore in this directory to be stowed
