@@ -81,16 +81,18 @@ This will:
 
 ### Just the dotfiles
 
-If you just want the dotfiles, clone them and use [rcm](https://github.com/thoughtbot/rcm) as below.
+If you just want the dotfiles, clone them and use [stow](https://www.gnu.org/software/stow/) as below.
 
-    git clone https://github.com/phansch/dotfiles.git $HOME/.dotfiles && cd $HOME/.dotfiles
+    git clone https://github.com/phansch/dotfiles.git $HOME/.dotfiles
 
-    wget https://thoughtbot.github.io/rcm/debs/rcm_1.3.0-1_all.deb
-    sha=$(sha256sum rcm_1.3.0-1_all.deb | cut -f1 -d' ')
-    [ "$sha" = "2e95bbc23da4a0b995ec4757e0920197f4c92357214a65fedaf24274cda6806d" ] && \
-    sudo dpkg -i rcm_1.3.0-1_all.deb
+    cd $HOME
 
-    cd $HOME && rcup -x README.md -x screenshots
+    # Install stow
+    sudo apt-get install stow
+
+    # To install the ruby dotfiles. Replace Ruby with the stow package you want.
+    # See ansible/playbooks/dotfiles.yml for a complete list of the stow packages.
+    stow ruby --verbose=1 --target=$HOME/ --dir=$HOME/.dotfiles
 
 
 ## Development
