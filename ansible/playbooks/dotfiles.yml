@@ -2,6 +2,7 @@
 - hosts: localhost
   tasks:
     - name: Install gnu-stow
+      become: yes
       apt: pkg=stow
     - name: Install dotfiles
       shell: stow {{ item }} --target=$HOME/ --dir=$HOME/.dotfiles
