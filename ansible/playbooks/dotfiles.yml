@@ -1,14 +1,29 @@
 ---
 - hosts: localhost
   tasks:
-    - name: Download rcm
-      get_url: url=https://thoughtbot.github.io/rcm/debs/rcm_1.2.2-2_all.deb
-        dest=/tmp/rcm.deb
-    - name: Install rcm
-      apt: deb=/tmp/rcm.deb
-      become: yes
+    - name: Install gnu-stow
+      apt: pkg=stow
     - name: Install dotfiles
-      shell: rcup -x README.md -x screenshots chdir=~
+      shell: stow {{ item }} --target=$HOME/ --dir=$HOME/.dotfiles
+      with_items:
+        - bin
+        - davfs2
+        - fonts
+        - git
+        - htop
+        - i3wm
+        - mutt
+        - notify
+        - qutebrowser
+        - redshift
+        - ruby
+        - screen
+        - shutter
+        - tmux
+        - urxvt
+        - vim
+        - x
+        - zsh
     - name: Create ~/.fonts directory
       file: path=~/.fonts state=directory
     - name: Download powerline font
