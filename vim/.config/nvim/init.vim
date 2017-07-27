@@ -301,10 +301,10 @@ noremap <leader>rs :e db/schema.rb<cr>
 noremap <leader>rr :e config/routes.rb<cr>
 
 " Open vimrc
-nnoremap <leader>ev :tabnew ~/.dotfiles/config/nvim/init.vim<cr>
+nnoremap <leader>ev :tabnew ~/.dotfiles/vim/.config/nvim/init.vim<cr>
 
 " Source vimrc
-nnoremap <leader>sv :source ~/.dotfiles/config/nvim/init.vim<cr>
+nnoremap <leader>sv :source ~/.dotfiles/vim/.config/nvim/init.vim<cr>
 
 " }}}
 
