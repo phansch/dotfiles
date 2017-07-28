@@ -105,6 +105,10 @@ You will need Vagrant and Virtualbox installed, then you can run:
 
 You can then either use `vagrant ssh` or connect to the VM through Virtualbox to have a GUI.
 
+**Re-running a failed ansible playbook**
+
+    ansible-playbook ansible/playbooks/<the-playbook>.yml
+
 **Running the tests**
 
     run-parts test/
