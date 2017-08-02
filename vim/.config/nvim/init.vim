@@ -152,19 +152,6 @@ set fillchars=vert:\│,stlnc:\ ",stl:\ "
 set laststatus=2
 set statusline=%9*\ \ %L%*        " Total rownumber
 set statusline+=%9*\ %f\           " File+path
-set statusline+=%9*\on\ \[%1*%{GitInfo()}%*%9*\]  " Git Branch name
-
-function! GitInfo()
-  if !exists('*fugitive#statusline')
-      return ''
-  endif
-  let l:git = fugitive#head()
-  if l:git != ''
-    return fugitive#head()
-  else
-    return ''
-  endif
-endfunction
 
 command! Gamend :Gcommit --amend
 
