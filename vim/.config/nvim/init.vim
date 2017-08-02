@@ -59,12 +59,10 @@ filetype plugin indent on
 " }}}
 
 
-set regexpengine=1
 " Settings {{{
 set number
 set hidden
 set hlsearch
-set showmode  " Display the mode you're in.
 set showmatch   " Show matching brackets/parenthesis
 set list
 set listchars=tab:▸\ ,trail:¬,extends:❯,precedes:❮
@@ -96,6 +94,7 @@ set expandtab
 set complete=.,w,b,u,t
 set completeopt=longest,menuone,preview
 
+" Disable backups
 set noswapfile
 set nobackup
 set nowritebackup
