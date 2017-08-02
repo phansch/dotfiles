@@ -279,11 +279,6 @@ autocmd VimResized * :wincmd =
 " format json (requires jq to be installed)
 noremap <leader>fj :call FormatJson()<CR>
 
-" Rails remaps
-noremap <leader>rf :e spec/factories/<cr>
-noremap <leader>rs :e db/schema.rb<cr>
-noremap <leader>rr :e config/routes.rb<cr>
-
 " Open vimrc
 nnoremap <leader>ev :tabnew ~/.dotfiles/vim/.config/nvim/init.vim<cr>
 
