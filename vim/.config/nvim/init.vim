@@ -20,8 +20,6 @@ Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rake'
 Plug 'pangloss/vim-javascript',                { 'for': ['javascript', 'coffeescript'] }
 Plug 'jelera/vim-javascript-syntax',           { 'for': ['javascript', 'coffeescript'] }
-Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'coffeescript'] }
-Plug 'kchmck/vim-coffee-script'
 Plug 'plasticboy/vim-markdown'
 Plug 'vimwiki/vimwiki'
 
