@@ -39,7 +39,6 @@ Plug 'tpope/vim-fugitive'
 
 " Insert mode
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
