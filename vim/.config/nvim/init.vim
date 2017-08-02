@@ -311,12 +311,6 @@ augroup filetype_html
   au FileType eelixir SnipMateLoadScope html
 augroup END
 
-augroup filetype_coffee
-  au!
-  " use folding by indentation for coffeescript
-  au FileType coffeescript setl foldmethod=indent nofoldenable
-augroup END
-
 augroup no_syntax_highlight_for_big_files
   au!
   autocmd BufReadPre * if getfsize(expand("%")) > 10000000 | syntax off | endif
