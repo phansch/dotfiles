@@ -11,6 +11,7 @@
         - build-essential
         - libglib2.0-dev
         - xsel
+        - xclip
         - xbindkeys
         - slock
         - zsh
@@ -22,7 +23,6 @@
         - htop
         - fontconfig
         - curl
-        - davfs2
     - name: Remove specific packages
       action: apt pkg={{ item }} state=absent
       with_items:
