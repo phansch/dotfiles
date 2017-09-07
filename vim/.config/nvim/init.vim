@@ -158,7 +158,7 @@ command! Gamend :Gcommit --amend
 let mapleader = ","
 let maplocalleader = "\\"
 
-let g:gitgutter_sign_column_always = 1
+set signcolumn=yes
 " Make vim-gitgutter faster
 let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
@@ -169,7 +169,7 @@ let g:gitgutter_eager = 0
 let g:fzf_tags_command = 'ctags -R'
 
 let g:vimwiki_list = [
-      \{'path': '~/documents/vimwiki/', 'syntax': 'markdown', 'ext': '.md'},
+      \{'path': '~/Documents/vimwiki/', 'syntax': 'markdown', 'ext': '.md'},
       \{'path': '~/code/documentation.wiki/', 'syntax': 'markdown', 'ext': '.md'}]
 
 " nvim cursor shape
