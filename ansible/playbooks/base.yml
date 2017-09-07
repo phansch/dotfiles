@@ -23,6 +23,7 @@
         - htop
         - fontconfig
         - curl
+        - at
     - name: Remove specific packages
       action: apt pkg={{ item }} state=absent
       with_items:
