@@ -10,3 +10,9 @@ iOS
 apps
 app
 vim
+HTMLProofer
+jekyll
+Capybara
+Hackership
+whitelist
+post_url
