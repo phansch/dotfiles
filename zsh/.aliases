@@ -25,7 +25,6 @@ alias m="migrate"
 alias ga="git add"
 alias gaa="git add --all"
 
-alias gco="git checkout"
 alias gst="git status"
 
 alias gb="git branch"

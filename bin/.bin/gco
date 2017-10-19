@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# Small wrapper around 'git checkout'.
+#
+# * Allows to checkout by ticket number
+# * Prevents the use of 'git checkout .' which made me lose files a couple of times.
+
+if [ "$1" = "-n" ]; then
+  # Checkout branch by ticket number
+  git checkout `git branch list "*$2*"`
+elif [ "$1" = "." ]; then
+  # Never accidentally lose files again with 'git checkout .'
+  echo "[error] Using . is too dangerous, be more precise, please."
+  exit 1
+else
+  # Normal git checkout
+  git checkout "$1"
+fi
