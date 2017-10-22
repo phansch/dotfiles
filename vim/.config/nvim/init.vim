@@ -330,6 +330,12 @@ augroup custom_ruby_syntax
   au FileType ruby highlight Pry ctermbg=1 ctermfg=2
 augroup END
 
+augroup ruby_skeleton
+  au!
+
+  autocmd BufNew *.rb 0r ~/.config/nvim/skeleton.ruby
+augroup END
+
 " }}}
 
 
