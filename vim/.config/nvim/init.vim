@@ -333,7 +333,7 @@ augroup END
 augroup ruby_skeleton
   au!
 
-  autocmd BufNew *.rb 0r ~/.config/nvim/skeleton.ruby
+  autocmd BufNewFile *.rb 0r ~/.config/nvim/skeleton.ruby
 augroup END
 
 " }}}
