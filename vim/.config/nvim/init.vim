@@ -334,7 +334,7 @@ augroup END
 augroup ruby_skeleton
   au!
 
-  autocmd BufNewFile *.rb 0r ~/.config/nvim/skeleton.ruby
+  autocmd BufNewFile *.rb call LoadSkeleton('ruby')
 augroup END
 
 " }}}
@@ -354,4 +354,10 @@ function! OpenCurrentFileInBrowser()
   :redraw!
 endfu
 
+function! LoadSkeleton(type)
+  " Load the given skeleton type and go two lines down
+  let l:file = '~/.config/nvim/skeleton.' . a:type
+  :silent execute '0read ' . l:file
+  :silent execute 'normal! jj'
+endfunction
 " }}}
