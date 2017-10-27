@@ -1,7 +1,7 @@
 #!/bin/sh
 
-current_time=`date +%X`
-today_file="$HOME/Documents/vimwiki/diary/`date +%Y-%m-%d`.md"
+current_time=$(date +%X)
+today_file="$HOME/Documents/vimwiki/diary/$(date +%Y-%m-%d).md"
 touch "$today_file"
 
 if [ "$1" = "--today" ]; then
@@ -10,5 +10,5 @@ if [ "$1" = "--today" ]; then
 elif [ "$1" ]; then
   echo "* ${current_time}: $*" >> "$today_file"
 else
-  cat $today_file
+  cat "$today_file"
 fi

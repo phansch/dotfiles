@@ -7,7 +7,7 @@
 
 if [ "$1" = "-n" ]; then
   # Checkout branch by ticket number
-  git checkout `git branch list "*$2*"`
+  git checkout "$(git branch list "*$2*")"
 elif [ "$1" = "." ]; then
   # Never accidentally lose files again with 'git checkout .'
   echo "[error] Using . is too dangerous, be more precise, please."
