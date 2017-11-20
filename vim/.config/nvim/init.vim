@@ -285,7 +285,10 @@ nnoremap <space>e :Explore<cr>
 let g:netrw_liststyle=3
 
 " let terminal resize scale the internal windows
-autocmd VimResized * :wincmd =
+augroup vim_resize
+  au!
+  autocmd VimResized * :wincmd =
+augroup END
 
 " format json (requires jq to be installed)
 noremap <leader>fj :call FormatJson()<CR>
