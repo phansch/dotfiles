@@ -45,6 +45,7 @@ Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
 
 " Other
+Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'DataWraith/auto_mkdir'
 Plug 'w0rp/ale'
@@ -161,6 +162,18 @@ set signcolumn=yes
 let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
 
+" }}}
+
+" LanguageClient settings {{{
+let g:LanguageClient_serverCommands = {
+    \ 'ruby': ['/home/phansch/.rvm/gems/ruby-2.4.1/bin/language_server-ruby'],
+    \ 'javascript': ['/opt/javascript-typescript-langserver/lib/language-server-stdio.js'],
+    \ }
+
+" Automatically start language servers.
+let g:LanguageClient_autoStart = 1
+
+nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 " }}}
 
 " fzf settings
