@@ -20,6 +20,7 @@ Plug 'pangloss/vim-javascript',                { 'for': ['javascript', 'coffeesc
 Plug 'jelera/vim-javascript-syntax',           { 'for': ['javascript', 'coffeescript'] }
 Plug 'plasticboy/vim-markdown'
 Plug 'vimwiki/vimwiki'
+Plug 'rust-lang/rust.vim'
 
 " Library dependencies
 Plug 'MarcWeber/vim-addon-mw-utils'
