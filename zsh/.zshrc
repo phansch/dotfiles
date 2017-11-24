@@ -48,7 +48,7 @@ zstyle ':completion:*:*' ignored-patterns '*ORIG_HEAD'
 
 # See http://robots.thoughtbot.com/cding-to-frequently-used-directories-in-zsh
 setopt auto_cd
-cdpath=($HOME $HOME/repos $HOME/code $HOME/.dotfiles $HOME/Documents)
+cdpath=($HOME $HOME/repos $HOME/code $HOME/code/rust $HOME/.dotfiles $HOME/Documents)
 
 stty -ixon
 
