@@ -268,6 +268,8 @@ nnoremap <leader>gr :terminal git rebase -i origin/master<cr>
 
 " Completion
 let g:deoplete#enable_at_startup = 1
+call deoplete#custom#source('buffer',
+\ 'min_pattern_length', 3)
 
 " Copy/pasting remaps
 set clipboard+=unnamedplus
