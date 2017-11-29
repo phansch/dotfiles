@@ -342,6 +342,7 @@ augroup END
 augroup custom_ruby_syntax
   au!
 
+  au BufNewFile,BufRead *.prawn set filetype=ruby
   au FileType ruby :highlight FocusTrue ctermbg=1 ctermfg=2
   au FileType ruby :match FocusTrue 'focus: true'
   au FileType ruby syntax match Pry 'binding.pry'
