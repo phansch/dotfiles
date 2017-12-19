@@ -349,6 +349,12 @@ augroup custom_ruby_syntax
   au FileType ruby highlight Pry ctermbg=1 ctermfg=2
 augroup END
 
+augroup git_commit_spelling
+  au!
+
+  au BufNewFile,BufRead COMMIT_EDITMSG set spell
+augroup END
+
 augroup ruby_skeleton
   au!
 
