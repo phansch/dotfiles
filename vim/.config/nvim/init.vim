@@ -21,6 +21,7 @@ Plug 'jelera/vim-javascript-syntax',           { 'for': ['javascript', 'coffeesc
 Plug 'plasticboy/vim-markdown'
 Plug 'vimwiki/vimwiki'
 Plug 'rust-lang/rust.vim'
+Plug 'posva/vim-vue'
 
 " Library dependencies
 Plug 'MarcWeber/vim-addon-mw-utils'
