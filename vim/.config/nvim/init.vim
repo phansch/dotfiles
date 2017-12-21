@@ -362,6 +362,12 @@ augroup ruby_skeleton
   autocmd BufNewFile *.rb call LoadSkeleton('ruby')
 augroup END
 
+augroup neovim_terminal
+  au!
+
+  au TermOpen * startinsert
+  au TermClose * stopinsert
+augroup END
 " }}}
 
 
