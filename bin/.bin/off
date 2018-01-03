@@ -1,0 +1,31 @@
+#!/bin/bash
+
+run() {
+  echo "Your journal for today looks like:"
+  today_file="$HOME/Documents/vimwiki/diary/$(date +%Y-%m-%d).md"
+  cat "$today_file"
+  ask_for_confirmation "Are you satisfied with todays journal?"
+
+  # If work machine, include the timetracking link and
+  # open it.
+  if answer_is_yes; then
+    echo "Ok then. Suspending the machine"
+    sudo pm-suspend
+  else
+    echo "You could write about what you did today; any ideas, goals, etc."
+  fi
+}
+
+answer_is_yes() {
+  [[ "$REPLY" =~ ^[Yy]$ ]] \
+    && return 0 \
+    || return 1
+}
+
+ask_for_confirmation() {
+  printf "%b" "$1 (y/n)"
+  read -r -n 1
+  printf "%b" "\n"
+}
+
+run
