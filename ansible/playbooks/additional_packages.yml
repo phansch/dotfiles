@@ -12,6 +12,7 @@
       - deja-dup
       - jq
       - redshift
+      - ctags
   - name: Create tmp download dir
     file: path=/tmp/ansible-debs state=directory
   - name: Install additional deb packages
