@@ -156,8 +156,8 @@ set statusline+=%9*\ %f\           " File+path
 command! Gamend :Gcommit --amend
 
 " Leader
-let mapleader = ","
-let maplocalleader = "\\"
+let g:mapleader = ','
+let g:maplocalleader = "\\"
 
 set signcolumn=yes
 " Make vim-gitgutter faster
@@ -169,6 +169,7 @@ let g:gitgutter_eager = 0
 " LanguageClient settings {{{
 let g:LanguageClient_serverCommands = {
     \ 'ruby': ['/home/phansch/.rvm/gems/ruby-2.4.1/bin/language_server-ruby'],
+    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
     \ 'javascript': ['/opt/javascript-typescript-langserver/lib/language-server-stdio.js'],
     \ }
 
@@ -184,6 +185,9 @@ let g:fzf_tags_command = 'ctags -R'
 let g:vimwiki_list = [
       \{'path': '~/Documents/vimwiki/', 'syntax': 'markdown', 'ext': '.md'},
       \{'path': '~/code/documentation.wiki/', 'syntax': 'markdown', 'ext': '.md'}]
+
+" Rust
+let g:autofmt_autosave = 1
 
 " nvim cursor shape
 if has('nvim')
