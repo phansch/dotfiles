@@ -20,6 +20,7 @@ alias pair_de="setxkbmap 'de'"
 ## Rails
 alias migrate="rake db:migrate db:rollback && rake db:migrate"
 alias m="migrate"
+alias be="bundle exec"
 
 ## Git
 alias ga="git add"
