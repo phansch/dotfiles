@@ -22,7 +22,9 @@ xset s noblank # don't blank the video device
 xrdb -merge ~/.Xresources & # reread ~/.Xresources
 setxkbmap 'de(dvorak)' & # Set german dvorak keyboard layout
 # TODO: Check for hostname of laptop to disable it
-xinput disable "ELAN Touchscreen" &
+if [ "$(hostname)" = 'philipp-samsung' ]; then
+  xinput disable "ELAN Touchscreen" &
+fi
 
 #############
 ## Startup ##
