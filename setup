@@ -49,7 +49,6 @@ bootstrap()
     ansible/playbooks/spotify.yml
     ansible/playbooks/additional_packages.yml
     ansible/playbooks/i3.yml
-    ansible/playbooks/qutebrowser.yml
     ansible/playbooks/udev.yml
     ansible/playbooks/github_hub.yml
   )
