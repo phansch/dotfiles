@@ -140,8 +140,8 @@ let g:gitgutter_override_sign_column_highlight = 0
 hi Normal ctermbg=NONE
 hi SignColumn ctermbg=NONE
 hi VertSplit ctermbg=NONE
-hi StatusLine ctermbg=2 ctermfg=NONE
-hi StatusLineNC ctermbg=2 ctermfg=0
+hi StatusLine ctermfg=8 ctermbg=0
+hi StatusLineNC ctermfg=8 ctermbg=0
 hi GitGutterAdd ctermfg=2 ctermbg=NONE
 hi GitGutterChange ctermfg=4 ctermbg=NONE
 hi GitGutterDelete ctermfg=1 ctermbg=NONE
@@ -150,8 +150,8 @@ hi User1 ctermfg=3
 
 set fillchars=vert:\│,stlnc:\ ",stl:\ "
 set laststatus=2
-set statusline=%9*\ \ %L%*        " Total rownumber
-set statusline+=%9*\ %f\           " File+path
+set statusline=\ \ %L%*        " Total rownumber
+set statusline+=\ %f\           " File+path
 
 command! Gamend :Gcommit --amend
 
