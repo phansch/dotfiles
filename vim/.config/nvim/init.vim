@@ -223,6 +223,7 @@ iabbrev objecs objects
 iabbrev shrug ¯\_(ツ)_/¯
 iabbrev mothed method
 iabbrev erros errors
+iabbrev haproxy HAproxy
 " }}}
 
 " Mappings {{{
