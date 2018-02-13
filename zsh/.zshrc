@@ -56,7 +56,6 @@ lazy_source () {
   eval "$1 () { [ -f $2 ] && source $2 && $1 \$@ }"
 }
 
-source ~/.bin/tmuxinator.zsh
 source ~/.zsh/prompt
 source ~/.aliases
 
@@ -85,3 +84,5 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval "$(tmuxifier init -)"
