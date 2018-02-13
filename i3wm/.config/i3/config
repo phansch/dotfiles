@@ -169,6 +169,7 @@ for_window [class="Thunar"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [class="xfce4-notifyd"] floating enable
 for_window [class="deja-dup|Deja-dup"] floating enable
+for_window [class="Pidgin"] floating enable
 for_window [class="eepassx"] floating enable, border none, move absolute position center
 for_window [title="spotify|Spotify"] floating enable, border none, move absolute position center
 for_window [title="Bluetooth"] floating enable, border none, move absolute position center
