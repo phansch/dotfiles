@@ -81,6 +81,8 @@ finish()
   ask_for_confirmation "[setup] Almost done. Do you want to re-login now to complete the setup? "
   if answer_is_yes; then
     xfce4-session-logout --logout
+  else
+    echo "Well, then track it now!"
   fi
 }
 

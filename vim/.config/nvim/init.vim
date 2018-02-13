@@ -167,14 +167,13 @@ let g:gitgutter_eager = 0
 " }}}
 
 " LanguageClient settings {{{
-" let g:LanguageClient_serverCommands = {
-"     \ 'ruby': ['/home/phansch/.rvm/gems/ruby-2.4.1/bin/language_server-ruby'],
-"     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-"     \ 'javascript': ['/opt/javascript-typescript-langserver/lib/language-server-stdio.js'],
-"     \ }
+let g:LanguageClient_serverCommands = {
+    \ 'ruby': ['/home/phansch/.rvm/gems/ruby-2.4.1/bin/language_server-ruby'],
+    \ 'javascript': ['/opt/javascript-typescript-langserver/lib/language-server-stdio.js'],
+    \ }
 
 " Automatically start language servers.
-" let g:LanguageClient_autoStart = 1
+let g:LanguageClient_autoStart = 1
 
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 " }}}
