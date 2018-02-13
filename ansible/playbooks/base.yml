@@ -9,6 +9,7 @@
       action: apt pkg={{ item }} state=present
       with_items:
         - build-essential
+        - cmake
         - libglib2.0-dev
         - xsel
         - xclip
