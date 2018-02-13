@@ -63,6 +63,10 @@ clip() {
   cd ~/code/rust-clippy
 }
 
+ru() {
+  cd ~/code/rust
+}
+
 fancy-ctrl-z () {
   if [[ $#BUFFER -eq 0 ]]; then
     BUFFER="fg"
