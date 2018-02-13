@@ -1,0 +1,5 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Install rustup
+      command: creates=~/.cargo/bin/rustup curl https://sh.rustup.rs -sSf | sh -s -- -y
