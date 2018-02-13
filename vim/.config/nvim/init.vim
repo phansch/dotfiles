@@ -47,7 +47,7 @@ Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
 
 " Other
-Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'DataWraith/auto_mkdir'
 Plug 'w0rp/ale'
@@ -174,7 +174,7 @@ let g:gitgutter_eager = 0
 "     \ }
 
 " Automatically start language servers.
-let g:LanguageClient_autoStart = 1
+" let g:LanguageClient_autoStart = 1
 
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 " }}}
