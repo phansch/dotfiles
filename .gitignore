@@ -2,3 +2,4 @@ vim/bundle/
 ansible/playbooks/*.retry
 !i3wm/.config/i3/config
 vim/.config/nvim
+zsh/.zsh/history
