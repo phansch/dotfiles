@@ -1,9 +1,0 @@
-# ~/.tmuxinator/live.yml
-
-name: live
-root: ~/code/screenshot-streamer
-
-windows:
-  - editor: vim
-  - git:
-  - server: rerun 'rackup'

@@ -1,8 +1,0 @@
-name: web
-root: ~/code/phansch-net
-
-windows:
-  - editor: vim
-  - git: git status
-  - server: vagrant ssh
-  - ssh: ssh phansch@bootes.uberspace.de
