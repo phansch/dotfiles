@@ -139,7 +139,7 @@ bindsym $mod+Shift+equal move container to workspace 10
 ### must be assigned before urxvt itself
 assign [title="irssi"] $WS3
 assign [instance="urxvt"] $WS1
-assign [class="^Firefox$"] $WS2
+assign [class="^Firefox|Nightly$"] $WS2
 assign [class="qutebrowser"] $WS2
 assign [class="Skype*"] $WS3
 assign [class="Pidgin"] $WS3
@@ -159,8 +159,8 @@ for_window [title="Auto-Type - KeePassX"] move to workspace current
 assign [title="Icedove|Thunderbird"] $WS7
 
 ## window floating, borders and positioning
-for_window [class="^Firefox$" title="^Library$"] floating enable
-for_window [class="^Firefox$" window_role="^Preferences$"] floating enable
+for_window [class="^Firefox|Nightly$" title="^Library$"] floating enable
+for_window [class="^Firefox|Nightly$" window_role="^Preferences$"] floating enable
 for_window [class="^Anki$"] floating enable, border normal, move absolute position center
 for_window [class="^Skype$"] floating enable
 for_window [title="xfce4-notifyd|Volume Control"] floating enable
