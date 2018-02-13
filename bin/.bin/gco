@@ -14,5 +14,7 @@ elif [ "$1" = "." ]; then
   exit 1
 else
   # Normal git checkout
-  git checkout "$*"
+  echo $@
+  git checkout "$@"
 fi
+
