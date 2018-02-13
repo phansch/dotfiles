@@ -59,6 +59,10 @@ lazy_source () {
 source ~/.zsh/prompt
 source ~/.aliases
 
+clip() {
+  cd ~/code/rust-clippy
+}
+
 fancy-ctrl-z () {
   if [[ $#BUFFER -eq 0 ]]; then
     BUFFER="fg"
