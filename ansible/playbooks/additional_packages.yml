@@ -73,6 +73,14 @@
       dest: /opt
       remote_src: yes
   - name: Rename extracted folder
-    command: mv /opt/anki-2.1.0beta36-amd64 /opt/anki
+    command: mv --no-clobber /opt/anki-2.1.0beta36-amd64 /opt/anki
   - name: Symlink moved anki executable
-    command: ln -s /opt/anki/bin/anki /usr/bin/anki
+    file:
+      src: /opt/anki/bin/anki
+      dest: /usr/bin/anki
+      state: link
+  - name: Install tmuxifier
+    become: no
+    git:
+      repo: git@github.com:jimeh/tmuxifier.git
+      dest: ~/.tmuxifier
