@@ -13,7 +13,6 @@
       - jq
       - redshift
       - ctags
-      - anki
   - name: Create tmp download dir
     file: path=/tmp/ansible-debs state=directory
   - name: Install additional deb packages
@@ -68,5 +67,12 @@
   - name: Update mime database
     become: no
     shell: update-mime-database ~/.local/share/mime
-
-
+  - name: Anki Latest Beta
+    unarchive:
+      src: https://apps.ankiweb.net/downloads/beta/anki-2.1.0beta36-amd64.tar.bz2
+      dest: /opt
+      remote_src: yes
+  - name: Rename extracted folder
+    command: mv /opt/anki-2.1.0beta36-amd64 /opt/anki
+  - name: Symlink moved anki executable
+    command: ln -s /opt/anki/bin/anki /usr/bin/anki
