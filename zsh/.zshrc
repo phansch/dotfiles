@@ -14,6 +14,7 @@ SAVEHIST=10000
 HISTFILE=~/.zsh/history
 setopt hist_verify
 setopt hist_ignore_dups
+setopt HIST_IGNORE_ALL_DUPS
 setopt hist_ignore_space
 setopt inc_append_history
 setopt share_history
