@@ -61,6 +61,7 @@ Launches a couple of programs and the [i3](https://i3wm.org://i3wm.org/) window 
  * `clean_rails` cleans cache and log files in rails projects
  * `lock.sh` Locks the screen with a blurred screenshot of the current screen.
    Requires `scrot`, `imagemagick` and `i3lock`
+ * `off` Will ask you to do a daily review and if you are fine with your journaling and then suspend the machine.
 
 ## Installation
 
@@ -94,6 +95,17 @@ If you just want the dotfiles, clone them and use [stow](https://www.gnu.org/sof
     # See ansible/playbooks/dotfiles.yml for a complete list of the stow packages.
     stow ruby --verbose=1 --target=$HOME/ --dir=$HOME/.dotfiles
 
+### Environment variables
+
+Some scripts like the off script use environment variables for configuration.
+You can set these in your `~/.zshrc.local` which is sourced by `~/.zshrc` automatically.
+
+The current environment variables are:
+
+| Variable           | Function                                                      |
+| ------------------ | ------------------------------------------------------------- |
+| DAILY_REVIEW_LINK  | If set, opens the configured link when using the `off` script |
+| WORK_TIME_TRACKING | If set, opens the configured link when using the `off` script |
 
 ## Development
 
