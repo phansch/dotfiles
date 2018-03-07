@@ -2,6 +2,7 @@
 
 run() {
   daily_review_check
+  time_tracking_check
 
   echo "Your journal for today looks like:"
   today_file="$HOME/Documents/vimwiki/diary/$(date +%Y-%m-%d).md"
@@ -15,6 +16,18 @@ run() {
     systemctl suspend
   else
     echo "You could write about what you did today; any ideas, goals, etc."
+  fi
+}
+
+time_tracking_check() {
+  if [[ -v TIME_TRACKING_LINK ]]; then
+    ask_for_confirmation "Did you track your time?"
+    if ! answer_is_yes; then
+      echo "Ok, opening your browser now with the time tracking sheet loaded"
+      sleep 1
+      sensible-browser $TIME_TRACKING_LINK
+      i3-msg "[class=Firefox|Nightly] focus"
+    fi
   fi
 }
 
