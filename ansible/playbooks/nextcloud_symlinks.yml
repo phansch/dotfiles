@@ -1,0 +1,38 @@
+---
+- hosts: localhost
+  tasks:
+    - command: readlink ~/Documents
+      register: is_symlink
+      ignore_errors: True
+    - name: Move old ~/Documents out of the way
+      command: mv ~/Documents ~/Documents_backup
+      when: is_symlink.rc == 1
+    - file:
+        src: ~/Nextcloud/Documents
+        path: ~/Documents
+        state: link
+      when: is_symlink.rc == 1
+
+    - command: readlink ~/Pictures
+      register: is_symlink
+      ignore_errors: True
+    - name: Move old ~/Pictures out of the way
+      command: mv ~/Pictures ~/Pictures_backup
+      when: is_symlink.rc == 1
+    - file:
+        src: ~/Nextcloud/Pictures
+        path: ~/Pictures
+        state: link
+      when: is_symlink.rc == 1
+
+    - command: readlink ~/Music
+      register: is_symlink
+      ignore_errors: True
+    - name: Move old ~/Music out of the way
+      command: mv ~/Music ~/Music_backup
+      when: is_symlink.rc == 1
+    - file:
+        src: ~/Nextcloud/Music
+        path: ~/Music
+        state: link
+      when: is_symlink.rc == 1

@@ -52,6 +52,7 @@ bootstrap()
     ansible/playbooks/udev.yml
     ansible/playbooks/github_hub.yml
     ansible/playbooks/rust.yml
+    ansible/playbooks/nextcloud_symlinks.yml
   )
 
   cmd="ansible-playbook ${additional_playbooks[*]} --ask-become-pass -u $USER"
