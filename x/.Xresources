@@ -17,10 +17,10 @@ URxvt*lineSpace: 0
 URxvt*loginShell: true
 
 ! Urxvt fonts
-URxvt.font: xft:Ubuntu Mono derivative Powerline:pixelsize=13:autohint=true
-URxvt.boldFont: xft:Ubuntu Mono derivative Powerline::bold:size=10
-URxvt.italicFont: xft:Ubuntu Mono derivative Powerline::italic:size=10
-URxvt.boldItalicFont: xft:Ubuntu Mono derivative Powerline::bolditalic:size=10
+URxvt.font: xft:Ubuntu Mono derivative Powerline:pixelsize=13:autohint=true,xft:Symbola:size=5
+URxvt.boldFont: xft:Ubuntu Mono derivative Powerline::bold:size=10,xft:Symbola:size=5
+URxvt.italicFont: xft:Ubuntu Mono derivative Powerline::italic:size=10,xft:Symbola:size=5
+URxvt.boldItalicFont: xft:Ubuntu Mono derivative Powerline::bolditalic:size=10,xft:Symbola:size=5
 
 ! Fix font space
 URxvt*letterSpace: -1
