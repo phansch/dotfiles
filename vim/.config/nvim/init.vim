@@ -91,6 +91,11 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 
+" Make sure that comments are automatically wrapped at 'textwidth'.
+" See :help fo-table for details on the options.
+set textwidth=78
+set formatoptions=jcroq
+
 " Better Completion
 set complete=.,w,b,u,t
 set completeopt=longest,menuone,preview
