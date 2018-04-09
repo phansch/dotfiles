@@ -357,6 +357,7 @@ augroup custom_ruby_syntax
   au FileType ruby :match FocusTrue 'focus: true'
   au FileType ruby syntax match Pry 'binding.pry'
   au FileType ruby highlight Pry ctermbg=1 ctermfg=2
+  hi def link rubyCapitalizedMethod rubyConstant
 augroup END
 
 augroup git_commit_spelling
