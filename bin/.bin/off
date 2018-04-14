@@ -25,7 +25,7 @@ time_tracking_check() {
     if ! answer_is_yes; then
       echo "Ok, opening your browser now with the time tracking sheet loaded"
       sleep 1
-      sensible-browser $TIME_TRACKING_LINK
+      sensible-browser "$TIME_TRACKING_LINK"
       i3-msg "[class=Firefox|Nightly] focus"
     fi
   fi
@@ -37,7 +37,7 @@ daily_review_check() {
     if ! answer_is_yes; then
       echo "Ok, opening your browser now with the daily review loaded"
       sleep 1
-      sensible-browser $DAILY_REVIEW_LINK
+      sensible-browser "$DAILY_REVIEW_LINK"
       i3-msg "[class=Firefox|Nightly] focus"
       exit 1
     fi
