@@ -58,6 +58,12 @@
             <glob pattern="*.markdown"/>
           </mime-type>
         </mime-info>
+  - name: Prepare markdown mimetype directory
+    become: no
+    file:
+      path: ~/.local/share/mime/packages/
+      state: directory
+      recurse: yes
   - name: Create new markdown mimetype file
     become: no
     file: path=~/.local/share/mime/packages/text-markdown.xml state=touch
