@@ -88,5 +88,5 @@
   - name: Install tmuxifier
     become: no
     git:
-      repo: git@github.com:jimeh/tmuxifier.git
+      repo: https://github.com/jimeh/tmuxifier.git
       dest: ~/.tmuxifier
