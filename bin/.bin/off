@@ -38,7 +38,7 @@ daily_review_check() {
       echo "Ok, opening your browser now with the daily review loaded"
       sleep 1
       sensible-browser "$DAILY_REVIEW_LINK"
-      i3-msg "[class=Firefox|Nightly] focus"
+      i3-msg "[class=Firefox|Nightly] focus" &>/dev/null
       exit 1
     fi
   fi
