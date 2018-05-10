@@ -13,7 +13,7 @@ run() {
   # open it.
   if answer_is_yes; then
     echo "Ok then. Suspending the machine"
-    systemctl suspend
+    systemctl suspend && ~/.bin/lock.sh
   else
     echo "You could write about what you did today; any ideas, goals, etc."
   fi
