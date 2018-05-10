@@ -9,4 +9,7 @@ scrot "$cfg_tmpdir/screen.png"
 
 convert "$image_path" -blur 4x8 "$image_path"
 
+j "Locking Screen"
 i3lock -u -n -t -i "$image_path"
+
+j "Unlocking screen"
