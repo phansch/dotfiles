@@ -12,7 +12,7 @@ run() {
   # If work machine, include the timetracking link and
   # open it.
   if answer_is_yes; then
-    j "Suspending machine"
+    j "[`hostname`] Suspending machine"
     echo "Ok then. Suspending the machine"
     systemctl suspend && ~/.bin/lock.sh
   else
