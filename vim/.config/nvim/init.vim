@@ -174,7 +174,7 @@ let g:gitgutter_eager = 0
 " LanguageClient settings {{{
 let g:LanguageClient_serverCommands = {
     \ 'ruby': ['/home/phansch/.rvm/gems/ruby-2.4.1/bin/language_server-ruby'],
-    \ 'javascript': ['/opt/javascript-typescript-langserver/lib/language-server-stdio.js'],
+    \ 'javascript': ['javascript-typescript-stdio'],
     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
     \ }
 
