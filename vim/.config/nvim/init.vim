@@ -39,7 +39,7 @@ Plug 'tpope/vim-fugitive'
 
 " Insert mode
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'tpope/vim-endwise'
+" Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
@@ -175,6 +175,7 @@ let g:gitgutter_eager = 0
 let g:LanguageClient_serverCommands = {
     \ 'ruby': ['/home/phansch/.rvm/gems/ruby-2.4.1/bin/language_server-ruby'],
     \ 'javascript': ['/opt/javascript-typescript-langserver/lib/language-server-stdio.js'],
+    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
     \ }
 
 " Automatically start language servers.
@@ -279,8 +280,6 @@ nnoremap <leader>gr :terminal git rebase -i origin/master<cr>
 
 " Completion
 let g:deoplete#enable_at_startup = 1
-call deoplete#custom#source('buffer',
-\ 'min_pattern_length', 3)
 
 " Copy/pasting remaps
 set clipboard+=unnamedplus
@@ -373,6 +372,13 @@ augroup ruby_skeleton
   autocmd BufNewFile *.rb call LoadSkeleton('ruby')
 augroup END
 
+augroup rust
+  au!
+
+  au FileType rust nnoremap <silent> K :call LanguageClient_textDocument_hover()
+  au FileType rust nnoremap <silent> gd :call LanguageClient_textDocument_definition()<cr>
+  au FileType rust nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<cr>
+augroup END
 augroup neovim_terminal
   au!
 
