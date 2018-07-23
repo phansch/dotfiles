@@ -5,6 +5,12 @@
 This is meant to be a 'minimal', distraction free setup.
 It should automate as much as possible and keep UI clutter to a minimum.
 
+I **don't** recommend running the `setup` script on your machine unless
+you understand what it does.  
+I **do** recommend having a look through the various config files.
+Below is a rough overview.
+
+If you are interested in the CI setup, look [below](#ci-info).
 
 ### i3
 
@@ -45,6 +51,7 @@ Launches a couple of programs and the [i3](https://i3wm.org://i3wm.org/) window 
  * Turns syntax off for large files
  * Open the current file in browser (Useful for markdown)
  * Return to the same line when you reopen a file
+ * Full Rust, Ruby and Javascript integration
 
 ### Git
 
@@ -58,10 +65,10 @@ Launches a couple of programs and the [i3](https://i3wm.org://i3wm.org/) window 
 
 ### Scripts in bin/
 
- * `clean_rails` cleans cache and log files in rails projects
+ * `off` Will ask you to do a daily review, time tracking and if you are fine with your journaling and then suspend the machine.
  * `lock.sh` Locks the screen with a blurred screenshot of the current screen.
    Requires `scrot`, `imagemagick` and `i3lock`
- * `off` Will ask you to do a daily review, time tracking and if you are fine with your journaling and then suspend the machine.
+ * `clean_rails` cleans cache and log files in rails projects
 
 ## Installation
 
@@ -135,3 +142,9 @@ All ansible playbooks are run on CI. The build will fail if:
 * i3 config is invalid
 * `ansible-playbook --syntax-check` has not finished successfully
 * shellcheck found errors
+
+Have a look at the [`.travis.yml`][travis] and
+[`Dockerfile`][dockerfile] to see how it works.
+
+[travis]: https://github.com/phansch/dotfiles/blob/master/.travis.yml
+[dockerfile]: https://github.com/phansch/dotfiles/blob/master/Dockerfile
