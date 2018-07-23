@@ -9,7 +9,7 @@ scrot "$cfg_tmpdir/screen.png"
 
 convert "$image_path" -blur 4x8 "$image_path"
 
-j "[`hostname`] Locking Screen"
+j "[$(hostname)] Locking Screen"
 i3lock -u -n -t -i "$image_path"
 
-j "[`hostname`] Unlocking screen"
+j "[$(hostname)] Unlocking screen"
