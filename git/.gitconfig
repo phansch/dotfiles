@@ -37,7 +37,7 @@
   local = yellow
   remote = green
 [diff]
-  tool = meld
+  tool = vimdiff
 [credential]
   helper = cred_path="/usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring"; test -d $cred_path && "$cred_path"
 [include]
@@ -48,8 +48,10 @@
 # https://groups.google.com/forum/#!topic/binary-transparency/f-BI4o8HZW0
 # check that anything we're getting is complete and sane on a regular basis
 [transfer]
-fsckobjects = true
+  fsckobjects = true
 [fetch]
-fsckobjects = true
+  fsckobjects = true
 [receive]
-fsckObjects = true
+  fsckObjects = true
+[difftool]
+  prompt = false
