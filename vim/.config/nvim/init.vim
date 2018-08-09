@@ -17,6 +17,7 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rake'
 Plug 'pangloss/vim-javascript',                { 'for': ['javascript', 'coffeescript'] }
+Plug 'mxw/vim-jsx',                            { 'for': ['javascript'] }
 Plug 'jelera/vim-javascript-syntax',           { 'for': ['javascript', 'coffeescript'] }
 Plug 'plasticboy/vim-markdown'
 Plug 'vimwiki/vimwiki'
@@ -336,6 +337,11 @@ augroup filetype_html
   au!
   au FileType html nnoremap <leader>f :call OpenCurrentFileInBrowser()<cr>
   au FileType eelixir SnipMateLoadScope html
+augroup END
+
+augroup filetype_javascript
+  au!
+  au FileType javascript let g:jsx_ext_required = 0
 augroup END
 
 augroup no_syntax_highlight_for_big_files
