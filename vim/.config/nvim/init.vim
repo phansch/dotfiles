@@ -188,6 +188,7 @@ nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 " fzf settings
 let g:fzf_tags_command = 'ctags -R'
 
+let g:vimwiki_global_ext = 0
 let g:vimwiki_list = [
       \{'path': '~/Documents/vimwiki/', 'syntax': 'markdown', 'ext': '.md'},
       \{'path': '~/code/documentation.wiki/', 'syntax': 'markdown', 'ext': '.md'}]
@@ -325,6 +326,7 @@ augroup filetype_markdown
   au!
   au BufNewFile,BufRead *.md set filetype=markdown
 
+  au FileType markdown set nofoldenable
   au FileType markdown nnoremap <leader>f :call OpenCurrentFileInBrowser()<cr>
   au FileType markdown nnoremap <leader>t :Toc<cr>
   au FileType markdown nnoremap <F5> :put ='### <' . strftime('%F %a') . '>'<cr>
