@@ -127,11 +127,11 @@ bindsym $mod+Shift+quotedbl move container to workspace $WS2
 bindsym $mod+Shift+section move container to workspace $WS3
 bindsym $mod+Shift+dollar move container to workspace $WS4
 bindsym $mod+Shift+percent move container to workspace $WS5
-bindsym $mod+Shift+ampersand move container to workspace $WS6
-bindsym $mod+Shift+slash move container to workspace $WS7
-bindsym $mod+Shift+parenleft move container to workspace $WS8
-bindsym $mod+Shift+parenright move container to workspace 9
-bindsym $mod+Shift+equal move container to workspace 10
+bindsym $mod+Shift+slash move container to workspace $WS6
+bindsym $mod+Shift+ampersand move container to workspace $WS7
+bindsym $mod+Shift+asterisk move container to workspace $WS8
+bindsym $mod+Shift+parenleft move container to workspace 9
+bindsym $mod+Shift+parenright move container to workspace 10
 
 # window specific settings
 ## Move to workspace
