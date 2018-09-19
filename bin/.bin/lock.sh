@@ -13,3 +13,7 @@ j "[$(hostname)] Locking Screen"
 i3lock -u -n -t -i "$image_path"
 
 j "[$(hostname)] Unlocking screen"
+
+# Show scratchpad after screen is unlocked
+# I use this in the morning and evening to review my notes
+i3-msg '[instance="urxvt" title="vimwiki"] scratchpad show'
