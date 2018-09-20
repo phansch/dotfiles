@@ -334,6 +334,7 @@ augroup filetype_markdown
   au FileType markdown inoremap <F5> :put ='### <' . strftime('%F %a') . '>'<cr>
   au FileType markdown let g:vim_markdown_new_list_item_indent = 2
   au FileType markdown let g:vim_markdown_toc_autofit = 1
+  au FileType markdown setlocal textwidth=80
 augroup END
 
 augroup filetype_html
