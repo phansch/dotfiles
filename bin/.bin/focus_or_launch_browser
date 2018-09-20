@@ -1,0 +1,6 @@
+#!/bin/sh
+
+sensible-browser &
+sleep 0.5
+i3-msg "[class=Firefox|Nightly] focus"
+

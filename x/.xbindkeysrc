@@ -2,6 +2,10 @@
 "dmenu_run -f -i -fn 'Ubuntu Mono derivative Powerline-10' -p 'run:' -nb '#ebdbb2' -nf '#282828' -sb '#282828' -sf '#ebdbb2'"
   Alt + d
 
+# Start sensible-browser and focus it
+"~/.bin/focus_or_launch_browser"
+  Alt + b
+
 # Volume down
 "pactl set-sink-volume @DEFAULT_SINK@ -- -5% && pactl set-sink-mute @DEFAULT_SINK@ 0"
   XF86AudioLowerVolume
