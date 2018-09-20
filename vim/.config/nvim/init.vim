@@ -21,7 +21,7 @@ Plug 'mxw/vim-jsx',                            { 'for': ['javascript'] }
 Plug 'jelera/vim-javascript-syntax',           { 'for': ['javascript', 'coffeescript'] }
 Plug 'plasticboy/vim-markdown'
 Plug 'vimwiki/vimwiki'
-Plug 'rust-lang/rust.vim'
+Plug 'rust-lang/rust.vim', { 'branch': 'rewritten-ident' }
 Plug 'posva/vim-vue'
 
 " Library dependencies
