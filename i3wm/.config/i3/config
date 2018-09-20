@@ -183,6 +183,7 @@ exec urxvtc
 exec spotify
 exec keepassx2
 exec xbindkeys
+exec_always /home/phansch/.bin/run_redshift.sh
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
