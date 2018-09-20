@@ -233,6 +233,7 @@ iabbrev mothed method
 iabbrev erros errors
 iabbrev haproxy HAproxy
 iabbrev commen common
+iabbrev mysql MySQL
 " }}}
 
 " Mappings {{{
