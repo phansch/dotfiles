@@ -385,9 +385,11 @@ augroup END
 augroup rust
   au!
 
-  au FileType rust nnoremap <silent> K :call LanguageClient_textDocument_hover()
+  au FileType rust nnoremap <silent> K :call LanguageClient_textDocument_hover()<cr>
   au FileType rust nnoremap <silent> gd :call LanguageClient_textDocument_definition()<cr>
   au FileType rust nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<cr>
+  au FileType rust set shiftwidth=4
+  au FileType rust set softtabstop=4
 augroup END
 augroup neovim_terminal
   au!
