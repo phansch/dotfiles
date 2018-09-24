@@ -335,6 +335,7 @@ augroup filetype_markdown
   au FileType markdown let g:vim_markdown_new_list_item_indent = 2
   au FileType markdown let g:vim_markdown_toc_autofit = 1
   au FileType markdown setlocal textwidth=80
+  au FileType markdown set wrap
 augroup END
 
 augroup filetype_html
