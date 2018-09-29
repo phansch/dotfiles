@@ -1,3 +1,3 @@
 #!/bin/sh
 
-nvim ~/Documents/vimwiki/index.md
+cd ~/Documents/vimwiki && nvim index.md
