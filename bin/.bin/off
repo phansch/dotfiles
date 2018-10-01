@@ -4,9 +4,9 @@ run() {
   daily_review_check
   time_tracking_check
 
-  echo "Your journal for today looks like:"
-  today_file="$HOME/Documents/vimwiki/diary/$(date +%Y-%m-%d).md"
-  cat "$today_file"
+  echo "Opening your journal to update it."
+
+  i3-msg '[instance="urxvt" title="vimwiki"] scratchpad show' &>/dev/null
   ask_for_confirmation "Are you satisfied with todays journal?"
 
   # If work machine, include the timetracking link and
