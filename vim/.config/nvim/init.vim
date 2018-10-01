@@ -377,6 +377,12 @@ augroup git_commit_spelling
   au BufNewFile,BufRead COMMIT_EDITMSG set spell
 augroup END
 
+augroup wiki_diary_skeleton
+  au!
+
+  autocmd BufNewFile diary/*.md call LoadSkeleton('diary')
+augroup END
+
 augroup ruby_skeleton
   au!
 
