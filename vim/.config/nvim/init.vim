@@ -172,6 +172,10 @@ let g:gitgutter_eager = 0
 
 " }}}
 
+
+" Disable ALE for rust-clippy
+let g:ale_pattern_options = { 'rust-clippy': { 'ale_enabled': 0 } }
+
 " LanguageClient settings {{{
 let g:LanguageClient_serverCommands = {
     \ 'ruby': ['/home/phansch/.rvm/gems/ruby-2.4.1/bin/language_server-ruby'],
