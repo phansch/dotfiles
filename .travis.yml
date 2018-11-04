@@ -17,5 +17,6 @@ install:
   - docker build -t dotfiles .
 
 script:
+  - docker run dotfiles test/vim
   - docker run dotfiles test/shellcheck
   - docker run dotfiles /bin/bash -c "./setup -a; ./test/ansible; ./test/i3"
