@@ -15,4 +15,3 @@
     - name: Reload udev rules
       shell: udevadm trigger
       when: udevrules.changed
-

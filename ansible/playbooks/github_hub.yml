@@ -4,7 +4,8 @@
     hub_platform: linux-amd64
   tasks:
     - name: Get latest release URL
-      shell: "curl -s https://api.github.com/repos/github/hub/releases/latest | jq -r '.assets[] | select(.name | test(\"{{ hub_platform }}\")) | .browser_download_url'"
+      shell: "curl -s https://api.github.com/repos/github/hub/releases/latest |
+  jq -r '.assets[] | select(.name | test(\"{{ hub_platform }}\")) | .browser_download_url'"
       register: download_url
     - name: Download latest release
       unarchive:

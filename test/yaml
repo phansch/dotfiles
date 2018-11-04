@@ -1,0 +1,3 @@
+#!/bin/sh
+
+yamllint -c .yamllint.yml .
