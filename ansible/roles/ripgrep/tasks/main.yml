@@ -1,0 +1,24 @@
+---
+# NOTE: This is available as an APT package from Ubuntu 18.10 on
+- name: Install curl
+  apt:
+    pkg:
+      - curl
+      - jq
+    state: present
+- name: Get latest release URL
+  shell: "curl -s https://api.github.com/repos/BurntSushi/ripgrep/releases/latest | jq -r '.assets[] | select(.name | test(\"{{ platform | mandatory }}\")) | .browser_download_url'"
+  register: download_url
+  args:
+    warn: false
+- name: Cleanup existing
+  file:
+    path: "/tmp/ripgrep_{{ version | mandatory }}_{{ platform | mandatory }}.deb"
+    state: absent
+- name: Download latest release
+  get_url:
+    url: "{{ download_url.stdout }}"
+    dest: /tmp/ripgrep.deb
+- name: Install ripgrep
+  become: true
+  apt: deb=/tmp/ripgrep.deb
