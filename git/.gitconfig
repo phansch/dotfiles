@@ -39,7 +39,7 @@
 [diff]
   tool = vimdiff
 [credential]
-  helper = cred_path="/usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring"; test -d $cred_path && "$cred_path"
+  helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
 [include]
   path = .gitconfig.local
 [gpg]

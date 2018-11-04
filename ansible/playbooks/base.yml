@@ -41,8 +41,13 @@
         name: "{{ lookup('env', 'USER') }}"
         shell: /bin/zsh
         append: yes
-    # Fix gnome keyring
-    - name: Install libgnome-keyring-dev
-      apt: name=libgnome-keyring-dev
-    - name: Make gnome-keyring git credential helper
-      shell: make chdir=/usr/share/doc/git/contrib/credential/gnome-keyring
+    # Integrate git with libsecret
+    - name: Install libsecret
+      apt:
+        pkg:
+          - libsecret-1-0
+          - libsecret-1-dev
+        state: present
+        update_cache: true
+    - name: Make libsecret git credential helper
+      shell: make chdir=/usr/share/doc/git/contrib/credential/libsecret
