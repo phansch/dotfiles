@@ -3,7 +3,10 @@
   become: yes
   become_method: sudo
   roles:
-    - role: kagux.silversearcher_ag
+    - role: ripgrep
+      vars:
+        platform: amd64
+        version: 0.10.0
   tasks:
     - name: Install base packages
       apt:
