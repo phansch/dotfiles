@@ -98,13 +98,13 @@ If you just want the dotfiles, clone them and use [stow](https://www.gnu.org/sof
     # Install stow
     sudo apt-get install stow
 
-    # To install the ruby dotfiles. Replace Ruby with the stow package you want.
+    # To install the ruby dotfiles. Replace `ruby` with the stow package you want.
     # See ansible/playbooks/dotfiles.yml for a complete list of the stow packages.
     stow ruby --verbose=1 --target=$HOME/ --dir=$HOME/.dotfiles
 
 ### Environment variables
 
-Some scripts like the off script use environment variables for configuration.
+Some scripts, like the `off` script, use environment variables for configuration.
 You can set these in your `~/.zshrc.local` which is sourced by `~/.zshrc` automatically.
 
 The current environment variables are:
