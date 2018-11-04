@@ -2,4 +2,3 @@
 - hosts: localhost
   roles:
     - role: FGtatsuro.vagrant
-
