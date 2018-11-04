@@ -49,5 +49,9 @@
           - libsecret-1-dev
         state: present
         update_cache: true
+    - name: Check for libsecret Makefile
+      stat: path=/usr/share/doc/git/contrib/credential/libsecret/Makefile
+      register: makefile_present
     - name: Make libsecret git credential helper
       shell: make chdir=/usr/share/doc/git/contrib/credential/libsecret
+      when: makefile_present.stat.exists
