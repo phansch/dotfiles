@@ -13,7 +13,7 @@ RUN apt-get update -qq && apt-get install -y -qq --no-install-recommends \
     udev \
     python3-pip \
     python3-setuptools
-RUN pip3 install vim-vint
+RUN pip3 install vim-vint yamllint
 
 COPY . /code
 WORKDIR /code

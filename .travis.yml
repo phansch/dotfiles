@@ -1,3 +1,4 @@
+---
 sudo: required
 
 language: generic
@@ -18,5 +19,6 @@ install:
 
 script:
   - docker run dotfiles test/vim
+  - docker run dotfiles test/yaml
   - docker run dotfiles test/shellcheck
   - docker run dotfiles /bin/bash -c "./setup -a; ./test/ansible; ./test/i3"
