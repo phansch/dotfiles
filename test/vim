@@ -1,0 +1,5 @@
+#!/bin/sh
+
+set -x
+
+bash -c "vint vim/.config/nvim/init.vim"
