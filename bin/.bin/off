@@ -35,7 +35,7 @@ time_tracking_check() {
 daily_review_check() {
   if [[ -v DAILY_REVIEW_LINK ]]; then
     current_hour=$(date +"%H")
-    if [[ $current_hour > 19 ]]; then
+    if [[ $current_hour -gt 19 ]]; then
       echo "Opening your browser now with the daily review loaded"
       sleep 1
       sensible-browser "$DAILY_REVIEW_LINK"
