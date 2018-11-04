@@ -17,6 +17,7 @@ run() {
     sudo systemctl suspend && ~/.bin/lock.sh
   else
     echo "You could write about what you did today; any ideas, goals, etc."
+    exit 1
   fi
 }
 
@@ -28,6 +29,7 @@ time_tracking_check() {
       sleep 1
       sensible-browser "$TIME_TRACKING_LINK"
       i3-msg "[class=Firefox|Nightly] focus"
+      exit 1
     fi
   fi
 }
