@@ -360,7 +360,7 @@ augroup END
 
 augroup remove_trailing_whitespace
   au!
-  autocmd FileType ruby,js,css autocmd BufWritePre <buffer> :%s/\s\+$//e
+  autocmd FileType ruby,rust,js,css autocmd BufWritePre <buffer> :%s/\s\+$//e
 augroup END
 
 " Some custom ruby syntax highlights
