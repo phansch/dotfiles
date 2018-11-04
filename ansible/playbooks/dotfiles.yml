@@ -11,19 +11,23 @@
         - davfs2
         - fonts
         - git
-        - htop
         - i3wm
         - mutt
         - notify
         - redshift
         - ruby
         - screen
-        - shutter
         - tmux
         - urxvt
         - vim
         - x
         - zsh
+    - name: check for ~/.xinitrc
+      stat: path=~/.xinitrc
+      register: xinitrc_presence
+    - name: fail if ~/.xinitrc not created
+      fail: msg="~/.xinitrc was not created by stow"
+      when: xinitrc_presence.stat.exists == false
     - name: Create ~/.fonts directory
       file: path=~/.fonts state=directory
     - name: Download powerline font
