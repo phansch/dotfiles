@@ -6,34 +6,36 @@
     - role: kagux.silversearcher_ag
   tasks:
     - name: Install base packages
-      action: apt pkg={{ item }} state=present
-      with_items:
-        - build-essential
-        - cmake
-        - libglib2.0-dev
-        - xsel
-        - xclip
-        - xbindkeys
-        - slock
-        - zsh
-        - arandr
-        - rxvt-unicode-256color
-        - tmux
-        - git
-        - feh
-        - htop
-        - fontconfig
-        - curl
-        - at
-        - tree
-        - pidgin
-        - scrot
+      apt:
+        pkg:
+          - build-essential
+          - cmake
+          - libglib2.0-dev
+          - xsel
+          - xclip
+          - xbindkeys
+          - slock
+          - zsh
+          - arandr
+          - rxvt-unicode-256color
+          - tmux
+          - git
+          - feh
+          - htop
+          - fontconfig
+          - curl
+          - at
+          - tree
+          - pidgin
+          - scrot
+        state: present
     - name: Remove specific packages
-      action: apt pkg={{ item }} state=absent
-      with_items:
-        - xscreensaver
-        - transmission-gtk
-        - thunderbird
+      apt:
+        pkg:
+          - xscreensaver
+          - transmission-gtk
+          - thunderbird
+        state: absent
     - name: Set zsh as default shell
       user:
         name: "{{ lookup('env', 'USER') }}"
