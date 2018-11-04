@@ -140,6 +140,8 @@ All ansible playbooks are run on CI. The build will fail if:
 
 * Any ansible playbook has not finished successfully
 * i3 config is invalid
+* vint detects mistakes in `init.vim`
+* yaml-lint finds any issues
 * `ansible-playbook --syntax-check` has not finished successfully
 * shellcheck found errors
 
