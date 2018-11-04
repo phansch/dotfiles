@@ -18,7 +18,7 @@ bootstrap()
 
   print_message "[setup] Upgrading and autocleaning packages..."
   run_with_sudo apt-get update -qq
-  run_with_sudo apt-get upgrade -qq --force-yes
+  run_with_sudo apt-get upgrade -qq --allow-downgrades --allow-remove-essential --allow-change-held-packages
   run_with_sudo apt-get autoremove -y -qq
 
   print_message "[setup] Installing Ansible and git..."
