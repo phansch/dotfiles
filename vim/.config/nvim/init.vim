@@ -25,6 +25,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'vimwiki/vimwiki'
 Plug 'rust-lang/rust.vim', { 'branch': 'rewritten-ident' }
 Plug 'posva/vim-vue'
+" Plug 'junegunn/goyo.vim'
 
 " Library dependencies
 Plug 'MarcWeber/vim-addon-mw-utils'
