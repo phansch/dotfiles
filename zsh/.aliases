@@ -22,6 +22,9 @@ alias migrate="rake db:migrate db:rollback && rake db:migrate"
 alias m="migrate"
 alias be="bundle exec"
 
+## Docker
+alias dc="docker-compose"
+
 ## Git
 alias ga="git add"
 alias gaa="git add --all"

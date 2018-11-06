@@ -35,6 +35,7 @@
     - name: Remove specific packages
       apt:
         pkg:
+          - dc
           - xscreensaver
           - transmission-gtk
           - thunderbird
