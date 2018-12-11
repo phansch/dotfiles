@@ -9,10 +9,7 @@ scrot "$cfg_tmpdir/screen.png"
 
 convert "$image_path" -blur 4x8 "$image_path"
 
-j "[$(hostname)] Locking Screen"
 i3lock -u -n -t -i "$image_path"
-
-j "[$(hostname)] Unlocking screen"
 
 # Show scratchpad after screen is unlocked
 # I use this in the morning and evening to review my notes
