@@ -23,7 +23,7 @@ xrdb -merge ~/.Xresources & # reread ~/.Xresources
 setxkbmap 'de(dvorak)' & # Set german dvorak keyboard layout
 
 if [ "$(hostname)" = 'viperfish' ]; then
-  synclient TapButton1=1 TapButton2=3 TapButton3=2
+  synclient TapButton1=1 TapButton2=3 TapButton3=2 &
 fi
 
 #############
