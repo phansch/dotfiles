@@ -21,9 +21,9 @@ xset -dpms
 xset s noblank # don't blank the video device
 xrdb -merge ~/.Xresources & # reread ~/.Xresources
 setxkbmap 'de(dvorak)' & # Set german dvorak keyboard layout
-# TODO: Check for hostname of laptop to disable it
-if [ "$(hostname)" = 'philipp-samsung' ]; then
-  xinput disable "ELAN Touchscreen" &
+
+if [ "$(hostname)" = 'viperfish' ]; then
+  synclient TapButton1=1 TapButton2=3 TapButton3=2
 fi
 
 #############
@@ -50,7 +50,7 @@ sleep 1 && run_nextcloud &
 
 sleep 1 && ~/bin/run_redshift.sh &
 
-if [ "$(hostname)" = 'philipp-samsung' ]; then
+if [ "$(hostname)" = 'viperfish' ]; then
   ~/.screenlayout/work_default.sh
 else
   ~/.screenlayout/home_default.sh
