@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-if ! pgrep -x nextcloud > /dev/null
-then
-  echo "Nextcloud not running. Starting in background"
-  nextcloud &
-fi
