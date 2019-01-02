@@ -102,12 +102,13 @@ exec_always --no-startup-id urxvt -title "scratchpad" -e ~/.bin/scratchpad_start
 # ASSIGN WORKSPACE VARIABLES
 set $WS1 1:dev
 set $WS2 2:www
-set $WS3 3:im
+set $WS3 3:anki
 set $WS4 4:media
 set $WS5 5:misc
 set $WS6 6:misc
 set $WS7 7:misc
 set $WS8 8:misc
+set $WS9 9:im
 
 # switch to workspace
 bindsym $mod+1 workspace $WS1
@@ -118,7 +119,7 @@ bindsym $mod+5 workspace $WS5
 bindsym $mod+6 workspace $WS6
 bindsym $mod+7 workspace $WS7
 bindsym $mod+8 workspace $WS8
-bindsym $mod+9 workspace 9
+bindsym $mod+9 workspace $WS9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
@@ -130,21 +131,22 @@ bindsym $mod+Shift+percent move container to workspace $WS5
 bindsym $mod+Shift+slash move container to workspace $WS6
 bindsym $mod+Shift+ampersand move container to workspace $WS7
 bindsym $mod+Shift+asterisk move container to workspace $WS8
-bindsym $mod+Shift+parenleft move container to workspace 9
+bindsym $mod+Shift+parenleft move container to workspace $WS9
 bindsym $mod+Shift+parenright move container to workspace 10
 
 # window specific settings
 ## Move to workspace
 ### Note that everything that's using urxvt as a base,
 ### must be assigned before urxvt itself
-assign [title="irssi"] $WS3
 assign [instance="urxvt"] $WS1
 assign [class="^Firefox|Nightly$"] $WS2
 assign [class="qutebrowser"] $WS2
-assign [class="Skype*"] $WS3
-assign [class="Pidgin"] $WS3
-assign [title="Messenger"] $WS3
-assign [class="Hexchat"] $WS3
+assign [class="^Anki$"] $WS3
+assign [title="irssi"] $WS9
+assign [class="Skype*"] $WS9
+assign [class="Pidgin"] $WS9
+assign [title="Messenger"] $WS9
+assign [class="Hexchat"] $WS9
 # assign doesn't work with Spotify because it doesn't set the
 # window classes early enough, so we have to use for_window:
 # https://github.com/i3/i3/issues/2060
@@ -184,6 +186,7 @@ exec urxvtc
 exec spotify
 exec keepassx2
 exec xbindkeys
+exec anki
 exec_always /home/phansch/.bin/run_redshift.sh
 
 # resize window (you can also use the mouse for that)

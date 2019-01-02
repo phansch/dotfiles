@@ -14,3 +14,4 @@ i3lock -u -n -t -i "$image_path"
 # Show scratchpad after screen is unlocked
 # I use this in the morning and evening to review my notes
 i3-msg '[instance="urxvt" title="vimwiki"] scratchpad show' >/dev/null 2>&1
+i3-msg '[class="^Anki$"] show' >/dev/null 2>&1
