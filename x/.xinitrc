@@ -46,7 +46,6 @@ sleep 1 && /usr/lib/x86_64-linux-gnu/deja-dup/deja-dup-monitor &
 
 # Launch programs
 sleep 1 && nm-applet &
-sleep 1 && run_nextcloud &
 
 sleep 1 && ~/bin/run_redshift.sh &
 
