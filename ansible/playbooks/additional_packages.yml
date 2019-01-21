@@ -23,7 +23,6 @@
     apt: deb={{ item }} state=present
     with_items:
       - https://go.skype.com/skypeforlinux-64.deb
-      - http://download.opensuse.org/repositories/home:/jgeboski/xUbuntu_17.10/amd64/purple-facebook_20180323~ef6ae47~9ff9acf9fa14~145_amd64.deb
   - name: Setup various ppa repositories
     shell: add-apt-repository -y {{ item }}
     with_items:
