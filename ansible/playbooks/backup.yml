@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Install borgbackup
+      apt: pkg=borgbackup
+    - name: Backup cron
+      cron:
+        name: Backup
+        minute: "0"
+        hour: "7"
+        job: /home/phansch/.bin/backup
+        user: phansch

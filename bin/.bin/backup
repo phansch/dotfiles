@@ -1,0 +1,12 @@
+#!/bin/sh
+
+export BORG_REPO=phansch@rasp:/srv/dev-disk-by-id-usb-Intenso_External_USB_3.0_20131231015294-0-0-part1/backups/
+
+borg create \
+  --info \
+  --stats \
+  ::main-{now:%Y-%m-%d} \
+  ~/Documents \
+  ~/Pictures \
+  ~/Music \
+  ~/Videos \
