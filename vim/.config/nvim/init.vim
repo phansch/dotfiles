@@ -420,6 +420,23 @@ augroup neovim_terminal
 augroup END
 " }}}
 
+" Fix netrw/vinegar file explorer issue: https://github.com/tpope/vim-vinegar/issues/13
+" This is not perfect, because it will still display the error messages for a
+" short duration when closing vim. Maybe it makes more sense to look for a
+" file explorer alternative at some point.
+function! QuitNetrw()
+  for i in range(1, bufnr($))
+    if buflisted(i)
+      if getbufvar(i, '&filetype') == "netrw"
+        silent exe 'bwipeout ' . i
+      endif
+    endif
+  endfor
+endfunction
+
+augroup vim
+  au! VimLeavePre *  call QuitNetrw()
+augroup END
 
 " Custom functions {{{
 
