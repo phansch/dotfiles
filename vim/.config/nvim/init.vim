@@ -15,6 +15,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 " Language specific
 Plug 'rodjek/vim-puppet'
 Plug 'vim-ruby/vim-ruby'
+Plug 'rlue/vim-fold-rspec'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rake'
@@ -335,6 +336,9 @@ nnoremap <leader>sv :source ~/.dotfiles/vim/.config/nvim/init.vim<cr>
 augroup filetype_xdefaults
   au!
   au BufNewFile,BufRead *.xresources set filetype=xdefaults
+
+  " Unfold everything first, I can fold my code myself
+  au BufRead * normal zR
 augroup END
 
 augroup filetype_markdown
