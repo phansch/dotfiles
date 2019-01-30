@@ -40,7 +40,7 @@ alias gd="git diff"
 
 alias gl="git pull"
 alias gfa="git fetch --all"
-alias gp="git push &"
+alias gp="git push"
 
 alias 'ga .'="echo don't use git add ."
 alias 'git add .'="echo don't use git add ."
