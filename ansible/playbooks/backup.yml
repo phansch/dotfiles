@@ -8,5 +8,5 @@
         name: Backup
         minute: "0"
         hour: "7"
-        job: /home/phansch/.bin/backup
+        job: /home/phansch/.bin/backup 2>&1 | /usr/bin/logger -t backup_cron
         user: phansch

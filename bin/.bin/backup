@@ -5,8 +5,10 @@ export BORG_REPO=phansch@rasp:/srv/dev-disk-by-id-usb-Intenso_External_USB_3.0_2
 borg create \
   --info \
   --stats \
-  ::main-{now:%Y-%m-%d} \
+  --list \
+  ::main-{now:%Y-%m-%d}-{hostname} \
   ~/Documents \
   ~/Pictures \
   ~/Music \
   ~/Videos \
+  ~/optimize.me
