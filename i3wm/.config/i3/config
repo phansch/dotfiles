@@ -147,6 +147,8 @@ assign [class="Skype*"] $WS9
 assign [class="Pidgin"] $WS9
 assign [title="Messenger"] $WS9
 assign [class="Hexchat"] $WS9
+assign [class="Pavucontrol"] $WS4
+
 # assign doesn't work with Spotify because it doesn't set the
 # window classes early enough, so we have to use for_window:
 # https://github.com/i3/i3/issues/2060
@@ -177,6 +179,7 @@ for_window [class="eepassx"] floating enable, border none, move absolute positio
 for_window [title="spotify|Spotify"] floating enable, border none, move absolute position center
 for_window [title="Bluetooth"] floating enable, border none, move absolute position center
 for_window [class="ile-roller$"] floating enable, border none, move absolute position center
+for_window [class="pavucontrol"] floating enable, border none
 
 # Autostart
 # Use --no-startup-id for background programs or if there is a 'watch' cursor
@@ -187,6 +190,7 @@ exec spotify
 exec keepassx2
 exec xbindkeys
 exec anki
+exec pavucontrol
 exec_always /home/phansch/.bin/run_redshift.sh
 
 # resize window (you can also use the mouse for that)
