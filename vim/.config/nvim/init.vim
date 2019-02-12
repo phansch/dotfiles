@@ -182,7 +182,7 @@ let g:ale_pattern_options = { 'rust-clippy': { 'ale_enabled': 0 } }
 
 " LanguageClient settings {{{
 let g:LanguageClient_serverCommands = {
-    \ 'ruby': ['/home/phansch/.rvm/gems/ruby-2.4.1/bin/language_server-ruby'],
+    \ 'ruby': ['tcp://localhost:7658'],
     \ 'javascript': ['javascript-typescript-stdio'],
     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
     \ }
@@ -386,6 +386,7 @@ augroup custom_ruby_syntax
   au FileType ruby :match FocusTrue 'focus: true'
   au FileType ruby syntax match Pry 'binding.pry'
   au FileType ruby highlight Pry ctermbg=1 ctermfg=2
+  au FileType ruby setlocal omnifunc=LanguageClient#complete
   hi def link rubyCapitalizedMethod rubyConstant
 augroup END
 
