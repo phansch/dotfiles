@@ -1,7 +1,7 @@
 # From https://github.com/ihashacks/notifyosd.zsh/blob/master/notifyosd.zsh
 
 # commands to ignore
-cmdignore=(fg htop man tmux top vim nvim vi)
+cmdignore=(fg ga gc pr htop man tmux top vim nvim vi)
 
 # set gt 0 to enable GNU units for time results
 gnuunits=0
