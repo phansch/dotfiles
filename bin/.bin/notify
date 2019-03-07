@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -euo pipefail
+
+text="Command complete"
+icon="/usr/share/icons/Adwaita/48x48/emblems/emblem-default.png"
+
+notify-send "$text" -i "$icon" && spd-say "$text" -t male2 -r -20
