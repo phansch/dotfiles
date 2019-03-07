@@ -32,7 +32,7 @@ alias gaa="git add --all"
 alias gst="git status"
 alias gs="git status"
 
-alias gb="git branch"
+alias gb="git branch --sort=committerdate"
 alias gc="git commit -v"
 alias gcp="git cherry-pick"
 
