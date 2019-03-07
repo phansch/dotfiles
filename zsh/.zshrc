@@ -58,6 +58,7 @@ lazy_source () {
 }
 
 source ~/.zsh/prompt
+source ~/.zsh/notifyosd.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.aliases
 
