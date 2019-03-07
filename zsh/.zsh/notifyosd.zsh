@@ -1,7 +1,7 @@
 # From https://github.com/ihashacks/notifyosd.zsh/blob/master/notifyosd.zsh
 
 # commands to ignore
-cmdignore=(fg ga gc pr htop man tmux top vim nvim vi)
+cmdignore=(fg git gd ga gc pr htop man tmux top vim nvim vi guard)
 
 # set gt 0 to enable GNU units for time results
 gnuunits=0
@@ -19,7 +19,7 @@ function notifyosd-precmd() {
         if [ $retval -gt 0 ]; then
 			cmdstat="with warning"
                         sndstat="/usr/share/sounds/sound-icons/prompt"
-			urgency="critical"
+			urgency="normal"
 		else
             cmdstat="successfully"
                         sndstat="/usr/share/sounds/sound-icons/electric-piano-3.wav"
@@ -34,11 +34,11 @@ function notifyosd-precmd() {
 			fi
             if [ ! -z $SSH_TTY ] ; then
                 notify-send -i utilities-terminal \
-						-u $urgency "$cmd_basename on `hostname` completed $cmdstat" "\"$cmd\" took $cmd_time"; \
+						-t 4000 -u $urgency "$cmd_basename on `hostname` completed $cmdstat" "\"$cmd\" took $cmd_time"; \
                                                 (play -q $sndstat > /dev/null 2>&1 &)
             else
                 notify-send -i utilities-terminal \
-						-u $urgency "$cmd_basename completed $cmdstat" "\"$cmd\" took $cmd_time"; \
+						-t 4000 -u $urgency "$cmd_basename completed $cmdstat" "\"$cmd\" took $cmd_time"; \
                                                 (play -q $sndstat > /dev/null 2>&1 &)
             fi
         fi
