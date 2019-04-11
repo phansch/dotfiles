@@ -3,21 +3,19 @@
 run() {
   daily_review_check
   time_tracking_check
-
-  echo "Opening your journal to update it."
-
-  i3-msg '[instance="urxvt" title="vimwiki"] scratchpad show' &>/dev/null
-  ask_for_confirmation "Are you satisfied with todays journal?"
+  journal_check
 
   if [ $(hostname) != "daggertooth" ]; then
     ask_for_confirmation "Did you turn off the office lamp?"
   fi
 
+  ask_for_confirmation "Do you want to suspend now?"
+
   if answer_is_yes; then
     echo "Ok then. Suspending the machine"
     sudo systemctl suspend && ~/.bin/lock.sh
   else
-    echo "You could write about what you did today; any ideas, goals, etc."
+    echo "Not suspending"
     exit 1
   fi
 }
@@ -44,6 +42,16 @@ daily_review_check() {
       sensible-browser "$DAILY_REVIEW_LINK"
       i3-msg "[class=Firefox|Nightly] focus" &>/dev/null
     fi
+  fi
+}
+
+journal_check() {
+  current_hour=$(date +"%-H")
+  if [[ $current_hour -gt 19 ]]; then
+    echo "Opening your journal to update it."
+
+    i3-msg '[instance="urxvt" title="vimwiki"] scratchpad show' &>/dev/null
+    ask_for_confirmation "Are you satisfied with todays journal?"
   fi
 }
 
