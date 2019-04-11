@@ -9,15 +9,10 @@ run() {
   i3-msg '[instance="urxvt" title="vimwiki"] scratchpad show' &>/dev/null
   ask_for_confirmation "Are you satisfied with todays journal?"
 
-  if [ "$HOST" != "daggertooth" ]; then
+  if [ $(hostname) != "daggertooth" ]; then
     ask_for_confirmation "Did you turn off the office lamp?"
-    if ! answer_is_yes; then
-      echo "Well, then turn if off now =)"
-    fi
   fi
 
-  # If work machine, include the timetracking link and
-  # open it.
   if answer_is_yes; then
     echo "Ok then. Suspending the machine"
     sudo systemctl suspend && ~/.bin/lock.sh
