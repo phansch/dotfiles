@@ -410,12 +410,6 @@ augroup rust
   au FileType rust set shiftwidth=4
   au FileType rust set softtabstop=4
 augroup END
-augroup neovim_terminal
-  au!
-
-  au TermOpen * startinsert
-  au TermClose * stopinsert
-augroup END
 " }}}
 
 " Fix netrw/vinegar file explorer issue: https://github.com/tpope/vim-vinegar/issues/13
