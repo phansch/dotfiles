@@ -196,13 +196,6 @@ nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 " fzf settings
 let g:fzf_tags_command = 'ctags -R'
 
-command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
-  \   <bang>0 ? fzf#vim#with_preview('up:60%')
-  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
-  \   <bang>0)
-
 let g:vimwiki_global_ext = 0
 let g:vimwiki_list = [
       \{'path': '~/Documents/vimwiki/', 'syntax': 'markdown', 'ext': '.md'},
