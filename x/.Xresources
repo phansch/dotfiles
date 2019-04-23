@@ -7,7 +7,6 @@
 !#include ".Xresources.d/rofi.xresources"
 
 *intensityStyles: false
-*fading: 20
 
 URxvt*depth: 32
 
