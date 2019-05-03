@@ -419,7 +419,7 @@ augroup END
 function! QuitNetrw()
   for i in range(1, bufnr($))
     if buflisted(i)
-      if getbufvar(i, '&filetype') == "netrw"
+      if getbufvar(i, '&filetype') ==# 'netrw'
         silent exe 'bwipeout ' . i
       endif
     endif
