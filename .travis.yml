@@ -15,8 +15,8 @@ branches:
     master
 
 install:
-  - pip install molecule
-  - pip install "molecule[docker]"
+  - pip install --user molecule
+  - pip install --user "molecule[docker]"
   - docker build -t dotfiles .
 
 script:
