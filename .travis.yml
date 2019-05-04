@@ -14,14 +14,27 @@ branches:
   only:
     master
 
-install:
-  - pip install --user molecule
-  - pip install --user "molecule[docker]"
-  - docker build -t dotfiles .
-
-script:
-  - docker run dotfiles test/vim
-  - docker run dotfiles test/yaml
-  - docker run dotfiles test/shellcheck
-  - cd ansible/roles/ripgrep && molecule test
-  - docker run dotfiles /bin/bash -c "./setup -a; ./test/ansible; ./test/i3"
+jobs:
+  include:
+    - stage: test
+      name: Molecule role tests
+      install:
+        - pip install --user molecule
+        - pip install --user "molecule[docker]"
+      script:
+        - (cd ansible/roles/ripgrep && molecule test)
+        - (cd ansible/roles/github_hub && molecule test)
+    - stage: test
+      name: Basic lints
+      install:
+        - docker build -t dotfiles .
+      script:
+        - docker run dotfiles test/vim
+        - docker run dotfiles test/yaml
+        - docker run dotfiles test/shellcheck
+    - stage: test
+      name: Full setup test
+      install:
+        - docker build -t dotfiles .
+      script:
+        - docker run dotfiles /bin/bash -c "./setup -a; ./test/ansible; ./test/i3"

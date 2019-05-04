@@ -2,4 +2,4 @@
 - hosts: localhost
   tasks:
     - name: Install rustup
-      command: creates=~/.cargo/bin/rustup curl https://sh.rustup.rs -sSf | sh -s -- -y
+      command: creates=~/.cargo/bin/rustup curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh -s -- -y

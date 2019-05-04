@@ -22,7 +22,14 @@ bootstrap()
   run_with_sudo apt-get autoremove -y -qq
 
   print_message "[setup] Installing Ansible and git..."
-  run_with_sudo apt-get install -qq git ansible
+  run_with_sudo apt-get install -qq git ansible wget
+
+  print_message "[setup] Installing Mitogen for Ansible..."
+  wget https://networkgenomics.com/try/mitogen-0.2.6.tar.gz
+  tar -xvzf mitogen-0.2.6.tar.gz
+  rm mitogen-0.2.6.tar.gz
+  mkdir ansible/mitogen
+  mv mitogen-0.2.6 ansible/mitogen
 
   if [ -d "$HOME/.dotfiles" ]; then
     print_message "[setup] Dotfiles exist. Updating dotfiles..."
@@ -42,7 +49,7 @@ bootstrap()
     ansible/playbooks/dotfiles.yml
   )
   print_message "[setup] Running default playbooks..."
-  run_with_sudo ansible-galaxy install -r ansible/requirements.yml --force
+  run_with_sudo ansible-galaxy install -c -r ansible/requirements.yml --force
   ansible-playbook "${default_playbooks[@]}" --ask-become-pass -u "$USER"
 
   additional_playbooks=(
@@ -50,7 +57,6 @@ bootstrap()
     ansible/playbooks/additional_packages.yml
     ansible/playbooks/i3.yml
     ansible/playbooks/udev.yml
-    ansible/playbooks/github_hub.yml
     ansible/playbooks/rust.yml
     ansible/playbooks/backup.yml
   )

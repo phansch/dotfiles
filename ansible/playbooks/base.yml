@@ -7,6 +7,10 @@
       vars:
         platform: amd64
         version: 0.10.0
+    - role: github_hub
+      vars:
+        platform: linux-amd64
+        dest_dir: ~/.bin/hub
   tasks:
     - name: Install base packages
       apt:
