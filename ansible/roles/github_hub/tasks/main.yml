@@ -1,0 +1,40 @@
+---
+- name: Install curl and JQ
+  apt:
+    pkg:
+      - curl
+      - jq
+    state: present
+- name: Get latest release URL
+  shell: |
+    set -o pipefail
+    curl -s https://api.github.com/repos/github/hub/releases/latest \
+    | jq -r '.assets[] | select(.name | test("{{ hub_platform }}")) | .browser_download_url'
+  args:
+    executable: /bin/bash
+  register: download_url
+  changed_when: false
+- name: Download latest release
+  unarchive:
+    src: "{{ download_url.stdout }}"
+    dest: /tmp/
+    remote_src: true
+  changed_when: false
+- name: Cleanup existing
+  file:
+    path: /tmp/hub
+    state: absent
+  changed_when: false
+- name: Rename unarchived folder
+  shell: mv `ls -d -1 /tmp/hub*` /tmp/hub
+  changed_when: false
+- name: Create final destination directory
+  file:
+    path: "{{ dest_dir }}"
+    state: directory
+- name: Install latest release
+  copy:
+    remote_src: true
+    src: /tmp/hub/bin/hub
+    dest: "{{ dest_dir }}"
+    mode: 0775

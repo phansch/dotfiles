@@ -24,4 +24,5 @@ script:
   - docker run dotfiles test/yaml
   - docker run dotfiles test/shellcheck
   - cd ansible/roles/ripgrep && molecule test
+  - cd ansible/roles/github_hub && molecule test
   - docker run dotfiles /bin/bash -c "./setup -a; ./test/ansible; ./test/i3"
