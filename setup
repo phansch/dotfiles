@@ -50,7 +50,6 @@ bootstrap()
     ansible/playbooks/additional_packages.yml
     ansible/playbooks/i3.yml
     ansible/playbooks/udev.yml
-    ansible/playbooks/github_hub.yml
     ansible/playbooks/rust.yml
     ansible/playbooks/backup.yml
   )
