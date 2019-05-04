@@ -22,10 +22,10 @@ bootstrap()
   run_with_sudo apt-get autoremove -y -qq
 
   print_message "[setup] Installing Ansible and git..."
-  run_with_sudo apt-get install -qq git ansible curl
+  run_with_sudo apt-get install -qq git ansible wget
 
   print_message "[setup] Installing Mitogen for Ansible..."
-  curl -O https://networkgenomics.com/try/mitogen-0.2.6.tar.gz
+  wget https://networkgenomics.com/try/mitogen-0.2.6.tar.gz
   tar -xvzf mitogen-0.2.6.tar.gz
   rm mitogen-0.2.6.tar.gz
   mkdir ansible/mitogen
