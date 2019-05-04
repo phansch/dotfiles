@@ -5,7 +5,7 @@ run() {
   time_tracking_check
   journal_check
 
-  if [ $(hostname) != "daggertooth" ]; then
+  if [ "$(hostname)" != "daggertooth" ]; then
     ask_for_confirmation "Did you turn off the office lamp?"
   fi
 

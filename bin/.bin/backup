@@ -6,6 +6,7 @@ borg create \
   --info \
   --stats \
   --list \
+  # shellcheck disable=SC1083
   ::main-{now:%Y-%m-%d}-{hostname} \
   ~/Documents \
   ~/Pictures \
