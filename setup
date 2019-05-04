@@ -53,7 +53,6 @@ bootstrap()
   ansible-playbook "${default_playbooks[@]}" --ask-become-pass -u "$USER"
 
   additional_playbooks=(
-    ansible/playbooks/spotify.yml
     ansible/playbooks/additional_packages.yml
     ansible/playbooks/i3.yml
     ansible/playbooks/udev.yml

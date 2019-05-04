@@ -1,0 +1,12 @@
+---
+- name: Install gpg
+  apt:
+    pkg:
+      - gpg
+- name: Add apt-key
+  apt_key: keyserver=keyserver.ubuntu.com id=931FF8E79F0876134EDDBDCCA87FF9DF48BF1C90
+- name: Add spotify source
+  apt_repository: repo="deb http://repository.spotify.com stable non-free"
+  become: true
+- name: Install spotify-client
+  apt: update_cache=yes name=spotify-client
