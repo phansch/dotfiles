@@ -10,8 +10,11 @@
   shell: "curl -s https://api.github.com/repos/BurntSushi/ripgrep/releases/latest |
   jq -r '.assets[] | select(.name | test(\"{{ platform | mandatory }}\")) | .browser_download_url'"
   register: download_url
+  changed_when: false
   args:
     warn: false
+  tags:
+    - skip_ansible_lint
 - name: Cleanup existing
   file:
     path: "/tmp/ripgrep_{{ version | mandatory }}_{{ platform | mandatory }}.deb"
