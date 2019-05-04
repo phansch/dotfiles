@@ -24,6 +24,13 @@ bootstrap()
   print_message "[setup] Installing Ansible and git..."
   run_with_sudo apt-get install -qq git ansible
 
+  print_message "[setup] Installing Mitogen for Ansible..."
+  wget https://networkgenomics.com/try/mitogen-0.2.6.tar.gz
+  tar -xvzf mitogen-0.2.6.tar.gz
+  rm mitogen-0.2.6.tar.gz
+  mkdir ansible/mitogen
+  mv mitogen-0.2.6 ansible/mitogen
+
   if [ -d "$HOME/.dotfiles" ]; then
     print_message "[setup] Dotfiles exist. Updating dotfiles..."
     cd "$HOME/.dotfiles" && git checkout master -q && git pull -q
