@@ -25,7 +25,7 @@ bootstrap()
   run_with_sudo apt-get install -qq git ansible
 
   print_message "[setup] Installing Mitogen for Ansible..."
-  wget https://networkgenomics.com/try/mitogen-0.2.6.tar.gz
+  curl -O https://networkgenomics.com/try/mitogen-0.2.6.tar.gz
   tar -xvzf mitogen-0.2.6.tar.gz
   rm mitogen-0.2.6.tar.gz
   mkdir ansible/mitogen
