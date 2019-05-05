@@ -4,6 +4,7 @@
   become_method: sudo
   roles:
     - role: spotify
+    - role: i3
   tasks:
     - name: Install additional apt packages
       apt:

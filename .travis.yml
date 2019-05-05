@@ -25,6 +25,7 @@ jobs:
         - (cd ansible/roles/ripgrep && molecule test)
         - (cd ansible/roles/github_hub && molecule test)
         - (cd ansible/roles/spotify && molecule test)
+        - (cd ansible/roles/i3 && molecule test)
     - stage: test
       name: Basic lints
       install:
