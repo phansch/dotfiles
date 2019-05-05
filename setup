@@ -44,12 +44,13 @@ bootstrap()
     git clone -q https://github.com/phansch/dotfiles.git "$HOME/.dotfiles" && cd "$HOME/.dotfiles" || exit
   fi
 
+  run_with_sudo ansible-galaxy install -c -r ansible/requirements.yml --roles-path ansible/roles/ --force
+
   default_playbooks=(
     ansible/playbooks/base.yml
     ansible/playbooks/dotfiles.yml
   )
   print_message "[setup] Running default playbooks..."
-  run_with_sudo ansible-galaxy install -c -r ansible/requirements.yml --roles-path ansible/roles/ --force
   ansible-playbook "${default_playbooks[@]}" --ask-become-pass -u "$USER"
 
   additional_playbooks=(
