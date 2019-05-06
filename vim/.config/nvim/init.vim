@@ -40,7 +40,6 @@ Plug 'tpope/vim-vinegar'
 
 " Git
 Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
 
 " Insert mode
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -279,15 +278,6 @@ set pastetoggle=<C-p>
 
 " Clear last search highlighting
 nnoremap <esc> :nohlsearch<return><esc>
-
-" Git fugitive remaps
-nnoremap <leader>gd :Gdiff<cr>
-nnoremap <leader>gs :Gstatus<cr>
-nnoremap <leader>gco :Gcheckout<cr>
-nnoremap <leader>gc :Gcommit<cr>
-nnoremap <leader>gp :Gpush<cr>
-nnoremap <leader>gl :Gpull<cr>
-nnoremap <leader>gr :terminal git rebase -i origin/master<cr>
 
 " Completion
 let g:deoplete#enable_at_startup = 1
