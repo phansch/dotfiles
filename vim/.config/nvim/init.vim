@@ -142,6 +142,13 @@ set undodir=$HOME/.config/nvim/undo
 set undolevels=1000
 set undoreload=10000
 
+" nvim cursor shape
+if has('nvim')
+  set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
+    \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
+    \,sm:block-blinkwait175-blinkoff150-blinkon175
+endif
+
 " Theme settings
 colorscheme gruvbox
 set background=dark
@@ -203,11 +210,6 @@ let g:vimwiki_list = [
 
 " Rust
 let g:autofmt_autosave = 1
-
-" nvim cursor shape
-if has('nvim')
-  let $NVIM_TUI_ENABLE_CURSOR_SHAPE=2
-endif
 
 " Line Return {{{
 
