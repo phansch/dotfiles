@@ -162,8 +162,6 @@ set laststatus=2
 set statusline=\ \ %L%*        " Total rownumber
 set statusline+=\ %f\           " File+path
 
-command! Gamend :Gcommit --amend
-
 " Leader
 let g:mapleader = ','
 let g:maplocalleader = "\\"
