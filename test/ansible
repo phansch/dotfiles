@@ -2,5 +2,5 @@
 
 set -x
 
-ansible-galaxy install -r ansible/requirements.yml
+ansible-galaxy install --ignore-certs -r ansible/requirements.yml --force -v
 ansible-playbook ansible/playbooks/* --syntax-check
