@@ -40,6 +40,7 @@ Plug 'tpope/vim-vinegar'
 
 " Git
 Plug 'airblade/vim-gitgutter'
+Plug 'rhysd/git-messenger.vim'
 
 " Insert mode
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -161,6 +162,8 @@ set fillchars=vert:\│,stlnc:\ ",stl:\ "
 set laststatus=2
 set statusline=\ \ %L%*        " Total rownumber
 set statusline+=\ %f\           " File+path
+
+command! Gblame :GitMessenger
 
 " Leader
 let g:mapleader = ','
