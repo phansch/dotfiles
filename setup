@@ -44,7 +44,7 @@ bootstrap()
     git clone -q https://github.com/phansch/dotfiles.git "$HOME/.dotfiles" && cd "$HOME/.dotfiles" || exit
   fi
 
-  run_with_sudo ansible-galaxy install -c -r ansible/requirements.yml --roles-path ansible/roles/ --force
+  run_with_sudo ansible-galaxy install -c -r ansible/requirements.yml --force
 
   default_playbooks=(
     ansible/playbooks/base.yml
