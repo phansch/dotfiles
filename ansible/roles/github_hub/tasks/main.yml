@@ -7,7 +7,6 @@
     state: present
 - name: Get latest release URL
   shell: |
-    set -o pipefail
     curl -s https://api.github.com/repos/github/hub/releases/latest \
     | jq -r '.assets[] | select(.name | test("{{ hub_platform }}")) | .browser_download_url'
   args:
@@ -17,6 +16,8 @@
   register: download_url
   until: download_url.rc == 0
   changed_when: false
+  tags:
+    - skip_ansible_lint
 - name: Download latest release
   unarchive:
     src: "{{ download_url.stdout }}"
