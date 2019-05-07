@@ -1,10 +1,12 @@
 ---
 sudo: required
 
-language: generic
+language: python
 
-services:
-  - docker
+cache: pip
+
+python:
+  - 3.6
 
 env:
   global:
@@ -18,14 +20,19 @@ jobs:
   include:
     - stage: test
       name: Molecule role tests
-      install:
-        - pip install --user molecule
-        - pip install --user "molecule[docker]"
-      script:
-        - (cd ansible/roles/ripgrep && molecule test)
-        - (cd ansible/roles/github_hub && molecule test)
-        - (cd ansible/roles/spotify && molecule test)
-        - (cd ansible/roles/i3 && molecule test)
+      install: |
+        pip3 install virtualenv
+        virtualenv virtenv
+        source virtenv/bin/activate
+
+        pip install molecule docker ansible
+      script: |
+        source virtenv/bin/activate
+
+        cd ansible/roles/ripgrep && molecule test && cd -
+        cd ansible/roles/github_hub && molecule test && cd -
+        cd ansible/roles/spotify && molecule test && cd -
+        cd ansible/roles/i3 && molecule test && cd -
     - stage: test
       name: Basic lints
       install:
