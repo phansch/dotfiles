@@ -1,10 +1,11 @@
 ---
 - hosts: localhost
-  become: yes
+  become: true
   become_method: sudo
   roles:
     - role: spotify
     - role: i3
+    - role: rust
   tasks:
     - name: Install additional apt packages
       apt:
