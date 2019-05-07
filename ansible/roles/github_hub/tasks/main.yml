@@ -12,7 +12,10 @@
     | jq -r '.assets[] | select(.name | test("{{ hub_platform }}")) | .browser_download_url'
   args:
     executable: /bin/bash
+  retries: 3  # Sometimes the JSON contains just `null` instead of the URL
+  delay: 2
   register: download_url
+  until: download_url.rc == 0
   changed_when: false
 - name: Download latest release
   unarchive:
