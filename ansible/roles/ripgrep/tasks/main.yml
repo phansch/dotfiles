@@ -11,6 +11,9 @@
   jq -r '.assets[] | select(.name | test(\"{{ platform | mandatory }}\")) | .browser_download_url'"
   register: download_url
   changed_when: false
+  retries: 3  # Sometimes the JSON contains just `null` instead of the URL
+  delay: 2
+  until: download_url.rc == 0
   args:
     warn: false
   tags:
