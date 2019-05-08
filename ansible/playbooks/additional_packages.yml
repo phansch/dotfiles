@@ -6,6 +6,7 @@
     - role: spotify
     - role: i3
     - role: rust
+    - role: FGtatsuro.vagrant
   tasks:
     - name: Install additional apt packages
       apt:
