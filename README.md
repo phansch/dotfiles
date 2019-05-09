@@ -2,7 +2,7 @@
 
 ## What's in there?
 
-This is meant to be a 'minimal', distraction free setup.
+This is meant to be a 'minimal', **distraction free** setup.
 It should automate as much as possible and keep UI clutter to a minimum.
 
 I **don't** recommend running the `setup` script on your machine unless
