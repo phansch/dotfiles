@@ -7,6 +7,7 @@
     - role: i3
     - role: rust
     - role: FGtatsuro.vagrant
+    - role: angstwad.docker_ubuntu
   tasks:
     - name: Install additional apt packages
       apt:
