@@ -8,6 +8,7 @@
     - role: rust
     - role: markdown_mimetype
     - role: FGtatsuro.vagrant
+    - role: angstwad.docker_ubuntu
   tasks:
     - name: Install additional apt packages
       apt:
