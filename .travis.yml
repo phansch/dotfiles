@@ -34,6 +34,7 @@ jobs:
         cd ansible/roles/spotify && molecule test && cd -
         cd ansible/roles/i3 && molecule test && cd -
         cd ansible/roles/rust && molecule test && cd -
+        cd ansible/roles/markdown_mimetype && molecule test && cd -
     - stage: test
       name: Basic lints
       install:
