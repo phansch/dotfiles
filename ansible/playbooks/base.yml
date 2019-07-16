@@ -35,6 +35,7 @@
           - tree
           - pidgin
           - scrot
+          - firejail
         state: present
     - name: Remove specific packages
       apt:
