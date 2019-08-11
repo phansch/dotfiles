@@ -1,0 +1,21 @@
+#!/usr/bin/ruby
+
+# Finds unpushed commits and branches
+
+git_cmd = "git --no-pager log --branches --not --remotes --simplify-by-decoration --decorate --oneline"
+
+Dir["*/"].each do |s|
+  Dir.chdir(s) do
+    next unless Dir.exist?(File.join(Dir.pwd, ".git"))
+
+    result = %x[#{git_cmd}]
+    next if result.empty?
+
+    puts
+    puts "\e[1m#{Dir.pwd}:\e[0m"
+    # FIXME: It's a shame that we have to call git twice.
+    # This has to be done so that the final output is colored.
+    # Can probably be fixed by using popen3, but I'm too lazy.
+    system(git_cmd)
+  end
+end
