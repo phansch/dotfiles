@@ -1,0 +1,13 @@
+include "/usr/share/X11/locale/en_US.UTF-8/Compose"
+
+# Note: you may have to manually remove the below entries from the file above if they
+# are not overridden :(
+<Multi_key> <a> <a> : "ä"
+<Multi_key> <A> <A> : "Ä"
+<Multi_key> <o> <o> : "ö"
+<Multi_key> <O> <O> : "Ö"
+<Multi_key> <u> <u> : "ü"
+<Multi_key> <U> <U> : "Ü"
+
+# Maybe useful
+<Multi_key> <p> <o> <o> : "💩"
