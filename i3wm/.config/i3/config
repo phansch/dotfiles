@@ -188,7 +188,6 @@ for_window [class="pavucontrol"] floating enable, border none
 exec sensible-browser
 exec urxvtc
 exec spotify
-exec keepassx2
 exec xbindkeys
 exec anki
 exec pavucontrol
