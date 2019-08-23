@@ -20,7 +20,7 @@ xset s off # don't activate screensaver
 xset -dpms
 xset s noblank # don't blank the video device
 xrdb -merge ~/.Xresources & # reread ~/.Xresources
-setxkbmap 'de(dvorak)' & # Set german dvorak keyboard layout
+setxkbmap 'us' -option compose:rctrl & # Set us keyboard layout
 
 if [ "$(hostname)" = 'viperfish' ]; then
   synclient TapButton1=1 TapButton2=3 TapButton3=2 &
