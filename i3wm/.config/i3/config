@@ -11,16 +11,25 @@
 
 set $mod Mod1
 
+# Colors from ~/.Xresources
+
+set_from_resource $border color11
+set_from_resource $background background #ff0000
+set_from_resource $foreground foreground #ff0000
+set_from_resource $warning color9 #ff0000
+
 font pango:Ubuntu Mono derivative Powerline 10
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #282828 #98971a #282828 #ffffff   #282828
+client.focused          $border $background $foreground #ffffff   $border
+client.focused_inactive $border $background $foreground #ffffff   $border
+client.unfocused        $border $background $foreground #ffffff   $border
+client.background       #ffffff
 
-# Never show borders (exceptions below)
-new_window none
+default_border pixel 5
 
 # Hide borders that are adjecent to screen edges
-hide_edge_borders none
+hide_edge_borders both
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -189,7 +198,6 @@ exec sensible-browser
 exec urxvtc
 exec spotify
 exec xbindkeys
-exec anki
 exec pavucontrol
 exec_always /home/phansch/.bin/run_redshift.sh
 
@@ -218,12 +226,6 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-
-# Colors from ~/.Xresources
-
-set_from_resource $background background #ff0000
-set_from_resource $foreground foreground #ff0000
-set_from_resource $warning color9 #ff0000
 
 # Start i3bar to display a workspace bar
 bar {
