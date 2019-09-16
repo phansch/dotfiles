@@ -149,13 +149,11 @@ bindsym $mod+Shift+parenright move container to workspace 10
 ### must be assigned before urxvt itself
 assign [instance="urxvt"] $WS1
 assign [class="^Firefox|Nightly$"] $WS2
-assign [class="qutebrowser"] $WS2
 assign [class="^Anki$"] $WS3
 assign [title="irssi"] $WS9
 assign [class="Skype*"] $WS9
 assign [class="Pidgin"] $WS9
 assign [title="Messenger"] $WS9
-assign [class="Hexchat"] $WS9
 assign [class="Pavucontrol"] $WS4
 
 # assign doesn't work with Spotify because it doesn't set the
@@ -164,28 +162,19 @@ assign [class="Pavucontrol"] $WS4
 for_window [class="spotify|Spotify"] move to workspace $WS4
 for_window [title="spotify|Spotify"] move to workspace $WS4
 # Same issue with hipchat
-for_window [class="hipchat4"] move to workspace $WS3
 assign [class="VirtualBox"] $WS5
-assign [class="eepassx"] $WS5
-for_window [class="deja-dup|Deja-dup"] move to workspace $WS6; workspace $WS6
-assign [title="Icedove|Thunderbird"] $WS7
 
 ## window floating, borders and positioning
 for_window [class="^Firefox|Nightly$" title="^Library$"] floating enable
 for_window [class="^Firefox|Nightly$" window_role="^Preferences$"] floating enable
 for_window [class="^Anki$"] floating enable, border normal, move absolute position center
-for_window [class="^Skype$"] floating enable
 for_window [title="xfce4-notifyd|Volume Control"] floating enable
 for_window [class="^Shutter$"] floating enable, border normal
 for_window [class="Thunar"] floating enable
 for_window [window_role="pop-up"] floating enable
-for_window [title="Auto-Type - KeePassXC"] move to workspace current
-for_window [title="Unlock Database - KeePassXC"] move to workspace current
-for_window [window_type="dialog" title="keepassxc"] move to workspace current
 for_window [class="xfce4-notifyd"] floating enable
 for_window [class="deja-dup|Deja-dup"] floating enable
 for_window [class="Pidgin"] floating enable
-for_window [class="eepassx"] floating enable, border none, move absolute position center
 for_window [title="spotify|Spotify"] floating enable, border none, move absolute position center
 for_window [title="Bluetooth"] floating enable, border none, move absolute position center
 for_window [class="ile-roller$"] floating enable, border none, move absolute position center
