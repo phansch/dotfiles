@@ -36,6 +36,7 @@
           - pidgin
           - scrot
           - firejail
+          - shellcheck
         state: present
     - name: Remove specific packages
       apt:
