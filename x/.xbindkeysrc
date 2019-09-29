@@ -31,5 +31,5 @@
   Alt + f
 
 # Lock screen
-"~/.bin/lock.sh"
+"slock"
   Alt + l

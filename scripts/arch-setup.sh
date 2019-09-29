@@ -9,7 +9,7 @@ sudo pacman -S xsel xbindkeys
 sudo pacman -S rxvt-unicode
 sudo pacman -S tmux
 sudo pacman -S the_silver_searcher
-sudo pacman -S i3-wm i3status i3lock dmenu
+sudo pacman -S i3-wm i3status dmenu
 sudo pacman -S htop
 sudo pacman -S skype
 sudo pacman -S mupdf
