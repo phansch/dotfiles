@@ -4,7 +4,9 @@
     pkg:
       - gpg
 - name: Add apt-key
-  apt_key: keyserver=keyserver.ubuntu.com id=931FF8E79F0876134EDDBDCCA87FF9DF48BF1C90
+  apt_key:
+    url: https://download.spotify.com/debian/pubkey.gpg
+    state: present
 - name: Add spotify source
   apt_repository: repo="deb http://repository.spotify.com stable non-free"
   become: true
