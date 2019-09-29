@@ -13,7 +13,7 @@ run() {
 
   if answer_is_yes; then
     echo "Ok then. Suspending the machine"
-    sudo systemctl suspend && ~/.bin/lock.sh
+    sudo systemctl suspend && slock
   else
     echo "Not suspending"
     exit 1
