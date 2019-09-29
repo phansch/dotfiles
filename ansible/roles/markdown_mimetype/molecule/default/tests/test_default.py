@@ -16,7 +16,8 @@ def test_hosts_file(host):
     <glob pattern="*.mkd"/>
     <glob pattern="*.markdown"/>
   </mime-type>
-</mime-info>"""
+</mime-info>
+"""
     assert f.exists
     assert f.content_string == expected_string
     assert f.user == 'root'
