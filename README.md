@@ -66,8 +66,6 @@ Launches a couple of programs and the [i3](https://i3wm.org://i3wm.org/) window 
 ### Scripts in bin/
 
  * `off` Will ask you to do a daily review, time tracking and if you are fine with your journaling and then suspend the machine.
- * `lock.sh` Locks the screen with a blurred screenshot of the current screen.
-   Requires `scrot`, `imagemagick` and `i3lock`
  * `clean_rails` cleans cache and log files in rails projects
 
 ## Installation
