@@ -203,10 +203,12 @@ nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 " fzf settings
 let g:fzf_tags_command = 'ctags -R'
 
+" vimwiki settings
 let g:vimwiki_global_ext = 0
 let g:vimwiki_list = [
       \{'path': '~/Documents/vimwiki/', 'syntax': 'markdown', 'ext': '.md'},
       \{'path': '~/code/documentation.wiki/', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_folding = ''
 
 " Rust
 let g:autofmt_autosave = 1
