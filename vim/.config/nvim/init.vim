@@ -43,7 +43,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'rhysd/git-messenger.vim'
 
 " Insert mode
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
@@ -51,8 +50,11 @@ Plug 'tpope/vim-repeat'
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
 
+" Completion features
+Plug 'neovim/nvim-lsp'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 " Other
-Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'DataWraith/auto_mkdir'
 Plug 'w0rp/ale'
@@ -183,21 +185,24 @@ let g:gitgutter_eager = 0
 
 " }}}
 
+" Completion settings {{{
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+" }}}
 
 " Disable ALE for rust-clippy
 let g:ale_pattern_options = { 'rust-clippy': { 'ale_enabled': 0 } }
 
 " LanguageClient settings {{{
-let g:LanguageClient_serverCommands = {
-    \ 'ruby': ['tcp://localhost:7658'],
-    \ 'javascript': ['javascript-typescript-stdio'],
-    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-    \ }
-
-" Automatically start language servers.
-let g:LanguageClient_autoStart = 1
-
-nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+call nvim_lsp#setup('rust_analyzer', {})
 " }}}
 
 " fzf settings
@@ -211,7 +216,8 @@ let g:vimwiki_list = [
 let g:vimwiki_folding = ''
 
 " Rust
-let g:autofmt_autosave = 1
+let g:rustfmt_autosave = 0
+let g:rustfmt_command = 'rustfmt +stable'
 
 " Line Return {{{
 
@@ -283,9 +289,6 @@ set pastetoggle=<C-p>
 
 " Clear last search highlighting
 nnoremap <esc> :nohlsearch<return><esc>
-
-" Completion
-let g:deoplete#enable_at_startup = 1
 
 " Copy/pasting remaps
 set clipboard+=unnamedplus
