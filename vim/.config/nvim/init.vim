@@ -57,7 +57,6 @@ Plug 'SirVer/ultisnips'
 " Other
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'DataWraith/auto_mkdir'
-Plug 'w0rp/ale'
 Plug 'morhetz/gruvbox'
 
 call plug#end()
