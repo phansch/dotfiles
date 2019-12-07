@@ -24,7 +24,7 @@ Plug 'mxw/vim-jsx',                            { 'for': ['javascript'] }
 Plug 'jelera/vim-javascript-syntax',           { 'for': ['javascript', 'coffeescript'] }
 Plug 'plasticboy/vim-markdown'
 Plug 'vimwiki/vimwiki'
-Plug 'rust-lang/rust.vim', { 'branch': 'rewritten-indent' }
+Plug 'rust-lang/rust.vim'
 Plug 'posva/vim-vue'
 " Plug 'junegunn/goyo.vim'
 
