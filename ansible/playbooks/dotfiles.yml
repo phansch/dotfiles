@@ -33,5 +33,8 @@
     - name: Download powerline font
       get_url: url=https://github.com/powerline/fonts/raw/master/UbuntuMono/Ubuntu%20Mono%20derivative%20Powerline.ttf
         dest=~/.fonts/
+    - name: Download Source Sans Pro
+      get_url: url=https://github.com/adobe-fonts/source-sans-pro/raw/release/TTF/SourceSansPro-Regular.ttf
+        dest=~/.fonts/
     - name: Refresh font cache
       shell: fc-cache -f
