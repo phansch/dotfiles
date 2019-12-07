@@ -47,12 +47,12 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
-Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
 
 " Completion features
 Plug 'neovim/nvim-lsp'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'SirVer/ultisnips'
 
 " Other
 Plug 'christoomey/vim-tmux-navigator'
@@ -186,6 +186,26 @@ let g:gitgutter_eager = 0
 " }}}
 
 " Completion settings {{{
+set shortmess+=c
+let g:UltiSnipsExpandTrigger='<nop>'
+
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+" Coc only does snippet and additional edit on confirm.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
@@ -350,7 +370,6 @@ augroup END
 augroup filetype_html
   au!
   au FileType html nnoremap <leader>f :call OpenCurrentFileInBrowser()<cr>
-  au FileType eelixir SnipMateLoadScope html
 augroup END
 
 augroup filetype_javascript
