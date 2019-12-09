@@ -221,8 +221,8 @@ endfunction
 let g:ale_pattern_options = { 'rust-clippy': { 'ale_enabled': 0 } }
 
 " LanguageClient settings {{{
-lua require'nvim_lsp'.rust_analyzer.setup({})
-lua require'nvim_lsp'.solargraph.setup({})
+lua require'nvim_lsp'.rust_analyzer.setup{}
+lua require'nvim_lsp'.solargraph.setup{}
 " }}}
 
 " fzf settings
