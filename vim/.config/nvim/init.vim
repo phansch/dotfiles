@@ -52,7 +52,11 @@ Plug 'honza/vim-snippets'
 " Completion features
 Plug 'neovim/nvim-lsp'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'neoclide/coc-snippets'
+" FIXME: Run manually from CLI:
+" vim -c \":CocInstall coc-solargraph coc-rust-analyzer coc-snippets"
+"
+" There's currently no way to know when the command is done, so vim can't be
+" automatically closed.
 
 " Other
 Plug 'christoomey/vim-tmux-navigator'
