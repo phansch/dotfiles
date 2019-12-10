@@ -26,6 +26,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'vimwiki/vimwiki'
 Plug 'rust-lang/rust.vim'
 Plug 'posva/vim-vue'
+Plug 'kchmck/vim-coffee-script'
 " Plug 'junegunn/goyo.vim'
 
 " Library dependencies
@@ -49,14 +50,8 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'honza/vim-snippets'
 
-" Completion features
-Plug 'neovim/nvim-lsp'
+" Completion/IDE features
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" FIXME: Run manually from CLI:
-" vim -c \":CocInstall coc-solargraph coc-rust-analyzer coc-snippets"
-"
-" There's currently no way to know when the command is done, so vim can't be
-" automatically closed.
 
 " Other
 Plug 'christoomey/vim-tmux-navigator'
@@ -218,11 +213,6 @@ endfunction
 
 " Disable ALE for rust-clippy
 let g:ale_pattern_options = { 'rust-clippy': { 'ale_enabled': 0 } }
-
-" LanguageClient settings {{{
-lua require'nvim_lsp'.rust_analyzer.setup{}
-lua require'nvim_lsp'.solargraph.setup{}
-" }}}
 
 " fzf settings
 let g:fzf_tags_command = 'ctags -R'
