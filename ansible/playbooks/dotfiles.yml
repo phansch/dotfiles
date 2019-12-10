@@ -22,6 +22,13 @@
         - vim
         - x
         - zsh
+    - name: Install vim-coc extensions
+      shell: vim -c 'CocInstall -sync {{ item }}|q'
+      with_items:
+        - coc-solargraph
+        - coc-rust-analyzer
+        - coc-snippets
+        - coc-eslint
     - name: check for ~/.xinitrc
       stat: path=~/.xinitrc
       register: xinitrc_presence
