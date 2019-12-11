@@ -14,6 +14,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " Language specific
 Plug 'rodjek/vim-puppet'
+Plug 'pearofducks/ansible-vim'
 Plug 'vim-ruby/vim-ruby'
 Plug 'rlue/vim-fold-rspec'
 Plug 'tpope/vim-rails'
