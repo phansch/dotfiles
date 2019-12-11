@@ -200,6 +200,9 @@ endfunction
 
 let g:coc_snippet_next = '<tab>'
 
+nmap <silent> gd <Plug>(coc-definition)
+nmap <leader>rn <Plug>(coc-rename)
+
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
@@ -225,6 +228,7 @@ let g:vimwiki_folding = ''
 " Rust
 let g:rustfmt_autosave = 0
 let g:rustfmt_command = 'rustfmt +stable'
+" }}}
 
 " Line Return {{{
 
@@ -408,9 +412,6 @@ augroup END
 augroup rust
   au!
 
-  au FileType rust nnoremap <silent> K :call LanguageClient_textDocument_hover()<cr>
-  au FileType rust nnoremap <silent> gd :call LanguageClient_textDocument_definition()<cr>
-  au FileType rust nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<cr>
   au FileType rust set shiftwidth=4
   au FileType rust set softtabstop=4
 augroup END
