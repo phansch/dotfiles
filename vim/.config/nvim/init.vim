@@ -212,9 +212,6 @@ function! s:show_documentation()
 endfunction
 " }}}
 
-" Disable ALE for rust-clippy
-let g:ale_pattern_options = { 'rust-clippy': { 'ale_enabled': 0 } }
-
 " fzf settings
 let g:fzf_tags_command = 'ctags -R'
 
