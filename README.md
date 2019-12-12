@@ -2,8 +2,10 @@
 
 ## What's in there?
 
-This is meant to be a 'minimal', **distraction free** setup.
-It should automate as much as possible and keep UI clutter to a minimum.
+This is meant to be a 'minimal', **distraction free** setup. No fancy
+statusbars, no crazy window decorations, no distractions.
+With these dotfiles I want to automate as much as possible and keep UI clutter
+to a minimum for a distraction-free environment.
 
 I **don't** recommend running the `setup` script on your machine unless
 you understand what it does.  
@@ -47,11 +49,12 @@ Launches a couple of programs and the [i3](https://i3wm.org://i3wm.org/) window 
 
 ### Vim
 
+ * Using [coc.vim][coc] for language integrations
  * Support for 'line' cursor shape in insert mode if using nvim
  * Turns syntax off for large files
  * Open the current file in browser (Useful for markdown)
  * Return to the same line when you reopen a file
- * Full Rust, Ruby and Javascript integration
+ * Switch between tmux and vim panes using the same shortcuts
 
 ### Git
 
@@ -148,3 +151,4 @@ Have a look at the [`.travis.yml`][travis] and
 
 [travis]: https://github.com/phansch/dotfiles/blob/master/.travis.yml
 [dockerfile]: https://github.com/phansch/dotfiles/blob/master/Dockerfile
+[coc]: https://github.com/neoclide/coc.nvim
