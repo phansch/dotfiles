@@ -53,6 +53,7 @@
   fsckobjects = true
 [fetch]
   fsckobjects = true
+  prune = true
 [receive]
   fsckObjects = true
 [difftool]
