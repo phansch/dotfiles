@@ -5,4 +5,7 @@ ansible/.virtenv
 vim/.config/nvim
 zsh/.zsh/history
 ansible/mitogen
+ansible/roles/FGtatsuro.*/
+ansible/roles/ferrarimarco.*/
+ansible/roles/angstwad.docker_ubuntu/
 *.pyc
