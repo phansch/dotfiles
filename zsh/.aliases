@@ -10,7 +10,7 @@ alias ll='ls -lh'
 alias la='ls -lAh'
 alias df="df -h"
 alias top="htop"
-alias git_clean_branches="git branch --merged | egrep -v '(^\*|master)' | xargs git branch -dr"
+alias git_clean_branches="git branch --merged | egrep -v '(^\*|master)' | xargs git branch -d"
 alias tree="tree -a -C -I '.git'"
 
 ## Switches for pairing
