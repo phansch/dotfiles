@@ -4,4 +4,4 @@ all_executable_files=$(find . -executable -type f -and -not -path "./.git*" -pri
 
 set -x
 
-bash -O extglob -c "shellcheck **/!(git-prompt).sh $all_executable_files -e SC1071"
+bash -O extglob -O globstar -O nullglob -c "shellcheck **/!(git-prompt).sh $all_executable_files -e SC1071"
