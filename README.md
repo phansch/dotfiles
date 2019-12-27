@@ -1,4 +1,6 @@
 [![Build Status](https://travis-ci.org/phansch/dotfiles.svg?branch=master)](https://travis-ci.org/phansch/dotfiles)
+[![Sponsor
+count](https://img.shields.io/badge/sponsors-2-brightgreen)](https://phansch.net/thanks)
 
 ## What's in there?
 
