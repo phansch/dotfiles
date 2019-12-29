@@ -134,7 +134,7 @@ install_mitogen() {
   mv "mitogen-$mitogen_version" ansible/mitogen
 }
 
-while getopts "a" opt; do
+while getopts ":as" opt; do
   case "$opt" in
     a)
       all=true
@@ -144,7 +144,7 @@ while getopts "a" opt; do
       ;;
     \?)
       echo >&2 \
-        "usage: $0 [-a,-s]"
+        "usage: $0 [-a] [-s]"
       exit 1;;
   esac
 done
