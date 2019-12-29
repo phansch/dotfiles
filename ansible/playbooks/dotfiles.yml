@@ -11,6 +11,7 @@
         - davfs2
         - fonts
         - git
+        - gtk
         - i3wm
         - notify
         - redshift
