@@ -7,6 +7,7 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   augroup plug
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    autocmd VimEnter * CocInstall -sync coc-solargraph coc-rust-analyzer coc-snippets coc-eslint
   augroup END
 endif
 
