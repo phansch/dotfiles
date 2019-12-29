@@ -34,7 +34,7 @@ bootstrap()
 
   if [ -d "$HOME/.dotfiles" ]; then
     print_message "[setup] Dotfiles exist. Updating dotfiles..."
-    cd "$HOME/.dotfiles" && git checkout master -q && git pull -q
+    cd "$HOME/.dotfiles" && git stash && git checkout master -q && git pull -q && git stash pop
   elif [ "$TESTING" = "true" ]; then
     print_message "[setup] We're in our testing container. Hello!"
     print_message "[setup] We're testing the code that has been mapped to the container."
