@@ -22,6 +22,7 @@ bootstrap()
 
   print_message "[setup] Creating virtual env..."
   python3 -m venv .venv
+  # shellcheck disable=SC1091
   source .venv/bin/activate
 
   print_message "[setup] Installing requirements.txt: ansible, molecule..."
