@@ -139,9 +139,12 @@ while getopts "a" opt; do
     a)
       all=true
       ;;
+    s)
+      all=false
+      ;;
     \?)
       echo >&2 \
-        "usage: $0 [-a]"
+        "usage: $0 [-a,-s]"
       exit 1;;
   esac
 done
