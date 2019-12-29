@@ -12,6 +12,9 @@
         platform: linux-amd64
         dest_dir: ~/.bin/hub
   tasks:
+    - name: Add neovim ppa
+      apt_repository:
+        repo: 'ppa:neovim-ppa/unstable'
     - name: Install base packages
       apt:
         pkg:
@@ -37,6 +40,7 @@
           - scrot
           - firejail
           - shellcheck
+          - neovim
         state: present
     - name: Remove specific packages
       apt:
@@ -51,6 +55,16 @@
         name: "{{ lookup('env', 'USER') }}"
         shell: /bin/zsh
         append: yes
+    - name: Set nvim as vi alternative
+      shell: update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
+    - name: Set nvim as vim alternative
+      shell: update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
+    - name: Set nvim as editor alternative
+      shell: update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
+    - name: Install python packages for neovim
+      pip:
+        name: neovim
+        executable: pip3
     # Integrate git with libsecret
     - name: Install libsecret
       apt:

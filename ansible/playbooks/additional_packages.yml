@@ -33,30 +33,14 @@
     - name: Setup various ppa repositories
       shell: add-apt-repository -y {{ item }}
       with_items:
-        - ppa:neovim-ppa/unstable
         - ppa:ubuntu-mozilla-daily/ppa
         - ppa:phoerious/keepassxc
     - name: Install packages from ppas
       apt:
         pkg:
           - firefox-trunk
-          - neovim
           - keepassxc
         update_cache: true
-    - name: Install python3-pip
-      apt: name=python3-pip
-    - name: Install python packages for neovim
-      pip:
-        name: neovim
-        executable: pip3
-    - name: Install neovim
-      apt: name=neovim update_cache=yes
-    - name: Set nvim as vi alternative
-      shell: update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
-    - name: Set nvim as vim alternative
-      shell: update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
-    - name: Set nvim as editor alternative
-      shell: update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
     - name: Anki Latest
       unarchive:
         src: https://apps.ankiweb.net/downloads/current/anki-2.1.9-linux-amd64.tar.bz2

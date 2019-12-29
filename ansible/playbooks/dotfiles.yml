@@ -22,6 +22,8 @@
         - vim
         - x
         - zsh
+    - name: Install vim plugins
+      shell: vim +'PlugInstall --sync' +qall &> /dev/null
     - name: Install vim-coc extensions
       shell: vim -c 'CocInstall -sync {{ item }}|q'
       with_items:
