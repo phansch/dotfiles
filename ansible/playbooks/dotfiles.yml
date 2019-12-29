@@ -12,6 +12,7 @@
         - fonts
         - git
         - gtk
+        - gnupg
         - i3wm
         - notify
         - redshift
