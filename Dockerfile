@@ -7,13 +7,10 @@ ENV TESTING true
 
 RUN uname -a
 
-# Install test dependencies
+# Install extra test dependencies
 RUN apt-get update -qq && apt-get install -y -qq --no-install-recommends \
     shellcheck \
-    udev \
-    python3-pip \
-    python3-setuptools
-RUN pip3 install vim-vint yamllint
+    udev
 
 COPY . /code
 WORKDIR /code
