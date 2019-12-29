@@ -51,6 +51,7 @@ jobs:
       install:
         - docker build -t dotfiles .
       script:
+        - docker run dotfiles /bin/bash -c "./setup"
         - docker run dotfiles test/vim
         - docker run dotfiles test/yaml
         - docker run dotfiles test/shellcheck
