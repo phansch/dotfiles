@@ -1,0 +1,4 @@
+molecule==2.20.1
+ansible==2.9.2
+docker==3.7.2
+jmespath==0.9.4
