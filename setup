@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euxo pipefail
+
 export ANSIBLE_FORCE_COLOR=true
 
 do_setup() {
@@ -10,34 +12,35 @@ do_setup() {
 
 bootstrap()
 {
-  print_message "[setup] Ensure add-apt-repository is installed"
+  if [[ "$OSTYPE" != "linux-gnu" ]]; then
+    echo "[setup] You're not on Linux, sorry =( This script only works on Linux for now"
+    exit 1
+  fi
+  print_message "[setup] Ensure prerequisites are installed"
   run_with_sudo apt-get update -qq
-  run_with_sudo apt-get install software-properties-common -qq
-  print_message "[setup] Adding ansible ppa..."
-  run_with_sudo add-apt-repository ppa:ansible/ansible -y > /dev/null
+  run_with_sudo apt-get install software-properties-common git wget python3-wheel python-apt python3-apt python3-pip python3-venv python3-setuptools python-setuptools -qq
+
+  print_message "[setup] Creating virtual env..."
+  python3 -m venv .venv
+  # shellcheck disable=SC1091
+  source .venv/bin/activate
+
+  print_message "[setup] Installing requirements.txt: ansible, molecule..."
+  pip3 install -r requirements.txt
+
+  install_mitogen '0.2.9'
 
   print_message "[setup] Upgrading and autocleaning packages..."
   run_with_sudo apt-get update -qq
   run_with_sudo apt-get upgrade -qq --allow-downgrades --allow-remove-essential --allow-change-held-packages
   run_with_sudo apt-get autoremove -y -qq
 
-  print_message "[setup] Installing Ansible and git..."
-  run_with_sudo apt-get install -qq git ansible wget
-
-  mitogen_version='0.2.9'
-  print_message "[setup] Installing Mitogen $mitogen_version for Ansible..."
-  wget "https://networkgenomics.com/try/mitogen-$mitogen_version.tar.gz"
-  tar -xvzf "mitogen-$mitogen_version.tar.gz"
-  rm "mitogen-$mitogen_version.tar.gz"
-  mkdir ansible/mitogen
-  mv "mitogen-$mitogen_version" ansible/mitogen
-
   if [ -d "$HOME/.dotfiles" ]; then
     print_message "[setup] Dotfiles exist. Updating dotfiles..."
     cd "$HOME/.dotfiles" && git stash && git checkout master -q && git pull -q && git stash pop
   elif [ "$TESTING" = "true" ]; then
     print_message "[setup] We're in our testing container. Hello!"
-    print_message "[setup] We're testing the code that has been mapped to the container."
+    print_message "[setup] We're about to test the code that has been mapped to the container."
     cd /code || exit 1
     cp -r /code "$HOME/.dotfiles"
   else
@@ -75,7 +78,8 @@ bootstrap()
 ssh_save()
 {
 
-  if [[ -n "$CI" ]]; then return; fi
+  if is_ci; then return; fi
+
   ask_for_confirmation "[setup] Do you want to add your ssh key to ssh-agent? "
   if answer_is_yes; then
     ssh-add "$HOME/.ssh/id_rsa" &>/dev/null
@@ -84,13 +88,20 @@ ssh_save()
 
 finish()
 {
-  if [[ -n "$CI" ]]; then return; fi
+  if is_ci; then return; fi
+
   ask_for_confirmation "[setup] Almost done. Do you want to re-login now to complete the setup? "
   if answer_is_yes; then
     xfce4-session-logout --logout
   else
     echo "Well, then track it now!"
   fi
+}
+
+is_ci() {
+  [[ "${CI-false}" == "true" ]] \
+    && return 0 \
+    || return 1
 }
 
 answer_is_yes() {
@@ -121,14 +132,27 @@ run_with_sudo() {
   $my_sudo "$@"
 }
 
-while getopts "a" opt; do
+install_mitogen() {
+  mitogen_version="$1"
+  print_message "[setup] Installing Mitogen $mitogen_version for Ansible..."
+  wget "https://networkgenomics.com/try/mitogen-$mitogen_version.tar.gz"
+  tar -xvzf "mitogen-$mitogen_version.tar.gz"
+  rm "mitogen-$mitogen_version.tar.gz"
+  mkdir ansible/mitogen
+  mv "mitogen-$mitogen_version" ansible/mitogen
+}
+
+while getopts ":as" opt; do
   case "$opt" in
     a)
       all=true
       ;;
+    s)
+      all=false
+      ;;
     \?)
       echo >&2 \
-        "usage: $0 [-a]"
+        "usage: $0 [-a] [-s]"
       exit 1;;
   esac
 done
