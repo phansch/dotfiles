@@ -138,7 +138,7 @@ install_mitogen() {
   wget "https://networkgenomics.com/try/mitogen-$mitogen_version.tar.gz"
   tar -xvzf "mitogen-$mitogen_version.tar.gz"
   rm "mitogen-$mitogen_version.tar.gz"
-  mkdir ansible/mitogen
+  mkdir -p ansible/mitogen
   mv "mitogen-$mitogen_version" ansible/mitogen
 }
 
