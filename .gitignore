@@ -1,4 +1,5 @@
 vim/bundle/
+.venv
 ansible/playbooks/*.retry
 ansible/.virtenv
 !i3wm/.config/i3/config
