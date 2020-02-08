@@ -1,8 +1,17 @@
 #!/bin/sh
 
+# Usage:
+# set_wallpaper [optional/path/to/wallpaper]
+#
+# Leaving the path empty will still run `feh` to scale the wallpaper.
+
 set -e
 
 mkdir -p ~/.config/wallpapersetter
-ln -sf "$1" ~/.config/wallpapersetter/current_wallpaper
+
+if [ -n "$1" ]; then
+  ln -sf "$1" ~/.config/wallpapersetter/current_wallpaper
+fi
+
 feh --no-fehbg --bg-scale ~/.config/wallpapersetter/current_wallpaper
 
