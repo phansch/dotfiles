@@ -1,0 +1,34 @@
+---
+- name: Install curl and JQ
+  apt:
+    pkg:
+      - curl
+      - jq
+    state: present
+- name: Get latest release URL
+  shell: |
+    curl -s https://api.github.com/repos/cli/cli/releases/latest \
+    | jq -r '.assets[] | select(.name | test("{{ file }}")) | .browser_download_url'
+  args:
+    executable: /bin/bash
+  retries: 3  # Sometimes the JSON contains just `null` instead of the URL
+  delay: 2
+  register: download_url
+  until: download_url.rc == 0
+  changed_when: false
+  tags:
+    - skip_ansible_lint
+- name: Cleanup existing
+  file:
+    path: /tmp/gh_cli.deb
+    state: absent
+  changed_when: false
+- name: Download latest release
+  get_url:
+    url: "{{ download_url.stdout }}"
+    dest: /tmp/gh_cli.deb
+    remote_src: true
+  changed_when: false
+- name: Install latest release
+  apt:
+    deb: /tmp/gh_cli.deb

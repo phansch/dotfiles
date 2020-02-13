@@ -7,10 +7,9 @@
       vars:
         platform: amd64
         version: 0.10.0
-    - role: github_hub
+    - role: github_cli
       vars:
-        platform: linux-amd64
-        dest_dir: ~/.bin/hub
+        file: linux_amd64.deb
   tasks:
     - name: Add neovim ppa
       apt_repository:
