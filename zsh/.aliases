@@ -45,4 +45,4 @@ alias gp="git push"
 alias 'ga .'="echo don't use git add ."
 alias 'git add .'="echo don't use git add ."
 
-alias pr="hub pull-request"
+alias pr="gh pr create"
