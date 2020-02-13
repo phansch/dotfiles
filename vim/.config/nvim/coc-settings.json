@@ -1,5 +1,8 @@
 {
   "solargraph.completion": true,
+  "solargraph.diagnostics": true,
+  "solargraph.hover": true,
+  "solargraph.useBundler": true,
   "languageserver": {
     "sorbet": {
       "command": "srb",
