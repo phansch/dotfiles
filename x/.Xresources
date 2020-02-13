@@ -8,6 +8,14 @@
 
 *intensityStyles: false
 
+! HiDPI configuration
+Xft.dpi: 98
+Xft.hinting: true
+Xft.antialias: true
+Xft.rgba: rgb
+Xft.hintstyle: hintfull
+Xft.autohint: 0
+
 URxvt*depth: 32
 
 URxvt*saveLines: 8000
