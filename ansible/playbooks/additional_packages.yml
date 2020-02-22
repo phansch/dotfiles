@@ -3,7 +3,6 @@
   become: true
   become_method: sudo
   roles:
-    - role: spotify
     - role: i3
     - role: rust
     - role: markdown_mimetype
