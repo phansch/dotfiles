@@ -155,14 +155,7 @@ assign [class="Skype*"] $WS9
 assign [class="Pidgin"] $WS9
 assign [title="Messenger"] $WS9
 assign [class="Pavucontrol"] $WS4
-
-# assign doesn't work with Spotify because it doesn't set the
-# window classes early enough, so we have to use for_window:
-# https://github.com/i3/i3/issues/2060
-for_window [class="spotify|Spotify"] move to workspace $WS4
-for_window [title="spotify|Spotify"] move to workspace $WS4
-# Same issue with hipchat
-assign [class="VirtualBox"] $WS5
+assign [class="vlc"] $WS4
 
 ## window floating, borders and positioning
 for_window [class="^Firefox|Nightly$" title="^Library$"] floating enable
@@ -175,10 +168,10 @@ for_window [window_role="pop-up"] floating enable
 for_window [class="xfce4-notifyd"] floating enable
 for_window [class="deja-dup|Deja-dup"] floating enable
 for_window [class="Pidgin"] floating enable
-for_window [title="spotify|Spotify"] floating enable, border none, move absolute position center
 for_window [title="Bluetooth"] floating enable, border none, move absolute position center
 for_window [class="ile-roller$"] floating enable, border none, move absolute position center
 for_window [class="pavucontrol"] floating enable, border none
+for_window [class="vlc"] floating enable, move absolute position center
 
 # Autostart
 # Use --no-startup-id for background programs or if there is a 'watch' cursor
