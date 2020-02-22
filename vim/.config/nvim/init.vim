@@ -457,3 +457,7 @@ function! LoadSkeleton(type)
   :silent execute 'normal! jj'
 endfunction
 " }}}
+
+" Highlight non-ascii characters in red
+syntax match nonascii "[^\x00-\x7F]"
+highlight nonascii guibg=Red ctermbg=2
