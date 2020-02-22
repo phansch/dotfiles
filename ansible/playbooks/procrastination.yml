@@ -1,0 +1,41 @@
+---
+# This sets up a cronjob that runs every 2 minutes.
+# It will copy `/etc/hosts_base` to `/etc/hosts` to make sure every
+# modification I make to `/etc/hosts` is overwritten by the default.
+#
+# This should not conflict with any other programs that write stuff to
+# /etc/hosts
+- hosts: localhost
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: Ensure /etc/hosts_base content
+      lineinfile:
+        dest: /etc/hosts_base
+        regexp: '127.0.0.1 {{ item }}$'
+        line: '127.0.0.1 {{ item }}'
+        state: present
+      with_items:
+        - reddit.com
+        - www.reddit.com
+        - blog.fefe.de
+        - tagesspiegel.de
+        - spiegel.de
+        - taz.de
+        - zeit.de
+        - twitter.com
+        - www.twitter.com
+        - mobile.twitter.com
+        - api.twitter.com
+        - youtube.com
+        - www.youtube.com
+        - facebook.com
+        - www.linkedin.com
+        - lobste.rs
+        - users.rust-lang.org
+
+    - name: Configure Anti Procrastination cronjob
+      cron:
+        name: No Procrastination
+        minute: "*/2"
+        job: cp /etc/hosts_base /etc/hosts
