@@ -96,6 +96,8 @@ set smartcase
 " Indentation settings
 set shiftwidth=2
 set softtabstop=2
+set autoindent
+set smartindent
 set expandtab
 
 " Make sure that comments are automatically wrapped at 'textwidth'.
