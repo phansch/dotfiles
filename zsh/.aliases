@@ -5,8 +5,7 @@ alias ...="cd ../.."
 alias mkdir="mkdir -p"
 alias grep="grep --color=auto"
 alias ping="ping -c 5"
-alias ls="ls -h --color"
-alias ll='ls -lh'
+alias ls="ls -lh --color"
 alias la='ls -lAh'
 alias df="df -h"
 alias top="htop"
