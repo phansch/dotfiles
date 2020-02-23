@@ -34,23 +34,15 @@ time_tracking_check() {
 }
 
 daily_review_check() {
-  if [[ -v DAILY_REVIEW_LINK ]]; then
-    current_hour=$(date +"%-H")
-    if [[ $current_hour -gt 19 ]]; then
-      echo "Opening your browser now with the daily review loaded"
-      sleep 1
-      sensible-browser "$DAILY_REVIEW_LINK"
-      i3-msg "[class=Firefox|Nightly] focus" &>/dev/null
-    fi
-  fi
+  $HOME/code/review/target/release/review
 }
 
 journal_check() {
   current_hour=$(date +"%-H")
   if [[ $current_hour -gt 19 ]]; then
-    echo "Opening your journal to update it."
+    # echo "Opening your journal to update it."
 
-    i3-msg '[instance="urxvt" title="vimwiki"] scratchpad show' &>/dev/null
+    # i3-msg '[instance="urxvt" title="vimwiki"] scratchpad show' &>/dev/null
     ask_for_confirmation "Are you satisfied with todays journal?"
   fi
 }
