@@ -1,7 +1,9 @@
 #!/bin/sh
 # shellcheck disable=SC1083
 
-export BORG_REPO=phansch@rasp:/srv/dev-disk-by-id-usb-Intenso_External_USB_3.0_20131231015294-0-0-part1/backups/
+raspberrypi_ip=$(arp -n | awk '/b8:27:eb/ {print $1}')
+
+export BORG_REPO="phansch@$raspberrypi_ip:/srv/dev-disk-by-id-usb-Intenso_External_USB_3.0_20131231015294-0-0-part1/backups/"
 
 borg create \
   --info \
