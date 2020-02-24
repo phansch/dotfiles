@@ -15,11 +15,9 @@
           - unclutter
           - shutter
           - libreoffice-calc
-          - deja-dup
           - jq
           - redshift
           - ctags
-          - newsbeuter
           - sqlitebrowser
         state: present
         update_cache: true
@@ -33,12 +31,10 @@
       shell: add-apt-repository -y {{ item }}
       with_items:
         - ppa:ubuntu-mozilla-daily/ppa
-        - ppa:phoerious/keepassxc
     - name: Install packages from ppas
       apt:
         pkg:
           - firefox-trunk
-          - keepassxc
         update_cache: true
     - name: Anki Latest
       unarchive:
