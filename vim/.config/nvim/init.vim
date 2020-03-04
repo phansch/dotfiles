@@ -59,6 +59,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'DataWraith/auto_mkdir'
 Plug 'morhetz/gruvbox'
+Plug 'terryma/vim-expand-region'
 
 call plug#end()
 
