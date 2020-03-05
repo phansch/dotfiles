@@ -1,0 +1,23 @@
+{
+    "editor.minimap.enabled": true,
+    "window.zoomLevel": 1,
+    "breadcrumbs.enabled": true,
+    "editor.renderWhitespace": "all",
+    "editor.renderControlCharacters": true,
+    "workbench.colorTheme": "Gruvbox Material Dark",
+    "rust-analyzer.displayInlayHints": false,
+    "rust-analyzer.cargo-watch.enable": true,
+    "vim.cursorStylePerMode.insert": "line",
+    "vim.history": 500,
+    "vim.hlsearch": true,
+    "rust-analyzer.excludeGlobs": [
+        ".cargo"
+    ],
+    "editor.fontFamily": "'Ubuntu Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "update.showReleaseNotes": false,
+    "telemetry.enableTelemetry": false,
+    "files.exclude": {
+        "**/target": true
+    },
+    "workbench.activityBar.visible": false,
+}
