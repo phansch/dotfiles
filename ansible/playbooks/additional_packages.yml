@@ -36,18 +36,6 @@
         pkg:
           - firefox-trunk
         update_cache: true
-    - name: Anki Latest
-      unarchive:
-        src: https://apps.ankiweb.net/downloads/current/anki-2.1.9-linux-amd64.tar.bz2
-        dest: /opt
-        remote_src: yes
-    - name: Rename extracted folder
-      command: mv --no-clobber /opt/anki-2.1.9-linux-amd64 /opt/anki
-    - name: Symlink moved anki executable
-      file:
-        src: /opt/anki/bin/anki
-        dest: /usr/bin/anki
-        state: link
     - name: Install tmuxifier
       become: no
       git:
