@@ -5,7 +5,7 @@
   "solargraph.useBundler": true,
   "languageserver": {
     "sorbet": {
-      "command": "srb",
+      "command": "/home/phansch/.gem/ruby/2.6.5/gems/sorbet-static-0.5.5427-x86_64-linux/libexec/sorbet",
       "args": ["tc", "--lsp", "--enable-all-experimental-lsp-features", "--disable-watchman"],
       "filetypes": ["ruby"],
       "rootPatterns": ["sorbet/config"],
