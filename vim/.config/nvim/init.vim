@@ -317,7 +317,6 @@ nnoremap <leader>av :AV<cr>
 " go substitute because the default map for sleeping is silly
 nnoremap gs :%s//g<Left><Left>
 
-nnoremap <space>e :Explore<cr>
 " Show 3 levels for :Explore
 let g:netrw_liststyle=3
 
