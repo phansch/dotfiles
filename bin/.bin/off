@@ -5,9 +5,10 @@ run() {
   time_tracking_check
   journal_check
 
-  if [ "$(hostname)" != "daggertooth" ]; then
-    ask_for_confirmation "Did you turn off the office lamp?"
-  fi
+  # NOTE: Disabled as long as I'm working from home
+  # if [ "$(hostname)" != "daggertooth" ]; then
+  #   ask_for_confirmation "Did you turn off the office lamp?"
+  # fi
 
   ask_for_confirmation "Do you want to suspend now?"
 
