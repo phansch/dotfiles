@@ -48,6 +48,7 @@
           - xscreensaver
           - transmission-gtk
           - thunderbird
+          - pidgin
         state: absent
     - name: Set zsh as default shell
       user:
