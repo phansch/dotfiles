@@ -33,6 +33,7 @@
         - www.linkedin.com
         - lobste.rs
         - users.rust-lang.org
+        - internals.rust-lang.org
 
     - name: Configure Anti Procrastination cronjob
       cron:
