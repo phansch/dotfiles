@@ -133,7 +133,7 @@ bindsym $mod+0 workspace 10
 
 # move focused container to workspace
 bindsym $mod+Shift+exclam move container to workspace $WS1
-bindsym $mod+Shift+quotedbl move container to workspace $WS2
+bindsym $mod+Shift+at move container to workspace $WS2
 bindsym $mod+Shift+section move container to workspace $WS3
 bindsym $mod+Shift+dollar move container to workspace $WS4
 bindsym $mod+Shift+percent move container to workspace $WS5
