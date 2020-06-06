@@ -35,11 +35,11 @@
           - curl
           - at
           - tree
-          - pidgin
           - scrot
           - firejail
           - shellcheck
           - neovim
+          - pasystray
         state: present
     - name: Remove specific packages
       apt:
