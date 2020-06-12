@@ -148,18 +148,8 @@ set undoreload=10000
 " Theme settings
 colorscheme gruvbox
 set background=dark
-" Transparent background colors
-let g:gitgutter_override_sign_column_highlight = 0
-hi Normal ctermbg=NONE
-hi SignColumn ctermbg=NONE
+" Make split column look nicer
 hi VertSplit ctermbg=NONE
-hi StatusLine ctermfg=8 ctermbg=0
-hi StatusLineNC ctermfg=8 ctermbg=0
-hi GitGutterAdd ctermfg=2 ctermbg=NONE
-hi GitGutterChange ctermfg=4 ctermbg=NONE
-hi GitGutterDelete ctermfg=1 ctermbg=NONE
-hi GitGutterChangeDelete ctermfg=1 ctermbg=NONE
-hi User1 ctermfg=3
 
 set fillchars=vert:\│,stlnc:\ ",stl:\ "
 set laststatus=2
