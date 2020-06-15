@@ -11,11 +11,32 @@
         "when": "editorTextFocus && vim.active && vim.use<C-t> && !inDebugRepl"
     },
     {
-        "key": "space d",
-        "command": "workbench.action.quickOpen"
-    },
-    {
         "key": "ctrl+p",
         "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.terminal.focus"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.navigateLeft"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.navigateRight"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.navigateUp"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.navigateDown"
     }
 ]

@@ -1,7 +1,6 @@
 {
     "editor.minimap.enabled": true,
     "window.zoomLevel": 1,
-    "breadcrumbs.enabled": true,
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": true,
     "workbench.colorTheme": "Gruvbox Material Dark",
@@ -20,4 +19,21 @@
         "**/target": true
     },
     "workbench.activityBar.visible": false,
+    "workbench.editor.showTabs": false,
+    "vim.leader": "<space>",
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                "<leader>",
+                "d"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.quickOpen",
+                    "args": []
+                }
+            ]
+        }
+    ]
 }
