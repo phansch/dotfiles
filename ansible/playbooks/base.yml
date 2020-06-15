@@ -39,7 +39,9 @@
           - firejail
           - shellcheck
           - neovim
-          - pasystray
+          - pulsemixer
+          - mpd
+          - ncmpcpp
         state: present
     - name: Remove specific packages
       apt:
