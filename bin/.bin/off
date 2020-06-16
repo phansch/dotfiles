@@ -37,7 +37,7 @@ time_tracking_check() {
 daily_review_check() {
   current_hour=$(date +"%-H")
   if [[ $current_hour -gt 19 ]]; then
-    $HOME/code/questionnaire/target/release/questionnaire ~/Documents/review-data/questions.json
+    "$HOME/code/questionnaire/target/release/questionnaire" ~/Documents/review-data/questions.json
   fi
 }
 

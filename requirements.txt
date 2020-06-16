@@ -3,3 +3,4 @@ ansible==2.9.2
 docker==3.7.2
 jmespath==0.9.4
 vim-vint==0.3.19
+wheel==0.34.2
