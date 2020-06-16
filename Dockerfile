@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:18.04
 MAINTAINER Philipp Hansch <dev@phansch.net>
 
 ENV USER root
