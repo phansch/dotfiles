@@ -51,10 +51,10 @@ jobs:
       install:
         - docker build -t dotfiles .
       script:
-        - docker run dotfiles /bin/bash -c "./setup -s; ./test/vim; ./test/yaml; ./test/shellcheck"
+        - docker run dotfiles /bin/bash -c "./setup -s && ./test/vim && ./test/yaml && ./test/shellcheck"
     - stage: test
       name: Full setup test
       install:
         - docker build -t dotfiles .
       script:
-        - docker run dotfiles /bin/bash -c "./setup -a; ./test/ansible; ./test/i3"
+        - docker run dotfiles /bin/bash -c "./setup -a && ./test/ansible && ./test/i3"
