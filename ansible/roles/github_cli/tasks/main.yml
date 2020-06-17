@@ -32,8 +32,3 @@
 - name: Install latest release
   apt:
     deb: /tmp/gh_cli.deb
-- name: Cleanup
-  file:
-    path: /tmp/gh_cli.deb
-    state: absent
-  changed_when: false

@@ -12,9 +12,3 @@ def test_hub_file_present(host):
     assert f.exists
     assert f.user == 'root'
     assert f.group == 'root'
-
-
-def test_tmp_file_absent(host):
-    f = host.file('/tmp/gh_cli.deb')
-
-    assert f.exists, False
