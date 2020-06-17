@@ -8,5 +8,5 @@
         name: Backup
         minute: "0"
         hour: "9"
-        job: "/usr/bin/ssh {{ansible_user_id}}@localhost /home/{{ ansible_user_id }}/.bin/backup 2>&1 | /usr/bin/logger -t backup_cron"
+        job: /home/{{ ansible_user_id }}/.bin/backup 2>&1 | /usr/bin/logger -t backup_cron
         user: phansch
