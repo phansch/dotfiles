@@ -7,7 +7,7 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 
 
 def test_hub_file_present(host):
-    f = host.file('/root/.bin/hub')
+    f = host.file('/usr/local/bin/gh')
 
     assert f.exists
     assert f.user == 'root'
@@ -15,6 +15,6 @@ def test_hub_file_present(host):
 
 
 def test_tmp_file_absent(host):
-    f = host.file('/tmp/hub/')
+    f = host.file('/tmp/gh_cli.deb')
 
     assert f.exists, False
