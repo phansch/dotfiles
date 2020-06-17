@@ -25,7 +25,7 @@ jobs:
         virtualenv virtenv
         source virtenv/bin/activate
 
-        pip install molecule docker ansible
+        pip3 install -r requirements.txt
       script: |
         source virtenv/bin/activate
 
@@ -39,7 +39,7 @@ jobs:
         virtualenv virtenv
         source virtenv/bin/activate
 
-        pip install molecule docker ansible
+        pip3 install -r requirements.txt
       script: |
         source virtenv/bin/activate
 
