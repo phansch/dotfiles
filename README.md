@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/phansch/dotfiles.svg?branch=master)](https://travis-ci.org/phansch/dotfiles)
+[![Build Status](https://travis-ci.org/phansch/dotfiles.svg?branch=main)](https://travis-ci.org/phansch/dotfiles)
 [![Sponsor
 count](https://img.shields.io/badge/sponsors-3-brightgreen)](https://phansch.net/thanks)
 
@@ -79,15 +79,15 @@ Launches a couple of programs and the [i3](https://i3wm.org://i3wm.org/) window 
 
 Just run the following command:
 
-    wget --no-check-certificate https://github.com/phansch/dotfiles/raw/master/setup -O - | bash
+    wget --no-check-certificate https://github.com/phansch/dotfiles/raw/main/setup -O - | bash
 
 This will:
 
 1. Setup [Ansible](https://www.ansible.com/)
 2. Upgrade and autoclean system packages
 3. Clone the dotfiles (or pull if they exist already)
-4. Run the [base playbook](https://github.com/phansch/dotfiles/blob/master/ansible/playbooks/base.yml) to install the prerequisites
-5. Run the [dotfiles playbook](https://github.com/phansch/dotfiles/blob/master/ansible/playbooks/dotfiles.yml) to symlink the dotfiles
+4. Run the [base playbook](https://github.com/phansch/dotfiles/blob/main/ansible/playbooks/base.yml) to install the prerequisites
+5. Run the [dotfiles playbook](https://github.com/phansch/dotfiles/blob/main/ansible/playbooks/dotfiles.yml) to symlink the dotfiles
 7. Print the command to run the optional playbooks
 
 ### Just the dotfiles
@@ -151,6 +151,6 @@ All ansible playbooks are run on CI. The build will fail if:
 Have a look at the [`.travis.yml`][travis] and
 [`Dockerfile`][dockerfile] to see how it works.
 
-[travis]: https://github.com/phansch/dotfiles/blob/master/.travis.yml
-[dockerfile]: https://github.com/phansch/dotfiles/blob/master/Dockerfile
+[travis]: https://github.com/phansch/dotfiles/blob/main/.travis.yml
+[dockerfile]: https://github.com/phansch/dotfiles/blob/main/Dockerfile
 [coc]: https://github.com/neoclide/coc.nvim
