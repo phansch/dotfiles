@@ -3,6 +3,7 @@
   tasks:
     - name: Install borgbackup
       apt: pkg=borgbackup
+
     - name: Backup cron
       cron:
         name: Backup
