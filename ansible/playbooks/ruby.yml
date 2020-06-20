@@ -1,7 +1,7 @@
----
-- hosts: localhost
-  roles:
-    - role: ferrarimarco.ruby-install
-      become: true
-    - role: ferrarimarco.chruby
-      become: true
+# ---
+# - hosts: localhost
+  # roles:
+    # - role: ferrarimarco.ruby-install
+    #   become: true
+    # - role: ferrarimarco.chruby
+    #   become: true
