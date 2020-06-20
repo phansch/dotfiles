@@ -1,0 +1,21 @@
+---
+
+- hosts: localhost
+  tasks:
+    - name: Add check_ip script
+      become: yes
+      become_method: sudo
+      copy:
+        # NOTE: I don't really like that the script is in the `playbooks`
+        # directory. Ideally, this copy task would be its own role with more
+        # checks.
+        src: ./check_ip.sh
+        dest: /usr/local/bin/check_ip
+        mode: a+x
+
+    - name: Setup check_ip cron for RaspberryPI
+      cron:
+        name: Check RaspberryPI connection
+        minute: "*/2"
+        job: /usr/local/bin/check_ip 192.168.0.20 2>&1 | /usr/bin/logger -t check_ip
+        user: phansch
