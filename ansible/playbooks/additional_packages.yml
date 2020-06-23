@@ -28,7 +28,7 @@
     # - name: Setup various ppa repositories
     #   shell: add-apt-repository -y {{ item }}
     #   with_items:
-    #     - ppa:ubuntu-mozilla-daily/ppa
+    #     - ppa:foo
     # - name: Install packages from ppas
     #   apt:
     #     pkg:
