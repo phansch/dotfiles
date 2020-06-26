@@ -25,15 +25,15 @@
       apt: deb={{ item }} state=present
       with_items:
         - https://go.skype.com/skypeforlinux-64.deb
-    - name: Setup various ppa repositories
-      shell: add-apt-repository -y {{ item }}
-      with_items:
-        - ppa:ubuntu-mozilla-daily/ppa
-    - name: Install packages from ppas
-      apt:
-        pkg:
-          - firefox-trunk
-        update_cache: true
+    # - name: Setup various ppa repositories
+    #   shell: add-apt-repository -y {{ item }}
+    #   with_items:
+    #     - ppa:ubuntu-mozilla-daily/ppa
+    # - name: Install packages from ppas
+    #   apt:
+    #     pkg:
+    #       - firefox-trunk
+    #     update_cache: true
     - name: Install tmuxifier
       become: no
       git:
