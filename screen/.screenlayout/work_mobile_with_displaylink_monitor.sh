@@ -10,3 +10,4 @@ xrandr && xrandr \
   --output eDP-1 --primary --mode 1920x1080 --scale 1.0x1.0 \
   --output DVI-I-1-1 --mode 1920x1080 --right-of eDP-1 --reflect normal --rotate normal --scale 1.0x1.0 \
   --verbose
+set_wallpaper

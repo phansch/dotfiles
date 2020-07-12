@@ -7,3 +7,4 @@ xrandr && xrandr --output DP-1-1 --mode 1920x1080 --scale 1x1 --primary \
   --output DP-2 --off \
   --output HDMI-2 --off \
   --output DP-1-2 --off
+set_wallpaper
