@@ -2,7 +2,10 @@
 - hosts: localhost
   tasks:
     - name: Install borgbackup
-      apt: pkg=borgbackup
+      apt:
+        pkg:
+          - cron
+          - borgbackup
 
     - name: Backup cron
       cron:
