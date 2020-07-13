@@ -13,12 +13,19 @@
       apt:
         pkg:
           - unclutter
-          - shutter
+          - xfce4-screenshooter
           - jq
           - redshift
           - ctags
         state: present
         update_cache: true
+    - name: Remove shutter
+      apt:
+        pkg:
+          - shutter
+        state: absent
+        update_cache: true
+
     - name: Create tmp download dir
       file: path=/tmp/ansible-debs state=directory
     - name: Install additional deb packages
