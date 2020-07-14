@@ -70,7 +70,7 @@ bootstrap()
   )
 
   cmd="ansible-playbook ${additional_playbooks[*]} --ask-become-pass -u $USER"
-  if [ "$1" = true ] ; then
+  if [ "$1" = "true" ] ; then
     print_message "[setup] Running all additional playbooks"
     ansible-playbook "${additional_playbooks[@]}" --ask-become-pass -u "$USER"
   else
