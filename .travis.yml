@@ -50,6 +50,7 @@ jobs:
       install:
         - docker build -t dotfiles .
       script:
+        # yamllint disable-line rule:line-length
         - docker run dotfiles /bin/bash -c "./setup -s && source .venv/bin/activate && ./test/vim && ./test/yaml && ./test/shellcheck"
     - stage: test
       name: Full setup test
