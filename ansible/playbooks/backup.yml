@@ -6,6 +6,7 @@
         pkg:
           - cron
           - borgbackup
+        state: present
 
     - name: Backup cron
       cron:
