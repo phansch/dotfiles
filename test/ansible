@@ -3,4 +3,4 @@
 set -x
 
 ansible-galaxy role install -r ansible/requirements.yml --force
-ansible-playbook ansible/playbooks/* --syntax-check
+ansible-playbook ansible/playbooks/*.yml --syntax-check
