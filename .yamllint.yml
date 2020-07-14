@@ -1,6 +1,14 @@
 ---
 extends: default
 
+
+ignore: |
+  ansible/roles/angstwad.docker_ubuntu/
+  ansible/roles/FGtatsuro.python-requirements/
+  ansible/roles/FGtatsuro.virtualbox/
+  ansible/roles/FGtatsuro.vagrant/
+  .venv/
+
 rules:
   line-length:
     max: 120

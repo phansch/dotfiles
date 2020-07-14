@@ -6,19 +6,26 @@
     - role: i3
     - role: rust
     - role: markdown_mimetype
-    - role: FGtatsuro.vagrant
+    # - role: FGtatsuro.vagrant
     - role: angstwad.docker_ubuntu
   tasks:
     - name: Install additional apt packages
       apt:
         pkg:
           - unclutter
-          - shutter
+          - xfce4-screenshooter
           - jq
           - redshift
           - ctags
         state: present
         update_cache: true
+    - name: Remove shutter
+      apt:
+        pkg:
+          - shutter
+        state: absent
+        update_cache: true
+
     - name: Create tmp download dir
       file: path=/tmp/ansible-debs state=directory
     - name: Install additional deb packages
