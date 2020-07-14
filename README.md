@@ -79,7 +79,7 @@ Launches a couple of programs and the [i3](https://i3wm.org://i3wm.org/) window 
 
 Just run the following command:
 
-    wget --no-check-certificate https://github.com/phansch/dotfiles/raw/main/setup -O - | bash
+    wget --no-check-certificate https://github.com/phansch/dotfiles/raw/main/setup -O - | bash -s -- -s
 
 This will:
 

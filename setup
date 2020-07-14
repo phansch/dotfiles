@@ -29,12 +29,6 @@ bootstrap()
   # shellcheck disable=SC1091
   source .venv/bin/activate
 
-  print_message "[setup] Installing requirements.txt: ansible, molecule..."
-  pip3 install wheel
-  pip3 install -r requirements.txt
-
-  install_mitogen '0.2.9'
-
   print_message "[setup] Upgrading and autocleaning packages..."
   run_with_sudo apt-get update -qq
   run_with_sudo apt-get upgrade -qq --allow-downgrades --allow-remove-essential --allow-change-held-packages
@@ -52,6 +46,12 @@ bootstrap()
     print_message "[setup] Cloning dotfiles..."
     git clone -q https://github.com/phansch/dotfiles.git "$HOME/.dotfiles" && cd "$HOME/.dotfiles" || exit
   fi
+
+  print_message "[setup] Installing requirements.txt: ansible, molecule..."
+  pip3 install wheel
+  pip3 install -r requirements.txt
+
+  install_mitogen '0.2.9'
 
   ansible-galaxy install -r ansible/requirements.yml --force
 
