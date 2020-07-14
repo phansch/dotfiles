@@ -13,7 +13,5 @@ RUN apt-get update -qq && apt-get install -y -qq --no-install-recommends \
     shellcheck \
     udev
 
-RUN pip3 install vim-vint
-
 COPY . /code
 WORKDIR /code
