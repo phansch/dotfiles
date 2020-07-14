@@ -62,7 +62,7 @@ bootstrap()
     ansible/playbooks/additional_packages.yml
     ansible/playbooks/udev.yml
     ansible/playbooks/backup.yml
-    ansible/playbooks/ruby.yml
+    # ansible/playbooks/ruby.yml
   )
 
   cmd="ansible-playbook ${additional_playbooks[*]} --ask-become-pass -u $USER"
