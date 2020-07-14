@@ -4,6 +4,7 @@ MAINTAINER Philipp Hansch <dev@phansch.net>
 ENV USER root
 USER root
 ENV TESTING true
+ENV CI true
 
 RUN uname -a
 
