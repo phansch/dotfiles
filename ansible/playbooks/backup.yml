@@ -10,4 +10,4 @@
         minute: "0"
         hour: "9"
         job: /home/{{ ansible_user_id }}/.bin/backup 2>&1 | /usr/bin/logger -t backup_cron
-        user: phansch
+        user: "{{ ansible_user_id }}"
