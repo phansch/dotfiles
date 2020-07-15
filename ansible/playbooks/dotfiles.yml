@@ -14,7 +14,9 @@
         - gtk
         - gnupg
         - i3wm
+        - ncmpcpp
         - notify
+        - mpd
         - redshift
         - ruby
         - screen
