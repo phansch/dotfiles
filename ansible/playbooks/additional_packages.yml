@@ -17,6 +17,7 @@
           - jq
           - redshift
           - ctags
+          - krita
         state: present
         update_cache: true
     - name: Remove shutter
