@@ -45,7 +45,7 @@
 [include]
   path = .gitconfig.local
 [gpg]
-  program = /usr/bin/gpg2
+  program = /usr/bin/gpg
 
 # https://groups.google.com/forum/#!topic/binary-transparency/f-BI4o8HZW0
 # check that anything we're getting is complete and sane on a regular basis
