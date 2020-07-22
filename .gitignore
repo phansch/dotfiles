@@ -10,3 +10,5 @@ ansible/roles/FGtatsuro.*/
 ansible/roles/ferrarimarco.*/
 ansible/roles/angstwad.docker_ubuntu/
 *.pyc
+.nvimlog
+ncmpcpp/.ncmpcpp/error.log
