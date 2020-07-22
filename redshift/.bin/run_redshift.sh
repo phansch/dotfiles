@@ -2,5 +2,7 @@
 
 if ! pgrep -x redshift > /dev/null
 then
-  redshift -l 52.2:13.6 -t 6500:2200 -m randr -v &
+  # Make sure we reset any exisiting redshift values first
+  redshift -x
+  redshift -l 52.2:13.6 -t 6500:2200 -m randr &
 fi

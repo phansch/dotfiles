@@ -157,6 +157,7 @@ assign [title="Messenger"] $WS9
 assign [class="Pavucontrol"] $WS4
 assign [class="vlc"] $WS4
 assign [instance="ncmpcpp"] $WS4
+assign [instance="pulsemixer"] $WS4
 
 ## window floating, borders and positioning
 for_window [class="^Firefox|Nightly$" title="^Library$"] floating enable
@@ -173,17 +174,11 @@ for_window [title="Bluetooth"] floating enable, border none, move absolute posit
 for_window [class="ile-roller$"] floating enable, border none, move absolute position center
 for_window [class="pavucontrol"] floating enable, border none
 for_window [class="vlc"] floating enable, move absolute position center
-for_window [instance="ncmpcpp"] floating enable, move absolute position center
 
 # Autostart
 # Use --no-startup-id for background programs or if there is a 'watch' cursor
 # exec --no-startup-id xrandr --output LVDS1 --mode 1366x768 --output HDMI1 --mode 1920x1080 --right-of LVDS1
-exec sensible-browser
-exec urxvtc
-exec xbindkeys
-exec pasystray
-exec_always /home/phansch/.bin/run_redshift.sh
-exec_always urxvt -name "ncmpcpp" -e ncmpcpp
+exec /home/phansch/.bin/startup
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

@@ -1,0 +1,32 @@
+#!/bin/sh
+
+set -x
+
+xset m 5 & # Increase mouse acceleration
+xset s off # don't activate screensaver
+xset -dpms
+xset s noblank # don't blank the video device
+xrdb -merge ~/.Xresources & # reread ~/.Xresources
+setxkbmap 'us' -option compose:rctrl # Set us keyboard layout
+xbindkeys
+
+
+eval "$(gpg-agent --daemon --pinentry-program /usr/bin/pinentry-gtk-2)"
+
+feh --no-fehbg --bg-scale ~/current_wallpaper
+
+unclutter -noevents -root & # Hides mousecursor when inactive
+urxvtd -q -o -f
+nm-applet &
+
+if [ "$(hostname)" = 'viperfish' ]; then
+  ~/.screenlayout/work_default.sh
+else
+  ~/.screenlayout/home_default.sh
+fi
+
+sensible-browser &
+urxvtc
+urxvtc -name "ncmpcpp" -e ncmpcpp
+urxvtc -name "pulsemixer" -e pulsemixer
+run_redshift.sh &
