@@ -13,7 +13,7 @@ xbindkeys
 
 eval "$(gpg-agent --daemon --pinentry-program /usr/bin/pinentry-gtk-2)"
 
-feh --no-fehbg --bg-scale ~/current_wallpaper
+~/.bin/set_wallpaper
 
 unclutter -noevents -root & # Hides mousecursor when inactive
 urxvtd -q -o -f
