@@ -25,6 +25,7 @@ else
   ~/.screenlayout/home_default.sh
 fi
 
+mpd ~/.config/mpd/mpd.conf -v
 sensible-browser &
 urxvtc
 urxvtc -name "ncmpcpp" -e ncmpcpp
