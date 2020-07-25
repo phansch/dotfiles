@@ -15,6 +15,7 @@
         regexp: '127.0.0.1 {{ item }}$'
         line: '127.0.0.1 {{ item }}'
         state: present
+        create: true
       with_items:
         - reddit.com
         - www.reddit.com
