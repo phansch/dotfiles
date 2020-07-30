@@ -58,3 +58,5 @@
   fsckObjects = true
 [difftool]
   prompt = false
+[init]
+  defaultBranch = main
