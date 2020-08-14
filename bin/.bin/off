@@ -13,8 +13,8 @@ run() {
   ask_for_confirmation "Do you want to suspend now?"
 
   if answer_is_yes; then
-    echo "Ok then. Locking the machine. Be sure to close the lid."
-    slock
+    echo "Ok then. Suspending the machine."
+    systemctl suspend
   else
     echo "Not suspending"
     exit 1
