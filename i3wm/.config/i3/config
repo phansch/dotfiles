@@ -11,14 +11,13 @@
 
 set $mod Mod1
 
-# Colors from ~/.Xresources
+set $border #ffff00
+set $background #000000
+set $foreground #ffffff
+set $warning #ff0000
 
-set_from_resource $border color11
-set_from_resource $background background #ff0000
-set_from_resource $foreground foreground #ff0000
-set_from_resource $warning color9 #ff0000
-
-font pango:Ubuntu Mono derivative Powerline 10
+# Use the default monospace font defined via fontconfig
+font pango:monospace
 
 # class                 border  backgr. text    indicator child_border
 client.focused          $border $background $foreground #ffffff   $border
@@ -104,9 +103,9 @@ bindsym $mod+a focus parent
 bindsym $mod+x move workspace to output right
 
 # Scratchpad configuration
-bindsym $mod+minus [instance="urxvt" title="vimwiki"] scratchpad show
-for_window [instance="urxvt" title="vimwiki"] move scratchpad
-exec_always --no-startup-id urxvt -title "scratchpad" -e ~/.bin/scratchpad_start
+bindsym $mod+minus [instance="Alacritty" title="scratchpad"] scratchpad show
+for_window [instance="Alacritty" title="scratchpad"] move scratchpad
+exec_always --no-startup-id alacritty --title "scratchpad" -e ~/.bin/scratchpad_start
 
 # ASSIGN WORKSPACE VARIABLES
 set $WS1 1:dev
@@ -145,9 +144,7 @@ bindsym $mod+Shift+parenright move container to workspace 10
 
 # window specific settings
 ## Move to workspace
-### Note that everything that's using urxvt as a base,
-### must be assigned before urxvt itself
-assign [instance="urxvt"] $WS1
+assign [instance="Alacritty"] $WS1
 assign [class="^Firefox|Nightly$"] $WS2
 assign [class="^Anki$"] $WS3
 assign [title="irssi"] $WS9
@@ -156,8 +153,8 @@ assign [class="Pidgin"] $WS9
 assign [title="Messenger"] $WS9
 assign [class="Pavucontrol"] $WS4
 assign [class="vlc"] $WS4
-assign [instance="ncmpcpp"] $WS4
-assign [instance="pulsemixer"] $WS4
+assign [title="ncmpcpp"] $WS4
+assign [title="pulsemixer"] $WS4
 
 ## window floating, borders and positioning
 for_window [class="^Firefox|Nightly$" title="^Library$"] floating enable

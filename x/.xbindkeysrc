@@ -23,7 +23,7 @@
   Print
 
 # Open a terminal
-"urxvtc"
+"alacritty"
   Alt + Return
 
 # Start thunar

@@ -42,6 +42,7 @@
           - pulsemixer
           - mpd
           - ncmpcpp
+          - fonts-noto-color-emoji
         state: present
     - name: Remove specific packages
       apt:
