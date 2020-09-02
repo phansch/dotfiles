@@ -16,18 +16,26 @@ Below is a rough overview.
 
 If you are interested in the CI setup, look [below](#ci-info).
 
-### i3
+### Window manager: i3
 
  * i3bar is only shown when the modifier key is pressed
  * i3bar only shows the workspaces, time and tray programs
 
-### tmux
+### Terminal: Alacritty + tmux
 
-The status display has no additional information apart from windows.
+Alacritty (vs. urxvt) improves various things for me:
+
+* Much better HiDPI support
+* Automatic config reloading (no more need for `xrdb -merge` and starting a new
+  terminal
+* Emoji support ✨
+
+
+The tmux status display has no additional information apart from windows.
 
 ![tmux status display](screenshots/screen-tmux.png)
 
-### zsh
+### Shell: zsh
 
 * Custom zsh prompt/theme
 * CTRL+Z to send jobs to background and to foreground
@@ -36,20 +44,7 @@ The status display has no additional information apart from windows.
 
 ![zsh prompt](screenshots/screen-zsh1.png)
 
-### X Config
-
-**.xinitrc for i3**
-
-Launches a couple of programs and the [i3](https://i3wm.org://i3wm.org/) window manager.
-
-**.Xresources for urxvt configuration**
-
- * Gruvbox and Solarized themes
- * Clickable urls to launch firefox
- * Shortcuts to change the terminal font size
- * Font size management with Ctrl + arrow keys
-
-### Vim
+### Editor: Vim
 
  * Using [coc.vim][coc] for language integrations
  * Support for 'line' cursor shape in insert mode if using nvim

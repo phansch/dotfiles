@@ -7,6 +7,7 @@
     - name: Install dotfiles
       shell: stow {{ item }} --target=$HOME/ --dir=$HOME/.dotfiles
       with_items:
+        - alacritty
         - bin
         - davfs2
         - fonts
@@ -21,7 +22,6 @@
         - ruby
         - screen
         - tmux
-        - urxvt
         - vim
         - x
         - zsh
@@ -33,9 +33,6 @@
       when: xinitrc_presence.stat.exists == false
     - name: Create ~/.fonts directory
       file: path=~/.fonts state=directory
-    - name: Download powerline font
-      get_url: url=https://github.com/powerline/fonts/raw/master/UbuntuMono/Ubuntu%20Mono%20derivative%20Powerline.ttf
-        dest=~/.fonts/
     - name: Download Source Sans Pro
       get_url: url=https://github.com/adobe-fonts/source-sans-pro/raw/release/TTF/SourceSansPro-Regular.ttf
         dest=~/.fonts/

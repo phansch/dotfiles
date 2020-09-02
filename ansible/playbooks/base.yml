@@ -11,12 +11,16 @@
       vars:
         file: linux_amd64.deb
   tasks:
-    - name: Add neovim ppa
+    - name: Add ppas
       apt_repository:
-        repo: 'ppa:neovim-ppa/unstable'
+        repo: '{{ item }}'
+      with_items:
+        - ppa:neovim-ppa/unstable
+        - ppa:mmstick76/alacritty
     - name: Install base packages
       apt:
         pkg:
+          - alacritty
           - build-essential
           - cmake
           - libglib2.0-dev
@@ -26,7 +30,6 @@
           - slock
           - zsh
           - arandr
-          - rxvt-unicode-256color
           - tmux
           - git
           - feh
@@ -42,6 +45,7 @@
           - pulsemixer
           - mpd
           - ncmpcpp
+          - fonts-noto-color-emoji
         state: present
     - name: Remove specific packages
       apt:
