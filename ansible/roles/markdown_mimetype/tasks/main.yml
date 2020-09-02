@@ -13,6 +13,7 @@
     state: directory
     recurse: true
     mode: '0775'
+  changed_when: false
 - name: Create new markdown mimetype file
   become: false
   copy:
@@ -20,10 +21,12 @@
     dest: ~/.local/share/mime/packages/text-markdown.xml
     mode: '0664'
     force: true
+  changed_when: false
 - name: Insert content into mimetype file
   become: false
   copy:
     content: '{{ mime_content }}'
     dest: ~/.local/share/mime/packages/text-markdown.xml
     mode: '0664'
+  changed_when: false
   notify: Update mime database
