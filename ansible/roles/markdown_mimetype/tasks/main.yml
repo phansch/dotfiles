@@ -1,18 +1,32 @@
 ---
+# NOTE: We need `become: false` here, otherwise the files would be installed
+# for the root user.
 - name: Ensure shared-mime-info is installed
+  become: false
   apt:
     pkg:
       - shared-mime-info
 - name: Prepare markdown mimetype directory
+  become: false
   file:
     path: ~/.local/share/mime/packages/
     state: directory
     recurse: true
+    mode: '0775'
+  changed_when: false
 - name: Create new markdown mimetype file
+  become: false
   copy:
     content: ""
     dest: ~/.local/share/mime/packages/text-markdown.xml
-    force: false
+    mode: '0664'
+    force: true
+  changed_when: false
 - name: Insert content into mimetype file
-  copy: content={{ mime_content }} dest=~/.local/share/mime/packages/text-markdown.xml
+  become: false
+  copy:
+    content: '{{ mime_content }}'
+    dest: ~/.local/share/mime/packages/text-markdown.xml
+    mode: '0664'
+  changed_when: false
   notify: Update mime database
