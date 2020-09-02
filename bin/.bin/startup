@@ -18,7 +18,7 @@ eval "$(gpg-agent --daemon --pinentry-program /usr/bin/pinentry-gtk-2)"
 unclutter -noevents -root & # Hides mousecursor when inactive
 nm-applet &
 
-if [ "$(hostname)" = 'viperfish' ]; then
+if [ "$(hostname)" = 'esaviperfish' ]; then
   ~/.screenlayout/work_default.sh
 else
   ~/.screenlayout/home_default.sh
@@ -27,6 +27,6 @@ fi
 mpd ~/.config/mpd/mpd.conf -v
 sensible-browser &
 alacritty &
-alacritty --title "ncmpcpp" -e ncmpcpp &
-alacritty --title "pulsemixer" -e pulsemixer &
+alacritty --class "ncmpcpp" -e ncmpcpp &
+alacritty --class "pulsemixer" -e pulsemixer &
 run_redshift.sh &
