@@ -57,6 +57,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'DataWraith/auto_mkdir'
 Plug 'morhetz/gruvbox'
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'terryma/vim-expand-region'
 
 call plug#end()
@@ -146,10 +147,10 @@ set undolevels=1000
 set undoreload=10000
 
 " Theme settings
-colorscheme gruvbox
-set background=dark
-" Make split column look nicer
-hi VertSplit ctermbg=NONE
+colorscheme dracula
+
+set cursorline
+highlight clear CursorLine
 
 set fillchars=vert:\│,stlnc:\ ",stl:\ "
 set laststatus=2
