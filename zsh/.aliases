@@ -9,7 +9,7 @@ alias ls="ls -lh --color"
 alias la='ls -lAh'
 alias df="df -h"
 alias top="htop"
-alias git_clean_branches="git branch --merged | egrep -v '(^\*|master)' | xargs git branch -d"
+alias git_clean_branches="git branch --merged | egrep -v '(^\*|master|main)' | xargs --no-run-if-empty git branch -d"
 alias tree="tree -a -C -I '.git'"
 
 ## Switches for pairing
@@ -37,7 +37,7 @@ alias gcp="git cherry-pick"
 
 alias gd="git diff"
 
-alias gl="git pull"
+alias gl="git pull && git_clean_branches"
 alias gfa="git fetch --all"
 alias gp="git push"
 
