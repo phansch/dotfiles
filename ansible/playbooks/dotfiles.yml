@@ -34,7 +34,7 @@
     - name: Create ~/.fonts directory
       file: path=~/.fonts state=directory
     - name: Download Source Sans Pro
-      get_url: url=https://github.com/adobe-fonts/source-sans-pro/raw/release/TTF/SourceSansPro-Regular.ttf
+      get_url: url=https://github.com/adobe-fonts/source-sans-pro/blob/release/TTF/SourceSans3-Regular.ttf?raw=true
         dest=~/.fonts/
     - name: Refresh font cache
       shell: fc-cache -f
