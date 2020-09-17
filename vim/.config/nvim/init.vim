@@ -56,7 +56,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Other
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'DataWraith/auto_mkdir'
-Plug 'morhetz/gruvbox'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'terryma/vim-expand-region'
 
@@ -147,6 +146,8 @@ set undolevels=1000
 set undoreload=10000
 
 " Theme settings
+set termguicolors
+let g:dracula_colorterm = 0
 colorscheme dracula
 
 set cursorline
