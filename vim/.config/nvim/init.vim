@@ -7,7 +7,6 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   augroup plug
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-    autocmd VimEnter * CocInstall -sync coc-solargraph coc-rust-analyzer coc-snippets coc-eslint
   augroup END
 endif
 
@@ -51,7 +50,9 @@ Plug 'tpope/vim-repeat'
 Plug 'honza/vim-snippets'
 
 " Completion/IDE features
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" NOTE: My understanding is, that this will be built-in to neovim at some
+" point. So maybe check if this is still needed later.
+Plug 'neovim/nvim-lspconfig'
 
 " Other
 Plug 'christoomey/vim-tmux-navigator'
@@ -171,35 +172,23 @@ let g:gitgutter_eager = 0
 
 " }}}
 
-" Completion settings {{{
+" Completion/IDE/LSP settings {{{
+" How I want this to work:
+"
+" <TAB> should trigger completion
+" <TAB> should expand snippets from completion
+" <TAB> should advance to the next selection
+"
+" gd should jump to definition
+" rn should attempt a rename
+" K should show documentation (doHover)
+
 set shortmess+=c
 
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? coc#_select_confirm() :
-      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-let g:coc_snippet_next = '<tab>'
-
-nmap <silent> gd <Plug>(coc-definition)
-nmap <leader>rn <Plug>(coc-rename)
-
-" Use K to show documentation in preview window
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
+lua <<EOF
+require'nvim_lsp'.solargraph.setup{}
+require'nvim_lsp'.rust_analyzer.setup{}
+EOF
 " }}}
 
 " fzf settings
