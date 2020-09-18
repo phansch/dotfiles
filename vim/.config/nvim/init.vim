@@ -53,6 +53,7 @@ Plug 'honza/vim-snippets'
 " NOTE: My understanding is, that this will be built-in to neovim at some
 " point. So maybe check if this is still needed later.
 Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
 
 " Other
 Plug 'christoomey/vim-tmux-navigator'
@@ -184,11 +185,10 @@ let g:gitgutter_eager = 0
 " K should show documentation (doHover)
 
 set shortmess+=c
+lua require("lsp")
 
-lua <<EOF
-require'nvim_lsp'.solargraph.setup{}
-require'nvim_lsp'.rust_analyzer.setup{}
-EOF
+nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> K  <cmd>lua vim.lsp.buf.hover()<CR>
 " }}}
 
 " fzf settings
