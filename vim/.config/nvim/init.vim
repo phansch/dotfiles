@@ -47,7 +47,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
-Plug 'honza/vim-snippets'
+Plug 'honza/vim-snippets' " Only the snippet database.
 
 " Completion/IDE features
 " NOTE: My understanding is, that this will be built-in to neovim at some
@@ -105,10 +105,6 @@ set expandtab
 " See :help fo-table for details on the options.
 set textwidth=78
 set formatoptions=jcroq
-
-" Better Completion
-set complete=.,w,b,u,t
-set completeopt=longest,menuone,preview
 
 " Disable backups
 set noswapfile
@@ -184,11 +180,23 @@ let g:gitgutter_eager = 0
 " rn should attempt a rename
 " K should show documentation (doHover)
 
+" Avoid showing message extra message when using completion
 set shortmess+=c
 lua require("lsp")
 
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> K  <cmd>lua vim.lsp.buf.hover()<CR>
+
+" Use <Tab> and <S-Tab> to navigate through popup menu
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" Better Completion
+set complete=.,w,b,u,t
+set completeopt=menuone,noinsert,noselect
+
+" Snippet config for `completion-nvim`
+let g:completion_enable_snippet = 'UltiSnips'
 " }}}
 
 " fzf settings
