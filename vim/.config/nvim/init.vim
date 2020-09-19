@@ -7,7 +7,6 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   augroup plug
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-    autocmd VimEnter * CocInstall -sync coc-solargraph coc-rust-analyzer coc-snippets coc-eslint
   augroup END
 endif
 
@@ -48,10 +47,14 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
-Plug 'honza/vim-snippets'
 
 " Completion/IDE features
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" NOTE: My understanding is, that this will be built-in to neovim at some
+" point. So maybe check if this is still needed later.
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
+Plug 'honza/vim-snippets' " Only the snippet database.
+Plug 'SirVer/ultisnips'
 
 " Other
 Plug 'christoomey/vim-tmux-navigator'
@@ -103,10 +106,6 @@ set expandtab
 " See :help fo-table for details on the options.
 set textwidth=78
 set formatoptions=jcroq
-
-" Better Completion
-set complete=.,w,b,u,t
-set completeopt=longest,menuone,preview
 
 " Disable backups
 set noswapfile
@@ -171,35 +170,34 @@ let g:gitgutter_eager = 0
 
 " }}}
 
-" Completion settings {{{
+" Completion/IDE/LSP settings {{{
+" How I want this to work:
+"
+" <TAB> should trigger completion
+" <TAB> should expand snippets from completion
+" <TAB> should advance to the next selection
+"
+" gd should jump to definition
+" rn should attempt a rename
+" K should show documentation (doHover)
+
+" Avoid showing message extra message when using completion
 set shortmess+=c
+lua require("lsp")
 
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? coc#_select_confirm() :
-      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
+nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> K  <cmd>lua vim.lsp.buf.hover()<CR>
 
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+" Use <Tab> and <S-Tab> to navigate through popup menu
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-let g:coc_snippet_next = '<tab>'
+" Better Completion
+set complete=.,w,b,u,t
+set completeopt=menuone,noinsert,noselect
 
-nmap <silent> gd <Plug>(coc-definition)
-nmap <leader>rn <Plug>(coc-rename)
-
-" Use K to show documentation in preview window
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
+" Snippet config for `completion-nvim`
+let g:completion_enable_snippet = 'UltiSnips'
 " }}}
 
 " fzf settings
