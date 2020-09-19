@@ -34,6 +34,7 @@
     - name: Create ~/.fonts directory
       file: path=~/.fonts state=directory
     - name: Download Source Code Pro font
+      # yamllint disable-line rule:line-length
       get_url: url=https://github.com/adobe-fonts/source-code-pro/releases/download/variable-fonts/SourceCodeVariable-Roman.ttf?raw=true
         dest=~/.fonts/
     - name: Refresh font cache
