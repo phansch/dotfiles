@@ -47,13 +47,14 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
-Plug 'honza/vim-snippets' " Only the snippet database.
 
 " Completion/IDE features
 " NOTE: My understanding is, that this will be built-in to neovim at some
 " point. So maybe check if this is still needed later.
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
+Plug 'honza/vim-snippets' " Only the snippet database.
+Plug 'SirVer/ultisnips'
 
 " Other
 Plug 'christoomey/vim-tmux-navigator'
