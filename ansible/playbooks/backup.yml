@@ -8,7 +8,7 @@
         pkg:
           - cron
           - borgbackup
-          - net-tools # needed for `arp` package
+          - net-tools  # needed for `arp` package
         state: present
 
     - name: Backup cron
