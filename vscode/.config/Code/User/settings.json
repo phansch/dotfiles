@@ -3,7 +3,7 @@
     "window.zoomLevel": 1,
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": true,
-    "workbench.colorTheme": "Gruvbox Material Dark",
+    "workbench.colorTheme": "Dracula",
     "rust-analyzer.displayInlayHints": false,
     "rust-analyzer.cargo-watch.enable": true,
     "vim.cursorStylePerMode.insert": "line",
@@ -12,7 +12,8 @@
     "rust-analyzer.excludeGlobs": [
         ".cargo"
     ],
-    "editor.fontFamily": "'Ubuntu Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    // My monospace font is configured via fontconfig
+    "editor.fontFamily": "'monospace', monospace",
     "update.showReleaseNotes": false,
     "telemetry.enableTelemetry": false,
     "files.exclude": {
