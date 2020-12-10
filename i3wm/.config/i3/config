@@ -131,16 +131,16 @@ bindsym $mod+9 workspace $WS9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+exclam move container to workspace $WS1
-bindsym $mod+Shift+at move container to workspace $WS2
-bindsym $mod+Shift+section move container to workspace $WS3
-bindsym $mod+Shift+dollar move container to workspace $WS4
-bindsym $mod+Shift+percent move container to workspace $WS5
-bindsym $mod+Shift+slash move container to workspace $WS6
-bindsym $mod+Shift+ampersand move container to workspace $WS7
-bindsym $mod+Shift+asterisk move container to workspace $WS8
-bindsym $mod+Shift+parenleft move container to workspace $WS9
-bindsym $mod+Shift+parenright move container to workspace 10
+bindsym $mod+Shift+1 move container to workspace $WS1
+bindsym $mod+Shift+2 move container to workspace $WS2
+bindsym $mod+Shift+3 move container to workspace $WS3
+bindsym $mod+Shift+4 move container to workspace $WS4
+bindsym $mod+Shift+5 move container to workspace $WS5
+bindsym $mod+Shift+6 move container to workspace $WS6
+bindsym $mod+Shift+7 move container to workspace $WS7
+bindsym $mod+Shift+8 move container to workspace $WS8
+bindsym $mod+Shift+9 move container to workspace $WS9
+bindsym $mod+Shift+0 move container to workspace 10
 
 # window specific settings
 ## Move to workspace
