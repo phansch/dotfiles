@@ -1,0 +1,93 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  molecule-1:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.6'
+
+      # Runs a single command using the runners shell
+      - name: Install
+        run: |
+          pip3 install virtualenv
+          virtualenv virtenv
+          source virtenv/bin/activate
+
+          pip3 install -r requirements.txt
+
+      - name: Test
+        run: |
+          source virtenv/bin/activate
+
+          cd ansible/roles/markdown_mimetype && molecule test && cd -
+          cd ansible/roles/i3 && molecule test && cd -
+          cd ansible/roles/rust && molecule test && cd -
+
+  molecule-2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.6'
+      - name: Install
+        run: |
+          pip3 install virtualenv
+          virtualenv virtenv
+          source virtenv/bin/activate
+
+          pip3 install -r requirements.txt
+
+      - name: Test
+        run: |
+          source virtenv/bin/activate
+
+          cd ansible/roles/ripgrep && molecule test && cd -
+          cd ansible/roles/github_cli && molecule test && cd -
+
+  lints:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install
+        run: |
+          docker build -t dotfiles .
+
+      - name: Test
+        run: |
+          # yamllint disable-line rule:line-length
+          docker run dotfiles /bin/bash -c "./setup -s && source .venv/bin/activate && ./test/vim && ./test/yaml && ./test/shellcheck"
+
+  full-setup-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install
+        run: |
+          docker build -t dotfiles .
+
+      - name: Test
+        run: |
+          docker run dotfiles /bin/bash -c "./setup -a && source .venv/bin/activate && ./test/ansible && ./test/i3"
