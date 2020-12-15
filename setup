@@ -24,11 +24,6 @@ bootstrap()
   run_with_sudo apt-get update -qq
   run_with_sudo apt-get install software-properties-common git wget python-apt python3-apt python3-pip python3-venv -qq
 
-  print_message "[setup] Creating virtual env..."
-  python3 -m venv .venv
-  # shellcheck disable=SC1091
-  source .venv/bin/activate
-
   print_message "[setup] Upgrading and autocleaning packages..."
   run_with_sudo apt-get update -qq
   run_with_sudo apt-get upgrade -qq --allow-downgrades --allow-remove-essential --allow-change-held-packages
@@ -47,9 +42,15 @@ bootstrap()
     git clone -q https://github.com/phansch/dotfiles.git "$HOME/.dotfiles" && cd "$HOME/.dotfiles" || exit
   fi
 
+  print_message "[setup] Creating virtual env..."
+  python -m venv .venv
+  python -V
+  # shellcheck disable=SC1091
+  source .venv/bin/activate
+
   print_message "[setup] Installing requirements.txt: ansible, molecule..."
-  pip3 install wheel
-  pip3 install -r requirements.txt
+  python -m pip install wheel
+  python -m pip install -r requirements.txt
 
   install_mitogen '0.2.9'
   # Not exactly sure who I have to reload the env here.. Otherwise
@@ -64,7 +65,7 @@ bootstrap()
     ansible/playbooks/dotfiles.yml
   )
   print_message "[setup] Running default playbooks..."
-  ansible-playbook "${default_playbooks[@]}" --ask-become-pass -u "$USER"
+  python ansible-playbook "${default_playbooks[@]}" --ask-become-pass -u "$USER"
 
   additional_playbooks=(
     ansible/playbooks/additional_packages.yml
