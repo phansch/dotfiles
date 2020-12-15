@@ -52,6 +52,10 @@ bootstrap()
   pip3 install -r requirements.txt
 
   install_mitogen '0.2.9'
+  # Not exactly sure who I have to reload the env here.. Otherwise
+  # `ansible-galaxy` fails immediately with an invalid interpreter error.
+  # shellcheck disable=SC1091
+  source .venv/bin/activate
 
   ansible-galaxy install -r ansible/requirements.yml --force
 
