@@ -11,10 +11,10 @@
 
 set $mod Mod1
 
-set $border #ffff00
-set $background #000000
-set $foreground #ffffff
-set $warning #ff0000
+set $border #f1fa8c
+set $background #282a36
+set $foreground #bd93f9
+set $warning #ff5555
 
 # Use the default monospace font defined via fontconfig
 font pango:monospace
@@ -209,8 +209,7 @@ bar {
   status_command i3status
   position top
   modifier $mod
-  mode hide
-  # separator_symbol "•"
+  separator_symbol "•"
 
   colors {
             background $background
@@ -227,8 +226,7 @@ bar {
   status_command i3status
   position top
   modifier $mod
-  mode hide
-  # separator_symbol "•"
+  separator_symbol "•"
 
   colors {
             background $background

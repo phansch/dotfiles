@@ -1,5 +1,5 @@
 # Start dmenu
-"dmenu_run -f -i -fn 'monospace' -p 'run:' -nb '#ebdbb2' -nf '#282828' -sb '#282828' -sf '#ebdbb2'"
+"dmenu_run -f -i -fn 'monospace' -p 'run:' -nb '#282a36' -nf '#bd93f9' -sb '#282a36' -sf '#bd93f9'"
   Alt + d
 
 # Start sensible-browser and focus it
