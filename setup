@@ -42,15 +42,17 @@ bootstrap()
     git clone -q https://github.com/phansch/dotfiles.git "$HOME/.dotfiles" && cd "$HOME/.dotfiles" || exit
   fi
 
+  print_message "[setup] Version info"
+  python3 -V
+  pip3 -V
   print_message "[setup] Creating virtual env..."
-  python -m venv .venv
-  python -V
+  python3 -m venv .venv
   # shellcheck disable=SC1091
   source .venv/bin/activate
 
   print_message "[setup] Installing requirements.txt: ansible, molecule..."
-  python -m pip install wheel
-  python -m pip install -r requirements.txt
+  python3 -m pip install wheel
+  python3 -m pip install -r requirements.txt
 
   install_mitogen '0.2.9'
   # Not exactly sure who I have to reload the env here.. Otherwise
@@ -60,12 +62,14 @@ bootstrap()
 
   ansible-galaxy install -r ansible/requirements.yml --force
 
+  install_mitogen '0.2.9'
+
   default_playbooks=(
     ansible/playbooks/base.yml
     ansible/playbooks/dotfiles.yml
   )
   print_message "[setup] Running default playbooks..."
-  python ansible-playbook "${default_playbooks[@]}" --ask-become-pass -u "$USER"
+  ansible-playbook "${default_playbooks[@]}" --ask-become-pass -u "$USER"
 
   additional_playbooks=(
     ansible/playbooks/additional_packages.yml
