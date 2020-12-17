@@ -210,6 +210,7 @@ bar {
   position top
   modifier $mod
   separator_symbol "•"
+  mode hide
 
   colors {
             background $background
@@ -227,6 +228,7 @@ bar {
   position top
   modifier $mod
   separator_symbol "•"
+  mode hide
 
   colors {
             background $background
