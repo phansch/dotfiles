@@ -144,7 +144,6 @@ bindsym $mod+Shift+0 move container to workspace 10
 
 # window specific settings
 ## Move to workspace
-assign [title="Alacritty"] $WS1
 assign [class="^Firefox|Nightly$"] $WS2
 assign [class="^Anki$"] $WS3
 assign [title="irssi"] $WS9
@@ -153,8 +152,11 @@ assign [class="Pidgin"] $WS9
 assign [title="Messenger"] $WS9
 assign [class="Pavucontrol"] $WS4
 assign [class="vlc"] $WS4
-assign [instance="ncmpcpp"] $WS4
-assign [instance="pulsemixer"] $WS4
+assign [class="pulsemixer"] $WS4
+assign [class="Clementine"] $WS4
+# Alacritty has to come last, because otherwise it would move pulsemixer to
+# WS1 as well
+assign [title="Alacritty"] $WS1
 
 ## window floating, borders and positioning
 for_window [class="^Firefox|Nightly$" title="^Library$"] floating enable

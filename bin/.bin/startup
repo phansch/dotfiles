@@ -27,6 +27,6 @@ fi
 mpd ~/.config/mpd/mpd.conf -v
 sensible-browser &
 alacritty &
-alacritty --class "ncmpcpp" -e ncmpcpp &
 alacritty --class "pulsemixer" -e pulsemixer &
+clementine &
 run_redshift.sh &
