@@ -27,7 +27,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
         with:
-          python-version: '3.6'
+          python-version: '3.8'
 
       # Runs a single command using the runners shell
       - name: Install
@@ -38,6 +38,8 @@ jobs:
           source virtenv/bin/activate
 
           pip3 install -r requirements.txt
+          pip3 uninstall -y testinfra
+          pip3 install testinfra
 
       - name: Test
         run: |
@@ -54,7 +56,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
         with:
-          python-version: '3.6'
+          python-version: '3.8'
       - name: Install
         run: |
           pip3 install virtualenv
@@ -63,6 +65,8 @@ jobs:
           source virtenv/bin/activate
 
           pip3 install -r requirements.txt
+          pip3 uninstall -y testinfra
+          pip3 install testinfra
 
       - name: Test
         run: |
