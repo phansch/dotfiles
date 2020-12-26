@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/phansch/dotfiles.svg?branch=main)](https://travis-ci.org/phansch/dotfiles)
+[![Build Status](https://github.com/phansch/dotfiles/workflows/CI/badge.svg?branch=main)](https://github.com/phansch/dotfiles/actions)
 [![Sponsor
 count](https://img.shields.io/badge/sponsors-4-brightgreen)](https://phansch.net/thanks)
 
