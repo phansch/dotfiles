@@ -66,6 +66,12 @@
       shell: update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
     - name: Set nvim as editor alternative
       shell: update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
+    # Ubuntu 20.04 doesn't ship with Python 2 and also doesn't set up a
+    # default 'python' executable. That break a lot of scripts.
+    # This makes 'python' run Python 3. Some older scripts might break, I
+    # guess ¯\_(ツ)_/¯
+    - name: Point 'python' to '/usr/bin/python3'
+      shell: update-alternatives --install /usr/bin/python python /usr/bin/python3 10
     - name: Install python packages for neovim
       pip:
         name: neovim
