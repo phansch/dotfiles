@@ -3,10 +3,6 @@
   become: yes
   become_method: sudo
   roles:
-    - role: ripgrep
-      vars:
-        platform: amd64
-        version: 0.10.0
     - role: github_cli
       vars:
         file: linux_amd64.deb
@@ -36,6 +32,7 @@
           - htop
           - fontconfig
           - curl
+          - ripgrep
           - at
           - tree
           - scrot
