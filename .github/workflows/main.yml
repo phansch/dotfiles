@@ -73,7 +73,6 @@ jobs:
           # shellcheck disable=SC1091
           source virtenv/bin/activate
 
-          cd ansible/roles/ripgrep && molecule test && cd -
           cd ansible/roles/github_cli && molecule test && cd -
 
   lints:
