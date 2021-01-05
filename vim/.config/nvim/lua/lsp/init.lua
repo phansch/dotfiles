@@ -10,4 +10,7 @@ require'lspconfig'.solargraph.setup{
 require'lspconfig'.rust_analyzer.setup{
   on_attach = on_attach,
 }
+require'lspconfig'.sorbet.setup{
+  on_attach = on_attach,
+}
 
