@@ -40,7 +40,6 @@
           - shellcheck
           - neovim
           - pulsemixer
-          - mpd
           - fonts-noto-color-emoji
         state: present
     - name: Remove specific packages
