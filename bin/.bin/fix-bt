@@ -1,0 +1,11 @@
+#!/bin/sh
+# When bluetooth doesn't work for some reason,
+# this script usually fixes the problem ¯\_(ツ)_/¯ 
+
+killall blueman-applet
+sudo rmmod btusb
+sleep 1
+sudo modprobe btusb
+sudo systemctl restart bluetooth.service
+pulseaudio -k
+blueman-applet &
