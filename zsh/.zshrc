@@ -46,6 +46,7 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|[._-]=* r:|=*'
 
 ## Git completion fix
 zstyle ':completion:*:*' ignored-patterns '*ORIG_HEAD'
+zstyle ':completion:*:*' ignored-patterns '*pull/*'
 
 # See http://robots.thoughtbot.com/cding-to-frequently-used-directories-in-zsh
 setopt auto_cd
