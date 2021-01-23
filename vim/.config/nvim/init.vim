@@ -47,6 +47,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
+Plug 'jiangmiao/auto-pairs'
 
 " Completion/IDE features
 " NOTE: My understanding is, that this will be built-in to neovim at some
