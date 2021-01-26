@@ -154,7 +154,7 @@ noremap k gk
 " hit <C-p>to toggle pastemode
 set pastetoggle=<C-p>
 
-" Clear last search highlighting
+" Clear last search highlighting when pressing ESC
 nnoremap <esc> :nohlsearch<return><esc>
 
 " Copy/pasting remaps
@@ -168,9 +168,6 @@ nnoremap <leader>av :AV<cr>
 
 " go substitute because the default map for sleeping is silly
 nnoremap gs :%s//g<Left><Left>
-
-" Show 3 levels for :Explore
-let g:netrw_liststyle=3
 
 " let terminal resize scale the internal windows
 augroup vim_resize
@@ -264,6 +261,9 @@ augroup END
 " short duration when closing vim. Maybe it makes more sense to look for a
 " file explorer alternative at some point.
 let g:netrw_fastbrowse = 0
+
+" Show 3 levels for :Explore
+let g:netrw_liststyle=3
 
 " Custom functions {{{
 
