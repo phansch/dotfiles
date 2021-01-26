@@ -21,7 +21,6 @@ Plug 'tpope/vim-rake'
 Plug 'pangloss/vim-javascript',                { 'for': ['javascript', 'coffeescript'] }
 Plug 'jelera/vim-javascript-syntax',           { 'for': ['javascript', 'coffeescript'] }
 Plug 'plasticboy/vim-markdown'
-Plug 'vimwiki/vimwiki'
 Plug 'rust-lang/rust.vim'
 Plug 'posva/vim-vue'
 Plug 'kchmck/vim-coffee-script'
@@ -82,12 +81,6 @@ let g:gitgutter_eager = 0
 
 " fzf settings
 let g:fzf_tags_command = 'ctags -R'
-
-" vimwiki settings
-let g:vimwiki_global_ext = 0
-let g:vimwiki_list = [
-      \{'path': '~/Documents/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
-let g:vimwiki_folding = ''
 
 " Rust
 let g:rustfmt_autosave = 0
@@ -213,8 +206,6 @@ augroup filetype_markdown
   au FileType markdown set nofoldenable
   au FileType markdown nnoremap <leader>f :call OpenCurrentFileInBrowser()<cr>
   au FileType markdown nnoremap <leader>t :Toc<cr>
-  au FileType markdown nnoremap <F5> :put ='### <' . strftime('%F %a') . '>'<cr>
-  au FileType markdown inoremap <F5> :put ='### <' . strftime('%F %a') . '>'<cr>
   au FileType markdown let g:vim_markdown_new_list_item_indent = 2
   au FileType markdown let g:vim_markdown_toc_autofit = 1
   au FileType markdown setlocal textwidth=80
@@ -253,12 +244,6 @@ augroup git_commit_spelling
   au!
 
   au BufNewFile,BufRead COMMIT_EDITMSG set spell
-augroup END
-
-augroup wiki_diary_skeleton
-  au!
-
-  autocmd BufNewFile diary/*.md call LoadSkeleton('diary')
 augroup END
 
 augroup ruby_skeleton
