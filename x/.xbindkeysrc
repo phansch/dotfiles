@@ -1,10 +1,6 @@
 # Start dmenu
-"dmenu_run -f -i -fn 'monospace' -p 'run:' -nb '#282a36' -nf '#bd93f9' -sb '#282a36' -sf '#bd93f9'"
+"dmenu_run -f -i -fn 'monospace' -p 'run:' -nb '#282a36' -nf '#bd93f9' -sb '#bd93f9' -sf '#282a36'"
   Alt + d
-
-# Start sensible-browser and focus it
-"~/.bin/focus_or_launch_browser"
-  Alt + b
 
 # Volume down
 "pactl set-sink-volume @DEFAULT_SINK@ -- -5% && pactl set-sink-mute @DEFAULT_SINK@ 0"
@@ -21,10 +17,6 @@
 # Take screenshot
 "~/.bin/screenshot"
   Print
-
-# Open a terminal
-"alacritty"
-  Alt + Return
 
 # Start thunar
 "thunar ~/code"
