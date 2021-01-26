@@ -24,6 +24,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'rust-lang/rust.vim'
 Plug 'posva/vim-vue'
 Plug 'kchmck/vim-coffee-script'
+Plug 'dart-lang/dart-vim-plugin'
 " Plug 'junegunn/goyo.vim'
 
 " Library dependencies
