@@ -41,7 +41,6 @@ feh --no-fehbg --bg-scale ~/current_wallpaper &
 
 # Do background stuff
 sleep 1 && unclutter -noevents -root & # Hides mousecursor when inactive
-sleep 1 && urxvtd -q -o -f &
 sleep 1 && /usr/lib/x86_64-linux-gnu/deja-dup/deja-dup-monitor &
 
 # Launch programs
