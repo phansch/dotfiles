@@ -225,12 +225,12 @@ augroup custom_ruby_syntax
   au!
 
   au BufNewFile,BufRead *.prawn set filetype=ruby
-  au FileType ruby :highlight FocusTrue ctermbg=1 ctermfg=2
-  au FileType ruby :match FocusTrue 'focus: true'
+  au FileType ruby syntax match FocusTrue 'focus: true'
   au FileType ruby syntax match Pry 'binding.pry'
   au FileType ruby syntax match Irb 'binding.irb'
   au FileType ruby highlight Pry ctermbg=1 ctermfg=2
   au FileType ruby highlight Irb ctermbg=1 ctermfg=2
+  au FileType ruby highlight FocusTrue ctermbg=1 ctermfg=2
 augroup END
 
 augroup git_commit_spelling
