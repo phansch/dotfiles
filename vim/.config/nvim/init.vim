@@ -79,9 +79,6 @@ endif
 let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
 
-" fzf settings
-let g:fzf_tags_command = 'ctags -R'
-
 " Rust
 let g:rustfmt_autosave = 0
 let g:rustfmt_command = 'rustfmt +stable'
