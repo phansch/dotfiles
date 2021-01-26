@@ -8,7 +8,6 @@ alias ping="ping -c 5"
 alias ls="ls -lh --color"
 alias la='ls -lAh'
 alias df="df -h"
-alias top="htop"
 alias git_clean_branches="git branch --merged | egrep -v '(^\*| main)' | xargs --no-run-if-empty git branch -d"
 alias tree="tree -a -C -I '.git'"
 
@@ -16,17 +15,8 @@ alias tree="tree -a -C -I '.git'"
 alias pair_dvorak="setxkbmap 'de(dvorak)'"
 alias pair_de="setxkbmap 'de'"
 
-## Rails
-alias migrate="rake db:migrate db:rollback && rake db:migrate"
-alias m="migrate"
-alias be="bundle exec"
-
-## Docker
-alias dc="docker-compose"
-
 ## Git
 alias ga="git add"
-alias gaa="git add --all"
 
 alias gst="git status"
 alias gs="git status"
@@ -37,8 +27,7 @@ alias gcp="git cherry-pick"
 
 alias gd="git diff"
 
-alias gl="git pull && git_clean_branches"
-alias gfa="git fetch --all"
+alias gl="git pull --rebase --autostash && git_clean_branches"
 alias gp="git push"
 
 alias 'ga .'="echo don't use git add ."
