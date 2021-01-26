@@ -21,7 +21,6 @@ Plug 'tpope/vim-rake'
 Plug 'pangloss/vim-javascript',                { 'for': ['javascript', 'coffeescript'] }
 Plug 'jelera/vim-javascript-syntax',           { 'for': ['javascript', 'coffeescript'] }
 Plug 'plasticboy/vim-markdown'
-Plug 'vimwiki/vimwiki'
 Plug 'rust-lang/rust.vim'
 Plug 'posva/vim-vue'
 Plug 'kchmck/vim-coffee-script'
@@ -80,15 +79,6 @@ endif
 let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
 
-" fzf settings
-let g:fzf_tags_command = 'ctags -R'
-
-" vimwiki settings
-let g:vimwiki_global_ext = 0
-let g:vimwiki_list = [
-      \{'path': '~/Documents/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
-let g:vimwiki_folding = ''
-
 " Rust
 let g:rustfmt_autosave = 0
 let g:rustfmt_command = 'rustfmt +stable'
@@ -131,7 +121,6 @@ iabbrev mysql MySQL
 
 " Mappings {{{
 
-nnoremap <leader>q :q<cr>
 noremap <C-s> <esc>:w<CR>
 inoremap <C-s> <esc>:w<CR>
 
@@ -162,7 +151,7 @@ noremap k gk
 " hit <C-p>to toggle pastemode
 set pastetoggle=<C-p>
 
-" Clear last search highlighting
+" Clear last search highlighting when pressing ESC
 nnoremap <esc> :nohlsearch<return><esc>
 
 " Copy/pasting remaps
@@ -176,9 +165,6 @@ nnoremap <leader>av :AV<cr>
 
 " go substitute because the default map for sleeping is silly
 nnoremap gs :%s//g<Left><Left>
-
-" Show 3 levels for :Explore
-let g:netrw_liststyle=3
 
 " let terminal resize scale the internal windows
 augroup vim_resize
@@ -213,8 +199,6 @@ augroup filetype_markdown
   au FileType markdown set nofoldenable
   au FileType markdown nnoremap <leader>f :call OpenCurrentFileInBrowser()<cr>
   au FileType markdown nnoremap <leader>t :Toc<cr>
-  au FileType markdown nnoremap <F5> :put ='### <' . strftime('%F %a') . '>'<cr>
-  au FileType markdown inoremap <F5> :put ='### <' . strftime('%F %a') . '>'<cr>
   au FileType markdown let g:vim_markdown_new_list_item_indent = 2
   au FileType markdown let g:vim_markdown_toc_autofit = 1
   au FileType markdown setlocal textwidth=80
@@ -241,24 +225,18 @@ augroup custom_ruby_syntax
   au!
 
   au BufNewFile,BufRead *.prawn set filetype=ruby
-  au FileType ruby :highlight FocusTrue ctermbg=1 ctermfg=2
-  au FileType ruby :match FocusTrue 'focus: true'
+  au FileType ruby syntax match FocusTrue 'focus: true'
   au FileType ruby syntax match Pry 'binding.pry'
   au FileType ruby syntax match Irb 'binding.irb'
   au FileType ruby highlight Pry ctermbg=1 ctermfg=2
   au FileType ruby highlight Irb ctermbg=1 ctermfg=2
+  au FileType ruby highlight FocusTrue ctermbg=1 ctermfg=2
 augroup END
 
 augroup git_commit_spelling
   au!
 
   au BufNewFile,BufRead COMMIT_EDITMSG set spell
-augroup END
-
-augroup wiki_diary_skeleton
-  au!
-
-  autocmd BufNewFile diary/*.md call LoadSkeleton('diary')
 augroup END
 
 augroup ruby_skeleton
@@ -280,6 +258,9 @@ augroup END
 " short duration when closing vim. Maybe it makes more sense to look for a
 " file explorer alternative at some point.
 let g:netrw_fastbrowse = 0
+
+" Show 3 levels for :Explore
+let g:netrw_liststyle=3
 
 " Custom functions {{{
 
