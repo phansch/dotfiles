@@ -124,7 +124,6 @@ iabbrev mysql MySQL
 
 " Mappings {{{
 
-nnoremap <leader>q :q<cr>
 noremap <C-s> <esc>:w<CR>
 inoremap <C-s> <esc>:w<CR>
 
