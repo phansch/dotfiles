@@ -11,7 +11,7 @@
           - "--git https://github.com/greshake/i3status-rust i3status-rs"
     - role: markdown_mimetype
     # - role: FGtatsuro.vagrant
-    - role: angstwad.docker_ubuntu
+    - role: geerlingguy.docker
   tasks:
     - name: Install additional apt packages
       apt:
