@@ -3,6 +3,7 @@
 # this script usually fixes the problem ¯\_(ツ)_/¯ 
 
 killall blueman-applet
+killall zoom
 sudo rmmod btusb
 sleep 1
 sudo modprobe btusb
