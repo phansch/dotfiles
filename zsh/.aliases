@@ -17,11 +17,11 @@ alias pair_de="setxkbmap 'de'"
 
 ## Git
 alias ga="git add"
+alias gb="git --no-pager branch --sort=committerdate"
 
-alias gst="git status"
-alias gs="git status"
+alias gst="git status && echo '\n- Branches -' && gb"
+alias gs="gst"
 
-alias gb="git branch --sort=committerdate"
 alias gc="git commit -v"
 alias gcp="git cherry-pick"
 
