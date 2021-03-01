@@ -208,30 +208,10 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar
 bar {
-  output LVDS1
-  status_command i3status
-  position top
+  status_command ~/.cargo/bin/i3status-rs ~/.config/i3status-rust/config.toml
+  position bottom
   modifier $mod
-  separator_symbol "•"
-  mode hide
-
-  colors {
-            background $background
-            statusline $foreground
-
-            #                 border background text
-            focused_workspace $background $foreground $background
-            active_workspace $background $background $foreground
-            inactive_workspace $background $background $foreground
-            urgent_workspace $background $warning $foreground
-  }
-}
-bar {
-  status_command i3status
-  position top
-  modifier $mod
-  separator_symbol "•"
-  mode hide
+  tray_output primary
 
   colors {
             background $background

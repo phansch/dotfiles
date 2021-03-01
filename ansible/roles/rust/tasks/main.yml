@@ -8,3 +8,10 @@
   changed_when: false
   args:
     warn: false
+
+- name: Install extra cargo packages
+  shell: "~/.cargo/bin/cargo install {{ item }}"  # noqa 301 305 306
+  loop: "{{ extra_cargo_packages }}"
+  changed_when: false
+  args:
+    warn: false

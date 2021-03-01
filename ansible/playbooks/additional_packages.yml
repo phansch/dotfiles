@@ -5,6 +5,9 @@
   roles:
     - role: i3
     - role: rust
+      vars:
+        extra_cargo_packages:
+          - "--git https://github.com/greshake/i3status-rust i3status-rs"
     - role: markdown_mimetype
     # - role: FGtatsuro.vagrant
     - role: angstwad.docker_ubuntu

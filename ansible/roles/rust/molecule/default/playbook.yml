@@ -1,4 +1,12 @@
 ---
+- name: Prepare
+  hosts: all
+  apt:
+    pkg:
+      - libdbus-glib-1-dev
+      - libssl-dev
+    state: present
+
 - name: Converge
   hosts: all
   roles:
