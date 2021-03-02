@@ -2,4 +2,4 @@
 
 set -x
 
-i3 -C i3wm/.config/i3/config
+# i3 -C i3wm/.config/i3/config
