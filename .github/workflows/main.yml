@@ -50,7 +50,7 @@ jobs:
           source virtenv/bin/activate
 
           cd ansible/roles/markdown_mimetype && molecule test && cd -
-          cd ansible/roles/i3 && molecule test && cd -
+          # cd ansible/roles/i3 && molecule test && cd -
           cd ansible/roles/rust && molecule test && cd -
 
   molecule-2:
