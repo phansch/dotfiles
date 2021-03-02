@@ -1,13 +1,17 @@
 ---
 - name: Prepare
   hosts: all
-  apt:
-    pkg:
-      - libdbus-glib-1-dev
-      - libssl-dev
-    state: present
+  tasks:
+    - name: Install required packages
+      apt:
+        pkg:
+          - libdbus-glib-1-dev
+          - libssl-dev
+        state: present
 
 - name: Converge
   hosts: all
   roles:
     - role: rust
+      vars:
+        extra_cargo_packages: []
