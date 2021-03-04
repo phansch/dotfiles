@@ -13,9 +13,12 @@
         dest: /usr/local/bin/check_ip
         mode: a+x
 
+    # 1. Have check scripts that put stuff into syslog
+    # 2. Have a user-space cron check (anacron?) to check the syslog for
+    # check_ entries
     - name: Setup check_ip cron for RaspberryPI
       cron:
         name: Check RaspberryPI connection
         minute: "*/2"
-        job: /usr/local/bin/check_ip 192.168.0.20 2>&1 | /usr/bin/logger -t check_ip
+        job: /usr/local/bin/check_ip raspberrypi.local 2>&1 | /usr/bin/logger -t check_ip
         user: phansch
