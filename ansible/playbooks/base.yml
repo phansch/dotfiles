@@ -72,7 +72,6 @@
     - name: Install python packages for neovim
       pip:
         name: neovim
-        executable: /usr/bin/pip3
     # Integrate git with libsecret
     - name: Install libsecret
       apt:
