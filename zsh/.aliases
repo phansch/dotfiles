@@ -34,3 +34,6 @@ alias 'ga .'="echo don't use git add ."
 alias 'git add .'="echo don't use git add ."
 
 alias pr="gh pr create -f"
+
+# Rails
+alias be="bundle exec"
