@@ -148,6 +148,7 @@ assign [class="^Firefox|Nightly$"] $WS2
 assign [class="^Anki$"] $WS3
 assign [title="irssi"] $WS9
 assign [class="Skype*"] $WS9
+assign [class="Slack"] $WS9
 assign [class="Pidgin"] $WS9
 assign [title="Messenger"] $WS9
 assign [class="Pavucontrol"] $WS4
