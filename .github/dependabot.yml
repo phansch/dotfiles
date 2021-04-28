@@ -1,0 +1,16 @@
+version: 2
+updates:
+- package-ecosystem: pip
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "16:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: molecule
+    versions:
+    - 3.2.3
+    - 3.2.4
+  - dependency-name: docker
+    versions:
+    - 4.4.2
