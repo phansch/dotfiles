@@ -4,9 +4,14 @@
 
 killall blueman-applet
 killall zoom
+killall slack
+
 sudo rmmod btusb
 sleep 1
 sudo modprobe btusb
 sudo systemctl restart bluetooth.service
 pulseaudio -k
+
 blueman-applet > /dev/null 2>&1 &
+TZ=Europe/Berlin /usr/bin/slack > /dev/null 2>&1 &
+/usr/bin/zoom > /dev/null 2>&1 &
