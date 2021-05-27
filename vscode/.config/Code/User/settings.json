@@ -1,6 +1,5 @@
 {
     "editor.minimap.enabled": true,
-    "window.zoomLevel": 1,
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": true,
     "workbench.colorTheme": "Dracula",
