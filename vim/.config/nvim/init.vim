@@ -226,6 +226,7 @@ augroup custom_ruby_syntax
   au!
 
   au BufNewFile,BufRead *.prawn set filetype=ruby
+  au BufNewFile,BufRead *Fastfile set filetype=ruby
   au FileType ruby syntax match FocusTrue 'focus: true'
   au FileType ruby syntax match Pry 'binding.pry'
   au FileType ruby syntax match Irb 'binding.irb'
