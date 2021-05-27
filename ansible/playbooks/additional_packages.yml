@@ -12,6 +12,7 @@
     - role: markdown_mimetype
     # - role: FGtatsuro.vagrant
     - role: geerlingguy.docker
+      when: lookup('env', 'CI') == 'false'
   tasks:
     - name: Install additional apt packages
       apt:
