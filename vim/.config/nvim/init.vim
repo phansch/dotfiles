@@ -11,7 +11,15 @@ endif
 
 call plug#begin('~/.local/share/nvim/plugged')
 
+" # Plugins that work in both VSCode and NeoVim:
+Plug 'tpope/vim-vinegar'
+
+" Library dependencies
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+
 " Language specific
+" TODO: These may not work in VSCode completely
 Plug 'pearofducks/ansible-vim'
 Plug 'vim-ruby/vim-ruby'
 Plug 'rlue/vim-fold-rspec'
@@ -27,40 +35,41 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'dart-lang/dart-vim-plugin'
 " Plug 'junegunn/goyo.vim'
 
-" Library dependencies
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
+if exists('g:vscode')
+  " # Plugins that only work in VSCode
+else
+  " # Plugins that only work in NeoVim
 
-" Search and find
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+  " Search and find
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug 'junegunn/fzf.vim'
 
-Plug 'tpope/vim-vinegar'
+  " Insert mode (NeoVim VSCode does not support insert mode stuff
+  " because it's handed off to VSCode)
+  Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-endwise'
+  Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-repeat'
+  Plug 'jiangmiao/auto-pairs'
 
-" Git
-Plug 'airblade/vim-gitgutter'
-Plug 'rhysd/git-messenger.vim'
+  " Completion/IDE features
+  " NOTE: My understanding is, that this will be built-in to neovim at some
+  " point. So maybe check if this is still needed later.
+  Plug 'neovim/nvim-lspconfig'
+  Plug 'nvim-lua/completion-nvim'
+  Plug 'honza/vim-snippets' " Only the snippet database.
+  Plug 'SirVer/ultisnips'
 
-" Insert mode
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-repeat'
-Plug 'jiangmiao/auto-pairs'
+  " Git
+  Plug 'airblade/vim-gitgutter'
+  Plug 'rhysd/git-messenger.vim'
 
-" Completion/IDE features
-" NOTE: My understanding is, that this will be built-in to neovim at some
-" point. So maybe check if this is still needed later.
-Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-lua/completion-nvim'
-Plug 'honza/vim-snippets' " Only the snippet database.
-Plug 'SirVer/ultisnips'
-
-" Other
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'DataWraith/auto_mkdir'
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'terryma/vim-expand-region'
+  " Other
+  Plug 'christoomey/vim-tmux-navigator'
+  Plug 'DataWraith/auto_mkdir'
+  Plug 'dracula/vim', { 'as': 'dracula' }
+  Plug 'terryma/vim-expand-region'
+endif
 
 call plug#end()
 
@@ -71,14 +80,19 @@ filetype plugin indent on
 source $HOME/.config/nvim/general_settings.vim
 
 if exists('g:vscode')
-  " TODO: VSCode specific config
+  xmap gc  <Plug>VSCodeCommentary
+  nmap gc  <Plug>VSCodeCommentary
+  omap gc  <Plug>VSCodeCommentary
+  nmap gcc <Plug>VSCodeCommentaryLine
 else
   source $HOME/.config/nvim/lsp.vim
-endif
+  source $HOME/.config/nvim/abbreviations.vim
 
-" Make vim-gitgutter faster
-let g:gitgutter_realtime = 0
-let g:gitgutter_eager = 0
+  " Make vim-gitgutter faster
+  let g:gitgutter_realtime = 0
+  let g:gitgutter_eager = 0
+
+endif
 
 " Rust
 let g:rustfmt_autosave = 0
@@ -97,27 +111,6 @@ augroup line_return
       \ endif
 augroup END
 
-" }}}
-
-" Abbreviations {{{
-iabbrev teh the
-iabbrev seperate separate
-iabbrev FactoryGril FactoryGirl
-iabbrev loctation location
-iabbrev sessinos sessions
-iabbrev initator initiator
-iabbrev conut count
-iabbrev prereqs prerequisites
-iabbrev pyr pry
-iabbrev visibilty visibility
-iabbrev enbaled enabled
-iabbrev objecs objects
-iabbrev shrug ¯\_(ツ)_/¯
-iabbrev mothed method
-iabbrev erros errors
-iabbrev haproxy HAproxy
-iabbrev commen common
-iabbrev mysql MySQL
 " }}}
 
 " Mappings {{{
