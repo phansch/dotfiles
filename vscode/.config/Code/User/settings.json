@@ -1,5 +1,5 @@
 {
-    "editor.minimap.enabled": true,
+    "editor.minimap.enabled": false,
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": true,
     "workbench.colorTheme": "Dracula",
@@ -20,4 +20,7 @@
     },
     "workbench.activityBar.visible": false,
     "workbench.editor.showTabs": false,
+    "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
 }
