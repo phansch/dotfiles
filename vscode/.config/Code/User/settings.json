@@ -3,9 +3,6 @@
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": true,
     "workbench.colorTheme": "Dracula",
-    "vim.cursorStylePerMode.insert": "line",
-    "vim.history": 500,
-    "vim.hlsearch": true,
     // My monospace font is configured via fontconfig
     "editor.fontFamily": "'monospace', monospace",
     "update.showReleaseNotes": false,
