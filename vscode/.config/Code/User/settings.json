@@ -3,14 +3,9 @@
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": true,
     "workbench.colorTheme": "Dracula",
-    "rust-analyzer.displayInlayHints": false,
-    "rust-analyzer.cargo-watch.enable": true,
     "vim.cursorStylePerMode.insert": "line",
     "vim.history": 500,
     "vim.hlsearch": true,
-    "rust-analyzer.excludeGlobs": [
-        ".cargo"
-    ],
     // My monospace font is configured via fontconfig
     "editor.fontFamily": "'monospace', monospace",
     "update.showReleaseNotes": false,
@@ -27,5 +22,9 @@
         "neovim"
     ],
     "sorbet.useBundler": true,
-    "ruby.useBundler": true
+    "ruby.useBundler": true,
+    "rust-analyzer.inlayHints.enable": false,
+    "rust-analyzer.files.excludeDirs": [
+        ".cargo"
+    ]
 }
