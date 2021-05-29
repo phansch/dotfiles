@@ -92,6 +92,25 @@ else
   let g:gitgutter_realtime = 0
   let g:gitgutter_eager = 0
 
+  " Line Return {{{
+
+  " Make sure Vim returns to the same line when you reopen a file.
+  " Thanks, Amit
+  augroup line_return
+      au!
+      au BufReadPost *
+        \ if line("'\"") > 0 && line("'\"") <= line("$") |
+        \     execute 'normal! g`"zvzz' |
+        \ endif
+  augroup END
+
+  " }}}
+
+  " let terminal resize scale the internal windows
+  augroup vim_resize
+    au!
+    autocmd VimResized * :wincmd =
+  augroup END
 endif
 
 " Rust
@@ -99,19 +118,6 @@ let g:rustfmt_autosave = 0
 let g:rustfmt_command = 'rustfmt +stable'
 " }}}
 
-" Line Return {{{
-
-" Make sure Vim returns to the same line when you reopen a file.
-" Thanks, Amit
-augroup line_return
-    au!
-    au BufReadPost *
-      \ if line("'\"") > 0 && line("'\"") <= line("$") |
-      \     execute 'normal! g`"zvzz' |
-      \ endif
-augroup END
-
-" }}}
 
 " Mappings {{{
 
@@ -151,16 +157,8 @@ vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
 
-nnoremap <leader>av :AV<cr>
-
 " go substitute because the default map for sleeping is silly
 nnoremap gs :%s//g<Left><Left>
-
-" let terminal resize scale the internal windows
-augroup vim_resize
-  au!
-  autocmd VimResized * :wincmd =
-augroup END
 
 " format json (requires jq to be installed)
 noremap <leader>fj :call FormatJson()<CR>
