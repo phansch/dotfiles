@@ -23,4 +23,9 @@
     "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
+    "cSpell.userWords": [
+        "neovim"
+    ],
+    "sorbet.useBundler": true,
+    "ruby.useBundler": true
 }
