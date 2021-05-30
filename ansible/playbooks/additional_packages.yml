@@ -59,8 +59,3 @@
         src: /opt/anki/bin/anki
         dest: /usr/bin/anki
         state: link
-    - name: Install tmuxifier
-      become: no
-      git:
-        repo: https://github.com/jimeh/tmuxifier.git
-        dest: ~/.tmuxifier
