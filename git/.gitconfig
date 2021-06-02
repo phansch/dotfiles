@@ -17,7 +17,6 @@
   rebase = true
 [commit]
   template = ~/.gitmessage
-  gpgSign = true
 [merge]
   conflictstyle = diff3
   # Standard diff is two sets of final changes. This introduces the original text before each side's changes.
