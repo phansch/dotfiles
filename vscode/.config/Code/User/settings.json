@@ -10,18 +10,25 @@
     "files.exclude": {
         "**/target": true
     },
-    "workbench.activityBar.visible": false,
     "workbench.editor.showTabs": false,
     "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
     "cSpell.userWords": [
-        "neovim"
+        "clippy",
+        "neovim",
+        "rustc",
+        "sysroot"
     ],
     "sorbet.useBundler": true,
     "ruby.useBundler": true,
     "rust-analyzer.inlayHints.enable": false,
     "rust-analyzer.files.excludeDirs": [
-        ".cargo"
-    ]
+        ".cargo",
+        "clippy-mini-macro-test"
+    ],
+    "rust-analyzer.rustcSource": "discover",
+    "rust-analyzer.updates.channel": "nightly",
+    "workbench.activityBar.visible": false,
+    "window.menuBarVisibility": "compact"
 }

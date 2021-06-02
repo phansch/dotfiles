@@ -133,9 +133,13 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-nnoremap <space>d :Files<cr>
-nnoremap <space>b :Buffers<cr>
-nnoremap <space>m :History<cr>
+if exists('g:vscode')
+  nnoremap <space>d <Cmd>call VSCodeNotify('workbench.action.quickOpen')<CR>
+else
+  nnoremap <space>d :Files<cr>
+  nnoremap <space>b :Buffers<cr>
+  nnoremap <space>m :History<cr>
+endif
 
 " Easier to type, and I never use the default behavior.
 noremap H ^
