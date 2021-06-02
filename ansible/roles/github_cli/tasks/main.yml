@@ -27,7 +27,6 @@
   get_url:
     url: "{{ download_url.stdout }}"
     dest: /tmp/gh_cli.deb
-    remote_src: true
   changed_when: false
 - name: Install latest release
   apt:
