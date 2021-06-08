@@ -30,5 +30,6 @@
     "rust-analyzer.rustcSource": "discover",
     "rust-analyzer.updates.channel": "nightly",
     "workbench.activityBar.visible": false,
-    "window.menuBarVisibility": "compact"
+    "window.menuBarVisibility": "compact",
+    "dart.lineLength": 120
 }
