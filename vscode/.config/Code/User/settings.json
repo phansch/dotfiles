@@ -8,6 +8,8 @@
     "update.showReleaseNotes": false,
     "telemetry.enableTelemetry": false,
     "files.exclude": {
+        "**/*.chopper.dart": true,
+        "**/*.g.dart": true,
         "**/target": true
     },
     "workbench.editor.showTabs": false,
