@@ -33,5 +33,7 @@
     "rust-analyzer.updates.channel": "nightly",
     "workbench.activityBar.visible": false,
     "window.menuBarVisibility": "compact",
-    "dart.lineLength": 120
+    "dart.lineLength": 120,
+    "dart.openDevTools": "flutter",
+    "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim"
 }
