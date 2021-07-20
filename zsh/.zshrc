@@ -1,4 +1,4 @@
-export EDITOR='vim'
+export EDITOR='nvim'
 export TERMINAL='alacritty'
 export LESS="-i -R" # case-insensitive less search
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
