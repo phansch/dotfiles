@@ -29,4 +29,5 @@ sensible-browser &
 alacritty &
 alacritty --class "pulsemixer" -e pulsemixer &
 clementine &
+blueman-applet &
 run_redshift.sh &
