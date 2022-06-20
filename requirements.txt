@@ -1,5 +1,5 @@
 molecule[docker]==3.5.2
-pytest-testinfra==6.4.0
+pytest-testinfra==6.8.0
 ansible==4.8.0
 ansible-lint==5.2.1
 docker==5.0.3
