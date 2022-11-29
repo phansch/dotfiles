@@ -30,4 +30,5 @@ alacritty &
 alacritty --class "pulsemixer" -e pulsemixer &
 clementine &
 blueman-applet &
+xfce4-power-manager &
 run_redshift.sh &
