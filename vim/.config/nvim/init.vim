@@ -56,9 +56,15 @@ else
   " NOTE: My understanding is, that this will be built-in to neovim at some
   " point. So maybe check if this is still needed later.
   Plug 'neovim/nvim-lspconfig'
-  Plug 'nvim-lua/completion-nvim'
+
+  Plug 'hrsh7th/cmp-nvim-lsp'
+  Plug 'hrsh7th/cmp-buffer'
+  Plug 'hrsh7th/cmp-path'
+  Plug 'hrsh7th/nvim-cmp'
+
   Plug 'honza/vim-snippets' " Only the snippet database.
-  Plug 'SirVer/ultisnips'
+  Plug 'SirVer/ultisnips' " The snippet 'engin'
+  Plug 'quangnguyen30192/cmp-nvim-ultisnips' " snippet-completion plugin
 
   " Git
   Plug 'airblade/vim-gitgutter'
