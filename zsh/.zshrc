@@ -33,9 +33,6 @@ setopt auto_menu
 setopt complete_in_word
 setopt always_to_end
 
-bindkey '^[[A' up-line-or-search
-bindkey '^[[B' down-line-or-search
-
 ## enable menu completion
 zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion::complete:*' use-cache 1
