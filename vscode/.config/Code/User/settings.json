@@ -31,9 +31,25 @@
     ],
     "rust-analyzer.rustcSource": "discover",
     "rust-analyzer.updates.channel": "nightly",
-    "workbench.activityBar.visible": false,
     "window.menuBarVisibility": "compact",
     "dart.lineLength": 120,
     "dart.openDevTools": "flutter",
-    "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim"
+    "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "[ruby]": {
+        "editor.defaultFormatter": "Shopify.ruby-lsp",
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "files.trimTrailingWhitespace": true,
+        "files.insertFinalNewline": true,
+        "files.trimFinalNewlines": true,
+        "editor.rulers": [
+            120
+        ],
+        "editor.semanticHighlighting.enabled": true
+    }
 }
