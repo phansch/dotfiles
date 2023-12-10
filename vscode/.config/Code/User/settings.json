@@ -1,18 +1,15 @@
 {
-    "editor.minimap.enabled": false,
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": true,
     "workbench.colorTheme": "Dracula",
     // My monospace font is configured via fontconfig
     "editor.fontFamily": "'monospace', monospace",
     "update.showReleaseNotes": false,
-    "telemetry.enableTelemetry": false,
+    "telemetry.telemetryLevel": "off",
     "files.exclude": {
-        "**/*.chopper.dart": true,
-        "**/*.g.dart": true,
         "**/target": true
     },
-    "workbench.editor.showTabs": false,
+    "workbench.editor.showTabs": "single",
     "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
@@ -20,10 +17,9 @@
         "clippy",
         "neovim",
         "rustc",
+        "sidekiq",
         "sysroot"
     ],
-    "sorbet.useBundler": true,
-    "ruby.useBundler": true,
     "rust-analyzer.inlayHints.enable": false,
     "rust-analyzer.files.excludeDirs": [
         ".cargo",
@@ -31,12 +27,26 @@
     ],
     "rust-analyzer.rustcSource": "discover",
     "rust-analyzer.updates.channel": "nightly",
-    "window.menuBarVisibility": "compact",
-    "dart.lineLength": 120,
-    "dart.openDevTools": "flutter",
     "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
+    "editor.accessibilitySupport": "off",
+    "files.insertFinalNewline": true,
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
+    },
+    "redhat.telemetry.enabled": false,
+    "editor.minimap.autohide": true,
+    "editor.minimap.scale": 2,
+    "editor.minimap.showSlider": "always",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.editor.enablePreview": false,
+    "terminal.integrated.profiles.osx": {
+        "zsh": {
+            "path": "/bin/zsh",
+            "args": [
+                "-l",
+                "-i"
+            ]
+        }
     },
     "[ruby]": {
         "editor.defaultFormatter": "Shopify.ruby-lsp",
@@ -44,12 +54,18 @@
         "editor.formatOnType": true,
         "editor.tabSize": 2,
         "editor.insertSpaces": true,
-        "files.trimTrailingWhitespace": true,
-        "files.insertFinalNewline": true,
-        "files.trimFinalNewlines": true,
         "editor.rulers": [
             120
         ],
         "editor.semanticHighlighting.enabled": true
-    }
+    },
+    "projectManager.git.baseFolders": [
+        "~/code/"
+    ],
+    "workbench.startupEditor": "none",
+    "editor.smoothScrolling": true,
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.scrollbar.vertical": "hidden",
+    "editor.minimap.renderCharacters": false,
+    "editor.snippetSuggestions": "top"}
 }
