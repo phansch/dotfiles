@@ -1,18 +1,16 @@
 {
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": true,
-    "workbench.colorTheme": "Spinel",
+    "workbench.colorTheme": "Dracula",
     // My monospace font is configured via fontconfig
     "editor.fontFamily": "'monospace', monospace",
     "update.showReleaseNotes": false,
     "telemetry.telemetryLevel": "off",
     "files.exclude": {
-        "**/*.chopper.dart": true,
-        "**/*.g.dart": true,
         "**/target": true
     },
     "workbench.editor.showTabs": "single",
-    "vscode-neovim.neovimExecutablePaths.linux": "/opt/homebrew/bin/nvim",
+    "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
     "cSpell.userWords": [
@@ -29,13 +27,9 @@
     ],
     "rust-analyzer.rustcSource": "discover",
     "rust-analyzer.updates.channel": "nightly",
-    "dart.lineLength": 120,
-    "dart.openDevTools": "flutter",
     "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
     "editor.accessibilitySupport": "off",
     "files.insertFinalNewline": true,
-    "dart.debugExternalPackageLibraries": true,
-    "dart.debugSdkLibraries": false,
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
     },
