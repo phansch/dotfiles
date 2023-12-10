@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 MAINTAINER Philipp Hansch <dev@phansch.net>
 
 ENV USER root
