@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 MAINTAINER Philipp Hansch <dev@phansch.net>
 
 ENV USER root
@@ -14,8 +14,7 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selectio
 # Install extra test dependencies
 RUN apt-get update -qq && apt-get install -y -qq --no-install-recommends \
     shellcheck \
-    yamllint \
-    udev
+    yamllint
 
 COPY . /code
 WORKDIR /code

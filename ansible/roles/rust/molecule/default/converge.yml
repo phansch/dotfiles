@@ -8,6 +8,7 @@
           - libdbus-glib-1-dev
           - libssl-dev
         state: present
+        update_cache: true
 
 - name: Converge
   hosts: all

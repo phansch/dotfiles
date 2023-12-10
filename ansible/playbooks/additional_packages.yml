@@ -21,9 +21,7 @@
           - xfce4-screenshooter
           - jq
           - redshift
-          - ctags
           - krita
-          - clementine
         state: present
         update_cache: true
     - name: Remove shutter

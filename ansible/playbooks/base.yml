@@ -12,7 +12,7 @@
         repo: '{{ item }}'
       with_items:
         - ppa:neovim-ppa/unstable
-        - ppa:mmstick76/alacritty
+        - ppa:aslatter/ppa
     - name: Install base packages
       apt:
         pkg:
