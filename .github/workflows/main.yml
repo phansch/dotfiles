@@ -53,6 +53,11 @@ jobs:
           # cd ansible/roles/i3 && molecule test && cd -
           cd ansible/roles/rust && molecule test && cd -
 
+      - uses: sarisia/actions-status-discord@v1
+        if: failure()
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+
   molecule-2:
     runs-on: ubuntu-latest
     steps:
@@ -78,6 +83,11 @@ jobs:
 
           cd ansible/roles/github_cli && molecule test && cd -
 
+      - uses: sarisia/actions-status-discord@v1
+        if: failure()
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+
   lints:
     runs-on: ubuntu-latest
     steps:
@@ -93,6 +103,11 @@ jobs:
             # shellcheck disable=SC1091
             source .venv/bin/activate && ./test/vim && ./test/yaml && ./test/shellcheck"
 
+      - uses: sarisia/actions-status-discord@v1
+        if: failure()
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+
   full-setup-test:
     runs-on: ubuntu-20.04
     steps:
@@ -105,3 +120,8 @@ jobs:
         run: |
           # shellcheck disable=SC1091
           docker run dotfiles /bin/bash -c "./setup -a && source .venv/bin/activate && ./test/ansible && ./test/i3"
+
+      - uses: sarisia/actions-status-discord@v1
+        if: failure()
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
