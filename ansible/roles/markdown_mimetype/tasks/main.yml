@@ -4,6 +4,7 @@
 - name: Ensure shared-mime-info is installed
   become: false
   apt:
+    update_cache: true
     pkg:
       - shared-mime-info
 - name: Prepare markdown mimetype directory

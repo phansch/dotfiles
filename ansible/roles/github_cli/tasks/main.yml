@@ -5,6 +5,7 @@
       - curl
       - jq
     state: present
+    update_cache: true
 - name: Get latest release URL
   shell: |
     curl -s https://api.github.com/repos/cli/cli/releases/latest \

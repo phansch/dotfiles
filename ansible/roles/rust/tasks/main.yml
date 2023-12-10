@@ -2,6 +2,7 @@
 - name: Install curl
   become: true
   apt:
+    update_cache: true
     pkg:
       - curl
 - name: Install rustup
