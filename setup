@@ -51,8 +51,9 @@ bootstrap()
   source .venv/bin/activate
 
   print_message "[setup] Installing requirements.txt: ansible, molecule..."
+  echo "cython<3" > /tmp/constraint.txt
   python3 -m pip install wheel
-  python3 -m pip install -r requirements.txt
+  PIP_CONSTRAINT=/tmp/constraint.txt python3 -m pip install -r requirements.txt
   pip3 uninstall -y testinfra
   pip3 install testinfra
 
