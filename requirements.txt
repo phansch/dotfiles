@@ -1,6 +1,6 @@
 molecule[docker]==3.5.2
 pytest-testinfra==10.0.0
-ansible==4.8.0
+ansible==8.7.0
 ansible-lint
 docker==7.0.0
 jmespath==1.0.1
