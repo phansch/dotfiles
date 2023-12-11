@@ -212,6 +212,7 @@ bar {
   status_command ~/.cargo/bin/i3status-rs ~/.config/i3status-rust/config.toml
   position bottom
   modifier $mod
+  mode hide
   tray_output primary
 
   colors {
