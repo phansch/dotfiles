@@ -67,5 +67,7 @@
     "editor.scrollbar.horizontal": "hidden",
     "editor.scrollbar.vertical": "hidden",
     "editor.minimap.renderCharacters": false,
-    "editor.snippetSuggestions": "top"}
+    "editor.snippetSuggestions": "top",
+    "workbench.activityBar.location": "hidden",
+    "breadcrumbs.enabled": false
 }
