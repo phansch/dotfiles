@@ -8,6 +8,7 @@
       shell: stow {{ item }} --target=$HOME/ --dir=$HOME/.dotfiles
       with_items:
         - alacritty
+        - autorandr
         - bin
         - davfs2
         - fonts
@@ -18,7 +19,6 @@
         - notify
         - redshift
         - ruby
-        - screen
         - tmux
         - vim
         - x

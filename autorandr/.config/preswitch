@@ -1,0 +1,3 @@
+#!/bin/bash
+
+setxkbmap -layout us && killall xbindkeys && xbindkeys
