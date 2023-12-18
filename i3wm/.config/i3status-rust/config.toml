@@ -1,14 +1,15 @@
+icons_format = "{icon}"
+
+[theme]
 theme = "slick"
-icons = "awesome"
+
+[icons]
+icons = "awesome6"
 
 [[block]]
 block = "pomodoro"
-length = 25
-break_length = 5
 message = "Take a break!"
 break_message = "Back to work!"
-use_nag = true
-nag_path = "i3-nagbar"
 
 [[block]]
 block = "sound"
@@ -16,4 +17,5 @@ block = "sound"
 [[block]]
 block = "time"
 interval = 60
-format = "%a %d.%m, %R"
+[block.format]
+full = " $icon $timestamp.datetime(f:'%a %d.%m, %R') "
