@@ -31,16 +31,11 @@
         state: absent
         update_cache: true
 
-    - name: Create tmp download dir
-      file: path=/tmp/ansible-debs state=directory
-    - name: Install additional deb packages
-      apt: deb={{ item }} state=present
-      with_items:
-        - https://go.skype.com/skypeforlinux-64.deb
     - name: Setup various ppa repositories
-      shell: add-apt-repository -y {{ item }}
+      command: add-apt-repository -y {{ item }}
       with_items:
         - ppa:git-core/ppa
+      changed_when: false
     - name: Install packages from ppas
       apt:
         pkg:
@@ -53,6 +48,7 @@
         remote_src: yes
     - name: Rename extracted folder
       command: mv --no-clobber /opt/anki-2.1.35-linux-amd64 /opt/anki
+      changed_when: false
     - name: Symlink moved anki executable
       file:
         src: /opt/anki/bin/anki
