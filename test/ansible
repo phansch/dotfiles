@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -x
+set -eux
 
 ansible-galaxy role install -r ansible/requirements.yml --force
 ansible-playbook ansible/playbooks/*.yml --syntax-check

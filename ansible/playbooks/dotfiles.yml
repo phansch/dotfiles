@@ -23,12 +23,13 @@
         - vim
         - x
         - zsh
+      changed_when: false
     - name: check for ~/.xinitrc
       stat: path=~/.xinitrc
       register: xinitrc_presence
     - name: fail if ~/.xinitrc not created
       fail: msg="~/.xinitrc was not created by stow"
-      when: xinitrc_presence.stat.exists == false
+      when: not xinitrc_presence.stat.exists
     - name: Create ~/.fonts directory
       file: path=~/.fonts state=directory
     - name: Download Source Code Pro font
@@ -36,4 +37,5 @@
       get_url: url=https://github.com/adobe-fonts/source-code-pro/releases/download/variable-fonts/SourceCodeVariable-Roman.ttf?raw=true
         dest=~/.fonts/
     - name: Refresh font cache
-      shell: fc-cache -f
+      command: fc-cache -f
+      changed_when: false
