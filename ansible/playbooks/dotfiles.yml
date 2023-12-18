@@ -30,8 +30,11 @@
     - name: fail if ~/.xinitrc not created
       fail: msg="~/.xinitrc was not created by stow"
       when: not xinitrc_presence.stat.exists
+
+    # FIXME: move to ~/.local/share/fonts directory and figure out correct permissions
     - name: Create ~/.fonts directory
-      file: path=~/.fonts state=directory
+      file: path=~/.fonts state=directory  # noqa risky-file-permissions
+
     - name: Download Source Code Pro font
       # yamllint disable-line rule:line-length
       get_url: url=https://github.com/adobe-fonts/source-code-pro/releases/download/variable-fonts/SourceCodeVariable-Roman.ttf?raw=true

@@ -4,8 +4,4 @@ set -eux
 
 ansible-galaxy role install -r ansible/requirements.yml --force
 ansible-playbook ansible/playbooks/*.yml --syntax-check
-ansible-lint -p ansible/playbooks/*.yml
-ansible-lint -p ansible/roles/github_cli
-ansible-lint -p ansible/roles/rust
-ansible-lint -p ansible/roles/i3
-ansible-lint -p ansible/roles/markdown_mimetype
+ansible-lint -p ansible/playbooks/*.yml ansible/roles/github_cli ansible/roles/rust ansible/roles/i3 ansible/roles/markdown_mimetype
