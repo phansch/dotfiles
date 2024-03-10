@@ -1,6 +1,14 @@
 # Start dmenu
-"dmenu_run -f -i -fn 'Ubuntu Mono' -p 'run:' -nb '#282a36' -nf '#bd93f9' -sb '#bd93f9' -sf '#282a36'"
+#"dmenu_run -f -i -fn 'Ubuntu Mono' -p 'run:' -nb '#282a36' -nf '#bd93f9' -sb '#bd93f9' -sf '#282a36'"
+"rofi -lines 10 -theme solarized -show drun"
   Mod4 + d
+
+# Launches a DDG search and activates the browser workspace.
+#
+# Sometimes the i3 socket can't be found automatically, so there's a small
+# workaround here as well.
+"rofi -lines 10 -theme solarized -show search -modi search:/home/phansch/.bin/rofi-web-search.py -i -p \"Search: \" && i3-msg --socket \"/run/user/1000/i3/$(\ls -t /run/user/1000/i3/ | awk '{print $1}' | grep ipc | head -n 1)\" workspace 2:www"
+  Mod4 + s
 
 # Volume down
 "pactl set-sink-volume @DEFAULT_SINK@ -- -5% && pactl set-sink-mute @DEFAULT_SINK@ 0"
