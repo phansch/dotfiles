@@ -20,9 +20,9 @@ set $warning #ff5555
 font pango:monospace
 
 # class                 border  backgr. text    indicator child_border
-client.focused          $border $background $foreground #ffffff   $border
+client.focused          $foreground $foreground $background #ffffff   $border
 client.focused_inactive $border $background $foreground #ffffff   $border
-client.unfocused        $border $background $foreground #ffffff   $border
+client.unfocused        $background $background $foreground #ffffff   $border
 client.background       #ffffff
 
 default_border pixel 5
@@ -35,6 +35,8 @@ floating_modifier $mod
 
 # Cycle between workspaces
 workspace_auto_back_and_forth yes
+
+title_align center
 
 # Keybindings
 
@@ -102,15 +104,10 @@ bindsym $mod+a focus parent
 
 bindsym $mod+x move workspace to output right
 
-# Scratchpad configuration
-bindsym $mod+minus [instance="Alacritty" title="scratchpad"] scratchpad show
-for_window [instance="Alacritty" title="scratchpad"] move scratchpad
-exec_always --no-startup-id alacritty --title "scratchpad" -e ~/.bin/scratchpad_start
-
 # ASSIGN WORKSPACE VARIABLES
 set $WS1 1:dev
 set $WS2 2:www
-set $WS3 3:anki
+set $WS3 3:notes
 set $WS4 4:media
 set $WS5 5:misc
 set $WS6 6:misc
@@ -212,7 +209,7 @@ bar {
   status_command ~/.cargo/bin/i3status-rs ~/.config/i3status-rust/config.toml
   position bottom
   modifier $mod
-  mode hide
+  mode dock
   tray_output primary
 
   colors {
