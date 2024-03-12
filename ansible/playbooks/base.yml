@@ -43,6 +43,8 @@
           - pulsemixer
           - fonts-noto-color-emoji
           - rofi
+          - xdg-utils
+          - desktop-file-utils
         state: present
 
     - name: Remove specific packages

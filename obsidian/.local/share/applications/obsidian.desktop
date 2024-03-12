@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Obsidian
+Exec=/home/phansch/Downloads/Obsidian.AppImage %u
+Terminal=false
+Type=Application
+StartupWMClass=obsidian
+Comment=Obsidian
+Categories=Office;
+MimeType=text/html;x-scheme-handler/obsidian;
