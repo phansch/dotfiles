@@ -16,6 +16,7 @@
         - gnupg
         - i3wm
         - notify
+        - obsidian
         - redshift
         - ruby
         - tmux
@@ -40,4 +41,9 @@
         dest=~/.fonts/
     - name: Refresh font cache
       command: fc-cache -f
+      changed_when: false
+
+    # Allow opening of obsidian:// URLs
+    - name: Update application cache for obsidian URL handling
+      command: update-desktop-database ~/.local/share/applications/
       changed_when: false
