@@ -13,6 +13,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " # Plugins that work in both VSCode and NeoVim:
 Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-surround'
 
 " Library dependencies
 Plug 'MarcWeber/vim-addon-mw-utils'
@@ -38,17 +39,16 @@ Plug 'dart-lang/dart-vim-plugin'
 if exists('g:vscode')
   " # Plugins that only work in VSCode
 else
-  " # Plugins that only work in NeoVim
+  " # Plugins that only work in or only make sense in NeoVim
 
   " Search and find
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
 
-  " Insert mode (NeoVim VSCode does not support insert mode stuff
+  " Insert mode (Some insert mode stuff isn't supported in NeoVim VSCode
   " because it's handed off to VSCode)
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-endwise'
-  Plug 'tpope/vim-surround'
   Plug 'tpope/vim-repeat'
   Plug 'jiangmiao/auto-pairs'
 
