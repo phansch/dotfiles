@@ -10,12 +10,15 @@ bindkey -e # emacs mode
 
 # History
 HISTSIZE=10000
-SAVEHIST=10000
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
 HISTFILE=~/.zsh/history
 setopt hist_verify
-setopt hist_ignore_dups
-setopt HIST_IGNORE_ALL_DUPS
+setopt hist_find_no_dups
+setopt hist_save_no_dups
+setopt hist_ignore_all_dups
 setopt hist_ignore_space
+setopt hist_ignore_dups
 setopt inc_append_history
 setopt share_history
 setopt extended_history
