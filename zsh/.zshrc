@@ -60,8 +60,9 @@ lazy_source () {
 
 source ~/.zsh/prompt
 source ~/.zsh/notifyosd.zsh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.aliases
-
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=7"
 clip() {
   cd ~/code/rust-clippy
 }
