@@ -12,4 +12,4 @@ ansible/roles/angstwad.docker_ubuntu/
 ansible/roles/geerlingguy.docker/
 *.pyc
 .nvimlog
-ncmpcpp/.ncmpcpp/error.log
+*.cast
