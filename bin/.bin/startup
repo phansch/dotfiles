@@ -28,7 +28,6 @@ mpd ~/.config/mpd/mpd.conf -v
 sensible-browser &
 alacritty &
 alacritty --class "pulsemixer" -e pulsemixer &
-clementine &
 blueman-applet &
 xfce4-power-manager &
 run_redshift.sh &
