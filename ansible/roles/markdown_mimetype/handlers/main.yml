@@ -1,3 +1,4 @@
 ---
 - name: Update mime database
-  command: update-mime-database ~/.local/share/mime
+  ansible.builtin.command: update-mime-database ~/.local/share/mime
+  changed_when: false # noqa no-changed-when

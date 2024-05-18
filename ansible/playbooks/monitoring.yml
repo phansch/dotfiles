@@ -1,11 +1,10 @@
 ---
-
-- hosts: localhost
+- name: Monitoring
+  hosts: localhost
   tasks:
     - name: Add check_ip script
-      become: yes
-      become_method: sudo
-      copy:
+      become: true
+      ansible.builtin.copy:
         # NOTE: I don't really like that the script is in the `playbooks`
         # directory. Ideally, this copy task would be its own role with more
         # checks.
@@ -17,7 +16,7 @@
     # 2. Have a user-space cron check (anacron?) to check the syslog for
     # check_ entries
     - name: Setup check_ip cron for RaspberryPI
-      cron:
+      ansible.builtin.cron:
         name: Check RaspberryPI connection
         minute: "*/2"
         job: /usr/local/bin/check_ip raspberrypi.local 2>&1 | /usr/bin/logger -t check_ip

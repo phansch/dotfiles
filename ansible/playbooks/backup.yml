@@ -1,18 +1,18 @@
 ---
-- hosts: localhost
+- name: Backup
+  hosts: localhost
   tasks:
     - name: Install borgbackup
       become: true
-      become_method: sudo
-      apt:
+      ansible.builtin.apt:
         pkg:
           - cron
           - borgbackup
-          - net-tools  # needed for `arp` package
+          - net-tools # needed for `arp` package
         state: present
 
     - name: Backup cron
-      cron:
+      ansible.builtin.cron:
         name: Backup
         minute: "0"
         hour: "9"

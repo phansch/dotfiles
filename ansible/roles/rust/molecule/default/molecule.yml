@@ -5,10 +5,8 @@ driver:
   name: docker
 platforms:
   - name: instance
-    image: ubuntu:latest
+    image: ubuntu:22.04
 provisioner:
   name: ansible
 verifier:
   name: testinfra
-  lint:
-    name: flake8

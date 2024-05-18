@@ -1,7 +1,7 @@
-molecule[docker]==3.5.2
+molecule==24.2.1
+molecule-plugins[docker]
 pytest-testinfra==10.1.0
-ansible==4.8.0
+ansible==9.5.1
 ansible-lint
 docker==7.0.0
-jmespath==1.0.1
 vim-vint==0.3.21

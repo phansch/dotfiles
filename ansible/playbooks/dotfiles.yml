@@ -1,11 +1,13 @@
 ---
-- hosts: localhost
+- name: Dotfiles
+  hosts: localhost
   tasks:
     - name: Install gnu-stow
-      become: yes
-      apt: pkg=stow
+      become: true
+      ansible.builtin.apt:
+        pkg: stow
     - name: Install dotfiles
-      shell: stow {{ item }} --target=$HOME/ --dir=$HOME/.dotfiles
+      ansible.builtin.shell: stow {{ item }} --target=$HOME/ --dir=$HOME/.dotfiles
       with_items:
         - alacritty
         - autorandr
@@ -24,26 +26,30 @@
         - x
         - zsh
       changed_when: false
-    - name: check for ~/.xinitrc
-      stat: path=~/.xinitrc
+    - name: Check for ~/.xinitrc
+      ansible.builtin.stat:
+        path: ~/.xinitrc
       register: xinitrc_presence
-    - name: fail if ~/.xinitrc not created
-      fail: msg="~/.xinitrc was not created by stow"
+    - name: Fail if ~/.xinitrc not created
+      ansible.builtin.fail:
+        msg: '"~/.xinitrc was not created by stow"'
       when: not xinitrc_presence.stat.exists
 
     # FIXME: move to ~/.local/share/fonts directory and figure out correct permissions
-    - name: Create ~/.fonts directory
-      file: path=~/.fonts state=directory  # noqa risky-file-permissions
-
+    - name: Create ~/.fonts directory # noqa risky-file-permissions
+      ansible.builtin.file:
+        path: ~/.fonts
+        state: directory
     - name: Download Source Code Pro font
-      # yamllint disable-line rule:line-length
-      get_url: url=https://github.com/adobe-fonts/source-code-pro/releases/download/variable-fonts/SourceCodeVariable-Roman.ttf?raw=true
-        dest=~/.fonts/
+      ansible.builtin.get_url: # noqa risky-file-permissions
+        # yamllint disable-line rule:line-length
+        url: "https://github.com/adobe-fonts/source-code-pro/releases/download/variable-fonts/SourceCodeVariable-Roman.ttf?raw=true"
+        dest: ~/.fonts/
     - name: Refresh font cache
-      command: fc-cache -f
+      ansible.builtin.command: fc-cache -f
       changed_when: false
 
     # Allow opening of obsidian:// URLs
     - name: Update application cache for obsidian URL handling
-      command: update-desktop-database ~/.local/share/applications/
+      ansible.builtin.command: update-desktop-database ~/.local/share/applications/
       changed_when: false

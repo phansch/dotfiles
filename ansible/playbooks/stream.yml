@@ -1,17 +1,17 @@
 ---
 # Various things to automate my streaming/video conf setup
-- hosts: localhost
-  become: yes
-  become_method: sudo
+- name: Streaming setup
+  hosts: localhost
+  become: true
   tasks:
     - name: Install obs
-      apt:
+      ansible.builtin.apt:
         pkg:
           - obs-studio
 
     # Used to forward audio from obs to other programs.
     # This way, noise filters can be applied to the audio input in OBS
     - name: Add a virtual sink output to pulseaudio
-      lineinfile:
-        path: "/etc/pulse/default.pa"
-        line: "load-module module-null-sink sink_name=Virtual_Sink sink_properties=device.description=Virtual_Sink"
+      ansible.builtin.lineinfile:
+        path: /etc/pulse/default.pa
+        line: load-module module-null-sink sink_name=Virtual_Sink sink_properties=device.description=Virtual_Sink
