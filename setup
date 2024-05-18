@@ -22,7 +22,7 @@ bootstrap()
     echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
   fi
   run_with_sudo apt-get update -qq
-  run_with_sudo apt-get install software-properties-common git wget curl python3-apt python3-pip python3-venv libdbus-glib-1-dev -qq
+  run_with_sudo apt-get install software-properties-common git wget curl python3-apt python3-pip python3-venv python-is-python3 libdbus-glib-1-dev -qq
 
   print_message "[setup] Upgrading and autocleaning packages..."
   run_with_sudo apt-get update -qq

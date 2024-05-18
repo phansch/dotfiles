@@ -72,10 +72,8 @@ jobs:
 
       - name: Test
         run: |
-          # yamllint disable-line rule:line-length
           docker run dotfiles /bin/bash -c "./setup -s && \
-            # shellcheck disable=SC1091
-            source .venv/bin/activate && ./test/vim && ./test/yaml && ./test/shellcheck"
+            ./test/vim && ./test/yaml && ./test/shellcheck"
 
       - uses: sarisia/actions-status-discord@v1
         if: failure()
@@ -93,7 +91,7 @@ jobs:
       - name: Test
         run: |
           # shellcheck disable=SC1091
-          docker run dotfiles /bin/bash -c "./setup -a && source .venv/bin/activate && ./test/ansible && ./test/i3"
+          docker run dotfiles /bin/bash -c "./setup -a && ./test/ansible && ./test/i3"
 
       - uses: sarisia/actions-status-discord@v1
         if: failure()
