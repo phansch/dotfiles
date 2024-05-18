@@ -1,6 +1,6 @@
 ---
 - name: Install curl and JQ
-  apt:
+  ansible.builtin.apt:
     pkg:
       - curl
       - jq
@@ -12,7 +12,7 @@
     | jq -r '.assets[] | select(.name | test("{{ file }}")) | .browser_download_url'
   args:
     executable: /bin/bash
-  retries: 3  # Sometimes the JSON contains just `null` instead of the URL
+  retries: 3 # Sometimes the JSON contains just `null` instead of the URL
   delay: 2
   register: download_url
   until: download_url.rc == 0
@@ -20,15 +20,15 @@
   tags:
     - skip_ansible_lint
 - name: Cleanup existing
-  file:
+  ansible.builtin.file:
     path: /tmp/gh_cli.deb
     state: absent
   changed_when: false
 - name: Download latest release
-  get_url:
+  ansible.builtin.get_url:
     url: "{{ download_url.stdout }}"
     dest: /tmp/gh_cli.deb
   changed_when: false
 - name: Install latest release
-  apt:
+  ansible.builtin.apt:
     deb: /tmp/gh_cli.deb

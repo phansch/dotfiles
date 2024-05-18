@@ -3,7 +3,7 @@
   hosts: all
   tasks:
     - name: Install required packages
-      apt:
+      ansible.builtin.apt:
         pkg:
           - libdbus-glib-1-dev
           - libssl-dev

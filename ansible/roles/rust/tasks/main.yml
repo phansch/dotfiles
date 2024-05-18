@@ -1,17 +1,17 @@
 ---
 - name: Install curl
   become: true
-  apt:
+  ansible.builtin.apt:
     update_cache: true
     pkg:
       - curl
       - libssl-dev
       - libsensors-dev
 - name: Install rustup
-  shell: curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh -s -- -y  # noqa 303 301 306
+  ansible.builtin.shell: curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh -s -- -y # noqa 303 301 306
   changed_when: false
 
 - name: Install extra cargo packages
-  shell: "~/.cargo/bin/cargo install {{ item }}"  # noqa 301 305 306
+  ansible.builtin.shell: ~/.cargo/bin/cargo install {{ item }} # noqa 301 305 306
   loop: "{{ extra_cargo_packages }}"
   changed_when: false

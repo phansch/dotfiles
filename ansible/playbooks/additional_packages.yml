@@ -14,7 +14,7 @@
       when: lookup('env', 'CI') == 'false'
   tasks:
     - name: Install additional apt packages
-      apt:
+      ansible.builtin.apt:
         pkg:
           - unclutter
           - xfce4-screenshooter
@@ -24,32 +24,32 @@
         state: present
         update_cache: true
     - name: Remove shutter
-      apt:
+      ansible.builtin.apt:
         pkg:
           - shutter
         state: absent
         update_cache: true
 
     - name: Setup various ppa repositories
-      command: add-apt-repository -y {{ item }}
+      ansible.builtin.command: add-apt-repository -y {{ item }}
       with_items:
         - ppa:git-core/ppa
       changed_when: false
     - name: Install packages from ppas
-      apt:
+      ansible.builtin.apt:
         pkg:
           - git
         update_cache: true
     - name: Anki Latest
-      unarchive:
+      ansible.builtin.unarchive:
         src: https://github.com/ankitects/anki/releases/download/2.1.35/anki-2.1.35-linux-amd64.tar.bz2
         dest: /opt
-        remote_src: yes
+        remote_src: true
     - name: Rename extracted folder
-      command: mv --no-clobber /opt/anki-2.1.35-linux-amd64 /opt/anki
+      ansible.builtin.command: mv --no-clobber /opt/anki-2.1.35-linux-amd64 /opt/anki
       changed_when: false
     - name: Symlink moved anki executable
-      file:
+      ansible.builtin.file:
         src: /opt/anki/bin/anki
         dest: /usr/bin/anki
         state: link

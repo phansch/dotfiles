@@ -1,20 +1,31 @@
 ---
-- name: Download package  # noqa 305
-  shell: >
+- name: Download package # noqa 305
+  ansible.builtin.shell: >
     /usr/lib/apt/apt-helper download-file
     https://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2021.02.02_all.deb
     /tmp/keyring.deb SHA256:cccfb1dd7d6b1b6a137bb96ea5b5eef18a0a4a6df1d6c0c37832025d2edaa710
   changed_when: false
 - name: Install keyring.deb
-  apt: deb=/tmp/keyring.deb
+  ansible.builtin.apt:
+    deb: /tmp/keyring.deb
+    cmd: ""
 - name: Add apt source
-  apt_repository: repo="deb http://debian.sur5r.net/i3/ {{ ansible_distribution_release }} universe"
+  ansible.builtin.apt_repository:
+    repo: '"deb'
+    cmd: http://debian.sur5r.net/i3/ {{ ansible_distribution_release }} universe"
 - name: Install i3
-  apt: update_cache=yes pkg=i3
+  ansible.builtin.apt:
+    update_cache: "yes"
+    pkg: i3
+    cmd: ""
 - name: Check if ~/.xinitrc exists
-  stat:
+  ansible.builtin.stat:
     path: ~/.xinitrc
   register: xinitrc_file
 - name: Link .xinitrc and .xsessionrc
-  file: state=link src=~/.xinitrc path=~/.xsessionrc
+  ansible.builtin.file:
+    state: link
+    src: ~/.xinitrc
+    path: ~/.xsessionrc
+    cmd: ""
   when: xinitrc_file.stat.exists
