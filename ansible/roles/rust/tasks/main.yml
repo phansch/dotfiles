@@ -10,12 +10,8 @@
 - name: Install rustup
   shell: curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh -s -- -y  # noqa 303 301 306
   changed_when: false
-  args:
-    warn: false
 
 - name: Install extra cargo packages
   shell: "~/.cargo/bin/cargo install {{ item }}"  # noqa 301 305 306
   loop: "{{ extra_cargo_packages }}"
   changed_when: false
-  args:
-    warn: false
