@@ -1,5 +1,2 @@
 ---
 - src: geerlingguy.docker
-- src: FGtatsuro.vagrant
-# - src: ferrarimarco.ruby-install
-# - src: ferrarimarco.chruby
