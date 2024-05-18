@@ -1,9 +1,9 @@
 ---
-- hosts: localhost
+- name: Backup
+  hosts: localhost
   tasks:
     - name: Install borgbackup
       become: true
-      become_method: sudo
       ansible.builtin.apt:
         pkg:
           - cron

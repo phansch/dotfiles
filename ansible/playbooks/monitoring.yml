@@ -1,9 +1,9 @@
 ---
-- hosts: localhost
+- name: Monitoring
+  hosts: localhost
   tasks:
     - name: Add check_ip script
       become: true
-      become_method: sudo
       ansible.builtin.copy:
         # NOTE: I don't really like that the script is in the `playbooks`
         # directory. Ideally, this copy task would be its own role with more

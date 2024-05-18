@@ -1,8 +1,8 @@
 ---
 # Various things to automate my streaming/video conf setup
-- hosts: localhost
+- name: Streaming setup
+  hosts: localhost
   become: true
-  become_method: sudo
   tasks:
     - name: Install obs
       ansible.builtin.apt:

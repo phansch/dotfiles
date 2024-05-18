@@ -8,10 +8,11 @@
       - libssl-dev
       - libsensors-dev
 - name: Install rustup
-  ansible.builtin.shell: curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh -s -- -y # noqa 303 301 306
+  # noqa no-changed-when command-instead-of-module risky-shell-pipe
+  ansible.builtin.shell: curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh -s -- -y
   changed_when: false
 
 - name: Install extra cargo packages
-  ansible.builtin.shell: ~/.cargo/bin/cargo install {{ item }} # noqa 301 305 306
-  loop: "{{ extra_cargo_packages }}"
+  ansible.builtin.shell: ~/.cargo/bin/cargo install {{ item }} # noqa no-changed-when command-instead-of-shell
+  loop: "{{ rust_extra_cargo_packages }}"
   changed_when: false

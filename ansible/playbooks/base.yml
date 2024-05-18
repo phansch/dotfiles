@@ -1,11 +1,11 @@
 ---
-- hosts: localhost
+- name: Base setup
+  hosts: localhost
   become: true
-  become_method: sudo
   roles:
     - role: github_cli
       vars:
-        file: linux_amd64.deb
+        github_cli_file: linux_amd64.deb
   tasks:
     - name: Add ppas
       ansible.builtin.apt_repository:
@@ -99,3 +99,4 @@
     - name: Make libsecret git credential helper
       ansible.builtin.command: make chdir=/usr/share/doc/git/contrib/credential/libsecret
       when: makefile_present.stat.exists
+      changed_when: false # noqa no-changed-when

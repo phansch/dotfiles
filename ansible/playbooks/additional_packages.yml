@@ -1,14 +1,13 @@
 ---
-- hosts: localhost
+- name: Additional Packages
+  hosts: localhost
   become: true
-  become_method: sudo
   roles:
     # - role: i3
     - role: rust
-      become: false
       vars:
-        extra_cargo_packages:
-          - "--git https://github.com/greshake/i3status-rust i3status-rs"
+        rust_extra_cargo_packages: []
+      become: false
     - role: markdown_mimetype
     - role: geerlingguy.docker
       when: lookup('env', 'CI') == 'false'

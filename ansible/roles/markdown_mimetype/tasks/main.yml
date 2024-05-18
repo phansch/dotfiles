@@ -26,7 +26,7 @@
 - name: Insert content into mimetype file
   become: false
   ansible.builtin.copy:
-    content: "{{ mime_content }}"
+    content: "{{ markdown_mimetype_mime_content }}"
     dest: ~/.local/share/mime/packages/text-markdown.xml
     mode: "0664"
   changed_when: false

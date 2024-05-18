@@ -1,5 +1,6 @@
 ---
-- hosts: localhost
+- name: Dotfiles
+  hosts: localhost
   tasks:
     - name: Install gnu-stow
       become: true
@@ -35,14 +36,15 @@
       when: not xinitrc_presence.stat.exists
 
     # FIXME: move to ~/.local/share/fonts directory and figure out correct permissions
-    - name: Create ~/.fonts directory
+    - name: Create ~/.fonts directory # noqa risky-file-permissions
       ansible.builtin.file:
         path: ~/.fonts
         state: directory
     - name: Download Source Code Pro font
-    # yamllint disable-line rule:line-length
-      ansible.builtin.get_url: url=https://github.com/adobe-fonts/source-code-pro/releases/download/variable-fonts/SourceCodeVariable-Roman.ttf?raw=true
-        dest=~/.fonts/
+      ansible.builtin.get_url: # noqa risky-file-permissions
+        # yamllint disable-line rule:line-length
+        url: "https://github.com/adobe-fonts/source-code-pro/releases/download/variable-fonts/SourceCodeVariable-Roman.ttf?raw=true"
+        dest: ~/.fonts/
     - name: Refresh font cache
       ansible.builtin.command: fc-cache -f
       changed_when: false

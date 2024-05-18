@@ -1,5 +1,5 @@
 ---
-- name: Download package # noqa 305
+- name: Download package # noqa command-instead-of-shell
   ansible.builtin.shell: >
     /usr/lib/apt/apt-helper download-file
     https://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2021.02.02_all.deb

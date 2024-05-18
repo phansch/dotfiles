@@ -15,4 +15,4 @@
   roles:
     - role: rust
       vars:
-        extra_cargo_packages: []
+        rust_extra_cargo_packages: []

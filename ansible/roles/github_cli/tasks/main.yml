@@ -9,7 +9,7 @@
 - name: Get latest release URL
   shell: |
     curl -s https://api.github.com/repos/cli/cli/releases/latest \
-    | jq -r '.assets[] | select(.name | test("{{ file }}")) | .browser_download_url'
+    | jq -r '.assets[] | select(.name | test("{{ github_cli_file }}")) | .browser_download_url'
   args:
     executable: /bin/bash
   retries: 3 # Sometimes the JSON contains just `null` instead of the URL
@@ -27,8 +27,14 @@
 - name: Download latest release
   ansible.builtin.get_url:
     url: "{{ download_url.stdout }}"
-    dest: /tmp/gh_cli.deb
+    # We remove the file at the end, so permissions shouldn't matter
+    dest: /tmp/gh_cli.deb # noqa risky-file-permissions
   changed_when: false
 - name: Install latest release
   ansible.builtin.apt:
     deb: /tmp/gh_cli.deb
+- name: Remove tmp file
+  ansible.builtin.file:
+    path: /tmp/gh_cli.deb
+    state: absent
+  changed_when: false
