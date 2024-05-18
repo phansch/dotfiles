@@ -5,7 +5,6 @@
       become: true
       ansible.builtin.apt:
         pkg: stow
-        cmd: ""
     - name: Install dotfiles
       ansible.builtin.shell: stow {{ item }} --target=$HOME/ --dir=$HOME/.dotfiles
       with_items:
@@ -29,7 +28,6 @@
     - name: Check for ~/.xinitrc
       ansible.builtin.stat:
         path: ~/.xinitrc
-        cmd: ""
       register: xinitrc_presence
     - name: Fail if ~/.xinitrc not created
       ansible.builtin.fail:
@@ -41,10 +39,9 @@
       ansible.builtin.file:
         path: ~/.fonts
         state: directory
-        cmd: ""
     - name: Download Source Code Pro font
-      # yamllint disable-line rule:line-length
-      get_url: url=https://github.com/adobe-fonts/source-code-pro/releases/download/variable-fonts/SourceCodeVariable-Roman.ttf?raw=true
+    # yamllint disable-line rule:line-length
+      ansible.builtin.get_url: url=https://github.com/adobe-fonts/source-code-pro/releases/download/variable-fonts/SourceCodeVariable-Roman.ttf?raw=true
         dest=~/.fonts/
     - name: Refresh font cache
       ansible.builtin.command: fc-cache -f

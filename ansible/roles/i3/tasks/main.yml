@@ -8,7 +8,6 @@
 - name: Install keyring.deb
   ansible.builtin.apt:
     deb: /tmp/keyring.deb
-    cmd: ""
 - name: Add apt source
   ansible.builtin.apt_repository:
     repo: '"deb'
@@ -17,7 +16,6 @@
   ansible.builtin.apt:
     update_cache: "yes"
     pkg: i3
-    cmd: ""
 - name: Check if ~/.xinitrc exists
   ansible.builtin.stat:
     path: ~/.xinitrc
@@ -27,5 +25,4 @@
     state: link
     src: ~/.xinitrc
     path: ~/.xsessionrc
-    cmd: ""
   when: xinitrc_file.stat.exists

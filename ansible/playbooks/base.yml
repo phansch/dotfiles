@@ -95,7 +95,6 @@
     - name: Check for libsecret Makefile
       ansible.builtin.stat:
         path: /usr/share/doc/git/contrib/credential/libsecret/Makefile
-        cmd: ""
       register: makefile_present
     - name: Make libsecret git credential helper
       ansible.builtin.command: make chdir=/usr/share/doc/git/contrib/credential/libsecret
