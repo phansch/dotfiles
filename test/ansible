@@ -2,6 +2,6 @@
 
 set -eux
 
-ansible-galaxy role install -r ansible/requirements.yml --force
-ansible-playbook ansible/playbooks/*.yml --syntax-check
-ansible-lint -p ansible/playbooks/*.yml ansible/roles/github_cli ansible/roles/rust ansible/roles/i3 ansible/roles/markdown_mimetype
+poetry run ansible-galaxy role install -r ansible/requirements.yml --force
+poetry run ansible-playbook ansible/playbooks/*.yml --syntax-check
+poetry run ansible-lint -p ansible/playbooks/*.yml ansible/roles/github_cli ansible/roles/rust ansible/roles/i3 ansible/roles/markdown_mimetype

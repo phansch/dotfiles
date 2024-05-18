@@ -29,27 +29,15 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v4
-
-      # Runs a single command using the runners shell
-      - name: Install
-        run: |
-          pip3 install virtualenv
-          virtualenv virtenv
-          # shellcheck disable=SC1091
-          source virtenv/bin/activate
-
-          pip3 install -r requirements.txt
-          pip3 uninstall -y testinfra
-          pip3 install testinfra
-
+      - name: Install poetry
+        uses: abatilo/actions-poetry@v2
+      - name: Install packages
+        run: poetry install
       - name: Test
         run: |
-          # shellcheck disable=SC1091
-          source virtenv/bin/activate
-
-          cd ansible/roles/markdown_mimetype && molecule test && cd -
+          cd ansible/roles/markdown_mimetype && poetry run molecule test && cd -
           # cd ansible/roles/i3 && molecule test && cd -
-          cd ansible/roles/rust && molecule test && cd -
+          cd ansible/roles/rust && poetry run molecule test && cd -
 
       - uses: sarisia/actions-status-discord@v1
         if: failure()
@@ -61,23 +49,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v4
-      - name: Install
-        run: |
-          pip3 install virtualenv
-          virtualenv virtenv
-          # shellcheck disable=SC1091
-          source virtenv/bin/activate
-
-          pip3 install -r requirements.txt
-          pip3 uninstall -y testinfra
-          pip3 install testinfra
-
+      - name: Install poetry
+        uses: abatilo/actions-poetry@v2
+      - name: Install packages
+        run: poetry install
       - name: Test
         run: |
-          # shellcheck disable=SC1091
-          source virtenv/bin/activate
-
-          cd ansible/roles/github_cli && molecule test && cd -
+          cd ansible/roles/github_cli && poetry run molecule test && cd -
 
       - uses: sarisia/actions-status-discord@v1
         if: failure()
