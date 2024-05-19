@@ -1,7 +1,0 @@
-molecule==24.2.1
-molecule-plugins[docker]
-pytest-testinfra==10.1.0
-ansible==9.5.1
-ansible-lint
-docker==7.0.0
-vim-vint==0.3.21

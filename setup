@@ -22,7 +22,7 @@ bootstrap()
     echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
   fi
   run_with_sudo apt-get update -qq
-  run_with_sudo apt-get install software-properties-common git wget python3-apt python3-pip python3-venv libdbus-glib-1-dev -qq
+  run_with_sudo apt-get install software-properties-common git wget curl python3-apt python3-pip python3-venv python-is-python3 libdbus-glib-1-dev -qq
 
   print_message "[setup] Upgrading and autocleaning packages..."
   run_with_sudo apt-get update -qq
@@ -45,31 +45,24 @@ bootstrap()
   print_message "[setup] Version info"
   python3 -V
   pip3 -V
-  print_message "[setup] Creating virtual env..."
-  python3 -m venv .venv
-  # shellcheck disable=SC1091
-  source .venv/bin/activate
+  print_message "[setup] Install poetry..."
+  curl -sSL https://install.python-poetry.org | python3 -
 
-  print_message "[setup] Installing requirements.txt: ansible, molecule..."
-  echo "cython<3" > /tmp/constraint.txt
-  python3 -m pip install wheel
-  PIP_CONSTRAINT=/tmp/constraint.txt python3 -m pip install -r requirements.txt
-  pip3 uninstall -y testinfra
-  pip3 install testinfra
+  poetry="$HOME/.local/bin/poetry"
 
-  # Not exactly sure who I have to reload the env here.. Otherwise
-  # `ansible-galaxy` fails immediately with an invalid interpreter error.
-  # shellcheck disable=SC1091
-  source .venv/bin/activate
+  $poetry env info
 
-  ansible-galaxy install -r ansible/requirements.yml --force
+  print_message "[setup] Setting up venv and deps w/ poetry..."
+  $poetry install
+
+  $poetry run ansible-galaxy install -r ansible/requirements.yml --force
 
   default_playbooks=(
     ansible/playbooks/base.yml
     ansible/playbooks/dotfiles.yml
   )
   print_message "[setup] Running default playbooks..."
-  ansible-playbook "${default_playbooks[@]}" --ask-become-pass -u "$USER"
+  $poetry run ansible-playbook "${default_playbooks[@]}" --ask-become-pass -u "$USER"
 
   additional_playbooks=(
     ansible/playbooks/additional_packages.yml
@@ -80,7 +73,7 @@ bootstrap()
   cmd="ansible-playbook ${additional_playbooks[*]} --ask-become-pass -u $USER"
   if [ "$1" = "true" ] ; then
     print_message "[setup] Running all additional playbooks"
-    ansible-playbook "${additional_playbooks[@]}" --ask-become-pass -u "$USER"
+    $poetry run ansible-playbook "${additional_playbooks[@]}" --ask-become-pass -u "$USER"
   else
     print_message "[setup] To run the rest of the playbooks:"
     print_message "$cmd"

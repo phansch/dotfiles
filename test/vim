@@ -2,4 +2,4 @@
 
 set -x
 
-bash -c "vint vim/.config/nvim/init.vim"
+bash -c "$HOME/.local/bin/poetry run vint vim/.config/nvim/init.vim"

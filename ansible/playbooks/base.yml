@@ -81,8 +81,8 @@
       ansible.builtin.command: update-alternatives --install /usr/bin/python python /usr/bin/python3 10
       changed_when: false
     - name: Install python packages for neovim
-      ansible.builtin.pip:
-        name: neovim
+      ansible.builtin.apt:
+        pkg: python3-neovim
 
     # Integrate git with libsecret
     - name: Install libsecret
