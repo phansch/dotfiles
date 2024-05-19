@@ -5,7 +5,7 @@ driver:
   name: docker
 platforms:
   - name: instance
-    image: ubuntu:22.04
+    image: ubuntu:24.04
 provisioner:
   name: ansible
 verifier:
