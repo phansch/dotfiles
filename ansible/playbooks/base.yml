@@ -13,10 +13,11 @@
       with_items:
         - ppa:neovim-ppa/unstable
         - ppa:aslatter/ppa
-    - name: Install base packages
+    - name: Install base APT packages
       ansible.builtin.apt:
         pkg:
           - alacritty
+          - autorandr
           - build-essential
           - cmake
           - libglib2.0-dev
@@ -47,7 +48,7 @@
           - desktop-file-utils
         state: present
 
-    - name: Remove specific packages
+    - name: Remove specific APT packages
       ansible.builtin.apt:
         pkg:
           - dc

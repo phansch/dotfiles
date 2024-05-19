@@ -22,6 +22,7 @@
           - krita
         state: present
         update_cache: true
+
     - name: Remove shutter
       ansible.builtin.apt:
         pkg:
@@ -34,19 +35,23 @@
       with_items:
         - ppa:git-core/ppa
       changed_when: false
+
     - name: Install packages from ppas
       ansible.builtin.apt:
         pkg:
           - git
         update_cache: true
+
     - name: Anki Latest
       ansible.builtin.unarchive:
         src: https://github.com/ankitects/anki/releases/download/2.1.35/anki-2.1.35-linux-amd64.tar.bz2
         dest: /opt
         remote_src: true
+
     - name: Rename extracted folder
       ansible.builtin.command: mv --no-clobber /opt/anki-2.1.35-linux-amd64 /opt/anki
       changed_when: false
+
     - name: Symlink moved anki executable
       ansible.builtin.file:
         src: /opt/anki/bin/anki
