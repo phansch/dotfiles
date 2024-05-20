@@ -36,7 +36,7 @@ jobs:
       - name: Test
         run: |
           cd ansible/roles/markdown_mimetype && poetry run molecule test && cd -
-          # cd ansible/roles/i3 && molecule test && cd -
+          cd ansible/roles/i3 && poetry run molecule test && cd -
           cd ansible/roles/rust && poetry run molecule test && cd -
 
       - uses: sarisia/actions-status-discord@v1

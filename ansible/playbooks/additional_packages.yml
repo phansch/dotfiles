@@ -3,7 +3,7 @@
   hosts: localhost
   become: true
   roles:
-    # - role: i3
+    - role: i3
     - role: rust
       vars:
         rust_extra_cargo_packages: []
