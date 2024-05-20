@@ -3,7 +3,7 @@
   hosts: localhost
   become: true
   roles:
-    # - role: i3
+    - role: i3
     - role: rust
       vars:
         rust_extra_cargo_packages: []
@@ -15,6 +15,8 @@
     - name: Install additional apt packages
       ansible.builtin.apt:
         pkg:
+          - calibre
+          - flatpak
           - unclutter
           - xfce4-screenshooter
           - jq
@@ -22,6 +24,11 @@
           - krita
         state: present
         update_cache: true
+
+    - name: Add flatpak flathub repository
+      # yamllint disable-line rule:line-length
+      ansible.builtin.command: flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+      changed_when: false
 
     - name: Remove shutter
       ansible.builtin.apt:
@@ -57,3 +64,21 @@
         src: /opt/anki/bin/anki
         dest: /usr/bin/anki
         state: link
+
+    - name: Install Steam
+      ansible.builtin.apt:
+        deb: https://cdn.cloudflare.steamstatic.com/client/installer/steam.deb
+      tags:
+        - games
+
+    - name: Install Lutris
+      community.general.flatpak:
+        name: net.lutris.Lutris
+        state: present
+      tags:
+        - games
+
+    - name: Install Pika backup
+      community.general.flatpak:
+        name: org.gnome.World.PikaBackup
+        state: present
