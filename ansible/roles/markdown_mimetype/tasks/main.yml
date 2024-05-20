@@ -2,7 +2,7 @@
 # NOTE: We need `become: false` here, otherwise the files would be installed
 # for the root user.
 - name: Ensure shared-mime-info is installed
-  become: false
+  become: true
   ansible.builtin.apt:
     update_cache: true
     pkg:
