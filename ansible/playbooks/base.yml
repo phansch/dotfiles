@@ -22,6 +22,7 @@
           - cmake
           - libglib2.0-dev
           - libssl-dev
+          - lxappearance
           - xsel
           - xclip
           - xbindkeys
@@ -57,6 +58,13 @@
           - thunderbird
           - pidgin
         state: absent
+
+    - name: Install Snap packages
+      community.general.snap:
+        name:
+          - code
+          - obsidian
+        classic: true
 
     - name: Set zsh as default shell
       ansible.builtin.user:
