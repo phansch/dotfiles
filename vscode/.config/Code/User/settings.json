@@ -68,6 +68,13 @@
     "editor.scrollbar.vertical": "hidden",
     "editor.minimap.renderCharacters": false,
     "editor.snippetSuggestions": "top",
-    "workbench.activityBar.location": "hidden",
-    "breadcrumbs.enabled": false
+    "workbench.activityBar.location": "bottom",
+    "breadcrumbs.enabled": false,
+    "window.menuBarVisibility": "toggle",
+    "terminal.integrated.scrollback": 10000,
+    "remote.SSH.useLocalServer": false,
+    "window.customTitleBarVisibility": "auto",
+    "cSpell.ignoreWords": [
+        "parsedate"
+    ]
 }
