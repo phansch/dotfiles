@@ -13,3 +13,4 @@ ansible/roles/geerlingguy.docker/
 *.pyc
 .nvimlog
 *.cast
+*.cache
