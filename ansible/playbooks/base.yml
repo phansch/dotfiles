@@ -47,6 +47,7 @@
           - rofi
           - xdg-utils
           - desktop-file-utils
+          - snapd
         state: present
 
     - name: Remove specific APT packages
