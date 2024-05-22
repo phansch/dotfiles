@@ -72,6 +72,11 @@
         shell: /bin/zsh
         append: true
 
+    - name: Setup zsh-autosuggestions
+      ansible.builtin.git:
+        repo: https://github.com/zsh-users/zsh-autosuggestions
+        dest: "{{ lookup('env', 'HOME') }}/.zsh/zsh-autosuggestions"
+
     - name: Set nvim as vi alternative
       ansible.builtin.command: update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
       changed_when: false
