@@ -143,15 +143,10 @@ bindsym $mod+Shift+0 move container to workspace 10
 ## Move to workspace
 assign [class="^Firefox|Nightly$"] $WS2
 assign [class="^Anki$"] $WS3
-assign [title="irssi"] $WS9
-assign [class="Skype*"] $WS9
+assign [class="obsidian"] $WS3
 assign [class="Slack"] $WS9
-assign [class="Pidgin"] $WS9
-assign [title="Messenger"] $WS9
-assign [class="Pavucontrol"] $WS4
 assign [class="vlc"] $WS4
 assign [class="pulsemixer"] $WS4
-assign [class="Clementine"] $WS4
 # Alacritty has to come last, because otherwise it would move pulsemixer to
 # WS1 as well
 assign [title="Alacritty"] $WS1
@@ -161,16 +156,12 @@ for_window [class="^Firefox|Nightly$" title="^Library$"] floating enable
 for_window [class="^Firefox|Nightly$" window_role="^Preferences$"] floating enable
 for_window [class="^Anki$"] floating enable, border normal, move absolute position center
 for_window [title="xfce4-notifyd|Volume Control"] floating enable
-for_window [class="^Shutter$"] floating enable, border normal
 for_window [class="Thunar"] floating enable
-for_window [title="Android Emulator"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [class="xfce4-notifyd"] floating enable
-for_window [class="deja-dup|Deja-dup"] floating enable
-for_window [class="Pidgin"] floating enable
 for_window [title="Bluetooth"] floating enable, border none, move absolute position center
 for_window [class="ile-roller$"] floating enable, border none, move absolute position center
-for_window [class="pavucontrol"] floating enable, border none
+for_window [class="pulsemixer"] floating enable, border none, move absolute position center
 for_window [class="vlc"] floating enable, move absolute position center
 
 # Autostart

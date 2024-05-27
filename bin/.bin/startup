@@ -24,10 +24,10 @@ else
   ~/.screenlayout/home_default.sh
 fi
 
-mpd ~/.config/mpd/mpd.conf -v
 sensible-browser &
 alacritty &
 alacritty --class "pulsemixer" -e pulsemixer &
 blueman-applet &
 xfce4-power-manager &
 run_redshift.sh &
+obsidian &
