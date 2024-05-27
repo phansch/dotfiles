@@ -7,6 +7,10 @@
       vars:
         github_cli_file: linux_amd64.deb
   tasks:
+    # Needed to skip snap installation in docker container
+    - name: Get facts on current container, if any
+      community.docker.current_container_facts:
+
     - name: Add ppas
       ansible.builtin.apt_repository:
         repo: "{{ item }}"
@@ -47,6 +51,7 @@
           - rofi
           - xdg-utils
           - desktop-file-utils
+          - snapd
         state: present
 
     - name: Remove specific APT packages
@@ -65,12 +70,22 @@
           - code
           - obsidian
         classic: true
+      when: not ansible_module_running_in_container
 
     - name: Set zsh as default shell
       ansible.builtin.user:
         name: "{{ lookup('env', 'USER') }}"
         shell: /bin/zsh
         append: true
+
+    - name: Setup zsh-autosuggestions
+      ansible.builtin.git:
+        repo: https://github.com/zsh-users/zsh-autosuggestions
+        dest: "{{ lookup('env', 'HOME') }}/.zsh/zsh-autosuggestions"
+        update: false
+        single_branch: yes
+        version: v0.7.0
+      changed_when: false
 
     - name: Set nvim as vi alternative
       ansible.builtin.command: update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
