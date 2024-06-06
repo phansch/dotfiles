@@ -2,17 +2,17 @@
 
 [[package]]
 name = "ansible"
-version = "9.5.1"
+version = "10.0.1"
 description = "Radically simple IT automation"
 optional = false
 python-versions = ">=3.10"
 files = [
-    {file = "ansible-9.5.1-py3-none-any.whl", hash = "sha256:aed2f4208a75836a27c13555ec5d8d942fe3b089a8b1fc44e8234fadd9e649fd"},
-    {file = "ansible-9.5.1.tar.gz", hash = "sha256:3c278bc9642b97fc953b2ba05b99cd80801e75bf3567dfaa1cb5131fe0ec1ecd"},
+    {file = "ansible-10.0.1-py3-none-any.whl", hash = "sha256:3134f502173fff84f323e988ded2dc1b0bebdf08d4a9f74d582c4faea00ef03b"},
+    {file = "ansible-10.0.1.tar.gz", hash = "sha256:b2ab79d54883837f3c5b9b95fd779dff76e5fc5d9ef8555c969575ed24f9f2e1"},
 ]
 
 [package.dependencies]
-ansible-core = ">=2.16.6,<2.17.0"
+ansible-core = ">=2.17.0,<2.18.0"
 
 [[package]]
 name = "ansible-compat"
@@ -38,13 +38,13 @@ test = ["coverage", "pip-tools", "pytest (>=7.2.0)", "pytest-mock", "pytest-plus
 
 [[package]]
 name = "ansible-core"
-version = "2.16.6"
+version = "2.17.0"
 description = "Radically simple IT automation"
 optional = false
 python-versions = ">=3.10"
 files = [
-    {file = "ansible_core-2.16.6-py3-none-any.whl", hash = "sha256:f9dea5044a86fd95cc27099f4f5c3ae9beb23acf7c3b6331455726c47825922b"},
-    {file = "ansible_core-2.16.6.tar.gz", hash = "sha256:111e55d358c2297ec0ce03ba98e6c5ce95947fdf50d878215eb8c183d0c275e4"},
+    {file = "ansible_core-2.17.0-py3-none-any.whl", hash = "sha256:a5de008985cd51eb01599cf1a14d3b45f917095ac6cdab867b0d11c3f922c343"},
+    {file = "ansible_core-2.17.0.tar.gz", hash = "sha256:bd16e30ecac405dac594de3e1b1b4d9cc6fa1a9f7a01a6a8d4c471b20660716d"},
 ]
 
 [package.dependencies]
@@ -1362,4 +1362,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "jaraco.test", "more
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "e206fb6a67167db814b7d337af9d60683f9b6578e21b831b278bc2123e9bd4a6"
+content-hash = "826a7f643151756fa369fec013f69f0a5d6d793fd0c4fba8751a2da51a53c175"
