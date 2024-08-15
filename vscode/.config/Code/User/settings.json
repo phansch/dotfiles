@@ -59,6 +59,9 @@
         ],
         "editor.semanticHighlighting.enabled": true
     },
+    "[markdown]": {
+      "editor.formatOnSave": false
+    },
     "projectManager.git.baseFolders": [
         "~/code/"
     ],
