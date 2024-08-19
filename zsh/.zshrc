@@ -86,6 +86,7 @@ bindkey '^Z' fancy-ctrl-z
 # Path stuff
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$HOME/.bin:$HOME/.local/bin
 
+export PATH="$PATH:/opt/nvim/"
 export FZF_DEFAULT_COMMAND='
   (git ls-tree -r --name-only HEAD ||
    find . -path "*/\.*" -prune -o -type f -print -o -type l -print |
