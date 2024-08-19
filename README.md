@@ -1,6 +1,5 @@
 [![Build Status](https://github.com/phansch/dotfiles/workflows/CI/badge.svg?branch=main)](https://github.com/phansch/dotfiles/actions)
-[![Sponsor
-count](https://img.shields.io/badge/sponsors-4-brightgreen)](https://phansch.net/thanks)
+[![Sponsor count](https://img.shields.io/badge/sponsors-4-brightgreen)](https://phansch.net/thanks)
 
 ## What's in there?
 
@@ -8,6 +7,10 @@ This is meant to be a 'minimal', **distraction free** setup. No fancy
 statusbars, no crazy window decorations, no distractions.
 With these dotfiles I want to automate as much as possible and keep UI clutter
 to a minimum for a distraction-free environment.
+
+The only exception for this is currently Neovim, where I'm using [LazyVim] to
+set up everything. I had too many issues with my config breaking and I hope,
+by 'outsourcing' it, it will break less often.
 
 I **don't** recommend running the `setup` script on your machine unless
 you understand what it does.  
@@ -46,7 +49,7 @@ The tmux status display has no additional information apart from windows.
 
 ### Editor: Vim
 
- * Using [coc.vim][coc] for language integrations
+ * Using [LazyVim] for the core IDE setup
  * Support for 'line' cursor shape in insert mode if using nvim
  * Turns syntax off for large files
  * Open the current file in browser (Useful for markdown)
@@ -149,3 +152,4 @@ Have a look at the [`.travis.yml`][travis] and
 [travis]: https://github.com/phansch/dotfiles/blob/main/.travis.yml
 [dockerfile]: https://github.com/phansch/dotfiles/blob/main/Dockerfile
 [coc]: https://github.com/neoclide/coc.nvim
+[LazyVim]: http://www.lazyvim.org/
