@@ -50,6 +50,7 @@
           - xdg-utils
           - desktop-file-utils
           - snapd
+          - unzip
         state: present
 
     - name: Remove specific APT packages

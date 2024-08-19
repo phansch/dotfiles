@@ -40,11 +40,13 @@
       ansible.builtin.file:
         path: ~/.fonts
         state: directory
-    - name: Download Source Code Pro font
-      ansible.builtin.get_url: # noqa risky-file-permissions
-        # yamllint disable-line rule:line-length
-        url: "https://github.com/adobe-fonts/source-code-pro/releases/download/variable-fonts/SourceCodeVariable-Roman.ttf?raw=true"
-        dest: ~/.fonts/
+
+    - name: Download UbuntuMono Nerd Font
+      ansible.builtin.unarchive:
+        src: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/UbuntuMono.zip
+        dest: ~/.fonts
+        remote_src: yes
+
     - name: Refresh font cache
       ansible.builtin.command: fc-cache -f
       changed_when: false
