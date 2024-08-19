@@ -878,13 +878,13 @@ dev = ["argcomplete", "attrs (>=19.2)", "hypothesis (>=3.56)", "mock", "pygments
 
 [[package]]
 name = "pytest-testinfra"
-version = "10.1.0"
+version = "10.1.1"
 description = "Test infrastructures"
 optional = false
 python-versions = ">=3.9"
 files = [
-    {file = "pytest-testinfra-10.1.0.tar.gz", hash = "sha256:f774339b94775acdf3a8c4a3793a8ead2e8dfc70ff34b778be15aaba140fa19e"},
-    {file = "pytest_testinfra-10.1.0-py3-none-any.whl", hash = "sha256:0a03b7f21c863396adba9578880e5a1a6764e9d20bb603e25317883fdeda024b"},
+    {file = "pytest-testinfra-10.1.1.tar.gz", hash = "sha256:a876f1453a01b58d94d9d936dd50344c2c01ac7880a2b41d15bdf233aed9cf1f"},
+    {file = "pytest_testinfra-10.1.1-py3-none-any.whl", hash = "sha256:b990dc7d77b49a1bba24818fbff49b6171d8c46d606fb5ca86b937de690d7062"},
 ]
 
 [package.dependencies]
@@ -1362,4 +1362,4 @@ test = ["big-O", "jaraco.functools", "jaraco.itertools", "jaraco.test", "more-it
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "d2b2f6457308aaf27cda0e0e72fd258e7dd1b9330e9bc746c986efca26165c93"
+content-hash = "f7c9b3dcc9c9fcdc037f800fec2c5e3e43f55b44558cb762dd0b304a5d0ba8c5"
