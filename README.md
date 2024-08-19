@@ -21,8 +21,8 @@ If you are interested in the CI setup, look [below](#ci-info).
 
 ### Window manager: i3
 
- * i3bar is only shown when the modifier key is pressed
- * i3bar only shows the workspaces, time and tray programs
+* i3bar is only shown when the modifier key is pressed
+* i3bar only shows the workspaces, time and tray programs
 
 ### Terminal: Alacritty + tmux
 
@@ -32,7 +32,6 @@ Alacritty (vs. urxvt) improves various things for me:
 * Automatic config reloading (no more need for `xrdb -merge` and starting a new
   terminal
 * Emoji support ✨
-
 
 The tmux status display has no additional information apart from windows.
 
@@ -49,27 +48,27 @@ The tmux status display has no additional information apart from windows.
 
 ### Editor: Vim
 
- * Using [LazyVim] for the core IDE setup
- * Support for 'line' cursor shape in insert mode if using nvim
- * Turns syntax off for large files
- * Open the current file in browser (Useful for markdown)
- * Return to the same line when you reopen a file
- * Switch between tmux and vim panes using the same shortcuts
+* Using [LazyVim] for the core IDE setup
+* Support for 'line' cursor shape in insert mode if using nvim
+* Turns syntax off for large files
+* Open the current file in browser (Useful for markdown)
+* Return to the same line when you reopen a file
+* Switch between tmux and vim panes using the same shortcuts
 
 ### Git
 
- * Pre-defined commit message with suggestions
+* Pre-defined commit message with suggestions
 
 ### Ruby
 
- * Basic rubocop.yml
- * irbrc - start pry if possible
- * gemrc - never download docs
+* Basic rubocop.yml
+* irbrc - start pry if possible
+* gemrc - never download docs
 
 ### Scripts in bin/
 
- * `off` Will ask you to do a daily review, time tracking and if you are fine with your journaling and then suspend the machine.
- * `clean_rails` cleans cache and log files in rails projects
+* `off` Will ask you to do a daily review, time tracking and if you are fine with your journaling and then suspend the machine.
+* `clean_rails` cleans cache and log files in rails projects
 
 ## Installation
 
@@ -86,7 +85,7 @@ This will:
 3. Clone the dotfiles (or pull if they exist already)
 4. Run the [base playbook](https://github.com/phansch/dotfiles/blob/main/ansible/playbooks/base.yml) to install the prerequisites
 5. Run the [dotfiles playbook](https://github.com/phansch/dotfiles/blob/main/ansible/playbooks/dotfiles.yml) to symlink the dotfiles
-7. Print the command to run the optional playbooks
+6. Print the command to run the optional playbooks
 
 ### Just the dotfiles
 
@@ -151,5 +150,4 @@ Have a look at the [`.travis.yml`][travis] and
 
 [travis]: https://github.com/phansch/dotfiles/blob/main/.travis.yml
 [dockerfile]: https://github.com/phansch/dotfiles/blob/main/Dockerfile
-[coc]: https://github.com/neoclide/coc.nvim
 [LazyVim]: http://www.lazyvim.org/
