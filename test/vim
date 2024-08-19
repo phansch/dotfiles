@@ -2,4 +2,5 @@
 
 set -x
 
-bash -c "$HOME/.local/bin/poetry run vint vim/.config/nvim/init.vim"
+# TODO:: Maybe move to luascript linter in the future
+# bash -c "$HOME/.local/bin/poetry run vint vim/.config/nvim/init.vim"
