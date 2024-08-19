@@ -8,6 +8,15 @@ return {
 		},
 	},
 
+	{
+		"neovim/nvim-lspconfig",
+		opts = {
+			servers = {
+				ltex = {},
+			},
+		},
+	},
+
 	-- Insert mode (Some insert mode stuff isn"t supported in NeoVim VSCode
 	-- because it"s handed off to VSCode)
 	"tpope/vim-commentary",
