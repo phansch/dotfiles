@@ -15,7 +15,6 @@
       ansible.builtin.apt_repository:
         repo: "{{ item }}"
       with_items:
-        - ppa:neovim-ppa/unstable
         - ppa:aslatter/ppa
     - name: Install base APT packages
       ansible.builtin.apt:
@@ -45,7 +44,6 @@
           - scrot
           - firejail
           - shellcheck
-          - neovim
           - pulsemixer
           - fonts-noto-color-emoji
           - rofi
@@ -87,15 +85,17 @@
         version: v0.7.0
       changed_when: false
 
-    - name: Set nvim as vi alternative
-      ansible.builtin.command: update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
-      changed_when: false
-    - name: Set nvim as vim alternative
-      ansible.builtin.command: update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
-      changed_when: false
-    - name: Set nvim as editor alternative
-      ansible.builtin.command: update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
-      changed_when: false
+    - name: Create /opt/nvim dir
+      ansible.builtin.file:
+        path: /opt/nvim
+        state: directory
+        mode: '0755'
+
+    - name: Install nvim via appimage
+      ansible.builtin.get_url:
+        url: https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+        dest: /opt/nvim/nvim
+        mode: '0764'
 
     - name: Install python packages for neovim
       ansible.builtin.apt:
