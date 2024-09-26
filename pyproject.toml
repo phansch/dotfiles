@@ -6,7 +6,7 @@ packages = [{include = "dotfiles"}]
 
 [tool.poetry.dependencies]
 python = "^3.12"
-ansible = "10.3.0"
+ansible = "10.4.0"
 molecule = "^24.8.0"
 vim-vint = "0.3.21"
 ansible-lint = { version = "24.5.0", markers = 'platform_system != "Windows"' }
