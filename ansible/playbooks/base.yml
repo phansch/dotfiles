@@ -118,3 +118,10 @@
       ansible.builtin.command: make chdir=/usr/share/doc/git/contrib/credential/libsecret
       when: makefile_present.stat.exists
       changed_when: false # noqa no-changed-when
+
+    - name: Install tmuxifier
+      ansible.builtin.git:
+        repo: https://github.com/jimeh/tmuxifier.git
+        dest: "{{ lookup('env', 'HOME') }}/.tmuxifier"
+        update: false
+        version: "v0.13.0"
