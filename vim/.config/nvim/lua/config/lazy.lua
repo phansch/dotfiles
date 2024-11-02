@@ -22,6 +22,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 require("config/custom_highlights")
+require("config/abbreviations")
 
 -- Setup lazy.nvim
 require("lazy").setup({
