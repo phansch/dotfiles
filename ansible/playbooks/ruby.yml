@@ -1,0 +1,29 @@
+---
+- name: Ruby setup
+  hosts: localhost
+  tasks:
+    - name: Ensure dependencies
+      become: true
+      ansible.builtin.apt:
+        pkg:
+          - curl
+          - git
+          - libyaml-dev
+        state: present
+
+    - name: Ensure asdf installed
+      ansible.builtin.git:
+        repo: https://github.com/asdf-vm/asdf.git
+        dest: "{{ lookup('env', 'HOME') }}/.asdf"
+        update: false
+        single_branch: yes
+        version: v0.14.1
+      changed_when: false
+
+    - name: Install asdf-ruby
+      ansible.builtin.command: asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
+      changed_when: false
+
+    - name: Install latest ruby
+      ansible.builtin.command: asdf install ruby latest
+      changed_when: false

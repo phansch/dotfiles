@@ -8,25 +8,26 @@ return {
 		},
 	},
 
-	{
-		"neovim/nvim-lspconfig",
-		opts = {
-			servers = {
-				ltex = {},
-			},
-		},
-	},
-
-	-- Insert mode (Some insert mode stuff isn"t supported in NeoVim VSCode
-	-- because it"s handed off to VSCode)
 	"tpope/vim-commentary",
 	"tpope/vim-endwise",
 	"tpope/vim-repeat",
 	"jiangmiao/auto-pairs",
 
-	"honza/vim-snippets", -- Only the snippet database.
-	"SirVer/ultisnips", -- The snippet "engine"
-	"quangnguyen30192/cmp-nvim-ultisnips", -- snippet-completion plugin
+	{
+		"stevearc/oil.nvim",
+		config = function()
+			require("oil").setup({
+				keymaps = {
+					["<C-h>"] = false,
+					["<M-h>"] = "actions.select_split",
+				},
+				view_options = {
+					show_hidden = true,
+				},
+			})
+			vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+		end,
+	},
 
 	-- Git
 	"rhysd/git-messenger.vim",

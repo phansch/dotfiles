@@ -21,12 +21,16 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+require("config/custom_highlights")
+require("config/abbreviations")
+
 -- Setup lazy.nvim
 require("lazy").setup({
 	spec = {
 		{ "LazyVim/LazyVim", import = "lazyvim.plugins" },
 		-- import your plugins
 		{ import = "lazyvim.plugins.extras.lang.rust" },
+		{ import = "lazyvim.plugins.extras.lang.ruby" },
 		{ import = "lazyvim.plugins.extras.lang.ansible" },
 		{ import = "lazyvim.plugins.extras.lang.toml" },
 		{ import = "lazyvim.plugins.extras.lang.python" },
