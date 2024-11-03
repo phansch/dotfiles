@@ -47,9 +47,3 @@ sleep 1 && /usr/lib/x86_64-linux-gnu/deja-dup/deja-dup-monitor &
 sleep 1 && nm-applet &
 
 sleep 1 && ~/bin/run_redshift.sh &
-
-if [ "$(hostname)" = 'viperfish' ]; then
-  ~/.screenlayout/work_default.sh
-else
-  ~/.screenlayout/home_default.sh
-fi &
