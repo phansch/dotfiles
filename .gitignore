@@ -5,6 +5,7 @@ ansible/.virtenv
 !i3wm/.config/i3/config
 vim/.config/nvim/undo
 vim/.config/nvim/spell
+vim/.config/nvim/lazyvim.json
 zsh/.zsh/history
 zsh/.zsh/zsh-autosuggestions/
 ansible/mitogen
