@@ -8,6 +8,7 @@
       ansible.builtin.apt:
         pkg:
           - obs-studio
+          - v4l2loopback-dkms
 
     # Used to forward audio from obs to other programs.
     # This way, noise filters can be applied to the audio input in OBS
