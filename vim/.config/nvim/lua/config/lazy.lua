@@ -35,6 +35,7 @@ require("lazy").setup({
 		{ import = "lazyvim.plugins.extras.lang.toml" },
 		{ import = "lazyvim.plugins.extras.lang.python" },
 		{ import = "lazyvim.plugins.extras.lang.markdown" },
+		{ import = "lazyvim.plugins.extras.lang.typescript" },
 		{ import = "plugins" },
 	},
 	-- Configure any other settings here. See the documentation for more details.
