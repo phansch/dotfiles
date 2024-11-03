@@ -1,15 +1,16 @@
 icons_format = "{icon}"
 
 [theme]
-theme = "slick"
+theme = "plain"
 
 [icons]
-icons = "awesome6"
+icons = "awesome4"
 
 [[block]]
 block = "pomodoro"
 message = "Take a break!"
 break_message = "Back to work!"
+notify_cmd = "notify-send '{msg}'"
 
 [[block]]
 block = "sound"

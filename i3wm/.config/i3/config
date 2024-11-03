@@ -17,7 +17,7 @@ set $foreground #bd93f9
 set $warning #ff5555
 
 # Use the default monospace font defined via fontconfig
-font pango:monospace
+font pango:monospace, FontAwesome
 
 # class                 border  backgr. text    indicator child_border
 client.focused          $foreground $foreground $background #ffffff   $border
@@ -102,7 +102,7 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindcode $mod+d focus child
 
-bindsym $mod+x move workspace to output right
+bindsym $mod+x move workspace to output left
 
 # ASSIGN WORKSPACE VARIABLES
 set $WS1 1:dev
