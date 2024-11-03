@@ -23,6 +23,7 @@
         - redshift
         - ruby
         - tmux
+        - tmuxifier
         - vim
         - x
         - zsh
