@@ -112,3 +112,4 @@ eval "$(pyenv virtualenv-init -)"
 # tmuxifier
 export PATH="$HOME/.tmuxifier/bin:$PATH"
 eval "$(tmuxifier init -)"
+. "/home/phansch/.deno/env"
