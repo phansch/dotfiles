@@ -9,7 +9,7 @@ python = "^3.12"
 ansible = "10.6.0"
 molecule = "^24.9.0"
 vim-vint = "0.3.21"
-ansible-lint = { version = "24.5.0", markers = 'platform_system != "Windows"' }
+ansible-lint = { version = "24.9.0", markers = 'platform_system != "Windows"' }
 molecule-plugins = { extras = ["docker"], version = "^23.5.3" }
 pytest-testinfra = "^10.1.1"
 setuptools = "^75.3.0"
