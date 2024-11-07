@@ -1,0 +1,8 @@
+{
+  "FactoryBot": {
+    "prefix": [
+      "fac"
+    ],
+    "body": "FactoryBot.${1:create}(:${2})"
+  }
+}
