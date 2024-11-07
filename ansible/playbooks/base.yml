@@ -114,8 +114,11 @@
       ansible.builtin.stat:
         path: /usr/share/doc/git/contrib/credential/libsecret/Makefile
       register: makefile_present
+
     - name: Make libsecret git credential helper
-      ansible.builtin.command: make chdir=/usr/share/doc/git/contrib/credential/libsecret
+      ansible.builtin.command:
+        cmd: make
+        chdir: /usr/share/doc/git/contrib/credential/libsecret
       when: makefile_present.stat.exists
       changed_when: false # noqa no-changed-when
 
