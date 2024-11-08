@@ -1,0 +1,31 @@
+return {
+	{
+		"williamboman/mason.nvim",
+		opts = {
+			ensure_installed = {
+				"ansiblels",
+				"shellcheck",
+				"shfmt",
+				"ansible-lint",
+				"codelldb",
+				"erb-formatter",
+				"erb-lint",
+				"jsonls",
+				"ltex",
+				"lua_ls",
+				"markdown-toc",
+				"markdownlint-cli2",
+				"marksman",
+				"pyright",
+				"rubocop",
+				"ruff",
+				"shfmt",
+				"stylua",
+				"taplo",
+				"texlab",
+				"vtsls",
+				"yamlls",
+			},
+		},
+	},
+}
