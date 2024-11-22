@@ -5,10 +5,10 @@ alias ...="cd ../.."
 alias mkdir="mkdir -p"
 alias grep="grep --color=auto"
 alias ping="ping -c 5"
-alias ls="ls -lh --color"
+alias ls="ls -lh"
 alias la='ls -lAh'
 alias df="df -h"
-alias git_clean_branches="git branch --merged | egrep -v '(^\*| main)' | xargs --no-run-if-empty git branch -d"
+alias git_clean_branches="git branch --merged | egrep -v '(^\*| main|devel)' | xargs --no-run-if-empty git branch -d"
 alias tree="tree -a -C -I '.git'"
 
 alias vim=nvim

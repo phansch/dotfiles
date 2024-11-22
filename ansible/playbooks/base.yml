@@ -85,6 +85,7 @@
         single_branch: yes
         version: v0.7.0
       changed_when: false
+      tags: zsh
 
     - name: Create /opt/nvim dir
       ansible.builtin.file:
@@ -128,3 +129,7 @@
         dest: "{{ lookup('env', 'HOME') }}/.tmuxifier"
         update: false
         version: "v0.13.0"
+
+    - name: Install git-delete-merged-branches
+      pip:
+        name: git-delete-merged-branches
