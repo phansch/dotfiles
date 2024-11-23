@@ -2,6 +2,7 @@
 -- https://www.reddit.com/r/neovim/comments/wl678s/comment/ik84pjx/
 local function do_custom_hi()
 	vim.api.nvim_set_hl(0, "Pry", { standout = true })
+	vim.api.nvim_set_hl(0, "Debugger", { standout = true })
 	vim.api.nvim_set_hl(0, "FocusTrue", { standout = true })
 end
 
@@ -16,6 +17,7 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufRead", "BufNewFile" }, {
 	pattern = "*.rb",
 	command = [[
       syn match Pry 'binding.pry'
+      syn match Debugger 'debugger'
       syn match FocusTrue 'focus: true'
     ]],
 })
