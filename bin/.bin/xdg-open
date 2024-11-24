@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# The obsidian snap I'm using, started having issues with opening URLs
+# in the wrong browser.
+#
+# This is a workaround for that.
+#
+# https://forum.obsidian.md/t/obsidian-doesnt-use-default-browser-on-ubuntu-snap/68177
+if [[ $SNAP_INSTANCE_NAME == "obsidian" && $1 =~ ^(https?://) ]]; then
+  unset XDG_DATA_HOME
+  unset XDG_CONFIG_HOME
+fi
+
+exec /usr/bin/xdg-open "$@"
