@@ -2,6 +2,14 @@
 - name: Base setup
   hosts: localhost
   become: true
+  pre_tasks:
+    - name: This playbook only runs on Ubuntu/Debian
+      ansible.builtin.debug:
+        msg: Aborting, this playbook only runs on Ubuntu/Debian
+      when: ansible_os_family != 'Debian'
+    - name: This playbook only runs on Ubuntu/Debian - end play
+      ansible.builtin.meta: end_play
+      when: ansible_os_family != 'Debian'
   roles:
     - role: github_cli
       vars:
