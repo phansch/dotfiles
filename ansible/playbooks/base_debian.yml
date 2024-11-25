@@ -31,6 +31,7 @@
           - autorandr
           - build-essential
           - cmake
+          #- git-delete-merged-branches # Enable once the github actions are upgraded to Ubuntu 24
           - libglib2.0-dev
           - libssl-dev
           - lxappearance
@@ -137,7 +138,3 @@
         dest: "{{ lookup('env', 'HOME') }}/.tmuxifier"
         update: false
         version: "v0.13.0"
-
-    - name: Install git-delete-merged-branches
-      pip:
-        name: git-delete-merged-branches
