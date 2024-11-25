@@ -11,4 +11,5 @@
       when: ansible_os_family != 'Darwin'
   tasks:
     - name: Install brew packages via Brewfile
-      command: 'brew bundle --file ../../macos/base.Brewfile'
+      ansible.builtin.command: 'brew bundle --file ../../macos/base.Brewfile'
+      changed_when: false

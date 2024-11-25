@@ -31,7 +31,7 @@
           - autorandr
           - build-essential
           - cmake
-          #- git-delete-merged-branches # Enable once the github actions are upgraded to Ubuntu 24
+          # - git-delete-merged-branches # Enable once the github actions are upgraded to Ubuntu 24
           - libglib2.0-dev
           - libssl-dev
           - lxappearance
