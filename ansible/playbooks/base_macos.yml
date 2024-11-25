@@ -1,0 +1,14 @@
+---
+- name: Base setup
+  hosts: localhost
+  pre_tasks:
+    - name: This playbook only runs on MacOS
+      ansible.builtin.debug:
+        msg: Aborting, this playbook only runs on MacOS
+      when: ansible_os_family != 'Darwin'
+    - name: This playbook only runs on MacOS - end play
+      ansible.builtin.meta: end_play
+      when: ansible_os_family != 'Darwin'
+  tasks:
+    - name: Install brew packages via Brewfile
+      command: 'brew bundle --file ../../macos/base.Brewfile'
