@@ -6,6 +6,7 @@
       become: true
       ansible.builtin.apt:
         pkg: stow
+      when: ansible_os_family == 'Debian'
     - name: Install dotfiles
       ansible.builtin.shell: stow {{ item }} --target=$HOME/ --dir=$HOME/.dotfiles
       with_items:
@@ -32,22 +33,25 @@
       ansible.builtin.stat:
         path: ~/.xinitrc
       register: xinitrc_presence
+      when: ansible_os_family == 'Debian'
     - name: Fail if ~/.xinitrc not created
       ansible.builtin.fail:
         msg: '"~/.xinitrc was not created by stow"'
-      when: not xinitrc_presence.stat.exists
+      when: ansible_os_family == 'Debian' and not xinitrc_presence.stat.exists
 
     # FIXME: move to ~/.local/share/fonts directory and figure out correct permissions
     - name: Create ~/.fonts directory # noqa risky-file-permissions
       ansible.builtin.file:
         path: ~/.fonts
         state: directory
+      when: ansible_os_family == 'Debian'
 
     - name: Download UbuntuMono Nerd Font
       ansible.builtin.unarchive:
         src: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/UbuntuMono.zip
         dest: ~/.fonts
         remote_src: yes
+      when: ansible_os_family == 'Debian'
 
     - name: Refresh font cache
       ansible.builtin.command: fc-cache -f
@@ -57,3 +61,4 @@
     - name: Update application cache for obsidian URL handling
       ansible.builtin.command: update-desktop-database ~/.local/share/applications/
       changed_when: false
+      when: ansible_os_family == 'Debian'
