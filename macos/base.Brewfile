@@ -29,6 +29,7 @@ brew 'wget'
 brew 'ripgrep'
 brew 'gh'
 brew 'zsh-autosuggestions'
+brew 'terminal-notifier'
 
 cask 'docker'
 
@@ -39,14 +40,17 @@ cask 'homebrew/cask/font-ubuntu'
 cask 'homebrew/cask/font-ubuntu-mono-derivative-powerline'
 
 # Additional tools
+brew 'languagetool'
+cask '1password'
+cask 'flux'
 cask 'slack'
 cask 'postman'
 cask 'obsidian'
 cask 'google-chrome' # For browser-testing
-# cask 'firefox'
+cask 'firefox'
 cask 'flameshot'
-# mas "HP Easy Scan", id: 967004861
-# mas "HP Smart", id: 1474276998
+mas "HP Easy Scan", id: 967004861
+mas "HP Smart", id: 1474276998
 
 # Window Management
 # I'm using yabai, but without disabling the System Integrity Protection

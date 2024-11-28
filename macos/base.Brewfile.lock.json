@@ -805,17 +805,36 @@
             "appdir": "/Applications"
           }
         }
+      },
+      "firefox": {
+        "version": "132.0.2",
+        "options": {
+          "full_name": "firefox",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      }
+    },
+    "mas": {
+      "HP Easy Scan": {
+        "id": "967004861",
+        "version": "2.0.0"
+      },
+      "HP Smart": {
+        "id": "1474276998",
+        "version": "17.30.1"
       }
     }
   },
   "system": {
     "macos": {
       "sequoia": {
-        "HOMEBREW_VERSION": "4.4.6",
+        "HOMEBREW_VERSION": "4.4.7",
         "HOMEBREW_PREFIX": "/opt/homebrew",
         "Homebrew/homebrew-core": "api",
         "CLT": "16.1.0.0.1.1729049160",
-        "Xcode": "16.1",
+        "Xcode": "16.0",
         "macOS": "15.1.1"
       }
     }
