@@ -60,6 +60,7 @@ clone_dotfiles() {
 }
 
 run_ansible() {
+  ./asdf/.bin/asdf_bootstrap.sh
   # From here on, everything should work the same on MacOS and Ubuntu
   print_message "[setup] Version info"
   python3 -V
