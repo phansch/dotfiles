@@ -57,6 +57,3 @@ mas "HP Smart", id: 1474276998
 brew 'sketchybar'
 brew 'yabai'
 cask 'displaylink'
-
-# Language specific
-brew 'asdf'

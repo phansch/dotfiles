@@ -17,3 +17,4 @@ ansible/roles/geerlingguy.docker/
 .nvimlog
 *.cast
 *.cache
+.DS_Store
