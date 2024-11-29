@@ -23,9 +23,11 @@ bootstrap() {
 
     set +ex
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    eval "$(/opt/homebrew/bin/brew shellenv)"
     brew analytics off
 
-    brew install git curl
+    brew install git curl poetry libyaml
+    rustup default stable
   fi
 
   if [[ $(uname) == "Linux" ]]; then
