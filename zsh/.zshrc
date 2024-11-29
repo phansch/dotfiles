@@ -59,7 +59,11 @@ lazy_source () {
 
 source ~/.zsh/prompt
 source ~/.zsh/notifyosd.zsh
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [[ $(uname) == "Darwin" ]]; then
+  source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+else
+  source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
 source ~/.aliases
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=7"
 clip() {
