@@ -1,6 +1,18 @@
 [window]
 decorations = "none"
 
+[terminal.shell]
+program = "/bin/zsh"
+# Automatically attach to existing tmux session if one exists
+args = [
+  "--login",
+  "-c",
+  "/opt/homebrew/bin/tmux attach || /opt/homebrew/bin/tmux",
+]
+
+[env]
+TERM = "xterm-256color"
+
 [colors]
 indexed_colors = []
 
