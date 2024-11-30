@@ -49,6 +49,7 @@ cask 'obsidian'
 cask 'google-chrome' # For browser-testing
 cask 'firefox'
 cask 'flameshot'
+cask 'raycast'
 mas "HP Easy Scan", id: 967004861
 mas "HP Smart", id: 1474276998
 
