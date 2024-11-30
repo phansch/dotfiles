@@ -46,17 +46,7 @@ foreground = "0xf8f8f2"
 background = "0x44475a"
 text = "0xf8f8f2"
 
-[font]
-size = 10.0
-
-[font.bold]
-family = "monospace"
-style = "Bold"
-
-[font.italic]
-family = "monospace"
-style = "Italic"
-
-[font.normal]
-family = "monospace"
-style = "Regular"
+# Linux uses alacritty default font settings with the monospace font.
+[general]
+# Specific font setup for macOS
+import = ["~/.config/alacritty/mac_fonts.toml"]
