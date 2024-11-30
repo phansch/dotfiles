@@ -2,17 +2,17 @@ return {
 	{
 		"williamboman/mason.nvim",
 		opts = {
+			-- package names can be found here: https://github.com/williamboman/mason-lspconfig.nvim/blob/main/doc/server-mapping.md
 			ensure_installed = {
-				"ansiblels",
 				"shellcheck",
 				"shfmt",
 				"ansible-lint",
 				"codelldb",
 				"erb-formatter",
 				"erb-lint",
-				"jsonls",
-				"ltex",
-				"lua_ls",
+				"json-lsp",
+				"ltex-ls",
+				"lua-language-server",
 				"markdown-toc",
 				"markdownlint-cli2",
 				"marksman",
@@ -24,7 +24,7 @@ return {
 				"taplo",
 				"texlab",
 				"vtsls",
-				"yamlls",
+				"yaml-language-server",
 			},
 		},
 	},
