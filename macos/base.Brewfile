@@ -37,7 +37,9 @@ cask 'docker'
 brew 'fontconfig'
 cask 'homebrew/cask/font-fontawesome'
 cask 'homebrew/cask/font-ubuntu'
+cask 'homebrew/cask/font-meslo-lg-nerd-font'
 cask 'homebrew/cask/font-ubuntu-mono-derivative-powerline'
+cask 'sf-symbols'
 
 # Additional tools
 brew 'languagetool'
