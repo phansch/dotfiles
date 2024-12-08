@@ -60,7 +60,7 @@ lazy_source () {
 source ~/.zsh/prompt
 source ~/.zsh/notifyosd.zsh
 if [[ $(uname) == "Darwin" ]]; then
-  source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+  source $(/opt/homebrew/bin/brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 else
   source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
