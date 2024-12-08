@@ -7,6 +7,10 @@ return {
 				ruby_lsp = {
 					mason = false,
 					cmd = { vim.fn.expand("~/.asdf/shims/ruby-lsp") },
+					init_options = {
+						formatter = "standard",
+						linters = { "standard" },
+					},
 				},
 			},
 		},
