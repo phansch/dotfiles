@@ -27,6 +27,7 @@ brew 'tree'
 brew 'stow'
 brew 'wget'
 brew 'ripgrep'
+brew 'fd'
 brew 'gh'
 brew 'zsh-autosuggestions'
 brew 'terminal-notifier'
@@ -42,7 +43,7 @@ cask 'homebrew/cask/font-ubuntu-mono-derivative-powerline'
 cask 'sf-symbols'
 
 # Additional tools
-brew 'languagetool'
+brew 'graphviz'
 cask '1password'
 cask 'flux'
 cask 'slack'
@@ -54,6 +55,7 @@ cask 'flameshot'
 cask 'raycast'
 mas "HP Easy Scan", id: 967004861
 mas "HP Smart", id: 1474276998
+mas "LanguageTool - Grammar Checker", id: 1534275760
 
 # Window Management
 # I'm using yabai, but without disabling the System Integrity Protection
