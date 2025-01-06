@@ -44,6 +44,7 @@ cask 'sf-symbols'
 
 # Additional tools
 brew 'graphviz'
+cask 'ghostty'
 cask '1password'
 cask 'flux'
 cask 'slack'
