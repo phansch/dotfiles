@@ -59,6 +59,4 @@ mas "LanguageTool - Grammar Checker", id: 1534275760
 
 # Window Management
 # I'm using yabai, but without disabling the System Integrity Protection
-brew 'sketchybar'
-brew 'yabai'
 cask 'displaylink'
