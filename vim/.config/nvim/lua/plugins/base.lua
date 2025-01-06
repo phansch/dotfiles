@@ -11,7 +11,6 @@ return {
 	"tpope/vim-commentary",
 	"tpope/vim-endwise",
 	"tpope/vim-repeat",
-	"jiangmiao/auto-pairs",
 
 	{
 		"stevearc/oil.nvim",
