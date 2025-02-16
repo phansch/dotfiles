@@ -1,0 +1,13 @@
+#!/usr/bin/ruby
+
+CMD = 'yt-dlp -6 --extract-audio --audio-format mp3 --embed-metadata --output "~/Music/%(title)s.%(ext)s" --restrict-filenames '
+
+def run(args)
+  urls = args.first.split
+
+  urls.each do |url|
+    system("#{CMD} \"#{url}\"")
+  end
+end
+
+run(ARGV)
