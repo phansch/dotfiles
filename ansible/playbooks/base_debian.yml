@@ -103,7 +103,7 @@
 
     - name: Install nvim via appimage
       ansible.builtin.get_url:
-        url: https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+        url: https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage
         dest: /opt/nvim/nvim
         mode: '0764'
 
