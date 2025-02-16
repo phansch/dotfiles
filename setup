@@ -78,6 +78,7 @@ run_ansible() {
   poetry="$HOME/.local/bin/poetry"
 
   $poetry env info
+  $poetry env use python
 
   print_message "[setup] Setting up venv and deps w/ poetry..."
   $poetry install
