@@ -1,5 +1,5 @@
 export EDITOR='nvim'
-export TERMINAL='alacritty'
+export TERMINAL='ghostty'
 export LESS="-i -R" # case-insensitive less search
 
 autoload -U compinit

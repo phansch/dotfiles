@@ -10,7 +10,6 @@
     - name: Install dotfiles
       ansible.builtin.shell: stow {{ item }} --target=$HOME/ --dir=$HOME/.dotfiles
       with_items:
-        - alacritty
         - autorandr
         - asdf
         - bin
