@@ -14,7 +14,6 @@ brew 'mas'
 # mas 'Xcode', id: 497_799_835
 
 # Terminal stuff
-cask 'alacritty'
 brew 'neovim'
 brew 'git'
 brew 'lazygit'

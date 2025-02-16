@@ -146,10 +146,10 @@ assign [class="^Anki$"] $WS3
 assign [class="obsidian"] $WS3
 assign [class="Slack"] $WS9
 assign [class="vlc"] $WS4
-assign [class="pulsemixer"] $WS4
-# Alacritty has to come last, because otherwise it would move pulsemixer to
+assign [title="pulsemixer"] $WS4
+# Ghostty has to come last, because otherwise it would move pulsemixer to
 # WS1 as well
-assign [title="Alacritty"] $WS1
+assign [class="ghostty"] $WS1
 
 ## window floating, borders and positioning
 for_window [class="^Firefox|Nightly$" title="^Library$"] floating enable
@@ -161,7 +161,7 @@ for_window [window_role="pop-up"] floating enable
 for_window [class="xfce4-notifyd"] floating enable
 for_window [title="Bluetooth"] floating enable, border none, move absolute position center
 for_window [class="ile-roller$"] floating enable, border none, move absolute position center
-for_window [class="pulsemixer"] floating enable, border none, move absolute position center
+for_window [title="pulsemixer"] floating enable, border none, move absolute position center
 for_window [class="vlc"] floating enable, move absolute position center
 
 # Autostart

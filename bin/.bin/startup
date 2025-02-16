@@ -18,8 +18,8 @@ eval "$(gpg-agent --daemon --pinentry-program /usr/bin/pinentry-gtk-2)"
 unclutter -noevents -root & # Hides mousecursor when inactive
 nm-applet &
 sensible-browser &
-alacritty &
-alacritty --class "pulsemixer" -e pulsemixer &
+ghostty &
+ghostty --title=pulsemixer -e pulsemixer &
 blueman-applet &
 xfce4-power-manager &
 run_redshift.sh &

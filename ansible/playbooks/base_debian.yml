@@ -27,7 +27,6 @@
     - name: Install base APT packages
       ansible.builtin.apt:
         pkg:
-          - alacritty
           - autorandr
           - build-essential
           - cmake

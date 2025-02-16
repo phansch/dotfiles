@@ -1,7 +1,17 @@
+# See https://ghostty.org/docs/config/reference
+
+# Look
 theme = Dracula+
 font-family = "MesloLGM Nerd Font Mono"
 font-size = 15
 font-thicken = true
+
+# Window-related stuff
 macos-titlebar-style = hidden
 mouse-hide-while-typing = true
+window-decoration = none
+maximize = true
+
+# Other stuff
 link-url = true
+auto-update = check
