@@ -15,3 +15,19 @@
 -- 		vim.opt_local.wrap = true
 -- 	end,
 -- })
+
+-- Disable autoformat for markdown files
+vim.api.nvim_create_autocmd({ "FileType" }, {
+	pattern = { "markdown" },
+	callback = function()
+		vim.b.autoformat = false
+	end,
+})
+
+-- Disable autoformat for yaml files
+vim.api.nvim_create_autocmd({ "FileType" }, {
+	pattern = { "yaml" },
+	callback = function()
+		vim.b.autoformat = false
+	end,
+})
