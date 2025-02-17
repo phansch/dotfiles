@@ -32,7 +32,9 @@ return {
 			require("neotest").setup({
 				adapters = {
 					require("neotest-rspec"),
-					require("neotest-minitest"),
+					require("neotest-minitest")({
+						test_cmd = "bin/my-test.sh",
+					}),
 				},
 			})
 		end,
