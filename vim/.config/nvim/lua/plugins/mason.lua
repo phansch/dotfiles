@@ -17,7 +17,6 @@ return {
 				"markdownlint-cli2",
 				"marksman",
 				"pyright",
-				"ruff",
 				"shfmt",
 				"stylua",
 				"taplo",
