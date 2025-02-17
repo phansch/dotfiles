@@ -49,13 +49,17 @@ cask 'flux'
 cask 'slack'
 cask 'postman'
 cask 'obsidian'
+cask 'notion'
 cask 'google-chrome' # For browser-testing
 cask 'firefox'
 cask 'flameshot'
 cask 'raycast'
+cask 'dash'
+cask 'ghostty'
 mas "HP Easy Scan", id: 967004861
 mas "HP Smart", id: 1474276998
 mas "LanguageTool - Grammar Checker", id: 1534275760
+# mas "WireGuard", id: 1451685025 # Fails to install via homebrew
 
 # Window Management
 # I'm using yabai, but without disabling the System Integrity Protection
