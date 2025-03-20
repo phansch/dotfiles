@@ -12,7 +12,7 @@ vim-vint = "0.3.21"
 ansible-lint = { version = "25.1.0", markers = 'platform_system != "Windows"' }
 molecule-plugins = { extras = ["docker"], version = "^23.6.0" }
 pytest-testinfra = "^10.1.1"
-setuptools = "^75.8.0"
+setuptools = "^77.0.3"
 
 
 [build-system]
