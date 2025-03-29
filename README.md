@@ -24,14 +24,15 @@ If you are interested in the CI setup, look [below](#ci-info).
 * i3bar is only shown when the modifier key is pressed
 * i3bar only shows the workspaces, time and tray programs
 
-### Terminal: Alacritty + tmux
+### Terminal: Ghostty + tmux
 
-Alacritty (vs. urxvt) improves various things for me:
+Ghostty (vs. urxvt) improves various things for me:
 
 * Much better HiDPI support
 * Automatic config reloading (no more need for `xrdb -merge` and starting a new
   terminal
 * Emoji support ✨
+* Image support
 
 The tmux status display has no additional information apart from windows.
 
