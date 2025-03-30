@@ -3,7 +3,9 @@ return {
 		"neovim/nvim-lspconfig",
 		opts = {
 			servers = {
-				ltex = {},
+				ltex = {
+					filetypes = { "latex", "tex" },
+				},
 				ruby_lsp = {
 					mason = false,
 					cmd = { vim.fn.expand("~/.asdf/shims/ruby-lsp") },
