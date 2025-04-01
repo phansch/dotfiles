@@ -1,5 +1,4 @@
 [![Build Status](https://github.com/phansch/dotfiles/workflows/CI/badge.svg?branch=main)](https://github.com/phansch/dotfiles/actions)
-[![Sponsor count](https://img.shields.io/badge/sponsors-4-brightgreen)](https://phansch.net/thanks)
 
 ## What's in there?
 
