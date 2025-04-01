@@ -13,6 +13,7 @@ asdf plugin add nodejs
 asdf plugin add rust
 
 asdf install python latest
+asdf install python 3.13.2
 asdf install rust latest
 export RUBY_CONFIGURE_OPTS=--enable-yjit
 asdf install ruby latest
