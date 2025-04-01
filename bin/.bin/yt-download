@@ -8,6 +8,9 @@ def run(args)
   urls.each do |url|
     system("#{CMD} \"#{url}\"")
   end
+
+  # Open thunar to further edit the id3 tags of the downloaded files
+  system("thunar ~/Music")
 end
 
 run(ARGV)
