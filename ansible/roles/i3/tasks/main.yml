@@ -10,7 +10,7 @@
     deb: /tmp/keyring.deb
 - name: Add apt source
   ansible.builtin.apt_repository:
-    repo: "deb http://debian.sur5r.net/i3/ {{ ansible_distribution_release }} universe"
+    repo: "deb https://debian.sur5r.net/i3/ {{ ansible_distribution_release }} universe"
     state: present
 - name: Install i3
   ansible.builtin.apt:
