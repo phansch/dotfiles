@@ -30,8 +30,7 @@ jobs:
 
       - name: Test
         run: |
-          docker run dotfiles /bin/bash -c "./setup -s && \
-            ./test/vim && ./test/shellcheck"
+          docker run dotfiles /bin/bash -c "./test/vim && ./test/shellcheck"
 
       - uses: sarisia/actions-status-discord@v1
         if: failure()
