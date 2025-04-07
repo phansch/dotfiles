@@ -80,12 +80,11 @@ Just run the following command:
 
 This will:
 
-1. Setup [Ansible](https://www.ansible.com/)
-2. Upgrade and autoclean system packages
-3. Clone the dotfiles (or pull if they exist already)
-4. Run the [base playbook](https://github.com/phansch/dotfiles/blob/main/ansible/playbooks/base.yml) to install the prerequisites
-5. Run the [dotfiles playbook](https://github.com/phansch/dotfiles/blob/main/ansible/playbooks/dotfiles.yml) to symlink the dotfiles
-6. Print the command to run the optional playbooks
+1. Upgrade and autoclean system packages
+2. Clone the dotfiles (or pull if they exist already)
+3. Install the base packages
+4. Symlink the dotfiles with `stow`
+5. Print the command to run the optional playbooks
 
 ### Just the dotfiles
 
@@ -99,7 +98,6 @@ If you just want the dotfiles, clone them and use [stow](https://www.gnu.org/sof
     sudo apt-get install stow
 
     # To install the ruby dotfiles. Replace `ruby` with the stow package you want.
-    # See ansible/playbooks/dotfiles.yml for a complete list of the stow packages.
     stow ruby --verbose=1 --target=$HOME/ --dir=$HOME/.dotfiles
 
 ### Environment variables
@@ -124,10 +122,6 @@ You will need Vagrant and Virtualbox installed, then you can run:
 
 You can then either use `vagrant ssh` or connect to the VM through Virtualbox to have a GUI.
 
-**Re-running a failed ansible playbook**
-
-    ansible-playbook ansible/playbooks/<the-playbook>.yml
-
 **Running the tests**
 
     run-parts test/
@@ -136,18 +130,8 @@ You can then either use `vagrant ssh` or connect to the VM through Virtualbox to
 
 CI is trying to mirror a full Ubuntu installation in order to ensure the setup script doesn't fail.
 
-All ansible playbooks are run on CI. The build will fail if:
-
-* Any ansible playbook has not finished successfully
 * i3 config is invalid
-* vint detects mistakes in `init.vim`
-* yaml-lint finds any issues
-* `ansible-playbook --syntax-check` has not finished successfully
 * shellcheck found errors
+* The full setup fails
 
-Have a look at the [`.travis.yml`][travis] and
-[`Dockerfile`][dockerfile] to see how it works.
-
-[travis]: https://github.com/phansch/dotfiles/blob/main/.travis.yml
-[dockerfile]: https://github.com/phansch/dotfiles/blob/main/Dockerfile
 [LazyVim]: http://www.lazyvim.org/

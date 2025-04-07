@@ -1,7 +1,0 @@
-#!/bin/sh
-
-set -eux
-
-"$HOME"/.local/bin/poetry run ansible-galaxy role install -r ansible/requirements.yml --force
-"$HOME"/.local/bin/poetry run ansible-playbook ansible/playbooks/*.yml --syntax-check
-"$HOME"/.local/bin/poetry run ansible-lint -p ansible/playbooks/*.yml ansible/roles/github_cli ansible/roles/rust ansible/roles/i3 ansible/roles/markdown_mimetype
