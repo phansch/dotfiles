@@ -5,7 +5,8 @@ set -euo pipefail
 source _setup-scripts/utils.sh
 
 # Use git-ppa for most recent release
-run_with_sudo add-apt-repository -y git-core/ppa
+run_with_sudo add-apt-repository -y ppa:git-core/ppa
+run_with_sudo apt-get update
 run_with_sudo apt-get install -y -qq calibre flatpak unclutter flameshot jq krita redshift git
 
 # Install PikaBackup
