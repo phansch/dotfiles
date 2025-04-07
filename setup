@@ -43,7 +43,7 @@ bootstrap() {
     eval "$(/opt/homebrew/bin/brew shellenv)"
     brew analytics off
 
-    brew install git curl poetry libyaml
+    brew install git curl libyaml
     rustup default stable
   fi
 
