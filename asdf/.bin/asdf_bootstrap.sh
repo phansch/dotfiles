@@ -1,26 +1,22 @@
 #!/bin/bash
 
-set -x
+set -euxo pipefail
 
 version="v0.16.7"
 wget "https://github.com/asdf-vm/asdf/releases/download/$version/asdf-$version-linux-amd64.tar.gz" -P /tmp/
-mkdir -p /opt/asdf/
-tar -xvf /tmp/asdf-$version-linux-amd64.tar.gz -C /opt/asdf/
+mkdir -p "$HOME/.bin"
+tar -xvf /tmp/asdf-$version-linux-amd64.tar.gz -C "$HOME/.bin"
 
-asdf="/opt/asdf/asdf"
+asdf="$HOME/.bin/asdf"
 $asdf info
 
-$asdf plugin add python
 $asdf plugin add ruby
-$asdf plugin add nodejs
+$asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 $asdf plugin add rust
 
-$asdf install python latest
-$asdf install python 3.13.2
 $asdf install rust latest
 $asdf install ruby latest
 $asdf install nodejs latest
 
 $asdf set --home nodejs latest
 $asdf set --home ruby latest
-$asdf set --home python latest

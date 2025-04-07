@@ -3,6 +3,7 @@
 set -euxo pipefail
 
 export ANSIBLE_FORCE_COLOR=true
+# shellcheck source=_setup-scripts/utils.sh
 source _setup-scripts/utils.sh
 
 do_setup() {
@@ -22,6 +23,7 @@ do_setup() {
   fi
 
   ./_setup-scripts/stow.sh
+  ./asdf/.bin/asdf_bootstrap.sh
   finish
 }
 
