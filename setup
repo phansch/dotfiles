@@ -2,7 +2,6 @@
 
 set -euxo pipefail
 
-export ANSIBLE_FORCE_COLOR=true
 # shellcheck source=_setup-scripts/utils.sh
 source _setup-scripts/utils.sh
 
@@ -14,8 +13,10 @@ do_setup() {
 
   bootstrap
   clone_dotfiles
+
   if [[ $(uname) == "Linux" ]]; then
     ./_setup-scripts/debian.sh
+    ./_setup-scripts/debian_additional.sh
   fi
 
   if [[ $(uname) == "Darwin" ]]; then
@@ -68,50 +69,6 @@ clone_dotfiles() {
   else
     print_message "[setup] Cloning dotfiles..."
     git clone -q https://github.com/phansch/dotfiles.git "$HOME/.dotfiles" && cd "$HOME/.dotfiles" || exit
-  fi
-}
-
-run_ansible() {
-  ./asdf/.bin/asdf_bootstrap.sh
-
-  python_version="$(cat .python-version)"
-  export ASDF_PYTHON_VERSION=$python_version
-  # From here on, everything should work the same on MacOS and Ubuntu
-  print_message "[setup] Version info"
-  python3 -V
-  pip3 -V
-  print_message "[setup] Install poetry..."
-  curl -sSL https://install.python-poetry.org | python3 -
-
-  poetry="$HOME/.local/bin/poetry"
-
-  $poetry env info
-  $poetry env use python
-
-  print_message "[setup] Setting up venv and deps w/ poetry..."
-  $poetry install
-
-  $poetry run ansible-galaxy install -r ansible/requirements.yml --force
-
-  default_playbooks=(
-    ansible/playbooks/dotfiles.yml
-  )
-  print_message "[setup] Running default playbooks..."
-  $poetry run ansible-playbook "${default_playbooks[@]}" --ask-become-pass -u "$USER"
-
-  additional_playbooks=(
-    ansible/playbooks/additional_packages.yml
-    ansible/playbooks/backup.yml
-    # ansible/playbooks/ruby.yml
-  )
-
-  cmd="ansible-playbook ${additional_playbooks[*]} --ask-become-pass -u $USER"
-  if [ "$1" = "true" ]; then
-    print_message "[setup] Running all additional playbooks"
-    $poetry run ansible-playbook "${additional_playbooks[@]}" --ask-become-pass -u "$USER"
-  else
-    print_message "[setup] To run the rest of the playbooks:"
-    print_message "$cmd"
   fi
 }
 
