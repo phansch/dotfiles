@@ -10,5 +10,5 @@ run_with_sudo apt-get update
 run_with_sudo apt-get install -y -qq calibre flatpak unclutter flameshot jq krita redshift git
 
 # Install PikaBackup
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.gnome.World.PikaBackup
+# flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+# flatpak install flathub org.gnome.World.PikaBackup
