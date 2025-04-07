@@ -8,6 +8,7 @@ mkdir -p "$HOME/.bin"
 tar -xvf /tmp/asdf-$version-linux-amd64.tar.gz -C "$HOME/.bin"
 
 asdf="$HOME/.bin/asdf"
+export PATH="$HOME/.asdf/shims:$PATH"
 $asdf info
 
 $asdf plugin add ruby
