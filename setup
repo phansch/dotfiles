@@ -3,14 +3,25 @@
 set -euxo pipefail
 
 export ANSIBLE_FORCE_COLOR=true
+source _setup-scripts/utils.sh
 
 do_setup() {
+  if is_ci; then
+    # Make sure we don't get any readline prompts on CI
+    echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
+  fi
+
   bootstrap
   clone_dotfiles
-  run_ansible "$1"
   if [[ $(uname) == "Linux" ]]; then
-    ssh_save
+    ./_setup-scripts/debian.sh
   fi
+
+  if [[ $(uname) == "Darwin" ]]; then
+    ./_setup-scripts/mac.sh
+  fi
+
+  ./_setup-scripts/stow.sh
   finish
 }
 
@@ -32,12 +43,8 @@ bootstrap() {
 
   if [[ $(uname) == "Linux" ]]; then
     print_message "[setup] Ensure prerequisites are installed"
-    if is_ci; then
-      # Make sure we don't get any readline prompts on CI
-      echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
-    fi
     run_with_sudo apt-get update -qq
-    run_with_sudo apt-get install software-properties-common git wget curl python3-apt python3-pip python3-venv python-is-python3 \
+    run_with_sudo apt-get install software-properties-common git wget curl \
       libdbus-glib-1-dev libyaml-dev libssl-dev libsqlite3-dev libreadline-dev libffi-dev liblzma-dev zlib1g-dev libbz2-dev -qq
 
     print_message "[setup] Upgrading and autocleaning packages..."
@@ -84,8 +91,6 @@ run_ansible() {
   $poetry run ansible-galaxy install -r ansible/requirements.yml --force
 
   default_playbooks=(
-    ansible/playbooks/base_debian.yml
-    ansible/playbooks/base_macos.yml
     ansible/playbooks/dotfiles.yml
   )
   print_message "[setup] Running default playbooks..."
@@ -107,16 +112,6 @@ run_ansible() {
   fi
 }
 
-ssh_save() {
-
-  if is_ci; then return; fi
-
-  ask_for_confirmation "[setup] Do you want to add your ssh key to ssh-agent? "
-  if answer_is_yes; then
-    ssh-add "$HOME/.ssh/id_rsa" &>/dev/null
-  fi
-}
-
 finish() {
   if is_ci; then return; fi
 
@@ -126,40 +121,6 @@ finish() {
   else
     echo "Ok, not logging you out."
   fi
-}
-
-is_ci() {
-  [[ "${CI-false}" == "true" ]] &&
-    return 0 ||
-    return 1
-}
-
-answer_is_yes() {
-  [[ "$REPLY" =~ ^[Yy]$ ]] &&
-    return 0 ||
-    return 1
-}
-
-ask_for_confirmation() {
-  printf "%b" "$1 (y/n)"
-  read -r -n 1
-  printf "%b" "\n"
-}
-
-print_message() {
-  printf "%b" "$1\n"
-}
-
-# This is a wrapper around sudo for docker
-run_with_sudo() {
-  my_sudo=""
-
-  if [[ $(id -u) -ne 0 ]]; then
-    print_message "We are not root, using 'sudo'"
-    my_sudo='sudo'
-  fi
-
-  $my_sudo "$@"
 }
 
 all=null
