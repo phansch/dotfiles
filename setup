@@ -16,6 +16,7 @@ do_setup() {
 
   if [[ $(uname) == "Linux" ]]; then
     ./_setup-scripts/debian.sh
+    ./_setup-scripts/debian_i3wm.sh
     ./_setup-scripts/debian_additional.sh
   fi
 
