@@ -11,8 +11,8 @@ on:
   pull_request:
     branches: [main]
   schedule:
-    # Every day at 3am UTC
-    - cron: '0 3 * * *'
+    # Every Friday at 14:00 UTC
+    - cron: '0 14 * * 5'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
