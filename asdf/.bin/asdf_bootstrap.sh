@@ -17,7 +17,7 @@ $asdf plugin add rust
 
 $asdf install rust latest
 $asdf install ruby latest
-$asdf install nodejs latest
+# $asdf install nodejs latest
 
-$asdf set --home nodejs latest
+# $asdf set --home nodejs latest
 $asdf set --home ruby latest
