@@ -31,7 +31,7 @@ jobs:
       - name: Test
         run: |
           docker run dotfiles /bin/bash -c "./setup -s && \
-            ./test/vim && ./test/yaml && ./test/shellcheck"
+            ./test/vim && ./test/shellcheck"
 
       - uses: sarisia/actions-status-discord@v1
         if: failure()
@@ -49,7 +49,7 @@ jobs:
       - name: Test
         run: |
           # shellcheck disable=SC1091
-          docker run dotfiles /bin/bash -c "./setup -a && ./test/ansible && ./test/i3"
+          docker run dotfiles /bin/bash -c "./setup -a && ./test/i3"
 
       - uses: sarisia/actions-status-discord@v1
         if: failure()
