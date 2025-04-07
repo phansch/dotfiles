@@ -1,6 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
+# shellcheck source=_setup-scripts/utils.sh
 source _setup-scripts/utils.sh
 
 run_with_sudo apt-get update -qq
@@ -12,7 +13,7 @@ if is_ci; then
 else
   snap install obsidian
 fi
-chsh -s $(which zsh)
+chsh -s "$(which zsh)"
 
 git clone https://github.com/zsh-users/zsh-autosuggestions --branch v0.7.0
 
@@ -32,4 +33,4 @@ if [[ -f "$libsecret_path/Makefile" ]]; then
 fi
 
 # Install tmuxifier
-git clone https://github.com/jimeh/tmuxifier.git --branch v0.13.0 $HOME/.tmuxifier
+git clone https://github.com/jimeh/tmuxifier.git --branch v0.13.0 "$HOME/.tmuxifier"

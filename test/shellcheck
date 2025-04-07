@@ -1,6 +1,6 @@
 #!/bin/sh
 
-all_executable_files=$(find . -executable -type f -and -not -path "./.git*" -and -not -path "./.venv*" -and -not -path "./ansible*" -and -not -path "./zsh/.zsh/*" -printf "%p ")
+all_executable_files=$(find . -executable -type f -and -not -path "./.git*" -and -not -path "./.venv*" -and -not -path "./ansible*" -and -not -path "./zsh/.zsh/*" -and -not -path "./zsh-autosuggestions/*" -printf "%p ")
 set -x
 
-bash -O extglob -O globstar -O nullglob -c "shellcheck $all_executable_files -e SC1071"
+bash -O extglob -O globstar -O nullglob -c "shellcheck $all_executable_files -e SC1071 -x"
