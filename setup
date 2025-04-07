@@ -65,9 +65,7 @@ clone_dotfiles() {
 run_ansible() {
   ./asdf/.bin/asdf_bootstrap.sh
 
-  # shellcheck disable=SC1091
-  . "$HOME/.asdf/asdf.sh"
-  asdf shell python 3.13.0
+  export ASDF_PYTHON_VERSION="$(cat .python-version)"
   # From here on, everything should work the same on MacOS and Ubuntu
   print_message "[setup] Version info"
   python3 -V
