@@ -32,11 +32,6 @@ jobs:
         run: |
           docker run dotfiles /bin/bash -c "./test/vim && ./test/shellcheck"
 
-      - uses: sarisia/actions-status-discord@v1
-        if: failure()
-        with:
-          webhook: ${{ secrets.DISCORD_WEBHOOK }}
-
   full-setup-test:
     runs-on: ubuntu-24.04
     steps:
@@ -49,8 +44,3 @@ jobs:
         run: |
           # shellcheck disable=SC1091
           docker run dotfiles /bin/bash -c "./setup -a && ./test/i3"
-
-      - uses: sarisia/actions-status-discord@v1
-        if: failure()
-        with:
-          webhook: ${{ secrets.DISCORD_WEBHOOK }}
