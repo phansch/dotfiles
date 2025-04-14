@@ -15,3 +15,6 @@ maximize = true
 # Other stuff
 link-url = true
 auto-update = check
+
+# Keybinds
+keybind = global:cmd+grave_accent=toggle_quick_terminal
