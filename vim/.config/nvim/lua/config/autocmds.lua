@@ -24,6 +24,14 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	end,
 })
 
+-- Disable autoformat for ruby files
+vim.api.nvim_create_autocmd({ "FileType" }, {
+	pattern = { "ruby" },
+	callback = function()
+		vim.b.autoformat = false
+	end,
+})
+
 -- Disable autoformat for yaml files
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = { "yaml" },
