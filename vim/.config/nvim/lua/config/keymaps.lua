@@ -4,6 +4,7 @@
 local map = vim.keymap.set
 
 map("n", "<S-h>", "^", { desc = "Start of line" })
+map("v", "<S-h>", "^", { desc = "Start of line" })
 map("n", "<S-l>", "$", { desc = "End of line" })
 map("v", "<S-l>", "g_", { desc = "End of line" })
 
