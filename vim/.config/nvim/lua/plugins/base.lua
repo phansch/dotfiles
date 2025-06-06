@@ -60,4 +60,13 @@ return {
 			{ "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
 		},
 	},
+	-- Show full path of files in lualine
+	{
+		"nvim-lualine/lualine.nvim",
+		event = "VeryLazy",
+		enabled = true,
+		opts = function(_, opts)
+			opts.sections.lualine_c[4] = { "filename", path = 1 }
+		end,
+	},
 }
