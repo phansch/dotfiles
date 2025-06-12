@@ -32,6 +32,14 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	end,
 })
 
+-- Disable autoformat for erb files
+vim.api.nvim_create_autocmd({ "FileType" }, {
+	pattern = { "eruby" },
+	callback = function()
+		vim.b.autoformat = false
+	end,
+})
+
 -- Disable autoformat for yaml files
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = { "yaml" },
