@@ -1,5 +1,7 @@
 [![Build Status](https://github.com/phansch/dotfiles/workflows/CI/badge.svg?branch=main)](https://github.com/phansch/dotfiles/actions)
 
+NOTE: The repository is only actively developed at https://codeberg.org/philhansch/dotfiles.
+
 ## What's in there?
 
 This is meant to be a 'minimal', **distraction free** setup. No fancy
